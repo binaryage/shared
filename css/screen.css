@@ -63,6 +63,12 @@ img.shadow {
     left: -40px;
 }
 
+img.small-shadow {
+    position: relative;
+    left: -20px;
+}
+
+
 img.binaryage-logo {
     padding: 4px 10px;
     background-color: #fff;
