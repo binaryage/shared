@@ -7,7 +7,7 @@
 }
 
 #header {
-    background-image: url(/images/header_bg.png);
+    background-image: url(/shared/img/header_bg.png);
 }
 
 #header .logo {
@@ -38,7 +38,7 @@
 }
 
 #footer {
-    background-image: url(/images/footer_bg.png);
+    background-image: url(/shared/img/footer_bg.png);
     color: #ccc;
 }
 
@@ -89,4 +89,3 @@ img.binaryage-logo {
     top: 36px;
     left: 540px;
 }
-
