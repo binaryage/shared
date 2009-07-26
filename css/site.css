@@ -68,12 +68,12 @@ a {
     float: left;
     margin-right: 10px;
     position: relative;
-    top: 6px;
+    top: -6px;
 }
 
 .logo h1 {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 32px;
     line-height: 24px;
 }
 
@@ -100,7 +100,7 @@ a {
     -moz-background-origin: padding;
     background: transparent url(../img/download-icon.png) repeat-x scroll center bottom;
     height: 32px;
-    left: 6px;
+    left: 38px;
     position: absolute;
     top: 3px;
     width: 32px;
@@ -143,7 +143,7 @@ a {
     border-width: 1px;
     height: 19px;
     line-height: 1.7em;
-    margin: 7px 24px 0 0px;
+    margin: 7px 24px 0 32px;
     padding: 8px 0 8px 32px;
     text-shadow: 1px 2px 2px #FFFFFF;
 }
@@ -181,11 +181,10 @@ a {
     text-decoration: none;
 }
 .download-button {
-    border-right: 1px solid #999999;
     float: left;
 }
 .donate-button {
-    border-left: 1px solid #FFFFFF;
+    border-left: 1px solid #999999;
     float: left;
 }
 
@@ -372,17 +371,17 @@ img.binaryage-logo {
 
 .wikistyle h1, h2, h3, h4, h5, h6 {
     border: 0 !important;
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
  
 .wikistyle h1 {
 }
  
 .wikistyle h2 {
-    margin-bottom: 0px;
 }
  
 .wikistyle h3 {
-    padding-top: 1em !important;
 }
  
 .wikistyle p {
@@ -409,7 +408,8 @@ img.binaryage-logo {
 }
  
 .wikistyle blockquote {
-    margin: 1em 0 !important;
+    margin-bottom: 1em 0 !important;
+    margin-top: 0px;
     border-left: 5px solid #ddd !important;
     padding-left: .6em !important;
     color: #555 !important;
@@ -504,6 +504,7 @@ img.binaryage-logo {
     margin-right: 10px;
     -webkit-box-shadow: rgb(204, 204, 204) 4px 4px 8px;
     -moz-box-shadow: 4px 4px 8px #CCCCCC;
+    border: 2px solid #ddd;
 }
 
 .advertisement .plug {
