@@ -1,0 +1,545 @@
+html {
+    height: 101%;
+}
+
+a {
+    color: #2F8BBA;
+}
+
+#header {
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+#header .container {
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.header-logo {
+    background: transparent url('/shared/img/header-logo.png') no-repeat top left;
+    width: 200px;
+    height: 50px;
+}
+
+.header-logo:hover {
+    background-position: 0 -50px;
+    cursor: pointer;
+}
+
+.header-menu-wrapper {
+    text-align: right;
+    color: #656565;
+}
+
+.header-menu {
+    margin: 26px 25px 0 0;
+    font-family: 'Helevetica Neue', Helvetica;
+    font-size: 20px;
+    font-weight: bold;
+    list-style-type: none;
+    line-height: 20px;
+}
+
+.header-menu li {
+    margin-left: 30px;
+    float: right;
+}
+
+.header-menu a {
+    text-decoration: none;
+    color: #656565;
+}
+
+.header-menu li.selected a {
+    text-decoration: none;
+    color: #3D99CD;
+}
+
+.header-menu li a:hover {
+    color: #00A8FF;
+}
+
+.logo {
+    font-family: 'Helevetica Neue', Helvetica;
+    margin-top: 40px;
+}
+
+.logo img {
+    float: left;
+    margin-right: 10px;
+    position: relative;
+    top: 6px;
+}
+
+.logo h1 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+.logo h2 {
+    font-size: 16px;
+    position: relative;
+    top: -14px;
+    left: 42px;
+}
+
+.download {
+    position: relative;
+    height: 100px;
+    left: 10px;
+}
+
+.download a {
+    text-decoration: none;
+}
+
+#download-icon {
+    -moz-background-clip: border;
+    -moz-background-inline-policy: continuous;
+    -moz-background-origin: padding;
+    background: transparent url(../img/download-icon.png) repeat-x scroll center bottom;
+    height: 32px;
+    left: 6px;
+    position: absolute;
+    top: 3px;
+    width: 32px;
+}
+
+#love-icon {
+    -moz-background-clip: border;
+    -moz-background-inline-policy: continuous;
+    -moz-background-origin: padding;
+    background: transparent url(../img/love-icon.png) repeat-x scroll center bottom;
+    height: 32px;
+    position: relative;
+    left: 0px;
+    top: -28px;
+    width: 32px;
+    float: right;
+}
+
+.donate-button {
+    position: relative;
+}
+
+.download-box {
+    -webkit-border-bottom-left-radius: 8px 8px;
+    -webkit-border-bottom-right-radius: 8px 8px;
+    -webkit-border-top-left-radius: 8px 8px;
+    -webkit-border-top-right-radius: 8px 8px;
+    -webkit-box-shadow: rgb(204, 204, 204) 0px 1px 4px;
+    -moz-background-clip: border; 
+    -moz-background-inline-policy: continuous;
+    -moz-background-origin: padding;
+    -moz-border-radius-bottomleft: 8px;
+    -moz-border-radius-bottomright: 8px;
+    -moz-border-radius-topleft: 8px;
+    -moz-border-radius-topright: 8px;
+    -moz-box-shadow: 0 1px 4px #CCCCCC;
+    background: #EDEDED url(../img/search-gradient.png) repeat-x scroll center bottom;
+    border-color: #CCCCCC #CCCCCC #C1C1C1;
+    border-style: solid;
+    border-width: 1px;
+    height: 19px;
+    line-height: 1.7em;
+    margin: 7px 24px 0 0px;
+    padding: 8px 0 8px 32px;
+    text-shadow: 1px 2px 2px #FFFFFF;
+}
+.release-notes {
+    font-size: 10px;
+    line-height: 1.9em;
+    margin: 3px 0 0 40px;
+    min-width: 400px;
+}
+.release-notes a {
+    border-bottom: 1px dotted #999999;
+    color: #999999;
+}
+.release-notes a:hover {
+    color: #666666;
+    text-decoration: none;
+}
+.release-notes-wrapper {
+    padding: 6px 28px;
+}
+.release-notes-wrapper a {
+    color: #666666;
+}
+
+.download-button, .donate-button {
+    padding: 0 15px;
+}
+.download-button a, .donate-button a {
+    color: #333333;
+    font-weight: bold;
+    text-decoration: none;
+}
+.download-button a:hover, .donate-button a:hover {
+    color: #0084B8;
+    text-decoration: none;
+}
+.download-button {
+    border-right: 1px solid #999999;
+    float: left;
+}
+.donate-button {
+    border-left: 1px solid #FFFFFF;
+    float: left;
+}
+
+.main-screenshot {
+    cursor: pointer;
+}
+
+/* the overlayed element */
+div.overlay {
+  background-image:url(../img/overlay/white.png);
+	width:680px;
+	height:480px;		
+	display:none;
+}
+
+/* default close button positioned on upper right corner */
+div.overlay div.close {
+	background-image:url(../img/overlay/apple-close.png);
+	position:absolute;
+	right:25px;
+	top:10px;
+	cursor:pointer;
+	height:28px;
+	width:28px;
+}
+
+
+/* root element for tabs  */
+ul.tabs { 
+    text-shadow: 1px 2px 2px #FFFFFF;
+	list-style:none; 
+	margin:0 !important; 
+	padding:0;	
+	height:30px;
+	clear: both;
+}
+
+/* single tab */
+ul.tabs li { 
+	float:left;	 
+	text-indent:0;
+	padding:0;
+	margin:0 !important;
+	list-style-image:none !important; 
+}
+
+/* link inside the tab. uses a background image */
+ul.tabs a { 
+/*    background: #EDEDED url(../img/search-gradient.png) repeat-x scroll center bottom;*/
+	font-size:14px;
+	display:block;
+	height: 30px;  
+	line-height:30px;
+	width: 134px;
+	text-align:center;	
+	text-decoration:none;
+	color:#333;
+	padding:0px;
+	margin:0px;
+      position: relative;
+      top: -1px;  
+    -webkit-border-top-left-radius: 8px 8px;
+    -webkit-border-top-right-radius: 8px 8px;
+    -webkit-box-shadow: rgb(204, 204, 204) 0px 0px 4px;
+    -moz-background-clip: border; 
+    -moz-background-inline-policy: continuous;
+    -moz-background-origin: padding;
+    -moz-border-radius-topleft: 8px;
+    -moz-border-radius-topright: 8px;
+    -moz-box-shadow: 0 0px 4px #CCCCCC;
+/*    background: #EDEDED url(../img/search-gradient.png) repeat-x scroll center bottom;*/
+    background-color: #E0E0E0;
+    border-color: #CCCCCC #CCCCCC #C1C1C1;
+    border-style: solid;
+    border-width: 1px;
+    text-shadow: 1px 2px 2px #FFFFFF;
+    outline:none;
+}
+
+ul.tabs a:active {
+  outline:none;       
+}
+
+/* when mouse enters the tab move the background image */
+ul.tabs a:hover {
+/*  background-position: -420px -31px;  */
+    color:#000; 
+}
+
+/* active tab uses a class name "current". it's highlight is also done by moving the background image. */
+ul.tabs a.current, ul.tabs a.current:hover, ul.tabs li.current a {
+/*  background-position: -420px -62px;      */
+    border-bottom: 1px solid #EDEDED;
+	cursor:default !important; 
+	background-color: #EDEDED;
+    -webkit-box-shadow: #EDEDED 0px 1px 4px;
+    -moz-box-shadow: 0 1px 4px #EDEDED;
+	color:#000 !important;
+}
+
+/* Different widths for tabs: use a class name: w1, w2, w3 or w2 */
+
+
+/* width 1 */
+ul.tabs a.s 			{ background-position: -553px 0; width:81px; }
+ul.tabs a.s:hover 	{ background-position: -553px -31px; }
+ul.tabs a.s.current  { background-position: -553px -62px; }
+
+/* width 2 */
+ul.tabs a.l 			{ background-position: -248px -0px; width:174px; }
+ul.tabs a.l:hover 	{ background-position: -248px -31px; }
+ul.tabs a.l.current  { background-position: -248px -62px; }
+
+
+/* width 3 */
+ul.tabs a.xl 			{ background-position: 0 -0px; width:248px; }
+ul.tabs a.xl:hover 	{ background-position: 0 -31px; }
+ul.tabs a.xl.current { background-position: 0 -62px; }
+
+
+/* initially all panes are hidden */ 
+div.panes div.pane {
+	display:none;		
+}
+
+div.panes div {
+	display:none;		
+	padding: 15px 10px 15px 10px;
+	border:1px solid #999;
+	border-top:0;
+    -webkit-border-bottom-left-radius: 8px 8px;
+    -webkit-border-bottom-right-radius: 8px 8px;
+    -moz-background-clip: border; 
+    -moz-background-inline-policy: continuous;
+    -moz-background-origin: padding;
+    -moz-border-radius-bottomleft: 8px;
+    -moz-border-radius-bottomright: 8px;
+    -webkit-box-shadow: rgb(204, 204, 204) 0px 1px 4px;
+    -moz-box-shadow: 0 1px 4px #CCCCCC;
+    background: #EDEDED url(../img/search-gradient.png) repeat-x scroll center bottom;
+    border-color: #CCCCCC #CCCCCC #C1C1C1;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#footer .container {
+    border-top: 1px solid #ccc;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    margin-top: 40px;
+    padding: 5px 10px;
+    position: relative;
+}
+ 
+#footer .binary-age {
+    position: absolute;
+    right: 10px;
+    top: 16px;
+}
+ 
+#footer .binary-age a {
+    text-decoration: none;
+}
+ 
+img.binaryage-logo {
+    padding: 0px 4px;
+    background-color: #fff;
+    border: 1px solid #999;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+ 
+#footer .github-icon {
+    position: absolute;
+    right: 110px;
+    top: 16px;
+}
+
+.github-icon img {
+    border: 1px solid #999;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+
+.wikistyle h1, h2, h3, h4, h5, h6 {
+    border: 0 !important;
+}
+ 
+.wikistyle h1 {
+}
+ 
+.wikistyle h2 {
+    margin-bottom: 0px;
+}
+ 
+.wikistyle h3 {
+    padding-top: 1em !important;
+}
+ 
+.wikistyle p {
+    margin: 1em 0 !important;
+    line-height: 1.5em !important;
+}
+ 
+.wikistyle ul {
+    margin: 1em 0 1em 1.3em !important;
+}
+ 
+.wikistyle ul {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+ 
+.wikistyle ol {
+    margin: 1em 0 1em 1.5em !important;
+}
+ 
+.wikistyle ol ol {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+ 
+.wikistyle blockquote {
+    margin: 1em 0 !important;
+    border-left: 5px solid #ddd !important;
+    padding-left: .6em !important;
+    color: #555 !important;
+}
+ 
+.wikistyle dt {
+    font-weight: bold !important;
+    margin-left: 1em !important;
+}
+ 
+.wikistyle dd {
+    margin-left: 2em !important;
+    margin-bottom: 1em !important;
+}
+ 
+.wikistyle table {
+    margin: 1em 0 !important;
+}
+ 
+.wikistyle table th {
+    border-bottom: 1px solid #bbb !important;
+    padding: .2em 1em !important;
+}
+ 
+.wikistyle table td {
+    border-bottom: 1px solid #ddd !important;
+    padding: .2em 1em !important;
+}
+ 
+.wikistyle pre {
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    font-family: Courier;
+    margin: 1em 0 !important;
+    background-color: #f8f8ff !important;
+    padding: .5em !important;
+    line-height: 1.5em !important;
+    color: #444 !important;
+    overflow: auto !important;
+}
+ 
+.wikistyle pre code {
+    padding: 0 !important;
+    background-color: #f8f8ff !important;
+    border: none !important;
+}
+ 
+.wikistyle code {
+    background-color: #f8f8ff !important;
+    color: #444 !important;
+    padding: 0 .2em !important;
+    border: 1px solid #dedede !important;
+}
+ 
+/* console */
+ 
+.wikistyle pre {
+    margin: 1em 0 !important;
+    background-color: black !important;
+    padding: .5em !important;
+    line-height: 1.5em !important;
+    color: white !important;
+}
+ 
+.wikistyle pre code {
+    padding: 0 !important;
+    background-color: black !important;
+    border: none !important;
+    color: white !important;
+}
+ 
+.wikistyle pre span {
+    color: #888 !important;
+}
+ 
+.wikistyle pre span.command {
+    color: yellow !important;
+}
+
+
+.advertisement {
+    border: 1px dashed #ddd;
+    padding: 6px 10px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+
+.advertisement > a > img  {
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    width: 60px;
+    margin-right: 10px;
+    -webkit-box-shadow: rgb(204, 204, 204) 4px 4px 8px;
+    -moz-box-shadow: 4px 4px 8px #CCCCCC;
+}
+
+.advertisement .plug {
+    color: #999;
+}
+
+.advertisement .offer a {
+    text-decoration: none;
+}
+
+.advertisement .offer {
+    font-size: 10px;
+    line-height: 10px;
+    text-align: right;
+}
+
+.copyright {
+    color: #999;
+}
+
+.copyright img {
+    position: relative;
+    top: 3px;
+    margin-right: 4px;
+}
+
+.header-left {
+    position: relative;
+}
+
+.twitter {
+    position: absolute;
+    top: 0px;
+    left: 250px;
+}
+
+.main-spacer {
+    height: 20px;
+}
