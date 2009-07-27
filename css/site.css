@@ -386,9 +386,18 @@ img.binaryage-logo {
  
 .wikistyle p {
     margin: 1em 0 !important;
+    margin-bottom: 0px !important;
     line-height: 1.5em !important;
 }
+
+.wikistyle > ul > li {
+    margin-top: 3px !important;
+}
  
+.wikistyle li p {
+    margin: 0px !important;
+}
+
 .wikistyle ul {
     margin: 1em 0 1em 1.3em !important;
 }
