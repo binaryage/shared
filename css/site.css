@@ -188,10 +188,6 @@ a {
     float: left;
 }
 
-.main-screenshot {
-    cursor: pointer;
-}
-
 /* the overlayed element */
 div.overlay {
   background-image:url(../img/overlay/white.png);
@@ -517,6 +513,11 @@ img.binaryage-logo {
     border: 2px solid #ddd;
 }
 
+.advertisement > a > img:hover {
+    position: relative;
+    top: -6px;
+}
+
 .advertisement .plug {
     color: #999;
 }
@@ -553,4 +554,30 @@ img.binaryage-logo {
 
 .main-spacer {
     height: 20px;
+}
+
+.raw-image {
+    border: 2px solid #888;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    margin-left: 10px;
+    margin-top: 6px;
+}
+
+.content-image {
+    margin-left: 10px;
+    margin-top: 6px;
+}
+
+.video-note {
+    font-size: 10px;
+    color: #999;
+    text-align: right;
+}
+
+.main-right object {
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border: 2px solid #888;
+    display: block;
 }
