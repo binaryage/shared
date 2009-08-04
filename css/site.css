@@ -558,6 +558,13 @@ img.binaryage-logo {
     position: absolute;
     top: 0px;
     left: 250px;
+    background: transparent url('../img/twitter.png') 0 0 no-repeat;
+    width: 157px;
+    height: 58px;
+}
+
+.twitter:hover {
+    background-position: 0 -58px;
 }
 
 .main-spacer {
