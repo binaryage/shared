@@ -664,20 +664,20 @@ img.binaryage-logo {
     clear: both;
 }
 
-.links {
+#footer .links {
     text-align: center;
     position: relative;
     top: -2px;
     z-index: 1;
 }
 
-.logos {
+#footer .logos {
     position: absolute;
     right: 10px;
     z-index: 2;
 }
 
-.copyright {
+#footer .copyright {
     color: #999;
     position: absolute;
     left: 10px;
