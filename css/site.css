@@ -344,9 +344,7 @@ div.panes div {
 }
  
 #footer .binary-age {
-    position: absolute;
-    right: 10px;
-    top: 16px;
+    float: left;
 }
  
 #footer .binary-age a {
@@ -362,9 +360,8 @@ img.binaryage-logo {
 }
  
 #footer .github-icon {
-    position: absolute;
-    right: 110px;
-    top: 16px;
+    float: left;
+    margin-right: 6px;
 }
 
 .github-icon img {
@@ -540,13 +537,7 @@ img.binaryage-logo {
     text-align: right;
 }
 
-.copyright {
-    color: #999;
-}
-
 .copyright img {
-    position: relative;
-    top: 3px;
     margin-right: 4px;
 }
 
@@ -671,4 +662,24 @@ img.binaryage-logo {
 
 .clear {
     clear: both;
+}
+
+.links {
+    text-align: center;
+    position: relative;
+    top: -2px;
+    z-index: 1;
+}
+
+.logos {
+    position: absolute;
+    right: 10px;
+    z-index: 2;
+}
+
+.copyright {
+    color: #999;
+    position: absolute;
+    left: 10px;
+    z-index: 2;
 }
