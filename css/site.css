@@ -503,16 +503,19 @@ img.binaryage-logo {
 .advertisement {
     border: 1px dashed #ddd;
     padding: 6px 10px;
+    margin-right: 44px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     display: none;
+    min-height: 125px;
 }
 
 .advertisement > a > img  {
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     width: 60px;
-    margin-right: 10px;
+    margin-right: 6px;
+    margin-left: 6px;
     -webkit-box-shadow: rgb(204, 204, 204) 4px 4px 8px;
     -moz-box-shadow: 4px 4px 8px #CCCCCC;
     border: 2px solid #ddd;
@@ -525,6 +528,7 @@ img.binaryage-logo {
 
 .advertisement .plug {
     color: #999;
+    margin-bottom: 6px;
 }
 
 .advertisement .offer a {
@@ -532,6 +536,7 @@ img.binaryage-logo {
 }
 
 .advertisement .offer {
+    margin-top: 4px;
     font-size: 10px;
     line-height: 10px;
     text-align: right;
