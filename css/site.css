@@ -593,24 +593,25 @@ img.binaryage-logo {
 }
 
 .product {
-	width:300px;
-	height: 370px;
+	width:460px;
+	height: 110px;
 	float: left;
 	cursor:pointer;
 	margin-left: 10px;
 	margin-top: 10px;
 	position: relative;
-	
-    border:1px solid #ccc;
+    border:1px solid #eee;
     -webkit-border-radius: 8px 8px;
     -moz-border-radius: 8px;
-    -webkit-box-shadow: #CCC 0px 1px 4px;
-    -moz-box-shadow: 0 1px 4px #CCC;
-    background-color: #eee;
+    -webkit-box-shadow: #ccc 0px 1px 2px;
+    -moz-box-shadow: 0 1px 2px #ccc;
+    background-color: #efefef;
 }
 
 .product:hover {
-    border: 1px solid #000;
+    border: 1px solid #ddd;
+    -webkit-box-shadow: #2F8BBA 0px 1px 20px;
+    -moz-box-shadow: 0 1px 20px #2F8BBA;
 }
 
 .product-logo {
@@ -629,8 +630,8 @@ img.binaryage-logo {
 }
 
 .product-logo h2 {
-    font-size: 11px;
-    line-height: 11px;
+    font-size: 12px;
+    line-height: 18px;
     left: 30px;
 }
 
@@ -641,23 +642,15 @@ img.binaryage-logo {
     top: 0px;
 }
 
-.product-image {
-    width: 300px;
-    margin: auto;
-}
-
-.product-image img {
-    width: 300px;
-}
-
 .product-link {
     display: block;
     width: 100%;
     position: absolute;
-    bottom: 10px;
-    text-align: center;
+    bottom: 20px;
+    text-align: left;
     font-weight: bold;
     font-size: 14px;
+    padding-left: 40px;
 }
 
 .clear {
@@ -682,4 +675,14 @@ img.binaryage-logo {
     position: absolute;
     left: 10px;
     z-index: 2;
+}
+
+.product-image {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.main-screenshot img {
+    width: 100px;
 }
