@@ -559,6 +559,12 @@ img.binaryage-logo {
     height: 58px;
 }
 
+.webexpo {
+    position: absolute;
+    top: 0px;
+    left: 430px;
+}
+
 .twitter:hover {
     background-position: 0 -58px;
 }
