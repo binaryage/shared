@@ -21,7 +21,7 @@ a:hover {
 
 .header-logo {
     background: transparent url('/shared/img/header-logo.png') no-repeat top left;
-    width: 200px;
+    width: 220px;
     height: 50px;
 }
 
@@ -36,9 +36,9 @@ a:hover {
 }
 
 .header-menu {
-    margin: 26px 25px 0 0;
+    margin: 20px 25px 0px 0px;
     font-family: 'Helevetica Neue', Helvetica;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     list-style-type: none;
     line-height: 20px;
@@ -52,16 +52,24 @@ a:hover {
 .header-menu a {
     text-decoration: none;
     color: #656565;
-}
-
-.header-menu li.selected a {
-    text-decoration: none;
-    color: #3D99CD;
+    display: block;
+    padding: 2px 10px;
+    -webkit-border-radius: 8px 8px;
+    -moz-border-radius: 8px;
+    background-color: #eee;
 }
 
 .header-menu li a:hover {
-    color: #00A8FF;
+    color: #000;
 }
+
+.products .menu-item-products,
+.blog .menu-item-blog,
+.services .menu-item-services {
+    background-color: #656565;
+    color: #fff !important;
+}
+
 
 .logo {
     font-family: 'Helevetica Neue', Helvetica;
@@ -195,55 +203,55 @@ a:hover {
 /* the overlayed element */
 div.overlay {
   background-image:url(../img/overlay/white.png);
-	width:680px;
-	height:480px;		
-	display:none;
+    width:680px;
+    height:480px;       
+    display:none;
 }
 
 /* default close button positioned on upper right corner */
 div.overlay div.close {
-	background-image:url(../img/overlay/apple-close.png);
-	position:absolute;
-	right:25px;
-	top:10px;
-	cursor:pointer;
-	height:28px;
-	width:28px;
+    background-image:url(../img/overlay/apple-close.png);
+    position:absolute;
+    right:25px;
+    top:10px;
+    cursor:pointer;
+    height:28px;
+    width:28px;
 }
 
 
 /* root element for tabs  */
 ul.tabs { 
     text-shadow: 1px 2px 2px #FFFFFF;
-	list-style:none; 
-	margin:0 !important; 
-	padding:0;	
-	height:30px;
-	clear: both;
+    list-style:none; 
+    margin:0 !important; 
+    padding:0;  
+    height:30px;
+    clear: both;
 }
 
 /* single tab */
 ul.tabs li { 
-	float:left;	 
-	text-indent:0;
-	padding:0;
-	margin:0 !important;
-	list-style-image:none !important; 
+    float:left;  
+    text-indent:0;
+    padding:0;
+    margin:0 !important;
+    list-style-image:none !important; 
 }
 
 /* link inside the tab. uses a background image */
 ul.tabs a { 
 /*    background: #EDEDED url(../img/search-gradient.png) repeat-x scroll center bottom;*/
-	font-size:14px;
-	display:block;
-	height: 30px;  
-	line-height:30px;
-	width: 134px;
-	text-align:center;	
-	text-decoration:none;
-	color:#333;
-	padding:0px;
-	margin:0px;
+    font-size:14px;
+    display:block;
+    height: 30px;  
+    line-height:30px;
+    width: 134px;
+    text-align:center;  
+    text-decoration:none;
+    color:#333;
+    padding:0px;
+    margin:0px;
       position: relative;
       top: -1px;  
     -webkit-border-top-left-radius: 8px 8px;
@@ -278,43 +286,43 @@ ul.tabs a:hover {
 ul.tabs a.current, ul.tabs a.current:hover, ul.tabs li.current a {
 /*  background-position: -420px -62px;      */
     border-bottom: 1px solid #EDEDED;
-	cursor:default !important; 
-	background-color: #EDEDED;
+    cursor:default !important; 
+    background-color: #EDEDED;
     -webkit-box-shadow: #EDEDED 0px 1px 4px;
     -moz-box-shadow: 0 1px 4px #EDEDED;
-	color:#000 !important;
+    color:#000 !important;
 }
 
 /* Different widths for tabs: use a class name: w1, w2, w3 or w2 */
 
 
 /* width 1 */
-ul.tabs a.s 			{ background-position: -553px 0; width:81px; }
-ul.tabs a.s:hover 	{ background-position: -553px -31px; }
+ul.tabs a.s             { background-position: -553px 0; width:81px; }
+ul.tabs a.s:hover   { background-position: -553px -31px; }
 ul.tabs a.s.current  { background-position: -553px -62px; }
 
 /* width 2 */
-ul.tabs a.l 			{ background-position: -248px -0px; width:174px; }
-ul.tabs a.l:hover 	{ background-position: -248px -31px; }
+ul.tabs a.l             { background-position: -248px -0px; width:174px; }
+ul.tabs a.l:hover   { background-position: -248px -31px; }
 ul.tabs a.l.current  { background-position: -248px -62px; }
 
 
 /* width 3 */
-ul.tabs a.xl 			{ background-position: 0 -0px; width:248px; }
-ul.tabs a.xl:hover 	{ background-position: 0 -31px; }
+ul.tabs a.xl            { background-position: 0 -0px; width:248px; }
+ul.tabs a.xl:hover  { background-position: 0 -31px; }
 ul.tabs a.xl.current { background-position: 0 -62px; }
 
 
 /* initially all panes are hidden */ 
 div.panes div.pane {
-	display:none;		
+    display:none;       
 }
 
 div.panes div {
-	display:none;		
-	padding: 15px 10px 15px 10px;
-	border:1px solid #999;
-	border-top:0;
+    display:none;       
+    padding: 15px 10px 15px 10px;
+    border:1px solid #999;
+    border-top:0;
     -webkit-border-bottom-left-radius: 8px 8px;
     -webkit-border-bottom-right-radius: 8px 8px;
     -moz-background-clip: border; 
@@ -603,47 +611,109 @@ img.binaryage-logo {
     position: relative;
 }
 
+#offers {
+    clear: both;
+}
+
+.offer {
+    background-image: url('/images/offer-box.png');
+    width: 462px;
+    height: 200px;
+    float: left;
+    cursor:pointer;
+    margin-left: 10px;
+    margin-top: 10px;
+    position: relative;
+    -webkit-border-radius: 2px 2px;
+    -moz-border-radius: 2px;
+    margin-bottom: 40px;
+}
+
+.offer:hover {
+    -webkit-box-shadow: #2F8BBA 0px 0px 20px;
+    -moz-box-shadow: 0 0px 20px #2F8BBA;
+}
+
+.offer-logo h1 {
+    font-size: 28px;
+    line-height: 28px;
+    text-shadow: 1px 2px 2px #fff;
+}
+
+.offer-logo h2 {
+    margin-top: 20px;
+}
+
+.offer .logo {
+    margin-top: 20px;
+    padding-left: 30px;;
+}
+
+.offer .product-link {
+    display: block;
+    position: absolute;
+    bottom: 16px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 14px;
+    padding-left: 70px;
+}
+
+.offer-image .main-screenshot {
+    float: right;
+    position: relative;
+    left: 7px;
+    top: 0px;
+}
+
+.offer-logo p {
+    font-size: 10px;
+    color: #aaa;
+    padding-left: 40px;;
+}
+
+#products {
+    clear: both;
+}
+
 .product {
-	width:460px;
-	height: 110px;
-	float: left;
-	cursor:pointer;
-	margin-left: 10px;
-	margin-top: 10px;
-	position: relative;
-    border:1px solid #eee;
-    -webkit-border-radius: 8px 8px;
-    -moz-border-radius: 8px;
-    -webkit-box-shadow: #ccc 0px 1px 2px;
-    -moz-box-shadow: 0 1px 2px #ccc;
-    background-color: #efefef;
+    background-image: url('/images/product-box.png');
+    width:226px;
+    height: 114px;
+    float: left;
+    cursor:pointer;
+    margin-left: 10px;
+    margin-top: 16px;
+    position: relative;
+    -webkit-border-radius: 2px 2px;
+    -moz-border-radius: 2px;
 }
 
 .product:hover {
-    border: 1px solid #ddd;
-    -webkit-box-shadow: #2F8BBA 0px 1px 20px;
-    -moz-box-shadow: 0 1px 20px #2F8BBA;
+    -webkit-box-shadow: #2F8BBA 0px 0px 20px;
+    -moz-box-shadow: 0 0px 20px #2F8BBA;
 }
 
 .product-logo {
-    width: 470px;
     margin: auto;
 }
 
 .product-logo .logo {
-    margin: 20px 10px 10px 10px;
+    margin: 16px 10px 10px 10px;
 }
 
 .product-logo h1 {
     font-size: 20px;
     line-height: 20px;
-    text-shadow: 1px 2px 2px #aaa;
+    text-shadow: 1px 1px 1px #fff;
 }
 
 .product-logo h2 {
-    font-size: 12px;
+    width: 170px;
+    font-size: 13px;
     line-height: 18px;
     left: 30px;
+    margin-top: 20px;
 }
 
 .product-logo img {
@@ -655,12 +725,11 @@ img.binaryage-logo {
 
 .product-link {
     display: block;
-    width: 100%;
     position: absolute;
-    bottom: 20px;
-    text-align: left;
+    bottom: 14px;
+    text-align: right;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 10px;
     padding-left: 40px;
 }
 
@@ -689,6 +758,7 @@ img.binaryage-logo {
 }
 
 .product-image {
+    display: none;
     position: absolute;
     right: 20px;
     top: 10px;
@@ -696,4 +766,31 @@ img.binaryage-logo {
 
 .product-image .main-screenshot img {
     width: 100px;
+}
+
+.products-bottom-bar {
+    clear:both;
+    margin-top: 20px;
+}
+
+.master-separator {
+    clear: both;
+    border-bottom: 2px dashed #cdcdcd;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.master-separator .separator-wrapper {
+    background-color: white;
+    padding: 0px 0px;
+    position: relative;
+    top: 10px;
+    left: 20px;
+}
+
+.master-separator .separator-label {
+    color: #cdcdcd;
+    font-weight: bold;
+    padding: 2px 10px;
+    font-size: 14px;
 }
