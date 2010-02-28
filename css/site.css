@@ -165,24 +165,16 @@ a:hover {
     text-shadow: 1px 2px 2px #FFFFFF;
 }
 .release-notes {
-    font-size: 10px;
-    line-height: 1.9em;
-    margin: 3px 0 0 40px;
-    min-width: 400px;
+    font-size:11px;
+    line-height:1.3em;
+    margin:3px 0 0 40px;
+    min-width:400px;
+    position:relative;
+    top:-18px;
 }
-.release-notes a {
-    border-bottom: 1px dotted #999999;
-    color: #999999;
-}
-.release-notes a:hover {
-    color: #666666;
-    text-decoration: none;
-}
+
 .release-notes-wrapper {
     padding: 6px 28px;
-}
-.release-notes-wrapper a {
-    color: #666666;
 }
 
 .download-button, .donate-button {
@@ -393,6 +385,7 @@ img.binaryage-logo {
 }
  
 .wikistyle h2 {
+    display: none;
 }
  
 .wikistyle h3 {
