@@ -960,8 +960,6 @@ img.binaryage-logo {
 
 .changelog body,.changelog h1,.changelog h2,.changelog h3,.changelog h4,.changelog p,.changelog table{padding:0;margin:0;}
 .changelog ol li{margin-bottom:5px;}
-.changelog a{text-decoration:none;font-variant:normal;color:#1e51be;}
-.changelog a:hover{text-decoration:underline;}
 
 .changelog h1{font-size:12pt;padding-top:5px;padding-bottom:5px;}
 .changelog h2{font-size:11pt;padding-top:5px;padding-bottom:5px;}
