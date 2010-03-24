@@ -152,3 +152,503 @@ d,e);d={top:b.top-e.top+j,left:b.left-e.left+i};"using"in b?b.using.call(a,d):f.
 f.top,left:d.left-f.left}},offsetParent:function(){return this.map(function(){for(var a=this.offsetParent||s.body;a&&!/^body|html$/i.test(a.nodeName)&&c.css(a,"position")==="static";)a=a.offsetParent;return a})}});c.each(["Left","Top"],function(a,b){var d="scroll"+b;c.fn[d]=function(f){var e=this[0],j;if(!e)return null;if(f!==w)return this.each(function(){if(j=wa(this))j.scrollTo(!a?f:c(j).scrollLeft(),a?f:c(j).scrollTop());else this[d]=f});else return(j=wa(e))?"pageXOffset"in j?j[a?"pageYOffset":
 "pageXOffset"]:c.support.boxModel&&j.document.documentElement[d]||j.document.body[d]:e[d]}});c.each(["Height","Width"],function(a,b){var d=b.toLowerCase();c.fn["inner"+b]=function(){return this[0]?c.css(this[0],d,false,"padding"):null};c.fn["outer"+b]=function(f){return this[0]?c.css(this[0],d,false,f?"margin":"border"):null};c.fn[d]=function(f){var e=this[0];if(!e)return f==null?null:this;if(c.isFunction(f))return this.each(function(j){var i=c(this);i[d](f.call(this,j,i[d]()))});return"scrollTo"in
 e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["client"+b]||e.document.body["client"+b]:e.nodeType===9?Math.max(e.documentElement["client"+b],e.body["scroll"+b],e.documentElement["scroll"+b],e.body["offset"+b],e.documentElement["offset"+b]):f===w?c.css(e,d):this.css(d,typeof f==="string"?f:f+"px")}});A.jQuery=A.$=c})(window);
+
+/*
+ * jquery.tools 1.1.2 - The missing UI library for the Web
+ * 
+ * [tools.tabs-1.0.4, tools.tabs.slideshow-1.0.2, tools.tabs.history-1.0.2, tools.tooltip-1.1.3, tools.scrollable-1.1.2, tools.scrollable.circular-0.5.1, tools.scrollable.autoscroll-1.0.1, tools.scrollable.navigator-1.0.2, tools.scrollable.mousewheel-1.0.1, tools.overlay-1.1.2, tools.overlay.gallery-1.0.0, tools.overlay.apple-1.0.1, tools.expose-1.0.5]
+ * 
+ * Copyright (c) 2009 Tero Piirainen
+ * http://flowplayer.org/tools/
+ *
+ * Dual licensed under MIT and GPL 2+ licenses
+ * http://www.opensource.org/licenses
+ * 
+ * -----
+ * 
+ * jquery.event.wheel.js - rev 1 
+ * Copyright (c) 2008, Three Dub Media (http://threedubmedia.com)
+ * Liscensed under the MIT License (MIT-LICENSE.txt)
+ * http://www.opensource.org/licenses/mit-license.php
+ * Created: 2008-07-01 | Updated: 2008-07-14
+ * 
+ * -----
+ * 
+ * File generated: Sun Mar 21 04:55:42 GMT 2010
+ */
+(function(d){d.tools=d.tools||{};d.tools.tabs={version:"1.0.4",conf:{tabs:"a",current:"current",onBeforeClick:null,onClick:null,effect:"default",initialIndex:0,event:"click",api:false,rotate:false},addEffect:function(e,f){c[e]=f}};var c={"default":function(f,e){this.getPanes().hide().eq(f).show();e.call()},fade:function(g,e){var f=this.getConf(),j=f.fadeOutSpeed,h=this.getPanes();if(j){h.fadeOut(j)}else{h.hide()}h.eq(g).fadeIn(f.fadeInSpeed,e)},slide:function(f,e){this.getPanes().slideUp(200);this.getPanes().eq(f).slideDown(400,e)},ajax:function(f,e){this.getPanes().eq(0).load(this.getTabs().eq(f).attr("href"),e)}};var b;d.tools.tabs.addEffect("horizontal",function(f,e){if(!b){b=this.getPanes().eq(0).width()}this.getCurrentPane().animate({width:0},function(){d(this).hide()});this.getPanes().eq(f).animate({width:b},function(){d(this).show();e.call()})});function a(g,h,f){var e=this,j=d(this),i;d.each(f,function(k,l){if(d.isFunction(l)){j.bind(k,l)}});d.extend(this,{click:function(k,n){var o=e.getCurrentPane();var l=g.eq(k);if(typeof k=="string"&&k.replace("#","")){l=g.filter("[href*="+k.replace("#","")+"]");k=Math.max(g.index(l),0)}if(f.rotate){var m=g.length-1;if(k<0){return e.click(m,n)}if(k>m){return e.click(0,n)}}if(!l.length){if(i>=0){return e}k=f.initialIndex;l=g.eq(k)}if(k===i){return e}n=n||d.Event();n.type="onBeforeClick";j.trigger(n,[k]);if(n.isDefaultPrevented()){return}c[f.effect].call(e,k,function(){n.type="onClick";j.trigger(n,[k])});n.type="onStart";j.trigger(n,[k]);if(n.isDefaultPrevented()){return}i=k;g.removeClass(f.current);l.addClass(f.current);return e},getConf:function(){return f},getTabs:function(){return g},getPanes:function(){return h},getCurrentPane:function(){return h.eq(i)},getCurrentTab:function(){return g.eq(i)},getIndex:function(){return i},next:function(){return e.click(i+1)},prev:function(){return e.click(i-1)},bind:function(k,l){j.bind(k,l);return e},onBeforeClick:function(k){return this.bind("onBeforeClick",k)},onClick:function(k){return this.bind("onClick",k)},unbind:function(k){j.unbind(k);return e}});g.each(function(k){d(this).bind(f.event,function(l){e.click(k,l);return false})});if(location.hash){e.click(location.hash)}else{if(f.initialIndex===0||f.initialIndex>0){e.click(f.initialIndex)}}h.find("a[href^=#]").click(function(k){e.click(d(this).attr("href"),k)})}d.fn.tabs=function(i,f){var g=this.eq(typeof f=="number"?f:0).data("tabs");if(g){return g}if(d.isFunction(f)){f={onBeforeClick:f}}var h=d.extend({},d.tools.tabs.conf),e=this.length;f=d.extend(h,f);this.each(function(l){var j=d(this);var k=j.find(f.tabs);if(!k.length){k=j.children()}var m=i.jquery?i:j.children(i);if(!m.length){m=e==1?d(i):j.parent().find(i)}g=new a(k,m,f);j.data("tabs",g)});return f.api?g:this}})(jQuery);
+(function(b){var a=b.tools.tabs;a.plugins=a.plugins||{};a.plugins.slideshow={version:"1.0.2",conf:{next:".forward",prev:".backward",disabledClass:"disabled",autoplay:false,autopause:true,interval:3000,clickable:true,api:false}};b.prototype.slideshow=function(e){var f=b.extend({},a.plugins.slideshow.conf),c=this.length,d;e=b.extend(f,e);this.each(function(){var p=b(this),m=p.tabs(),i=b(m),o=m;b.each(e,function(t,u){if(b.isFunction(u)){m.bind(t,u)}});function n(t){return c==1?b(t):p.parent().find(t)}var s=n(e.next).click(function(){m.next()});var q=n(e.prev).click(function(){m.prev()});var h,j,l,g=false;b.extend(m,{play:function(){if(h){return}var t=b.Event("onBeforePlay");i.trigger(t);if(t.isDefaultPrevented()){return m}g=false;h=setInterval(m.next,e.interval);i.trigger("onPlay");m.next()},pause:function(){if(!h){return m}var t=b.Event("onBeforePause");i.trigger(t);if(t.isDefaultPrevented()){return m}h=clearInterval(h);l=clearInterval(l);i.trigger("onPause")},stop:function(){m.pause();g=true},onBeforePlay:function(t){return m.bind("onBeforePlay",t)},onPlay:function(t){return m.bind("onPlay",t)},onBeforePause:function(t){return m.bind("onBeforePause",t)},onPause:function(t){return m.bind("onPause",t)}});if(e.autopause){var k=m.getTabs().add(s).add(q).add(m.getPanes());k.hover(function(){m.pause();j=clearInterval(j)},function(){if(!g){j=setTimeout(m.play,e.interval)}})}if(e.autoplay){l=setTimeout(m.play,e.interval)}else{m.stop()}if(e.clickable){m.getPanes().click(function(){m.next()})}if(!m.getConf().rotate){var r=e.disabledClass;if(!m.getIndex()){q.addClass(r)}m.onBeforeClick(function(u,t){if(!t){q.addClass(r)}else{q.removeClass(r);if(t==m.getTabs().length-1){s.addClass(r)}else{s.removeClass(r)}}})}});return e.api?d:this}})(jQuery);
+(function(d){var a=d.tools.tabs;a.plugins=a.plugins||{};a.plugins.history={version:"1.0.2",conf:{api:false}};var e,b;function c(f){if(f){var g=b.contentWindow.document;g.open().close();g.location.hash=f}}d.fn.onHash=function(g){var f=this;if(d.browser.msie&&d.browser.version<"8"){if(!b){b=d("<iframe/>").attr("src","javascript:false;").hide().get(0);d("body").append(b);setInterval(function(){var i=b.contentWindow.document,j=i.location.hash;if(e!==j){d.event.trigger("hash",j);e=j}},100);c(location.hash||"#")}f.bind("click.hash",function(h){c(d(this).attr("href"))})}else{setInterval(function(){var j=location.hash;var i=f.filter("[href$="+j+"]");if(!i.length){j=j.replace("#","");i=f.filter("[href$="+j+"]")}if(i.length&&j!==e){e=j;d.event.trigger("hash",j)}},100)}d(window).bind("hash",g);return this};d.fn.history=function(g){var h=d.extend({},a.plugins.history.conf),f;g=d.extend(h,g);this.each(function(){var j=d(this).tabs(),i=j.getTabs();if(j){f=j}i.onHash(function(k,l){if(!l||l=="#"){l=j.getConf().initialIndex}j.click(l)});i.click(function(k){location.hash=d(this).attr("href").replace("#","")})});return g.api?f:this}})(jQuery);
+(function(c){var d=[];c.tools=c.tools||{};c.tools.tooltip={version:"1.1.3",conf:{effect:"toggle",fadeOutSpeed:"fast",tip:null,predelay:0,delay:30,opacity:1,lazy:undefined,position:["top","center"],offset:[0,0],cancelDefault:true,relative:false,oneInstance:true,events:{def:"mouseover,mouseout",input:"focus,blur",widget:"focus mouseover,blur mouseout",tooltip:"mouseover,mouseout"},api:false},addEffect:function(e,g,f){b[e]=[g,f]}};var b={toggle:[function(e){var f=this.getConf(),g=this.getTip(),h=f.opacity;if(h<1){g.css({opacity:h})}g.show();e.call()},function(e){this.getTip().hide();e.call()}],fade:[function(e){this.getTip().fadeIn(this.getConf().fadeInSpeed,e)},function(e){this.getTip().fadeOut(this.getConf().fadeOutSpeed,e)}]};function a(f,g){var p=this,k=c(this);f.data("tooltip",p);var l=f.next();if(g.tip){l=c(g.tip);if(l.length>1){l=f.nextAll(g.tip).eq(0);if(!l.length){l=f.parent().nextAll(g.tip).eq(0)}}}function o(u){var t=g.relative?f.position().top:f.offset().top,s=g.relative?f.position().left:f.offset().left,v=g.position[0];t-=l.outerHeight()-g.offset[0];s+=f.outerWidth()+g.offset[1];var q=l.outerHeight()+f.outerHeight();if(v=="center"){t+=q/2}if(v=="bottom"){t+=q}v=g.position[1];var r=l.outerWidth()+f.outerWidth();if(v=="center"){s-=r/2}if(v=="left"){s-=r}return{top:t,left:s}}var i=f.is(":input"),e=i&&f.is(":checkbox, :radio, select, :button"),h=f.attr("type"),n=g.events[h]||g.events[i?(e?"widget":"input"):"def"];n=n.split(/,\s*/);if(n.length!=2){throw"Tooltip: bad events configuration for "+h}f.bind(n[0],function(r){if(g.oneInstance){c.each(d,function(){this.hide()})}var q=l.data("trigger");if(q&&q[0]!=this){l.hide().stop(true,true)}r.target=this;p.show(r);n=g.events.tooltip.split(/,\s*/);l.bind(n[0],function(){p.show(r)});if(n[1]){l.bind(n[1],function(){p.hide(r)})}});f.bind(n[1],function(q){p.hide(q)});if(!c.browser.msie&&!i&&!g.predelay){f.mousemove(function(){if(!p.isShown()){f.triggerHandler("mouseover")}})}if(g.opacity<1){l.css("opacity",g.opacity)}var m=0,j=f.attr("title");if(j&&g.cancelDefault){f.removeAttr("title");f.data("title",j)}c.extend(p,{show:function(r){if(r){f=c(r.target)}clearTimeout(l.data("timer"));if(l.is(":animated")||l.is(":visible")){return p}function q(){l.data("trigger",f);var t=o(r);if(g.tip&&j){l.html(f.data("title"))}r=r||c.Event();r.type="onBeforeShow";k.trigger(r,[t]);if(r.isDefaultPrevented()){return p}t=o(r);l.css({position:"absolute",top:t.top,left:t.left});var s=b[g.effect];if(!s){throw'Nonexistent effect "'+g.effect+'"'}s[0].call(p,function(){r.type="onShow";k.trigger(r)})}if(g.predelay){clearTimeout(m);m=setTimeout(q,g.predelay)}else{q()}return p},hide:function(r){clearTimeout(l.data("timer"));clearTimeout(m);if(!l.is(":visible")){return}function q(){r=r||c.Event();r.type="onBeforeHide";k.trigger(r);if(r.isDefaultPrevented()){return}b[g.effect][1].call(p,function(){r.type="onHide";k.trigger(r)})}if(g.delay&&r){l.data("timer",setTimeout(q,g.delay))}else{q()}return p},isShown:function(){return l.is(":visible, :animated")},getConf:function(){return g},getTip:function(){return l},getTrigger:function(){return f},bind:function(q,r){k.bind(q,r);return p},onHide:function(q){return this.bind("onHide",q)},onBeforeShow:function(q){return this.bind("onBeforeShow",q)},onShow:function(q){return this.bind("onShow",q)},onBeforeHide:function(q){return this.bind("onBeforeHide",q)},unbind:function(q){k.unbind(q);return p}});c.each(g,function(q,r){if(c.isFunction(r)){p.bind(q,r)}})}c.prototype.tooltip=function(e){var f=this.eq(typeof e=="number"?e:0).data("tooltip");if(f){return f}var g=c.extend(true,{},c.tools.tooltip.conf);if(c.isFunction(e)){e={onBeforeShow:e}}else{if(typeof e=="string"){e={tip:e}}}e=c.extend(true,g,e);if(typeof e.position=="string"){e.position=e.position.split(/,?\s/)}if(e.lazy!==false&&(e.lazy===true||this.length>20)){this.one("mouseover",function(h){f=new a(c(this),e);f.show(h);d.push(f)})}else{this.each(function(){f=new a(c(this),e);d.push(f)})}return e.api?f:this}})(jQuery);
+(function(b){b.tools=b.tools||{};b.tools.scrollable={version:"1.1.2",conf:{size:5,vertical:false,speed:400,keyboard:true,keyboardSteps:null,disabledClass:"disabled",hoverClass:null,clickable:true,activeClass:"active",easing:"swing",loop:false,items:".items",item:null,prev:".prev",next:".next",prevPage:".prevPage",nextPage:".nextPage",api:false}};var c;function a(o,m){var r=this,p=b(this),d=!m.vertical,e=o.children(),k=0,i;if(!c){c=r}b.each(m,function(s,t){if(b.isFunction(t)){p.bind(s,t)}});if(e.length>1){e=b(m.items,o)}function l(t){var s=b(t);return m.globalNav?s:o.parent().find(t)}o.data("finder",l);var f=l(m.prev),h=l(m.next),g=l(m.prevPage),n=l(m.nextPage);b.extend(r,{getIndex:function(){return k},getClickIndex:function(){var s=r.getItems();return s.index(s.filter("."+m.activeClass))},getConf:function(){return m},getSize:function(){return r.getItems().size()},getPageAmount:function(){return Math.ceil(this.getSize()/m.size)},getPageIndex:function(){return Math.ceil(k/m.size)},getNaviButtons:function(){return f.add(h).add(g).add(n)},getRoot:function(){return o},getItemWrap:function(){return e},getItems:function(){return e.children(m.item)},getVisibleItems:function(){return r.getItems().slice(k,k+m.size)},seekTo:function(s,w,t){if(s<0){s=0}if(k===s){return r}if(b.isFunction(w)){t=w}if(s>r.getSize()-m.size){return m.loop?r.begin():this.end()}var u=r.getItems().eq(s);if(!u.length){return r}var v=b.Event("onBeforeSeek");p.trigger(v,[s]);if(v.isDefaultPrevented()){return r}if(w===undefined||b.isFunction(w)){w=m.speed}function x(){if(t){t.call(r,s)}p.trigger("onSeek",[s])}if(d){e.animate({left:-u.position().left},w,m.easing,x)}else{e.animate({top:-u.position().top},w,m.easing,x)}c=r;k=s;v=b.Event("onStart");p.trigger(v,[s]);if(v.isDefaultPrevented()){return r}f.add(g).toggleClass(m.disabledClass,s===0);h.add(n).toggleClass(m.disabledClass,s>=r.getSize()-m.size);return r},move:function(u,t,s){i=u>0;return this.seekTo(k+u,t,s)},next:function(t,s){return this.move(1,t,s)},prev:function(t,s){return this.move(-1,t,s)},movePage:function(w,v,u){i=w>0;var s=m.size*w;var t=k%m.size;if(t>0){s+=(w>0?-t:m.size-t)}return this.move(s,v,u)},prevPage:function(t,s){return this.movePage(-1,t,s)},nextPage:function(t,s){return this.movePage(1,t,s)},setPage:function(t,u,s){return this.seekTo(t*m.size,u,s)},begin:function(t,s){i=false;return this.seekTo(0,t,s)},end:function(t,s){i=true;var u=this.getSize()-m.size;return u>0?this.seekTo(u,t,s):r},reload:function(){p.trigger("onReload");return r},focus:function(){c=r;return r},click:function(u){var v=r.getItems().eq(u),s=m.activeClass,t=m.size;if(u<0||u>=r.getSize()){return r}if(t==1){if(m.loop){return r.next()}if(u===0||u==r.getSize()-1){i=(i===undefined)?true:!i}return i===false?r.prev():r.next()}if(t==2){if(u==k){u--}r.getItems().removeClass(s);v.addClass(s);return r.seekTo(u,time,fn)}if(!v.hasClass(s)){r.getItems().removeClass(s);v.addClass(s);var x=Math.floor(t/2);var w=u-x;if(w>r.getSize()-t){w=r.getSize()-t}if(w!==u){return r.seekTo(w)}}return r},bind:function(s,t){p.bind(s,t);return r},unbind:function(s){p.unbind(s);return r}});b.each("onBeforeSeek,onStart,onSeek,onReload".split(","),function(s,t){r[t]=function(u){return r.bind(t,u)}});f.addClass(m.disabledClass).click(function(){r.prev()});h.click(function(){r.next()});n.click(function(){r.nextPage()});if(r.getSize()<m.size){h.add(n).addClass(m.disabledClass)}g.addClass(m.disabledClass).click(function(){r.prevPage()});var j=m.hoverClass,q="keydown."+Math.random().toString().substring(10);r.onReload(function(){if(j){r.getItems().hover(function(){b(this).addClass(j)},function(){b(this).removeClass(j)})}if(m.clickable){r.getItems().each(function(s){b(this).unbind("click.scrollable").bind("click.scrollable",function(t){if(b(t.target).is("a")){return}return r.click(s)})})}if(m.keyboard){b(document).unbind(q).bind(q,function(t){if(t.altKey||t.ctrlKey){return}if(m.keyboard!="static"&&c!=r){return}var u=m.keyboardSteps;if(d&&(t.keyCode==37||t.keyCode==39)){r.move(t.keyCode==37?-u:u);return t.preventDefault()}if(!d&&(t.keyCode==38||t.keyCode==40)){r.move(t.keyCode==38?-u:u);return t.preventDefault()}return true})}else{b(document).unbind(q)}});r.reload()}b.fn.scrollable=function(d){var e=this.eq(typeof d=="number"?d:0).data("scrollable");if(e){return e}var f=b.extend({},b.tools.scrollable.conf);d=b.extend(f,d);d.keyboardSteps=d.keyboardSteps||d.size;this.each(function(){e=new a(b(this),d);b(this).data("scrollable",e)});return d.api?e:this}})(jQuery);
+(function(b){var a=b.tools.scrollable;a.plugins=a.plugins||{};a.plugins.circular={version:"0.5.1",conf:{api:false,clonedClass:"cloned"}};b.fn.circular=function(e){var d=b.extend({},a.plugins.circular.conf),c;b.extend(d,e);this.each(function(){var i=b(this).scrollable(),n=i.getItems(),k=i.getConf(),f=i.getItemWrap(),j=0;if(i){c=i}if(n.length<k.size){return false}n.slice(0,k.size).each(function(o){b(this).clone().appendTo(f).click(function(){i.click(n.length+o)}).addClass(d.clonedClass)});var l=b.makeArray(n.slice(-k.size)).reverse();b(l).each(function(o){b(this).clone().prependTo(f).click(function(){i.click(-o-1)}).addClass(d.clonedClass)});var m=f.children(k.item);var h=k.hoverClass;if(h){m.hover(function(){b(this).addClass(h)},function(){b(this).removeClass(h)})}function g(o){var p=m.eq(o);if(k.vertical){f.css({top:-p.position().top})}else{f.css({left:-p.position().left})}}g(k.size);b.extend(i,{move:function(s,r,p,q){var u=j+s+k.size;var t=u>i.getSize()-k.size;if(u<=0||t){var o=j+k.size+(t?-n.length:n.length);g(o);u=o+s}if(q){m.removeClass(k.activeClass).eq(u+Math.floor(k.size/2)).addClass(k.activeClass)}if(u===j+k.size){return self}return i.seekTo(u,r,p)},begin:function(p,o){return this.seekTo(k.size,p,o)},end:function(p,o){return this.seekTo(n.length,p,o)},click:function(p,r,q){if(!k.clickable){return self}if(k.size==1){return this.next()}var s=p-j,o=k.activeClass;s-=Math.floor(k.size/2);return this.move(s,r,q,true)},getIndex:function(){return j},setPage:function(p,q,o){return this.seekTo(p*k.size+k.size,q,o)},getPageAmount:function(){return Math.ceil(n.length/k.size)},getPageIndex:function(){if(j<0){return this.getPageAmount()-1}if(j>=n.length){return 0}var o=(j+k.size)/k.size-1;return o},getVisibleItems:function(){var o=j+k.size;return m.slice(o,o+k.size)}});i.onStart(function(p,o){j=o-k.size;return false});i.getNaviButtons().removeClass(k.disabledClass)});return d.api?c:this}})(jQuery);
+(function(b){var a=b.tools.scrollable;a.plugins=a.plugins||{};a.plugins.autoscroll={version:"1.0.1",conf:{autoplay:true,interval:3000,autopause:true,steps:1,api:false}};b.fn.autoscroll=function(d){if(typeof d=="number"){d={interval:d}}var e=b.extend({},a.plugins.autoscroll.conf),c;b.extend(e,d);this.each(function(){var g=b(this).scrollable();if(g){c=g}var i,f,h=true;g.play=function(){if(i){return}h=false;i=setInterval(function(){g.move(e.steps)},e.interval);g.move(e.steps)};g.pause=function(){i=clearInterval(i)};g.stop=function(){g.pause();h=true};if(e.autopause){g.getRoot().add(g.getNaviButtons()).hover(function(){g.pause();clearInterval(f)},function(){if(!h){f=setTimeout(g.play,e.interval)}})}if(e.autoplay){setTimeout(g.play,e.interval)}});return e.api?c:this}})(jQuery);
+(function(b){var a=b.tools.scrollable;a.plugins=a.plugins||{};a.plugins.navigator={version:"1.0.2",conf:{navi:".navi",naviItem:null,activeClass:"active",indexed:false,api:false,idPrefix:null}};b.fn.navigator=function(d){var e=b.extend({},a.plugins.navigator.conf),c;if(typeof d=="string"){d={navi:d}}d=b.extend(e,d);this.each(function(){var i=b(this).scrollable(),f=i.getRoot(),l=f.data("finder").call(null,d.navi),g=null,k=i.getNaviButtons();if(i){c=i}i.getNaviButtons=function(){return k.add(l)};function j(){if(!l.children().length||l.data("navi")==i){l.empty();l.data("navi",i);for(var m=0;m<i.getPageAmount();m++){l.append(b("<"+(d.naviItem||"a")+"/>"))}g=l.children().each(function(n){var o=b(this);o.click(function(p){i.setPage(n);return p.preventDefault()});if(d.indexed){o.text(n)}if(d.idPrefix){o.attr("id",d.idPrefix+n)}})}else{g=d.naviItem?l.find(d.naviItem):l.children();g.each(function(n){var o=b(this);o.click(function(p){i.setPage(n);return p.preventDefault()})})}g.eq(0).addClass(d.activeClass)}i.onStart(function(o,n){var m=d.activeClass;g.removeClass(m).eq(i.getPageIndex()).addClass(m)});i.onReload(function(){j()});j();var h=g.filter("[href="+location.hash+"]");if(h.length){i.move(g.index(h))}});return d.api?c:this}})(jQuery);
+(function(b){b.fn.wheel=function(e){return this[e?"bind":"trigger"]("wheel",e)};b.event.special.wheel={setup:function(){b.event.add(this,d,c,{})},teardown:function(){b.event.remove(this,d,c)}};var d=!b.browser.mozilla?"mousewheel":"DOMMouseScroll"+(b.browser.version<"1.9"?" mousemove":"");function c(e){switch(e.type){case"mousemove":return b.extend(e.data,{clientX:e.clientX,clientY:e.clientY,pageX:e.pageX,pageY:e.pageY});case"DOMMouseScroll":b.extend(e,e.data);e.delta=-e.detail/3;break;case"mousewheel":e.delta=e.wheelDelta/120;break}e.type="wheel";return b.event.handle.call(this,e,e.delta)}var a=b.tools.scrollable;a.plugins=a.plugins||{};a.plugins.mousewheel={version:"1.0.1",conf:{api:false,speed:50}};b.fn.mousewheel=function(f){var g=b.extend({},a.plugins.mousewheel.conf),e;if(typeof f=="number"){f={speed:f}}f=b.extend(g,f);this.each(function(){var h=b(this).scrollable();if(h){e=h}h.getRoot().wheel(function(i,j){h.move(j<0?1:-1,f.speed||50);return false})});return f.api?e:this}})(jQuery);
+(function(c){c.tools=c.tools||{};c.tools.overlay={version:"1.1.2",addEffect:function(e,f,g){b[e]=[f,g]},conf:{top:"10%",left:"center",absolute:false,speed:"normal",closeSpeed:"fast",effect:"default",close:null,oneInstance:true,closeOnClick:true,closeOnEsc:true,api:false,expose:null,target:null}};var b={};c.tools.overlay.addEffect("default",function(e){this.getOverlay().fadeIn(this.getConf().speed,e)},function(e){this.getOverlay().fadeOut(this.getConf().closeSpeed,e)});var d=[];function a(g,k){var o=this,m=c(this),n=c(window),j,i,h,e=k.expose&&c.tools.expose.version;var f=k.target||g.attr("rel");i=f?c(f):null||g;if(!i.length){throw"Could not find Overlay: "+f}if(g&&g.index(i)==-1){g.click(function(p){o.load(p);return p.preventDefault()})}c.each(k,function(p,q){if(c.isFunction(q)){m.bind(p,q)}});c.extend(o,{load:function(u){if(o.isOpened()){return o}var r=b[k.effect];if(!r){throw'Overlay: cannot find effect : "'+k.effect+'"'}if(k.oneInstance){c.each(d,function(){this.close(u)})}u=u||c.Event();u.type="onBeforeLoad";m.trigger(u);if(u.isDefaultPrevented()){return o}h=true;if(e){i.expose().load(u)}var t=k.top;var s=k.left;var p=i.outerWidth({margin:true});var q=i.outerHeight({margin:true});if(typeof t=="string"){t=t=="center"?Math.max((n.height()-q)/2,0):parseInt(t,10)/100*n.height()}if(s=="center"){s=Math.max((n.width()-p)/2,0)}if(!k.absolute){t+=n.scrollTop();s+=n.scrollLeft()}i.css({top:t,left:s,position:"absolute"});u.type="onStart";m.trigger(u);r[0].call(o,function(){if(h){u.type="onLoad";m.trigger(u)}});if(k.closeOnClick){c(document).bind("click.overlay",function(w){if(!o.isOpened()){return}var v=c(w.target);if(v.parents(i).length>1){return}c.each(d,function(){this.close(w)})})}if(k.closeOnEsc){c(document).unbind("keydown.overlay").bind("keydown.overlay",function(v){if(v.keyCode==27){c.each(d,function(){this.close(v)})}})}return o},close:function(q){if(!o.isOpened()){return o}q=q||c.Event();q.type="onBeforeClose";m.trigger(q);if(q.isDefaultPrevented()){return}h=false;b[k.effect][1].call(o,function(){q.type="onClose";m.trigger(q)});var p=true;c.each(d,function(){if(this.isOpened()){p=false}});if(p){c(document).unbind("click.overlay").unbind("keydown.overlay")}return o},getContent:function(){return i},getOverlay:function(){return i},getTrigger:function(){return g},getClosers:function(){return j},isOpened:function(){return h},getConf:function(){return k},bind:function(p,q){m.bind(p,q);return o},unbind:function(p){m.unbind(p);return o}});c.each("onBeforeLoad,onStart,onLoad,onBeforeClose,onClose".split(","),function(p,q){o[q]=function(r){return o.bind(q,r)}});if(e){if(typeof k.expose=="string"){k.expose={color:k.expose}}c.extend(k.expose,{api:true,closeOnClick:k.closeOnClick,closeOnEsc:false});var l=i.expose(k.expose);l.onBeforeClose(function(p){o.close(p)});o.onClose(function(p){l.close(p)})}j=i.find(k.close||".close");if(!j.length&&!k.close){j=c('<div class="close"></div>');i.prepend(j)}j.click(function(p){o.close(p)})}c.fn.overlay=function(e){var f=this.eq(typeof e=="number"?e:0).data("overlay");if(f){return f}if(c.isFunction(e)){e={onBeforeLoad:e}}var g=c.extend({},c.tools.overlay.conf);e=c.extend(true,g,e);this.each(function(){f=new a(c(this),e);d.push(f);c(this).data("overlay",f)});return e.api?f:this}})(jQuery);
+(function(d){var b=d.tools.overlay;b.effects=b.effects||{};b.effects.apple={version:"1.0.1"};d.extend(b.conf,{start:{absolute:true,top:null,left:null},fadeInSpeed:"fast",zIndex:9999});function c(f){var g=f.offset();return[g.top+f.height()/2,g.left+f.width()/2]}var e=function(n){var k=this.getOverlay(),f=this.getConf(),i=this.getTrigger(),q=this,r=k.outerWidth({margin:true}),m=k.data("img");if(!m){var l=k.css("backgroundImage");if(!l){throw"background-image CSS property not set for overlay"}l=l.substring(l.indexOf("(")+1,l.indexOf(")")).replace(/\"/g,"");k.css("backgroundImage","none");m=d('<img src="'+l+'"/>');m.css({border:0,position:"absolute",display:"none"}).width(r);d("body").append(m);k.data("img",m)}var o=d(window),j=f.start.top||Math.round(o.height()/2),h=f.start.left||Math.round(o.width()/2);if(i){var g=c(i);j=g[0];h=g[1]}if(!f.start.absolute){j+=o.scrollTop();h+=o.scrollLeft()}m.css({top:j,left:h,width:0,zIndex:f.zIndex}).show();m.animate({top:k.css("top"),left:k.css("left"),width:r},f.speed,function(){k.css("zIndex",f.zIndex+1).fadeIn(f.fadeInSpeed,function(){if(q.isOpened()&&!d(this).index(k)){n.call()}else{k.hide()}})})};var a=function(f){var h=this.getOverlay(),i=this.getConf(),g=this.getTrigger(),l=i.start.top,k=i.start.left;h.hide();if(g){var j=c(g);l=j[0];k=j[1]}h.data("img").animate({top:l,left:k,width:0},i.closeSpeed,f)};b.addEffect("apple",e,a)})(jQuery);
+(function(b){b.tools=b.tools||{};b.tools.expose={version:"1.0.5",conf:{maskId:null,loadSpeed:"slow",closeSpeed:"fast",closeOnClick:true,closeOnEsc:true,zIndex:9998,opacity:0.8,color:"#456",api:false}};function a(){if(b.browser.msie){var f=b(document).height(),e=b(window).height();return[window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,f-e<20?e:f]}return[b(window).width(),b(document).height()]}function c(h,g){var e=this,j=b(this),d=null,f=false,i=0;b.each(g,function(k,l){if(b.isFunction(l)){j.bind(k,l)}});b(window).resize(function(){e.fit()});b.extend(this,{getMask:function(){return d},getExposed:function(){return h},getConf:function(){return g},isLoaded:function(){return f},load:function(n){if(f){return e}i=h.eq(0).css("zIndex");if(g.maskId){d=b("#"+g.maskId)}if(!d||!d.length){var l=a();d=b("<div/>").css({position:"absolute",top:0,left:0,width:l[0],height:l[1],display:"none",opacity:0,zIndex:g.zIndex});if(g.maskId){d.attr("id",g.maskId)}b("body").append(d);var k=d.css("backgroundColor");if(!k||k=="transparent"||k=="rgba(0, 0, 0, 0)"){d.css("backgroundColor",g.color)}if(g.closeOnEsc){b(document).bind("keydown.unexpose",function(o){if(o.keyCode==27){e.close()}})}if(g.closeOnClick){d.bind("click.unexpose",function(o){e.close(o)})}}n=n||b.Event();n.type="onBeforeLoad";j.trigger(n);if(n.isDefaultPrevented()){return e}b.each(h,function(){var o=b(this);if(!/relative|absolute|fixed/i.test(o.css("position"))){o.css("position","relative")}});h.css({zIndex:Math.max(g.zIndex+1,i=="auto"?0:i)});var m=d.height();if(!this.isLoaded()){d.css({opacity:0,display:"block"}).fadeTo(g.loadSpeed,g.opacity,function(){if(d.height()!=m){d.css("height",m)}n.type="onLoad";j.trigger(n)})}f=true;return e},close:function(k){if(!f){return e}k=k||b.Event();k.type="onBeforeClose";j.trigger(k);if(k.isDefaultPrevented()){return e}d.fadeOut(g.closeSpeed,function(){k.type="onClose";j.trigger(k);h.css({zIndex:b.browser.msie?i:null})});f=false;return e},fit:function(){if(d){var k=a();d.css({width:k[0],height:k[1]})}},bind:function(k,l){j.bind(k,l);return e},unbind:function(k){j.unbind(k);return e}});b.each("onBeforeLoad,onLoad,onBeforeClose,onClose".split(","),function(k,l){e[l]=function(m){return e.bind(l,m)}})}b.fn.expose=function(d){var e=this.eq(typeof d=="number"?d:0).data("expose");if(e){return e}if(typeof d=="string"){d={color:d}}var f=b.extend({},b.tools.expose.conf);d=b.extend(f,d);this.each(function(){e=new c(b(this),d);b(this).data("expose",e)});return d.api?e:this}})(jQuery);
+/**
+ * Overlay Gallery plugin, version: 1.0.0
+ * 
+ * Copyright (c) 2009 Tero Piirainen
+ * http://flowplayer.org/tools/overlay.html#gallery
+ *
+ * Dual licensed under MIT and GPL 2+ licenses
+ * http://www.opensource.org/licenses
+ *
+ * Since  : July 2009
+ * Date: ${date}
+ * Revision: ${revision} 
+ */
+(function($) { 
+		
+	// TODO: next(), prev(), getIndex(), onChange event
+	
+	// version number
+	var t = $.tools.overlay; 
+	t.plugins = t.plugins || {};
+	
+	t.plugins.gallery = {
+		version: '1.0.0', 
+		conf: { 
+			imgId: 'img',
+			next: '.next',
+			prev: '.prev',
+			info: '.info',
+			progress: '.progress',
+			disabledClass: 'disabled',
+			activeClass: 'active',
+			opacity: 0.8,
+			speed: 'slow',
+			template: '<strong>${title}</strong> <span>Image ${index} of ${total}</span>',  
+			autohide: true,
+			preload: true,
+			api: false
+		}
+	};			
+	
+	$.fn.gallery = function(opts) {
+		
+		var conf = $.extend({}, t.plugins.gallery.conf), api;
+		$.extend(conf, opts);   	
+
+		// common variables for all gallery images
+		api = this.overlay();
+		
+		var links = this,
+			 overlay = api.getOverlay(),
+			 next = overlay.find(conf.next),
+			 prev = overlay.find(conf.prev),
+			 info = overlay.find(conf.info),
+			 progress = overlay.find(conf.progress),
+			 els = prev.add(next).add(info).css({opacity: conf.opacity}),
+			 close = api.getClosers(), 			 
+			 index;
+		
+		
+//{{{ load 
+
+		function load(el) {
+			
+			progress.fadeIn();
+			els.hide(); close.hide();
+			
+			var url = el.attr("href"); 
+			
+			// download the image 
+			var image = new Image();
+			
+			image.onload = function() {
+				
+				progress.fadeOut();
+				
+				// find image inside overlay
+				var img = $("#" + conf.imgId, overlay); 
+				
+				// or append it to the overlay 
+				if (!img.length) { 
+					img = $("<img/>").attr("id", conf.imgId).css("visibility", "hidden");
+					overlay.prepend(img);
+				}
+				
+				// make initially invisible to get it's dimensions
+				img.attr("src", url).css("visibility", "hidden"); 			
+					
+				// animate overlay to fit the image dimensions
+				var width = image.width;
+				var left = ($(window).width() - width) / 2;
+					
+				// calculate index number
+				index = links.index(links.filter("[href=" +url+ "]"));	
+				
+				// activate trigger
+				links.removeClass(conf.activeClass).eq(index).addClass(conf.activeClass);
+				
+				// enable/disable next/prev links
+				var cls = conf.disabledClass;
+				els.removeClass(cls);
+
+				if (index === 0) { prev.addClass(cls); }
+				if (index == links.length -1) { next.addClass(cls); }
+				
+				
+				// set info text & width
+				var text = conf.template
+					.replace("${title}", el.attr("title") || el.data("title") || "")
+					.replace("${index}", index + 1)
+					.replace("${total}", links.length);
+					
+				//var padd = parseInt(info.css("paddingLeft"), 10) +  parseInt(info.css("paddingRight"), 10);
+				info.html(text); //.css({width: width - padd});				
+				
+				overlay.animate({
+					width: width, height: image.height, left: left}, conf.speed, function() {
+						
+					// gradually show the image
+					img.hide().css("visibility", "visible").fadeIn(function() {						
+						if (!conf.autohide) { 
+							els.fadeIn(); close.show(); 
+						}														
+					});								
+
+				}); 
+			};
+			
+			image.onerror = function() {
+				overlay.fadeIn().html("Cannot find image " + url); 
+			};
+			
+			image.src = url;
+			
+			if (conf.preload) {
+				links.filter(":eq(" +(index-1)+ "), :eq(" +(index+1)+ ")").each(function()  {
+					var img = new Image();
+					img.src = $(this).attr("href");					
+				});
+			}
+			
+		}
+		
+//}}}
+
+
+		// function to add click handlers to next/prev links	 
+		function addClick(el, isNext)  {
+			
+			el.click(function() {
+					
+				if (el.hasClass(conf.disabledClass)) { return; }				
+				
+				// find the triggering link
+				var trigger = links.eq(i = index + (isNext ? 1 : -1));			
+					 
+				// if found load it's href
+				if (trigger.length) { load(trigger); }
+				
+			});				
+		}
+
+		// assign next/prev click handlers
+		addClick(next, true);
+		addClick(prev);
+
+		
+		// arrow keys
+		$(document).keydown(function(evt) {
+				
+			if (!overlay.is(":visible") || evt.altKey || evt.ctrlKey) { return; }
+			
+			if (evt.keyCode == 37 || evt.keyCode == 39) {					
+				var btn = evt.keyCode == 37 ? prev : next;
+				btn.click();
+				return evt.preventDefault();
+			}	
+			return true;			
+		});		
+		
+		function showEls() {
+			if (!overlay.is(":animated")) {
+				els.show(); close.show();		
+			}	
+		}
+		
+		// autohide functionality
+		if (conf.autohide) { 
+			overlay.hover(showEls, function() { els.fadeOut();	close.hide(); }).mousemove(showEls);
+		}		
+		
+		// load a proper gallery image when overlay trigger is clicked
+		var ret;
+		
+		this.each(function() {
+				
+			var el = $(this), api = $(this).overlay(), ret = api;
+			
+			api.onBeforeLoad(function() {
+				load(el);
+			});
+			
+			api.onClose(function() {
+				links.removeClass(conf.activeClass);	
+			});			
+		});  		
+		
+		return conf.api ? ret : this;
+		
+	};
+	
+})(jQuery);	
+
+/*!
+ * jQuery hashchange event - v1.2 - 2/11/2010
+ * http://benalman.com/projects/jquery-hashchange-plugin/
+ * 
+ * Copyright (c) 2010 "Cowboy" Ben Alman
+ * Dual licensed under the MIT and GPL licenses.
+ * http://benalman.com/about/license/
+ */
+
+// Script: jQuery hashchange event
+//
+// *Version: 1.2, Last updated: 2/11/2010*
+// 
+// Project Home - http://benalman.com/projects/jquery-hashchange-plugin/
+// GitHub       - http://github.com/cowboy/jquery-hashchange/
+// Source       - http://github.com/cowboy/jquery-hashchange/raw/master/jquery.ba-hashchange.js
+// (Minified)   - http://github.com/cowboy/jquery-hashchange/raw/master/jquery.ba-hashchange.min.js (1.1kb)
+// 
+// About: License
+// 
+// Copyright (c) 2010 "Cowboy" Ben Alman,
+// Dual licensed under the MIT and GPL licenses.
+// http://benalman.com/about/license/
+// 
+// About: Examples
+// 
+// This working example, complete with fully commented code, illustrate one way
+// in which this plugin can be used.
+// 
+// hashchange event - http://benalman.com/code/projects/jquery-hashchange/examples/hashchange/
+// 
+// About: Support and Testing
+// 
+// Information about what version or versions of jQuery this plugin has been
+// tested with, what browsers it has been tested in, and where the unit tests
+// reside (so you can test it yourself).
+// 
+// jQuery Versions - 1.3.2, 1.4.1, 1.4.2pre
+// Browsers Tested - Internet Explorer 6-8, Firefox 2-3.7, Safari 3-4, Chrome, Opera 9.6-10.1.
+// Unit Tests      - http://benalman.com/code/projects/jquery-hashchange/unit/
+// 
+// About: Known issues
+// 
+// While this jQuery hashchange event implementation is quite stable and robust,
+// there are a few unfortunate browser bugs surrounding expected hashchange
+// event-based behaviors, independent of any JavaScript window.onhashchange
+// abstraction. See the following examples for more information:
+// 
+// Chrome: Back Button - http://benalman.com/code/projects/jquery-hashchange/examples/bug-chrome-back-button/
+// Firefox: Remote XMLHttpRequest - http://benalman.com/code/projects/jquery-hashchange/examples/bug-firefox-remote-xhr/
+// WebKit: Back Button in an Iframe - http://benalman.com/code/projects/jquery-hashchange/examples/bug-webkit-hash-iframe/
+// Safari: Back Button from a different domain - http://benalman.com/code/projects/jquery-hashchange/examples/bug-safari-back-from-diff-domain/
+// 
+// About: Release History
+// 
+// 1.2   - (2/11/2010) Fixed a bug where coming back to a page using this plugin
+//         from a page on another domain would cause an error in Safari 4. Also,
+//         IE6/7 Iframe is now inserted after the body (this actually works),
+//         which prevents the page from scrolling when the event is first bound.
+//         Event can also now be bound before DOM ready, but it won't be usable
+//         before then in IE6/7.
+// 1.1   - (1/21/2010) Incorporated document.documentMode test to fix IE8 bug
+//         where browser version is incorrectly reported as 8.0, despite
+//         inclusion of the X-UA-Compatible IE=EmulateIE7 meta tag.
+// 1.0   - (1/9/2010) Initial Release. Broke out the jQuery BBQ event.special
+//         window.onhashchange functionality into a separate plugin for users
+//         who want just the basic event & back button support, without all the
+//         extra awesomeness that BBQ provides. This plugin will be included as
+//         part of jQuery BBQ, but also be available separately.
+
+(function($,window,undefined){
+  '$:nomunge'; // Used by YUI compressor.
+  
+  // Method / object references.
+  var fake_onhashchange,
+    jq_event_special = $.event.special,
+    
+    // Reused strings.
+    str_location = 'location',
+    str_hashchange = 'hashchange',
+    str_href = 'href',
+    
+    // IE6/7 specifically need some special love when it comes to back-button
+    // support, so let's do a little browser sniffing..
+    browser = $.browser,
+    mode = document.documentMode,
+    is_old_ie = browser.msie && ( mode === undefined || mode < 8 ),
+    
+    // Does the browser support window.onhashchange? Test for IE version, since
+    // IE8 incorrectly reports this when in "IE7" or "IE8 Compatibility View"!
+    supports_onhashchange = 'on' + str_hashchange in window && !is_old_ie;
+  
+  // Get location.hash (or what you'd expect location.hash to be) sans any
+  // leading #. Thanks for making this necessary, Firefox!
+  function get_fragment( url ) {
+    url = url || window[ str_location ][ str_href ];
+    return url.replace( /^[^#]*#?(.*)$/, '$1' );
+  };
+  
+  // Property: jQuery.hashchangeDelay
+  // 
+  // The numeric interval (in milliseconds) at which the <hashchange event>
+  // polling loop executes. Defaults to 100.
+  
+  $[ str_hashchange + 'Delay' ] = 100;
+  
+  // Event: hashchange event
+  // 
+  // Fired when location.hash changes. In browsers that support it, the native
+  // window.onhashchange event is used (IE8, FF3.6), otherwise a polling loop is
+  // initialized, running every <jQuery.hashchangeDelay> milliseconds to see if
+  // the hash has changed. In IE 6 and 7, a hidden Iframe is created to allow
+  // the back button and hash-based history to work.
+  // 
+  // Usage:
+  // 
+  // > $(window).bind( 'hashchange', function(e) {
+  // >   var hash = location.hash;
+  // >   ...
+  // > });
+  // 
+  // Additional Notes:
+  // 
+  // * The polling loop and Iframe are not created until at least one callback
+  //   is actually bound to 'hashchange'.
+  // * If you need the bound callback(s) to execute immediately, in cases where
+  //   the page 'state' exists on page load (via bookmark or page refresh, for
+  //   example) use $(window).trigger( 'hashchange' );
+  // * The event can be bound before DOM ready, but since it won't be usable
+  //   before then in IE6/7 (due to the necessary Iframe), recommended usage is
+  //   to bind it inside a $(document).ready() callback.
+  
+  jq_event_special[ str_hashchange ] = $.extend( jq_event_special[ str_hashchange ], {
+    
+    // Called only when the first 'hashchange' event is bound to window.
+    setup: function() {
+      // If window.onhashchange is supported natively, there's nothing to do..
+      if ( supports_onhashchange ) { return false; }
+      
+      // Otherwise, we need to create our own. And we don't want to call this
+      // until the user binds to the event, just in case they never do, since it
+      // will create a polling loop and possibly even a hidden Iframe.
+      $( fake_onhashchange.start );
+    },
+    
+    // Called only when the last 'hashchange' event is unbound from window.
+    teardown: function() {
+      // If window.onhashchange is supported natively, there's nothing to do..
+      if ( supports_onhashchange ) { return false; }
+      
+      // Otherwise, we need to stop ours (if possible).
+      $( fake_onhashchange.stop );
+    }
+    
+  });
+  
+  // fake_onhashchange does all the work of triggering the window.onhashchange
+  // event for browsers that don't natively support it, including creating a
+  // polling loop to watch for hash changes and in IE 6/7 creating a hidden
+  // Iframe to enable back and forward.
+  fake_onhashchange = (function(){
+    var self = {},
+      timeout_id,
+      iframe,
+      set_history,
+      get_history;
+    
+    // Initialize. In IE 6/7, creates a hidden Iframe for history handling.
+    function init(){
+      // Most browsers don't need special methods here..
+      set_history = get_history = function(val){ return val; };
+      
+      // But IE6/7 do!
+      if ( is_old_ie ) {
+        
+        // Create hidden Iframe after the end of the body to prevent initial
+        // page load from scrolling unnecessarily.
+        iframe = $('<iframe src="javascript:0"/>').hide().insertAfter( 'body' )[0].contentWindow;
+        
+        // Get history by looking at the hidden Iframe's location.hash.
+        get_history = function() {
+          return get_fragment( iframe.document[ str_location ][ str_href ] );
+        };
+        
+        // Set a new history item by opening and then closing the Iframe
+        // document, *then* setting its location.hash.
+        set_history = function( hash, history_hash ) {
+          if ( hash !== history_hash ) {
+            var doc = iframe.document;
+            doc.open().close();
+            doc[ str_location ].hash = '#' + hash;
+          }
+        };
+        
+        // Set initial history.
+        set_history( get_fragment() );
+      }
+    };
+    
+    // Start the polling loop.
+    self.start = function() {
+      // Polling loop is already running!
+      if ( timeout_id ) { return; }
+      
+      // Remember the initial hash so it doesn't get triggered immediately.
+      var last_hash = get_fragment();
+      
+      // Initialize if not yet initialized.
+      set_history || init();
+      
+      // This polling loop checks every $.hashchangeDelay milliseconds to see if
+      // location.hash has changed, and triggers the 'hashchange' event on
+      // window when necessary.
+      (function loopy(){
+        var hash = get_fragment(),
+          history_hash = get_history( last_hash );
+        
+        if ( hash !== last_hash ) {
+          set_history( last_hash = hash, history_hash );
+          
+          $(window).trigger( str_hashchange );
+          
+        } else if ( history_hash !== last_hash ) {
+          window[ str_location ][ str_href ] = window[ str_location ][ str_href ].replace( /#.*/, '' ) + '#' + history_hash;
+        }
+        
+        timeout_id = setTimeout( loopy, $[ str_hashchange + 'Delay' ] );
+      })();
+    };
+    
+    // Stop the polling loop, but only if an IE6/7 Iframe wasn't created. In
+    // that case, even if there are no longer any bound event handlers, the
+    // polling loop is still necessary for back/next to work at all!
+    self.stop = function() {
+      if ( !iframe ) {
+        timeout_id && clearTimeout( timeout_id );
+        timeout_id = 0;
+      }
+    };
+    
+    return self;
+  })();
+  
+})(jQuery,this);
+
+/*!
+ * The following copyright notice may not be removed under any circumstances.
+ * 
+ * Copyright:
+ * Copyright (c) Magnus Högberg, 2000. All rights reserved.
+ */
+Cufon.registerFont({"w":172,"face":{"font-family":"BitLow","font-weight":400,"font-stretch":"normal","units-per-em":"256","panose-1":"0 0 0 0 0 0 0 0 0 0","ascent":"205","descent":"-51","bbox":"3 -199 144 57","underline-thickness":"12.8","underline-position":"-19.2","unicode-range":"U+0020-U+00D6"},"glyphs":{" ":{"w":128},"!":{"d":"3,0r28,0r0,-28r-28,0r0,28xm3,-57r28,0r0,-85r-28,0r0,85","w":57},"\"":{"d":"3,-85r28,0r0,-57r-28,0r0,57xm59,-85r29,0r0,-57r-29,0r0,57","w":113},"'":{"d":"3,-85r28,0r0,-57r-28,0r0,57","w":57},"(":{"d":"31,28r28,0r0,-28r-28,0r0,28xm3,0r28,0r0,-142r28,0r0,-28r-28,0r0,28r-28,0r0,142","w":86},")":{"d":"3,28r28,0r0,-28r28,0r0,-142r-28,0r0,142r-28,0r0,28xm3,-142r28,0r0,-28r-28,0r0,28","w":85},"+":{"d":"59,0r29,0r0,-57r56,0r0,-28r-56,0r0,-57r-29,0r0,57r-56,0r0,28r56,0r0,57","w":173},",":{"d":"3,28r28,0r0,-56r-28,0r0,56","w":58},"-":{"d":"3,-57r141,0r0,-28r-141,0r0,28","w":170},".":{"d":"3,0r28,0r0,-28r-28,0r0,28","w":58},"\/":{"d":"3,0r28,0r0,-28r28,0r0,-29r29,0r0,-28r28,0r0,-28r28,0r0,-29r-28,0r0,29r-28,0r0,28r-29,0r0,28r-28,0r0,29r-28,0r0,28"},"0":{"d":"3,0r141,0r0,-142r-141,0r0,142xm116,-113r0,85r-85,0r0,-85r85,0xm59,-57r29,0r0,-28r-29,0r0,28"},"1":{"d":"31,0r28,0r0,-142r-56,0r0,29r28,0r0,113","w":88},"2":{"d":"3,0r141,0r0,-28r-113,0r0,-29r113,0r0,-85r-141,0r0,29r113,0r0,28r-113,0r0,85","w":171},"3":{"d":"3,0r141,0r0,-142r-141,0r0,29r113,0r0,28r-85,0r0,28r85,0r0,29r-113,0r0,28","w":171},"4":{"d":"116,0r28,0r0,-142r-28,0r0,57r-85,0r0,-57r-28,0r0,85r113,0r0,57","w":173},"5":{"d":"3,0r141,0r0,-85r-113,0r0,-28r113,0r0,-29r-141,0r0,85r113,0r0,29r-113,0r0,28","w":173},"6":{"d":"3,0r141,0r0,-85r-113,0r0,-28r113,0r0,-29r-141,0r0,142xm116,-57r0,29r-85,0r0,-29r85,0"},"7":{"d":"116,0r28,0r0,-142r-141,0r0,29r113,0r0,113","w":173},"8":{"d":"3,0r141,0r0,-142r-141,0r0,142xm116,-57r0,29r-85,0r0,-29r85,0xm116,-113r0,28r-85,0r0,-28r85,0"},"9":{"d":"3,0r141,0r0,-142r-141,0r0,85r113,0r0,29r-113,0r0,28xm116,-113r0,28r-85,0r0,-28r85,0","w":173},":":{"d":"3,0r28,0r0,-28r-28,0r0,28xm3,-85r28,0r0,-28r-28,0r0,28","w":60},";":{"d":"3,28r28,0r0,-56r-28,0r0,56xm3,-85r28,0r0,-28r-28,0r0,28","w":61},"?":{"d":"59,0r29,0r0,-28r-29,0r0,28xm59,-57r85,0r0,-85r-141,0r0,29r113,0r0,28r-57,0r0,28"},"A":{"d":"3,0r141,0r0,-142r-141,0r0,29r113,0r0,28r-113,0r0,85xm116,-57r0,29r-85,0r0,-29r85,0"},"B":{"d":"3,0r141,0r0,-142r-113,0r0,-57r-28,0r0,199xm116,-113r0,85r-85,0r0,-85r85,0","w":171},"C":{"d":"3,0r141,0r0,-28r-113,0r0,-85r113,0r0,-29r-141,0r0,142","w":173},"D":{"d":"3,0r141,0r0,-199r-28,0r0,57r-113,0r0,142xm116,-113r0,85r-85,0r0,-85r85,0","w":173},"E":{"d":"3,0r141,0r0,-28r-113,0r0,-29r113,0r0,-85r-141,0r0,142xm116,-113r0,28r-85,0r0,-28r85,0"},"F":{"d":"3,57r28,0r0,-114r85,0r0,-28r-85,0r0,-28r113,0r0,-29r-141,0r0,199"},"G":{"d":"3,57r141,0r0,-199r-141,0r0,142r113,0r0,29r-113,0r0,28xm116,-113r0,85r-85,0r0,-85r85,0","w":173},"H":{"d":"3,0r28,0r0,-113r85,0r0,113r28,0r0,-142r-113,0r0,-57r-28,0r0,199","w":173},"I":{"d":"3,0r28,0r0,-142r-28,0r0,142xm3,-170r28,0r0,-29r-28,0r0,29","w":60},"J":{"d":"3,57r56,0r0,-199r-28,0r0,171r-28,0r0,28xm31,-170r28,0r0,-29r-28,0r0,29","w":87},"K":{"d":"3,0r28,0r0,-57r57,0r0,-28r28,0r0,-28r28,0r0,-29r-28,0r0,29r-28,0r0,28r-57,0r0,-114r-28,0r0,199xm116,0r28,0r0,-28r-28,0r0,28xm88,-28r28,0r0,-29r-28,0r0,29","w":173},"L":{"d":"3,0r56,0r0,-28r-28,0r0,-171r-28,0r0,199","w":87},"M":{"d":"3,0r28,0r0,-113r28,0r0,113r29,0r0,-113r28,0r0,113r28,0r0,-142r-141,0r0,142"},"N":{"d":"3,0r28,0r0,-113r85,0r0,113r28,0r0,-142r-141,0r0,142"},"O":{"d":"3,0r141,0r0,-142r-141,0r0,142xm116,-113r0,85r-85,0r0,-85r85,0","w":171},"P":{"d":"3,57r28,0r0,-57r113,0r0,-142r-141,0r0,199xm116,-113r0,85r-85,0r0,-85r85,0","w":173},"Q":{"d":"116,57r28,0r0,-199r-141,0r0,142r113,0r0,57xm116,-113r0,85r-85,0r0,-85r85,0"},"R":{"d":"3,0r28,0r0,-113r113,0r0,-29r-141,0r0,142"},"S":{"d":"3,0r141,0r0,-85r-113,0r0,-28r113,0r0,-29r-141,0r0,85r113,0r0,29r-113,0r0,28"},"T":{"d":"3,0r141,0r0,-28r-113,0r0,-85r57,0r0,-29r-57,0r0,-57r-28,0r0,199"},"U":{"d":"3,0r141,0r0,-142r-28,0r0,114r-85,0r0,-114r-28,0r0,142"},"V":{"d":"59,0r29,0r0,-28r28,0r0,-29r28,0r0,-85r-28,0r0,85r-28,0r0,29r-29,0r0,28xm31,-28r28,0r0,-29r-28,0r0,29xm3,-57r28,0r0,-85r-28,0r0,85","w":173},"W":{"d":"3,0r141,0r0,-142r-28,0r0,114r-28,0r0,-85r-29,0r0,85r-28,0r0,-114r-28,0r0,142"},"X":{"d":"3,0r28,0r0,-28r28,0r0,-29r29,0r0,-28r28,0r0,-28r28,0r0,-29r-28,0r0,29r-28,0r0,28r-29,0r0,28r-28,0r0,29r-28,0r0,28xm116,0r28,0r0,-28r-28,0r0,28xm88,-28r28,0r0,-29r-28,0r0,29xm31,-85r28,0r0,-28r-28,0r0,28xm3,-114r28,0r0,-28r-28,0r0,28","w":171},"Y":{"d":"3,57r141,0r0,-199r-28,0r0,114r-85,0r0,-114r-28,0r0,142r113,0r0,29r-113,0r0,28"},"Z":{"d":"3,0r141,0r0,-28r-85,0r0,-29r29,0r0,-28r28,0r0,-28r28,0r0,-29r-141,0r0,29r85,0r0,28r-29,0r0,28r-28,0r0,29r-28,0r0,28","w":173},"[":{"d":"3,28r56,0r0,-28r-28,0r0,-142r28,0r0,-28r-56,0r0,198","w":88},"\\":{"d":"116,0r28,0r0,-28r-28,0r0,28xm88,-28r28,0r0,-29r-28,0r0,29xm59,-57r29,0r0,-28r-29,0r0,28xm31,-85r28,0r0,-28r-28,0r0,28xm3,-114r28,0r0,-28r-28,0r0,28"},"]":{"d":"3,28r56,0r0,-198r-56,0r0,28r28,0r0,142r-28,0r0,28","w":87},"|":{"d":"3,28r28,0r0,-198r-28,0r0,198","w":59},"\u00c4":{"d":"3,0r141,0r0,-142r-28,0r0,-28r-28,0r0,28r-29,0r0,-28r-28,0r0,28r-28,0r0,29r113,0r0,28r-113,0r0,85xm116,-57r0,29r-85,0r0,-29r85,0"},"\u00c5":{"d":"3,0r141,0r0,-142r-56,0r0,-28r-29,0r0,28r-56,0r0,29r113,0r0,28r-113,0r0,85xm116,-57r0,29r-85,0r0,-29r85,0","w":173},"\u00d6":{"d":"3,0r141,0r0,-142r-28,0r0,-28r-28,0r0,28r-29,0r0,-28r-28,0r0,28r-28,0r0,142xm116,-113r0,85r-85,0r0,-85r85,0"},"\u00a0":{"w":128}}});
