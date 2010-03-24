@@ -1247,7 +1247,8 @@ ul.tabs a:active {
 }
 
 ul.tabs a:hover {
-    color:#000; 
+    color:#000;
+    background-color: #DEE5EB;
 }
 
 ul.tabs a.current, ul.tabs a.current:hover, ul.tabs li.current a {
