@@ -266,6 +266,7 @@ html {
 
 body {
     background: #F6F8F9 url('/shared/img/body-repeat.png') repeat-x top left;
+    font-family: Arial;
 }
 
 h1 {
@@ -1772,16 +1773,12 @@ pre code {
 }
 
 #blog .post-title {
+    font-weight: bold;
     font-family: bitlow, arial;
     text-transform: uppercase;
     font-size: 18px;
     line-height: 20px;
     color: #000;
-}
-
-#blog .post-title:hover {
-    color: #F8941C;
-    text-decoration: none;
 }
 
 .blog-side-praise {
