@@ -305,17 +305,17 @@ h3 {
 }
 
 .background-highlight {
-    background: transparent url('/shared/img/background-highlight.png') no-repeat top left;
+    background: #C9D1D9 url('/shared/img/background-highlight.png') no-repeat top left;
     min-height:200px;
 }
 
 .header-bar {
     position: relative;
-    background: transparent url('/shared/img/header-bar.png') no-repeat top left;
+    background: #DFDFDF url('/shared/img/header-bar.png') no-repeat top left;
 }
 
 .header-logo {
-    background: transparent url('/shared/img/main-logo.png') no-repeat top left;
+    background: #DFDFDF url('/shared/img/main-logo.png') no-repeat top left;
     width: 270px;
     height: 55px;
     margin-left: 1px;
