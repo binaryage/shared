@@ -404,8 +404,6 @@ h3 {
     border-top: 3px solid transparent;
 }
 
-
-
 .products .menu-item-products,
 .blog .menu-item-blog,
 .about .menu-item-about {
@@ -414,8 +412,10 @@ h3 {
 }
 
 #gallery {
-    height: 500px;
-    background: #F6F8F9 url('/shared/img/gallery-background.png') no-repeat top left;
+    height: 410px;
+    padding-top: 30px;
+    margin-bottom: 40px;
+    clear: both;
 }
 
 .main-product-left {
@@ -427,7 +427,7 @@ h3 {
 }
 
 #main-product .container {
-    padding-top: 50px;
+    padding-top: 80px;
 }
 
 #main-about .container {
@@ -435,7 +435,7 @@ h3 {
 }
 
 #main-about .strong {
-    font-weight: bold;
+    font-size: 14px;
     margin-bottom: 10px;
 }
 
@@ -457,12 +457,10 @@ h3 {
 }
 
 .about-intro, .about-story {
-    margin-bottom: 50px;
+    margin-bottom: 70px;
 }
 
 .about-title {
-    font-family: bitlow, arial;
-    text-transform: uppercase;
     font-size: 20px;
 }
 
@@ -520,6 +518,23 @@ h3 {
     text-align: right;
 }
 
+.facebook-like-wrapper {
+    height: 80px;
+    margin-top: 10px;
+    margin-left: 5px;
+    position: relative;
+}
+
+.facebook-like-box .fb_iframe_widget {
+    margin-top: 10px;
+}
+
+.twitter-button-wrapper {
+    position: absolute;
+    right: -20px;
+    top: 4px;
+}
+
 .about-side-photo {
     position: relative;
     height: 250px;
@@ -536,6 +551,7 @@ h3 {
 
 .about-main {
     background: transparent url('/shared/img/about-vseparator.png') no-repeat top right;
+    margin-top: 20px;
 }
 
 .blog-main {
@@ -585,22 +601,27 @@ h3 {
 }
 
 #scroll {
+    border: 2px solid #fff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -webkit-box-shadow: #aaa 0px 0px 10px;
+    -moz-box-shadow: 0 0px 10px #aaa;
+    background-color: #fff;
     position:relative;
-    height: 500px;
+    height: 340px;
     overflow:hidden;
 }
 
 #thumbs {
+    z-index: 100;
     height:60px;
-    position:absolute;
-    top: 432px;
-    width:100%;
+    position: relative;
 }
 
 .tool {
     max-height:324px;
+    padding-top: 14px;
     overflow:hidden;
-    margin-top: 100px;
     float:left;
     position: relative;
 }
@@ -662,20 +683,23 @@ h3 {
 }
 
 #thumbs .tab {
-    background-image: url('/shared/img/gallery-tabs.png');
-    background-repeat: no-repeat;
-    background-position: 0px -52px;
-    margin-left:3px;
+    border: 2px solid #fff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -webkit-box-shadow: #aaa 0px 0px 10px;
+    -moz-box-shadow: 0 0px 10px #aaa;
+    background-color: #eee;
     float:left;
     display:block;
-    width:126px;
-    height:52px;
+    width:120px;
+    margin-left: 5px;
+    height:50px;
     cursor:default !important;
 }
 
 #thumbs .tab.active {
     cursor:default !important;
-    background-position: 0px 0px;
+    background-color: #fff;
 }
 
 .thumb-box {
@@ -789,7 +813,7 @@ h3 {
     cursor: pointer;
     position: absolute;
     top: 230px;
-    left: 180px;
+    left: 110px;
     display:block;
 }
 
@@ -935,8 +959,7 @@ h3 {
 }
 
 .twitterbox, .satisfactionbox {
-    background: transparent url('/shared/img/social-separator.png') no-repeat scroll right 0;
-    height: 89px;
+    height: 80px;
 }
 
 .satisfaction {
@@ -1057,7 +1080,7 @@ h3 {
     position: relative;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
-    min-height: 78px;
+    min-height: 60px;
     line-height: 16px;
     padding: 8px 8px;
 }
@@ -1139,11 +1162,21 @@ a:hover {
 
 .product-buttons-box {
     margin-top: 20px;
+    margin-left: 76px;
     font-size: 20px;
 }
 
+.facebook-like-box {
+    height: 80px;
+    margin-left:6px;
+    margin-top:4px;
+}
+
 .product-actions-box {
-    margin-top: 60px;
+    position: absolute;
+    margin-top: 10px;
+    right: 0px;
+    padding-right: 30px;
 }
 
 .product-thumbs-box {
@@ -1164,7 +1197,7 @@ a:hover {
     text-transform: uppercase;
     float: left;
     background: transparent url('/shared/img/product-buttons.png') no-repeat scroll 0px 0px;
-    width: 275px;
+    width: 240px;
     height: 50px;
     line-height: 46px;
 }
@@ -1180,15 +1213,15 @@ a:hover {
     font-family: bitlow, arial;
     text-transform: uppercase;
     float: left;
-    margin-left: 10px;
-    background: transparent url('/shared/img/product-buttons.png') no-repeat scroll -275px 0px;
-    width: 156px;
+    margin-left: 8px;
+    background: transparent url('/shared/img/product-buttons.png') no-repeat scroll -240px 0px;
+    width: 120px;
     height: 50px;
     line-height: 46px;
 }
 
 .product-button-buy div {
-    margin-left: 50px;
+    margin-left: 56px;
     text-align: center;
 }
 
@@ -2061,9 +2094,26 @@ pre code {
     color: #fff !important;
 }
 
-.retweet, .facebook, .digg, .usethis {
+.retweet, .facebook, .digg, .usethis, .buzz {
     float:left;
-    margin: 0px 5px;
+    margin: 4px 5px;
+}
+
+.buzz {
+    margin: 0;
+}
+
+.usethis {
+    position: absolute;
+    top: 146px;
+    left: 430px;
+    z-index: 400;
+    background-color: #eee;
+    display: none;
+}
+
+.usethis:hover {
+    background-color: #FFFFC2;
 }
 
 .main-product-right {
@@ -2071,7 +2121,6 @@ pre code {
 }
 
 .main-product-right .main-screenshot {
-    border-bottom: 1px solid #BBC4CF;
     min-height: 325px;
 }
 
@@ -2173,14 +2222,12 @@ ol.loading {
 }
 
 ol.statuses li.status, ol.statuses li.direct_message {
-    border-bottom: 1px solid #EEEEEE;
     line-height: 1.1em;
     padding: 0.7em 0 0.6em;
     position: relative;
 }
 
 ol.statuses > li:first-child {
-    border-top: 1px solid #EEEEEE;
 }
 
 ol.statuses .thumb {
@@ -2202,7 +2249,7 @@ ol.statuses .thumb img{
     font-size: 10px;
     position: absolute;
     right: 6px;
-    bottom: 20px;
+    bottom: 2px;
 }
 
 .no-results {
