@@ -393,7 +393,7 @@ h3 {
     -webkit-transform:rotate(5deg);
     color: #fff;
     font-weight: bold;
-    font-size: 9px;
+    font-size: 10px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
 }
@@ -526,7 +526,7 @@ h3 {
 }
 
 .facebook-like-box .fb_iframe_widget {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .twitter-button-wrapper {
@@ -1140,7 +1140,7 @@ a:hover {
     -moz-border-radius:2px 2px 2px 2px;
     background-color:#CC4444;
     color:#FFFFFF;
-    font-size:9px;
+    font-size: 10px;
     line-height: 14px;
     font-weight:bold;
     padding:1px 4px;
@@ -1174,7 +1174,7 @@ a:hover {
 
 .product-actions-box {
     position: absolute;
-    margin-top: 10px;
+    margin-top: 20px;
     right: 0px;
     padding-right: 30px;
 }
@@ -1209,12 +1209,13 @@ a:hover {
 
 .product-button-buy {
     text-decoration: none;
-    color: #000;
+/*    color: #000;*/
+    color: #aaa;
     font-family: bitlow, arial;
     text-transform: uppercase;
     float: left;
     margin-left: 8px;
-    background: transparent url('/shared/img/product-buttons.png') no-repeat scroll -240px 0px;
+    background: transparent url('/shared/img/product-buttons.png') no-repeat scroll -362px 0px; /* active=240 */
     width: 120px;
     height: 50px;
     line-height: 46px;
@@ -1226,8 +1227,9 @@ a:hover {
 }
 
 .product-button-buy {
-    opacity: 0.2;
+/*    opacity: 0.2;
     filter: alpha(opacity=20);
+*/
 }
 
 .product-note {
@@ -2104,12 +2106,20 @@ pre code {
 }
 
 .usethis {
+    border: 1px solid #ddd;
+    -webkit-border-radius: 2px 2px;
+    -moz-border-radius: 2px;
     position: absolute;
-    top: 146px;
+    top: 136px;
     left: 430px;
     z-index: 400;
     background-color: #eee;
     display: none;
+}
+
+.ie .usethis {
+    top: 138px;
+    left: 429px;
 }
 
 .usethis:hover {
