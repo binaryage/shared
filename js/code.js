@@ -646,7 +646,7 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 })(jQuery,this);
 
 /**
- * writeCapture.js v0.3.3-SNAPSHOT
+ * writeCapture.js v0.3.4-SNAPSHOT
  *
  * @author noah <noah.sloan@gmail.com>
  * 
@@ -780,25 +780,103 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 		}
 	};
 	
+	// TODO unit tests...
+	function MockDocument() { }
+	MockDocument.prototype = {
+		_html: '',
+		open: function( ) { 
+			this._opened = true;
+			if(this._delegate) {
+				this._delegate.open();
+			}
+		},
+		write: function(s) { 
+			if(this._closed) return; 
+			this._written = true;
+			if(this._delegate) {
+				this._delegate.write(s);
+			} else {
+				this._html += s;
+			}
+		}, 
+		writeln: function(s) { 
+			this.write(s + '\n');
+		}, 
+		close: function( ) { 
+			this._closed = true;
+			if(this._delegate) {
+				this._delegate.close();
+			}
+		}, 
+		copyTo: function(d) { 
+			this._delegate = d;
+			d.foobar = true;
+			if(this._opened) {
+				d.open();
+			}
+			if(this._written) {
+				d.write(this._html); 
+			}
+			if(this._closed) {
+				d.close();
+			}
+		}
+	};
+	
 	function capture() {
 		var state = {
 			write: global.document.write,
 			writeln: global.document.writeln,
+			getEl: global.document.getElementById,
+			tempEls: [],
+			finish: function() {
+				each(this.tempEls,function(it) {
+					var real = global.document.getElementById(it.id);
+					if(!real) throw "No element with id: " + it.id;
+					each(it.el.childNodes,function(it) {
+						real.appendChild(it);
+					});
+					if(real.contentWindow) {
+						// TODO why is the setTimeout necessary?
+						global.setTimeout(function() {
+							it.el.contentWindow.document.
+								copyTo(real.contentWindow.document);
+						},1);
+					}
+				});
+			},
 			out: ''
 		};
 		global.document.write = replacementWrite;
-		global.document.writeln = replacementWriteln;	
+		global.document.writeln = replacementWriteln;
+		if(self.proxyGetElementById) {
+			global.document.getElementById = getEl;			
+		}
 		function replacementWrite(s) {
 			state.out +=  s;
 		}
 		function replacementWriteln(s) {
 			state.out +=  s + '\n';
-		}		
+		}
+		function makeTemp(id) {
+			var t = global.document.createElement('div');
+			state.tempEls.push({id:id,el:t});
+			// mock contentWindow in case it's supposed to be an iframe
+			t.contentWindow = { document: new MockDocument() };
+			return t;
+		}
+		function getEl(id) {
+			var result = state.getEl.call(global.document,id);
+			return result || makeTemp(id);
+		}
 		return state;
 	}
 	function uncapture(state) {
 		global.document.write = state.write;
 		global.document.writeln = state.writeln;
+		if(self.proxyGetElementById) {
+			global.document.getElementById = state.getEl;
+		}
 		return state.out;
 	}
 	
@@ -825,7 +903,7 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 		} finally {
 			uncapture(state);
 		}
-		return state.out;
+		return state;
 	}
 	
 	// copied from jQuery
@@ -834,10 +912,23 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 		return parts && ( parts[1] && parts[1] != location.protocol || parts[2] != location.host );
 	}
 	
+	function attrPattern(name) {
+		return new RegExp(name+'=(?:(["\'])(.*?)\\1|([^\\s>]+))','i');
+	}
+	
+	function matchAttr(name) {
+		var regex = attrPattern(name);
+		return function(tag) {
+			var match = regex.exec(tag) || [];
+			return match[2] || match[3];
+		};
+	}
+	
 	var SCRIPT_TAGS = /(<script[\s\S]*?>)([\s\S]*?)<\/script>/ig, 
-		SRC_ATTR = /src="(.*?)"/i,
-		TYPE_ATTR = /type="(.*?)"/i,
-		LANG_ATTR = /language="(.*?)"/i,
+		SRC_REGEX = attrPattern('src'),
+		SRC_ATTR = matchAttr('src'),
+		TYPE_ATTR = matchAttr('type'),
+		LANG_ATTR = matchAttr('language'),
 		GLOBAL = "__document_write_ajax_callbacks__",
 		DIV_PREFIX = "__document_write_ajax_div-",
 		TEMPLATE = "window['"+GLOBAL+"']['%d']();",
@@ -908,12 +999,13 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 		// themselves
 		return html.replace(SCRIPT_TAGS,proxyTag) + doneHtml;
 		function proxyTag(element,openTag,code) {
-			var src = (SRC_ATTR.exec(openTag)||[])[1],
-				type = (TYPE_ATTR.exec(openTag)||[])[1] || '',
-				lang = (LANG_ATTR.exec(openTag)||[])[1] || '',
-				// TODO what about jscript? others?
-				isJs = type.toLowerCase().indexOf('javascript') !== -1 || 
+			var src = SRC_ATTR(openTag),
+				type = TYPE_ATTR(openTag) || '',
+				lang = LANG_ATTR(openTag) || '',
+				isJs = (!type && !lang) || // no type or lang assumes JS
+					type.toLowerCase().indexOf('javascript') !== -1 || 
 					lang.toLowerCase().indexOf('javascript') !== -1;
+			
 			var id = nextId(), divId = DIV_PREFIX + id;
 			var run;
 			
@@ -934,7 +1026,7 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 			}
 			
 			if(src) {
-				openTag = openTag.replace(SRC_ATTR,'');
+				openTag = openTag.replace(SRC_REGEX,'');
 				if(isXDomain(src)) {
 					// will load async via script tag injection (eval()'d on
 					// it's own)
@@ -1012,11 +1104,14 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 				});
 				function captureAndResume(xhr,st,error) {
 					html(uncapture(state));
+					state.finish();
 					queue.resume();
 				}
 			}
 			function captureHtml(script) {
-				html(captureWrite(script));
+				var state = captureWrite(script);
+				html(state.out);
+				state.finish();
 			}
 			function html(markup) {
 				$.replaceWith('#'+divId,sanitize(markup,null,queue));
@@ -1068,10 +1163,16 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 			global[name] = this._original;
 			return this;
 		},
+		/**
+		 * Enables a fun little hack that replaces document.getElementById and
+		 * creates temporary elements for the calling code to use.
+		 */
+		proxyGetElementById: false,
 		// this is only for testing, please don't use these
 		_forTest: {
 			Q: Q,
 			$: $,
+			matchAttr: matchAttr,
 			slice: slice,
 			capture: capture,
 			uncapture: uncapture,
@@ -1099,162 +1200,6 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 	};
 	
 })(this.writeCaptureSupport,this,eval);
-
-/**
- * jquery.writeCapture.js 
- * 
- * Note that this file only provides the jQuery plugin functionality, you still
- * need writeCapture.js. The compressed version will contain both as as single
- * file.
- *
- * @author noah <noah.sloan@gmail.com>
- * 
- */
-(function($,wc,noop) {
-	// methods that take HTML content (according to API)
-	var methods = {
-		html: html
-	};
-	// TODO wrap domManip instead?
-	$.each(['append', 'prepend', 'after', 'before', 'wrap', 'wrapAll', 'replaceWith',
-		'wrapInner'],function() { methods[this] = makeMethod(this); });
-	
-	function isString(s) {
-		return Object.prototype.toString.call(s) == "[object String]";
-	}
-	
-	function executeMethod(method,content,options,cb) {
-		if(arguments.length == 0) return proxyMethods.call(this);
-		
-		var m = methods[method];
-		if(method == 'load') {
-			return load.call(this,content,options,cb);
-		}
-		if(!m) error(method);
-		return doEach.call(this,content,options,m);
-	}
-	
-	$.fn.writeCapture = executeMethod;
-	
-	var PROXIED = '__writeCaptureJsProxied-fghebd__';
-	// inherit from the jQuery instance, proxying the HTML injection methods
-	// so that the HTML is sanitized
-	function proxyMethods() {
-		if(this[PROXIED]) return this;
-		
-		var jq = this;
-		function F() {
-			var _this = this, sanitizing = false;
-			this[PROXIED] = true;
-			$.each(methods,function(method) {
-				var _super = jq[method];
-				if(!_super) return;
-				_this[method] = function(content,options,cb) {
-					// if it's unsanitized HTML, proxy it
-					if(!sanitizing && isString(content)) {
-						try {
-							sanitizing = true;
-							return executeMethod.call(_this,method,content,
-								options,cb);
-						} finally {
-							sanitizing = false;
-						}
-					} 
-					return _super.apply(_this,arguments); // else delegate
-				};
-			});
-			// wrap pushStack so that the new jQuery instance is also wrapped
-			this.pushStack = function() {
-				return proxyMethods.call(jq.pushStack.apply(_this,arguments));
-			};
-			this.endCapture = function() { return jq; };
-		}
-		F.prototype = jq;
-		return new F();
-	}
-	
-	function doEach(content,options,action) {
-		var done, self = this;
-		if(options && options.done) {
-			done = options.done;
-			delete options.done;
-		} else if($.isFunction(options)) {
-			done = options;
-			options = null;
-		}
-		wc.sanitizeSerial($.map(this,function(el) {
-			return {
-				html: content,
-				options: options,
-				action: function(text) {
-					action.call(el,text);
-				}
-			};
-		}),done && function() { done.call(self); } || done);
-		return this;
-	}
-	
-	
-	function html(safe) {
-		$(this).html(safe);
-	}
-	
-	function makeMethod(method) {
-		return function(safe) {
-			$(this)[method](safe);
-		};
-	}
-	
-	function load(url,options,callback) {
-		var self = this,  selector, off = url.indexOf(' ');
-		if ( off >= 0 ) {
-			selector = url.slice(off, url.length);
-			url = url.slice(0, off);
-		}
-		if($.isFunction(callback)) {
-			options = options || {};
-			options.done = callback;
-		}
-		return $.ajax({
-			url: url,
-			type:  options && options.type || "GET",
-			dataType: "html",
-			data: options && options.params,
-			complete: loadCallback(self,options,selector)
-		});
-	}
-	
-	function loadCallback(self,options,selector) {
-		return function(res,status) {
-			if ( status == "success" || status == "notmodified" ) {
-				var text = getText(res.responseText,selector);
-				doEach.call(self,text,options,html);
-			}
-		};
-	}
-	
-	var PLACEHOLDER = /jquery-writeCapture-script-placeholder-(\d+)-wc/g;
-	function getText(text,selector) {
-		if(!selector || !text) return text;
-		
-		var id = 0, scripts = {};			
-		return $('<div/>').append(
-			text.replace(/<script(.|\s)*?\/script>/g, function(s) {
-				scripts[id] = s;
-				return "jquery-writeCapture-script-placeholder-"+(id++)+'-wc';
-			})
-		).find(selector).html().replace(PLACEHOLDER,function(all,id) {
-			return scripts[id];
-		});
-	}
-	
-	function error(method) {
-		throw "invalid method parameter "+method;
-	}
-	
-	// expose core
-	$.writeCapture = wc;
-})(jQuery,writeCapture.noConflict());
 
 /*
  * Copyright (c) 2009 Simo Kinnunen.
