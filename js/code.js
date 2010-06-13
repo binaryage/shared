@@ -1216,3 +1216,704 @@ var Cufon=(function(){var m=function(){return m.replace.apply(null,arguments)};v
  * Copyright (c) Magnus Högberg, 2000. All rights reserved.
  */
 Cufon.registerFont({"w":172,"face":{"font-family":"BitLow","font-weight":400,"font-stretch":"normal","units-per-em":"256","panose-1":"0 0 0 0 0 0 0 0 0 0","ascent":"205","descent":"-51","bbox":"3 -199 144 57","underline-thickness":"12.8","underline-position":"-19.2","unicode-range":"U+0020-U+00D6"},"glyphs":{" ":{"w":128},"!":{"d":"3,0r28,0r0,-28r-28,0r0,28xm3,-57r28,0r0,-85r-28,0r0,85","w":57},"\"":{"d":"3,-85r28,0r0,-57r-28,0r0,57xm59,-85r29,0r0,-57r-29,0r0,57","w":113},"'":{"d":"3,-85r28,0r0,-57r-28,0r0,57","w":57},"(":{"d":"31,28r28,0r0,-28r-28,0r0,28xm3,0r28,0r0,-142r28,0r0,-28r-28,0r0,28r-28,0r0,142","w":86},")":{"d":"3,28r28,0r0,-28r28,0r0,-142r-28,0r0,142r-28,0r0,28xm3,-142r28,0r0,-28r-28,0r0,28","w":85},"+":{"d":"59,0r29,0r0,-57r56,0r0,-28r-56,0r0,-57r-29,0r0,57r-56,0r0,28r56,0r0,57","w":173},",":{"d":"3,28r28,0r0,-56r-28,0r0,56","w":58},"-":{"d":"3,-57r141,0r0,-28r-141,0r0,28","w":170},".":{"d":"3,0r28,0r0,-28r-28,0r0,28","w":58},"\/":{"d":"3,0r28,0r0,-28r28,0r0,-29r29,0r0,-28r28,0r0,-28r28,0r0,-29r-28,0r0,29r-28,0r0,28r-29,0r0,28r-28,0r0,29r-28,0r0,28"},"0":{"d":"3,0r141,0r0,-142r-141,0r0,142xm116,-113r0,85r-85,0r0,-85r85,0xm59,-57r29,0r0,-28r-29,0r0,28"},"1":{"d":"31,0r28,0r0,-142r-56,0r0,29r28,0r0,113","w":88},"2":{"d":"3,0r141,0r0,-28r-113,0r0,-29r113,0r0,-85r-141,0r0,29r113,0r0,28r-113,0r0,85","w":171},"3":{"d":"3,0r141,0r0,-142r-141,0r0,29r113,0r0,28r-85,0r0,28r85,0r0,29r-113,0r0,28","w":171},"4":{"d":"116,0r28,0r0,-142r-28,0r0,57r-85,0r0,-57r-28,0r0,85r113,0r0,57","w":173},"5":{"d":"3,0r141,0r0,-85r-113,0r0,-28r113,0r0,-29r-141,0r0,85r113,0r0,29r-113,0r0,28","w":173},"6":{"d":"3,0r141,0r0,-85r-113,0r0,-28r113,0r0,-29r-141,0r0,142xm116,-57r0,29r-85,0r0,-29r85,0"},"7":{"d":"116,0r28,0r0,-142r-141,0r0,29r113,0r0,113","w":173},"8":{"d":"3,0r141,0r0,-142r-141,0r0,142xm116,-57r0,29r-85,0r0,-29r85,0xm116,-113r0,28r-85,0r0,-28r85,0"},"9":{"d":"3,0r141,0r0,-142r-141,0r0,85r113,0r0,29r-113,0r0,28xm116,-113r0,28r-85,0r0,-28r85,0","w":173},":":{"d":"3,0r28,0r0,-28r-28,0r0,28xm3,-85r28,0r0,-28r-28,0r0,28","w":60},";":{"d":"3,28r28,0r0,-56r-28,0r0,56xm3,-85r28,0r0,-28r-28,0r0,28","w":61},"?":{"d":"59,0r29,0r0,-28r-29,0r0,28xm59,-57r85,0r0,-85r-141,0r0,29r113,0r0,28r-57,0r0,28"},"A":{"d":"3,0r141,0r0,-142r-141,0r0,29r113,0r0,28r-113,0r0,85xm116,-57r0,29r-85,0r0,-29r85,0"},"B":{"d":"3,0r141,0r0,-142r-113,0r0,-57r-28,0r0,199xm116,-113r0,85r-85,0r0,-85r85,0","w":171},"C":{"d":"3,0r141,0r0,-28r-113,0r0,-85r113,0r0,-29r-141,0r0,142","w":173},"D":{"d":"3,0r141,0r0,-199r-28,0r0,57r-113,0r0,142xm116,-113r0,85r-85,0r0,-85r85,0","w":173},"E":{"d":"3,0r141,0r0,-28r-113,0r0,-29r113,0r0,-85r-141,0r0,142xm116,-113r0,28r-85,0r0,-28r85,0"},"F":{"d":"3,57r28,0r0,-114r85,0r0,-28r-85,0r0,-28r113,0r0,-29r-141,0r0,199"},"G":{"d":"3,57r141,0r0,-199r-141,0r0,142r113,0r0,29r-113,0r0,28xm116,-113r0,85r-85,0r0,-85r85,0","w":173},"H":{"d":"3,0r28,0r0,-113r85,0r0,113r28,0r0,-142r-113,0r0,-57r-28,0r0,199","w":173},"I":{"d":"3,0r28,0r0,-142r-28,0r0,142xm3,-170r28,0r0,-29r-28,0r0,29","w":60},"J":{"d":"3,57r56,0r0,-199r-28,0r0,171r-28,0r0,28xm31,-170r28,0r0,-29r-28,0r0,29","w":87},"K":{"d":"3,0r28,0r0,-57r57,0r0,-28r28,0r0,-28r28,0r0,-29r-28,0r0,29r-28,0r0,28r-57,0r0,-114r-28,0r0,199xm116,0r28,0r0,-28r-28,0r0,28xm88,-28r28,0r0,-29r-28,0r0,29","w":173},"L":{"d":"3,0r56,0r0,-28r-28,0r0,-171r-28,0r0,199","w":87},"M":{"d":"3,0r28,0r0,-113r28,0r0,113r29,0r0,-113r28,0r0,113r28,0r0,-142r-141,0r0,142"},"N":{"d":"3,0r28,0r0,-113r85,0r0,113r28,0r0,-142r-141,0r0,142"},"O":{"d":"3,0r141,0r0,-142r-141,0r0,142xm116,-113r0,85r-85,0r0,-85r85,0","w":171},"P":{"d":"3,57r28,0r0,-57r113,0r0,-142r-141,0r0,199xm116,-113r0,85r-85,0r0,-85r85,0","w":173},"Q":{"d":"116,57r28,0r0,-199r-141,0r0,142r113,0r0,57xm116,-113r0,85r-85,0r0,-85r85,0"},"R":{"d":"3,0r28,0r0,-113r113,0r0,-29r-141,0r0,142"},"S":{"d":"3,0r141,0r0,-85r-113,0r0,-28r113,0r0,-29r-141,0r0,85r113,0r0,29r-113,0r0,28"},"T":{"d":"3,0r141,0r0,-28r-113,0r0,-85r57,0r0,-29r-57,0r0,-57r-28,0r0,199"},"U":{"d":"3,0r141,0r0,-142r-28,0r0,114r-85,0r0,-114r-28,0r0,142"},"V":{"d":"59,0r29,0r0,-28r28,0r0,-29r28,0r0,-85r-28,0r0,85r-28,0r0,29r-29,0r0,28xm31,-28r28,0r0,-29r-28,0r0,29xm3,-57r28,0r0,-85r-28,0r0,85","w":173},"W":{"d":"3,0r141,0r0,-142r-28,0r0,114r-28,0r0,-85r-29,0r0,85r-28,0r0,-114r-28,0r0,142"},"X":{"d":"3,0r28,0r0,-28r28,0r0,-29r29,0r0,-28r28,0r0,-28r28,0r0,-29r-28,0r0,29r-28,0r0,28r-29,0r0,28r-28,0r0,29r-28,0r0,28xm116,0r28,0r0,-28r-28,0r0,28xm88,-28r28,0r0,-29r-28,0r0,29xm31,-85r28,0r0,-28r-28,0r0,28xm3,-114r28,0r0,-28r-28,0r0,28","w":171},"Y":{"d":"3,57r141,0r0,-199r-28,0r0,114r-85,0r0,-114r-28,0r0,142r113,0r0,29r-113,0r0,28"},"Z":{"d":"3,0r141,0r0,-28r-85,0r0,-29r29,0r0,-28r28,0r0,-28r28,0r0,-29r-141,0r0,29r85,0r0,28r-29,0r0,28r-28,0r0,29r-28,0r0,28","w":173},"[":{"d":"3,28r56,0r0,-28r-28,0r0,-142r28,0r0,-28r-56,0r0,198","w":88},"\\":{"d":"116,0r28,0r0,-28r-28,0r0,28xm88,-28r28,0r0,-29r-28,0r0,29xm59,-57r29,0r0,-28r-29,0r0,28xm31,-85r28,0r0,-28r-28,0r0,28xm3,-114r28,0r0,-28r-28,0r0,28"},"]":{"d":"3,28r56,0r0,-198r-56,0r0,28r28,0r0,142r-28,0r0,28","w":87},"|":{"d":"3,28r28,0r0,-198r-28,0r0,198","w":59},"\u00c4":{"d":"3,0r141,0r0,-142r-28,0r0,-28r-28,0r0,28r-29,0r0,-28r-28,0r0,28r-28,0r0,29r113,0r0,28r-113,0r0,85xm116,-57r0,29r-85,0r0,-29r85,0"},"\u00c5":{"d":"3,0r141,0r0,-142r-56,0r0,-28r-29,0r0,28r-56,0r0,29r113,0r0,28r-113,0r0,85xm116,-57r0,29r-85,0r0,-29r85,0","w":173},"\u00d6":{"d":"3,0r141,0r0,-142r-28,0r0,-28r-28,0r0,28r-29,0r0,-28r-28,0r0,28r-28,0r0,142xm116,-113r0,85r-85,0r0,-85r85,0"},"\u00a0":{"w":128}}});
+
+/*
+ * jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
+ *
+ * Uses the built in easing capabilities added In jQuery 1.1
+ * to offer multiple easing options
+ *
+ * TERMS OF USE - jQuery Easing
+ * 
+ * Open source under the BSD License. 
+ * 
+ * Copyright Â© 2008 George McGinley Smith
+ * All rights reserved.
+ * 
+ * Redistribution and use in source and binary forms, with or without modification, 
+ * are permitted provided that the following conditions are met:
+ * 
+ * Redistributions of source code must retain the above copyright notice, this list of 
+ * conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright notice, this list 
+ * of conditions and the following disclaimer in the documentation and/or other materials 
+ * provided with the distribution.
+ * 
+ * Neither the name of the author nor the names of contributors may be used to endorse 
+ * or promote products derived from this software without specific prior written permission.
+ * 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
+ * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+ *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
+ * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
+ * OF THE POSSIBILITY OF SUCH DAMAGE. 
+ *
+*/
+
+// t: current time, b: begInnIng value, c: change In value, d: duration
+jQuery.easing['jswing'] = jQuery.easing['swing'];
+
+jQuery.extend( jQuery.easing,
+{
+	def: 'easeOutQuad',
+	swing: function (x, t, b, c, d) {
+		//alert(jQuery.easing.default);
+		return jQuery.easing[jQuery.easing.def](x, t, b, c, d);
+	},
+	easeInQuad: function (x, t, b, c, d) {
+		return c*(t/=d)*t + b;
+	},
+	easeOutQuad: function (x, t, b, c, d) {
+		return -c *(t/=d)*(t-2) + b;
+	},
+	easeInOutQuad: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return c/2*t*t + b;
+		return -c/2 * ((--t)*(t-2) - 1) + b;
+	},
+	easeInCubic: function (x, t, b, c, d) {
+		return c*(t/=d)*t*t + b;
+	},
+	easeOutCubic: function (x, t, b, c, d) {
+		return c*((t=t/d-1)*t*t + 1) + b;
+	},
+	easeInOutCubic: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return c/2*t*t*t + b;
+		return c/2*((t-=2)*t*t + 2) + b;
+	},
+	easeInQuart: function (x, t, b, c, d) {
+		return c*(t/=d)*t*t*t + b;
+	},
+	easeOutQuart: function (x, t, b, c, d) {
+		return -c * ((t=t/d-1)*t*t*t - 1) + b;
+	},
+	easeInOutQuart: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return c/2*t*t*t*t + b;
+		return -c/2 * ((t-=2)*t*t*t - 2) + b;
+	},
+	easeInQuint: function (x, t, b, c, d) {
+		return c*(t/=d)*t*t*t*t + b;
+	},
+	easeOutQuint: function (x, t, b, c, d) {
+		return c*((t=t/d-1)*t*t*t*t + 1) + b;
+	},
+	easeInOutQuint: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return c/2*t*t*t*t*t + b;
+		return c/2*((t-=2)*t*t*t*t + 2) + b;
+	},
+	easeInSine: function (x, t, b, c, d) {
+		return -c * Math.cos(t/d * (Math.PI/2)) + c + b;
+	},
+	easeOutSine: function (x, t, b, c, d) {
+		return c * Math.sin(t/d * (Math.PI/2)) + b;
+	},
+	easeInOutSine: function (x, t, b, c, d) {
+		return -c/2 * (Math.cos(Math.PI*t/d) - 1) + b;
+	},
+	easeInExpo: function (x, t, b, c, d) {
+		return (t==0) ? b : c * Math.pow(2, 10 * (t/d - 1)) + b;
+	},
+	easeOutExpo: function (x, t, b, c, d) {
+		return (t==d) ? b+c : c * (-Math.pow(2, -10 * t/d) + 1) + b;
+	},
+	easeInOutExpo: function (x, t, b, c, d) {
+		if (t==0) return b;
+		if (t==d) return b+c;
+		if ((t/=d/2) < 1) return c/2 * Math.pow(2, 10 * (t - 1)) + b;
+		return c/2 * (-Math.pow(2, -10 * --t) + 2) + b;
+	},
+	easeInCirc: function (x, t, b, c, d) {
+		return -c * (Math.sqrt(1 - (t/=d)*t) - 1) + b;
+	},
+	easeOutCirc: function (x, t, b, c, d) {
+		return c * Math.sqrt(1 - (t=t/d-1)*t) + b;
+	},
+	easeInOutCirc: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return -c/2 * (Math.sqrt(1 - t*t) - 1) + b;
+		return c/2 * (Math.sqrt(1 - (t-=2)*t) + 1) + b;
+	},
+	easeInElastic: function (x, t, b, c, d) {
+		var s=1.70158;var p=0;var a=c;
+		if (t==0) return b;  if ((t/=d)==1) return b+c;  if (!p) p=d*.3;
+		if (a < Math.abs(c)) { a=c; var s=p/4; }
+		else var s = p/(2*Math.PI) * Math.asin (c/a);
+		return -(a*Math.pow(2,10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )) + b;
+	},
+	easeOutElastic: function (x, t, b, c, d) {
+		var s=1.70158;var p=0;var a=c;
+		if (t==0) return b;  if ((t/=d)==1) return b+c;  if (!p) p=d*.3;
+		if (a < Math.abs(c)) { a=c; var s=p/4; }
+		else var s = p/(2*Math.PI) * Math.asin (c/a);
+		return a*Math.pow(2,-10*t) * Math.sin( (t*d-s)*(2*Math.PI)/p ) + c + b;
+	},
+	easeInOutElastic: function (x, t, b, c, d) {
+		var s=1.70158;var p=0;var a=c;
+		if (t==0) return b;  if ((t/=d/2)==2) return b+c;  if (!p) p=d*(.3*1.5);
+		if (a < Math.abs(c)) { a=c; var s=p/4; }
+		else var s = p/(2*Math.PI) * Math.asin (c/a);
+		if (t < 1) return -.5*(a*Math.pow(2,10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )) + b;
+		return a*Math.pow(2,-10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )*.5 + c + b;
+	},
+	easeInBack: function (x, t, b, c, d, s) {
+		if (s == undefined) s = 1.70158;
+		return c*(t/=d)*t*((s+1)*t - s) + b;
+	},
+	easeOutBack: function (x, t, b, c, d, s) {
+		if (s == undefined) s = 1.70158;
+		return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
+	},
+	easeInOutBack: function (x, t, b, c, d, s) {
+		if (s == undefined) s = 1.70158; 
+		if ((t/=d/2) < 1) return c/2*(t*t*(((s*=(1.525))+1)*t - s)) + b;
+		return c/2*((t-=2)*t*(((s*=(1.525))+1)*t + s) + 2) + b;
+	},
+	easeInBounce: function (x, t, b, c, d) {
+		return c - jQuery.easing.easeOutBounce (x, d-t, 0, c, d) + b;
+	},
+	easeOutBounce: function (x, t, b, c, d) {
+		if ((t/=d) < (1/2.75)) {
+			return c*(7.5625*t*t) + b;
+		} else if (t < (2/2.75)) {
+			return c*(7.5625*(t-=(1.5/2.75))*t + .75) + b;
+		} else if (t < (2.5/2.75)) {
+			return c*(7.5625*(t-=(2.25/2.75))*t + .9375) + b;
+		} else {
+			return c*(7.5625*(t-=(2.625/2.75))*t + .984375) + b;
+		}
+	},
+	easeInOutBounce: function (x, t, b, c, d) {
+		if (t < d/2) return jQuery.easing.easeInBounce (x, t*2, 0, c, d) * .5 + b;
+		return jQuery.easing.easeOutBounce (x, t*2-d, 0, c, d) * .5 + c*.5 + b;
+	}
+});
+
+/*
+ *
+ * TERMS OF USE - EASING EQUATIONS
+ * 
+ * Open source under the BSD License. 
+ * 
+ * Copyright Â© 2001 Robert Penner
+ * All rights reserved.
+ * 
+ * Redistribution and use in source and binary forms, with or without modification, 
+ * are permitted provided that the following conditions are met:
+ * 
+ * Redistributions of source code must retain the above copyright notice, this list of 
+ * conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright notice, this list 
+ * of conditions and the following disclaimer in the documentation and/or other materials 
+ * provided with the distribution.
+ * 
+ * Neither the name of the author nor the names of contributors may be used to endorse 
+ * or promote products derived from this software without specific prior written permission.
+ * 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
+ * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+ *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
+ * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
+ * OF THE POSSIBILITY OF SUCH DAMAGE. 
+ *
+ */
+
+(function ($) {
+    // Monkey patch jQuery 1.3.1+ css() method to support CSS 'transform'
+    // property uniformly across Webkit/Safari/Chrome and Firefox 3.5.
+    // 2009 Zachary Johnson www.zachstronaut.com
+    function getTransformProperty(element)
+    {
+        // Try transform first for forward compatibility
+        var properties = ['transform', 'WebkitTransform', 'MozTransform'];
+        var p;
+        while (p = properties.shift())
+        {
+            if (typeof element.style[p] != 'undefined')
+            {
+                return p;
+            }
+        }
+        
+        // Default to transform also
+        return 'transform';
+    }
+    
+    var proxied = $.fn.css;
+    $.fn.css = function (arg)
+    {
+        // Find the correct browser specific property and setup the mapping using
+        // $.props which is used internally by jQuery.attr() when setting CSS
+        // properties via either the css(name, value) or css(properties) method.
+        // The problem with doing this once outside of css() method is that you
+        // need a DOM node to find the right CSS property, and there is some risk
+        // that somebody would call the css() method before body has loaded or any
+        // DOM-is-ready events have fired.
+        if
+        (
+            typeof $.props['transform'] == 'undefined'
+            &&
+            (
+                arg == 'transform'
+                ||
+                (
+                    typeof arg == 'object'
+                    && typeof arg['transform'] != 'undefined'
+                )
+            )
+        )
+        {
+            $.props['transform'] = getTransformProperty(this.get(0));
+        }
+        
+        // We force the property mapping here because jQuery.attr() does
+        // property mapping with jQuery.props when setting a CSS property,
+        // but curCSS() does *not* do property mapping when *getting* a
+        // CSS property.  (It probably should since it manually does it
+        // for 'float' now anyway... but that'd require more testing.)
+        if (arg == 'transform')
+        {
+            arg = $.props['transform'];
+        }
+        
+        return proxied.apply(this, arguments);
+    };
+})(jQuery);
+
+
+(function ($) {
+    // Monkey patch jQuery 1.3.1+ to add support for setting or animating CSS
+    // scale and rotation independently.
+    // 2009 Zachary Johnson www.zachstronaut.com
+    var rotateUnits = 'deg';
+    
+    $.fn.rotate = function (val)
+    {
+        var style = $(this).css('transform') || 'none';
+        
+        if (typeof val == 'undefined')
+        {
+            if (style)
+            {
+                var m = style.match(/rotate\(([^)]+)\)/);
+                if (m && m[1])
+                {
+                    return m[1];
+                }
+            }
+            
+            return 0;
+        }
+        
+        var m = val.toString().match(/^(-?\d+(\.\d+)?)(.+)?$/);
+        if (m)
+        {
+            if (m[3])
+            {
+                rotateUnits = m[3];
+            }
+            
+            $(this).css(
+                'transform',
+                style.replace(/none|rotate\([^)]*\)/, '') + 'rotate(' + m[1] + rotateUnits + ')'
+            );
+        }
+    }
+    
+    // Note that scale is unitless.
+    $.fn.scale = function (val, duration, options)
+    {
+        var style = $(this).css('transform');
+        
+        if (typeof val == 'undefined')
+        {
+            if (style)
+            {
+                var m = style.match(/scale\(([^)]+)\)/);
+                if (m && m[1])
+                {
+                    return m[1];
+                }
+            }
+            
+            return 1;
+        }
+        
+        $(this).css(
+            'transform',
+            style.replace(/none|scale\([^)]*\)/, '') + 'scale(' + val + ')'
+        );
+    }
+
+    // fx.cur() must be monkey patched because otherwise it would always
+    // return 0 for current rotate and scale values
+    var curProxied = $.fx.prototype.cur;
+    $.fx.prototype.cur = function ()
+    {
+        if (this.prop == 'rotate')
+        {
+            return parseFloat($(this.elem).rotate());
+        }
+        else if (this.prop == 'scale')
+        {
+            return parseFloat($(this.elem).scale());
+        }
+        
+        return curProxied.apply(this, arguments);
+    }
+    
+    $.fx.step.rotate = function (fx)
+    {
+        $(fx.elem).rotate(fx.now + rotateUnits);
+    }
+    
+    $.fx.step.scale = function (fx)
+    {
+        $(fx.elem).scale(fx.now);
+    }
+    
+    /*
+    
+    Starting on line 3905 of jquery-1.3.2.js we have this code:
+    
+    // We need to compute starting value
+    if ( unit != "px" ) {
+        self.style[ name ] = (end || 1) + unit;
+        start = ((end || 1) / e.cur(true)) * start;
+        self.style[ name ] = start + unit;
+    }
+    
+    This creates a problem where we cannot give units to our custom animation
+    because if we do then this code will execute and because self.style[name]
+    does not exist where name is our custom animation's name then e.cur(true)
+    will likely return zero and create a divide by zero bug which will set
+    start to NaN.
+    
+    The following monkey patch for animate() gets around this by storing the
+    units used in the rotation definition and then stripping the units off.
+    
+    */
+    
+    var animateProxied = $.fn.animate;
+    $.fn.animate = function (prop)
+    {
+        if (typeof prop['rotate'] != 'undefined')
+        {
+            var m = prop['rotate'].toString().match(/^(([+-]=)?(-?\d+(\.\d+)?))(.+)?$/);
+            if (m && m[5])
+            {
+                rotateUnits = m[5];
+            }
+            
+            prop['rotate'] = m[1];
+        }
+        
+        return animateProxied.apply(this, arguments);
+    }
+})(jQuery);
+
+
+/*
+
+Quicksand 1.2.1
+
+Reorder and filter items with a nice shuffling animation.
+
+Copyright (c) 2010 Jacek Galanciak (razorjack.net) and agilope.com
+Big thanks for Piotr Petrus (riddle.pl) for deep code review and wonderful docs & demos.
+
+Dual licensed under the MIT and GPL version 2 licenses.
+http://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt
+http://github.com/jquery/jquery/blob/master/GPL-LICENSE.txt
+
+Project site: http://razorjack.net/quicksand
+Github site: http://github.com/razorjack/quicksand
+
+*/
+
+(function ($) {
+    $.fn.quicksand = function (collection, customOptions) {     
+        var options = {
+            duration: 750,
+            easing: 'swing',
+            attribute: 'data-id', // attribute to recognize same items within source and dest
+            adjustHeight: 'auto', // 'dynamic' animates height during shuffling (slow), 'auto' adjusts it before or after the animation, false leaves height constant
+            useScaling: true, // disable it if you're not using scaling effect or want to improve performance
+            enhancement: function(c) {}, // Visual enhacement (eg. font replacement) function for cloned elements
+            selector: '> *',
+            dx: 0,
+            dy: 0
+        };
+        $.extend(options, customOptions);
+        
+        if ($.browser.msie || (typeof($.fn.scale) == 'undefined')) {
+            // Got IE and want scaling effect? Kiss my ass.
+            options.useScaling = false;
+        }
+        
+        var callbackFunction;
+        if (typeof(arguments[1]) == 'function') {
+            var callbackFunction = arguments[1];
+        } else if (typeof(arguments[2] == 'function')) {
+            var callbackFunction = arguments[2];
+        }
+    
+        
+        return this.each(function (i) {
+            var val;
+            var animationQueue = []; // used to store all the animation params before starting the animation; solves initial animation slowdowns
+            var $collection = $(collection).clone(); // destination (target) collection
+            var $sourceParent = $(this); // source, the visible container of source collection
+            var sourceHeight = $(this).css('height'); // used to keep height and document flow during the animation
+            
+            var destHeight;
+            var adjustHeightOnCallback = false;
+            
+            var offset = $($sourceParent).offset(); // offset of visible container, used in animation calculations
+            var offsets = []; // coordinates of every source collection item            
+            
+            var $source = $(this).find(options.selector); // source collection items
+            
+            // Replace the collection and quit if IE6
+            if ($.browser.msie && $.browser.version.substr(0,1)<7) {
+                $sourceParent.html('').append($collection);
+                return;
+            }
+
+            // Gets called when any animation is finished
+            var postCallbackPerformed = 0; // prevents the function from being called more than one time
+            var postCallback = function () {
+                if (!postCallbackPerformed) {
+                    $sourceParent.html($dest.html()); // put target HTML into visible source container        
+                    if (typeof callbackFunction == 'function') {
+                        callbackFunction.call(this);
+                    }
+                    if (adjustHeightOnCallback) {
+                        $sourceParent.css('height', destHeight);
+                    }
+                    options.enhancement($sourceParent); // Perform custom visual enhancements on a newly replaced collection
+                    postCallbackPerformed = 1;
+                }
+            };
+            
+            // Position: relative situations
+            var $correctionParent = $sourceParent.offsetParent();
+            var correctionOffset = $correctionParent.offset();
+            if ($correctionParent.css('position') == 'relative') {
+                if ($correctionParent.get(0).nodeName.toLowerCase() == 'body') {
+
+                } else {
+                    correctionOffset.top += parseFloat($correctionParent.css('border-top-width'));
+                    correctionOffset.left += parseFloat($correctionParent.css('border-left-width'));
+                }
+            } else {
+                correctionOffset.top -= parseFloat($correctionParent.css('border-top-width'));
+                correctionOffset.left -= parseFloat($correctionParent.css('border-left-width'));
+                correctionOffset.top -= parseFloat($correctionParent.css('margin-top'));
+                correctionOffset.left -= parseFloat($correctionParent.css('margin-left'));
+            }
+            
+            // perform custom corrections from options (use when Quicksand fails to detect proper correction)
+            if (isNaN(correctionOffset.left)) {
+                correctionOffset.left = 0;
+            }
+            if (isNaN(correctionOffset.top)) {
+                correctionOffset.top = 0;
+            }
+            
+            correctionOffset.left -= options.dx;
+            correctionOffset.top -= options.dy;
+
+            // keeps nodes after source container, holding their position
+            $sourceParent.css('height', $(this).height());
+            
+            // get positions of source collections
+            $source.each(function (i) {
+                offsets[i] = $(this).offset();
+            });
+            
+            // stops previous animations on source container
+            $(this).stop();
+            var dx = 0; var dy = 0;
+            $source.each(function (i) {
+                $(this).stop(); // stop animation of collection items
+                var rawObj = $(this).get(0);
+                if (rawObj.style.position == 'absolute') {
+                    dx = -options.dx;
+                    dy = -options.dy;
+                } else {
+                    dx = options.dx;
+                    dy = options.dy;                    
+                }
+
+                rawObj.style.position = 'absolute';
+                rawObj.style.margin = '0';
+
+                rawObj.style.top = (offsets[i].top - parseFloat(rawObj.style.marginTop) - correctionOffset.top + dy) + 'px';
+                rawObj.style.left = (offsets[i].left - parseFloat(rawObj.style.marginLeft) - correctionOffset.left + dx) + 'px';
+            });
+                    
+            // create temporary container with destination collection
+            var $dest = $($sourceParent).clone();
+            var rawDest = $dest.get(0);
+            rawDest.innerHTML = '';
+            rawDest.setAttribute('id', '');
+            rawDest.style.height = 'auto';
+            rawDest.style.width = $sourceParent.width() + 'px';
+            $dest.append($collection);      
+            // insert node into HTML
+            // Note that the node is under visible source container in the exactly same position
+            // The browser render all the items without showing them (opacity: 0.0)
+            // No offset calculations are needed, the browser just extracts position from underlayered destination items
+            // and sets animation to destination positions.
+            $dest.insertBefore($sourceParent);
+            $dest.css('opacity', 0.0);
+            rawDest.style.zIndex = -1;
+            
+            rawDest.style.margin = '0';
+            rawDest.style.position = 'absolute';
+            rawDest.style.top = offset.top - correctionOffset.top + 'px';
+            rawDest.style.left = offset.left - correctionOffset.left + 'px';
+            
+            
+    
+            
+
+            if (options.adjustHeight === 'dynamic') {
+                // If destination container has different height than source container
+                // the height can be animated, adjusting it to destination height
+                $sourceParent.animate({height: $dest.height()}, options.duration, options.easing);
+            } else if (options.adjustHeight === 'auto') {
+                destHeight = $dest.height();
+                if (parseFloat(sourceHeight) < parseFloat(destHeight)) {
+                    // Adjust the height now so that the items don't move out of the container
+                    $sourceParent.css('height', destHeight);
+                } else {
+                    //  Adjust later, on callback
+                    adjustHeightOnCallback = true;
+                }
+            }
+                
+            // Now it's time to do shuffling animation
+            // First of all, we need to identify same elements within source and destination collections    
+            $source.each(function (i) {
+                var destElement = [];
+                if (typeof(options.attribute) == 'function') {
+                    
+                    val = options.attribute($(this));
+                    $collection.each(function() {
+                        if (options.attribute(this) == val) {
+                            destElement = $(this);
+                            return false;
+                        }
+                    });
+                } else {
+                    destElement = $collection.filter('[' + options.attribute + '=' + $(this).attr(options.attribute) + ']');
+                }
+                if (destElement.length) {
+                    // The item is both in source and destination collections
+                    // It it's under different position, let's move it
+                    if (!options.useScaling) {
+                        animationQueue.push(
+                                            {
+                                                element: $(this), 
+                                                animation: 
+                                                    {top: destElement.offset().top - correctionOffset.top, 
+                                                     left: destElement.offset().left - correctionOffset.left, 
+                                                     opacity: 1.0
+                                                    }
+                                            });
+
+                    } else {
+                        animationQueue.push({
+                                            element: $(this), 
+                                            animation: {top: destElement.offset().top - correctionOffset.top, 
+                                                        left: destElement.offset().left - correctionOffset.left, 
+                                                        opacity: 1.0, 
+                                                        scale: '1.0'
+                                                       }
+                                            });
+
+                    }
+                } else {
+                    // The item from source collection is not present in destination collections
+                    // Let's remove it
+                    if (!options.useScaling) {
+                        animationQueue.push({element: $(this), 
+                                             animation: {opacity: '0.0'}});
+                    } else {
+                        animationQueue.push({element: $(this), animation: {opacity: '0.0', 
+                                         scale: '0.0'}});
+                    }
+                }
+            });
+            
+            $collection.each(function (i) {
+                // Grab all items from target collection not present in visible source collection
+                
+                var sourceElement = [];
+                var destElement = [];
+                if (typeof(options.attribute) == 'function') {
+                    val = options.attribute($(this));
+                    $source.each(function() {
+                        if (options.attribute(this) == val) {
+                            sourceElement = $(this);
+                            return false;
+                        }
+                    });                 
+
+                    $collection.each(function() {
+                        if (options.attribute(this) == val) {
+                            destElement = $(this);
+                            return false;
+                        }
+                    });
+                } else {
+                    sourceElement = $source.filter('[' + options.attribute + '=' + $(this).attr(options.attribute) + ']');
+                    destElement = $collection.filter('[' + options.attribute + '=' + $(this).attr(options.attribute) + ']');
+                }
+                
+                var animationOptions;
+                if (sourceElement.length === 0) {
+                    // No such element in source collection...
+                    if (!options.useScaling) {
+                        animationOptions = {
+                            opacity: '1.0'
+                        };
+                    } else {
+                        animationOptions = {
+                            opacity: '1.0',
+                            scale: '1.0'
+                        };
+                    }
+                    // Let's create it
+                    d = destElement.clone();
+                    var rawDestElement = d.get(0);
+                    rawDestElement.style.position = 'absolute';
+                    rawDestElement.style.margin = '0';
+                    rawDestElement.style.top = destElement.offset().top - correctionOffset.top + 'px';
+                    rawDestElement.style.left = destElement.offset().left - correctionOffset.left + 'px';
+                    d.css('opacity', 0.0); // IE
+                    if (options.useScaling) {
+                        d.css('transform', 'scale(0.0)');
+                    }
+                    d.appendTo($sourceParent);
+                    
+                    animationQueue.push({element: $(d), 
+                                         animation: animationOptions});
+                }
+            });
+            
+            $dest.remove();
+            options.enhancement($sourceParent); // Perform custom visual enhancements during the animation
+            for (i = 0; i < animationQueue.length; i++) {
+                animationQueue[i].element.animate(animationQueue[i].animation, options.duration, options.easing, postCallback);
+            }
+        });
+    };
+})(jQuery);
