@@ -1901,3 +1901,219 @@ Github site: http://github.com/razorjack/quicksand
         });
     };
 })(jQuery);
+
+$.fn.autolink = function () {
+    return $(this).each(function() {
+        var el = $(this);
+        var re = /((http|https|ftp):\/\/[\w?=&.\/-;#~%-]+(?![\w\s?&.\/;#~%"=-]*>))/g;
+        el.html(el.html().replace(re, '<a href="$1">$1</a>'));
+    });
+};
+
+$.fn.autohash = function () {
+    return $(this).each(function() {
+        var el = $(this);
+        var re = /#(\w+)/g;
+        el.html(el.html().replace(re, '<a href="http://twitter.com/search?q=%23$1">#$1</a>'));
+    });
+};
+
+// All credit goes to Rick Olson.
+(function($) {
+  $.fn.relatizeDate = function() {
+    return $(this).each(function() {
+      $(this).text( $.relatizeDate(this) );
+    });
+  };
+
+  $.relatizeDate = function(element) {
+        var date = new Date( $(element).text() );
+
+        if (isNaN(date.getTime()))
+            date = new Date( $(element).attr("title") );
+
+        if (isNaN(date.getTime()))
+            date = new Date(parseInt( $(element).attr("title") ));
+
+        if (isNaN(date.getTime()))
+            return $(element).text();
+        else 
+            return $.relatizeDate.timeAgoInWords(date);  
+    };
+
+  // shortcut
+  $r = $.relatizeDate;
+
+  $.extend($.relatizeDate, {
+    shortDays: [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' ],
+    days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    shortMonths: [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ],
+    months: [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ],
+
+    /**
+     * Given a formatted string, replace the necessary items and return.
+     * Example: Time.now().strftime("%B %d, %Y") => February 11, 2008
+     * @param {String} format The formatted string used to format the results
+     */
+    strftime: function(date, format) {
+      var day = date.getDay(), month = date.getMonth();
+      var hours = date.getHours(), minutes = date.getMinutes();
+
+      var pad = function(num) { 
+        var string = num.toString(10);
+        return new Array((2 - string.length) + 1).join('0') + string;
+      };
+
+      return format.replace(/\%([aAbBcdHImMpSwyY])/g, function(part) {
+        switch(part[1]) {
+          case 'a': return $r.shortDays[day]; break;
+          case 'A': return $r.days[day]; break;
+          case 'b': return $r.shortMonths[month]; break;
+          case 'B': return $r.months[month]; break;
+          case 'c': return date.toString(); break;
+          case 'd': return pad(date.getDate()); break;
+          case 'H': return pad(hours); break;
+          case 'I': return pad((hours + 12) % 12); break;
+          case 'm': return pad(month + 1); break;
+          case 'M': return pad(minutes); break;
+          case 'p': return hours > 12 ? 'PM' : 'AM'; break;
+          case 'S': return pad(date.getSeconds()); break;
+          case 'w': return day; break;
+          case 'y': return pad(date.getFullYear() % 100); break;
+          case 'Y': return date.getFullYear().toString(); break;
+        }
+      });
+    },
+
+    timeAgoInWords: function(targetDate, includeTime) {
+      return $r.distanceOfTimeInWords(targetDate, new Date(), includeTime);
+    },
+
+    /**
+     * Return the distance of time in words between two Date's
+     * Example: '5 days ago', 'about an hour ago'
+     * @param {Date} fromTime The start date to use in the calculation
+     * @param {Date} toTime The end date to use in the calculation
+     * @param {Boolean} Include the time in the output
+     */
+    distanceOfTimeInWords: function(fromTime, toTime, includeTime) {
+      var delta = parseInt((toTime.getTime() - fromTime.getTime()) / 1000, 10);
+      if (delta < 60) {
+          return 'less than a minute ago';
+      } else if (delta < 120) {
+          return 'about a minute ago';
+      } else if (delta < (45*60)) {
+          return (parseInt(delta / 60, 10)).toString() + ' minutes ago';
+      } else if (delta < (120*60)) {
+          return 'about an hour ago';
+      } else if (delta < (24*60*60)) {
+          return 'about ' + (parseInt(delta / 3600, 10)).toString() + ' hours ago';
+      } else if (delta < (48*60*60)) {
+          return '1 day ago';
+      } else {
+        var days = (parseInt(delta / 86400, 10)).toString();
+        if (days > 5) {
+          var fmt  = '%B %d, %Y';
+          if (includeTime) fmt += ' %I:%M %p';
+          return $r.strftime(fromTime, fmt);
+        } else {
+          return days + " days ago";
+        }
+      }
+    }
+  });
+})(jQuery);
+
+function prepareTweetLoader(msg) {
+    return [
+        '<li class="hentry status" id="tweet-loader">',
+        '<span class="thumb vcard author"><img width="31" height="31" src="/shared/img/twitter-loader.gif"></span>',
+        '<span class="status-body"><span class="tweet-msg">'+msg+'</span><a class="more-praise" target="_blank" href="http://twitter.com/binaryage/favorites">show all recent</a></span>',
+        '</li>'
+    ].join('');
+}
+
+$.fn.tweet = function(options) {
+
+    var generator = function(root, params) {
+        var itemTemplate = '\
+            <li id="status_--id--" class="hentry status">\
+                <span class="thumb vcard author">\
+                    <a class="tweet-url profile-pic url" href="http://twitter.com/--userscreenname--">\
+                        <img width="48" height="48" src="--avatar--" class="photo fn" alt="--username--">\
+                    </a>\
+                </span>\
+                <span class="status-body">\
+                    <strong><a title="--username--" class="tweet-url screen-name" href="http://twitter.com/--userscreenname--">--userscreenname--</a></strong> \
+                    <span class="entry-content">--text--</span><span class="meta entry-meta">\
+                        <a rel="bookmark" class="entry-date" href="http://twitter.com/--userscreenname--/status/--id--"><span class="published timestamp">--createdat--</span></a> \
+                        <span>from --source--</span>\
+                    </span>\
+                    <a class="more-praise" target="_blank" href="http://twitter.com/binaryage/favorites">show all recent</a>\
+                </span>\
+            </li>';
+
+        $.getJSON('http://twitter.com/favorites.json?page='+params.page+'&id='+encodeURIComponent(params.user)+'&callback=?', function(data) {
+            if (!$('.lovebox').is('visible')) {
+                setTimeout(function() {
+                    $('.lovebox').show();
+                }, 16000);
+            }
+            if (!data.length) {
+                $('#tweet-loader .tweet-msg').html('No more tweets!<br/><a href="http://twitter.com">What do you think about apps from BinaryAge?</a>');
+                $('.tweet-loader .thumb').hide();
+            } else {
+                root.children().slice(0, -1).remove();
+                for (var i=0; i<data.length; i++) {
+                    var item = data[i];
+
+                    var li = itemTemplate;
+                    li = li.replace(/--id--/g, item.id);
+                    li = li.replace(/--text--/g, item.text);
+                    li = li.replace(/--avatar--/g, item.user.profile_image_url);
+                    li = li.replace(/--username--/g, item.user.name);
+                    li = li.replace(/--userscreenname--/g, item.user.screen_name);
+                    li = li.replace(/--source--/g, item.source);
+                    li = li.replace(/--createdat--/g, item.created_at);
+                    root.append($(li));
+                }
+                root.find('.published').relatizeDate();
+                root.find('.entry-content').autolink().autohash();
+                $('#tweets').append(prepareTweetLoader('Loading even more tweets ...'));
+
+                jQuery.fx.off = true;
+                params.scrollable.reload().begin();
+                jQuery.fx.off = false;
+            }
+        });
+    }
+
+
+    return this.each(function() {
+        var root = $(this);
+
+        var defaults = {
+            user: 'binaryage',
+            count: 5
+        };
+        var params = $.extend(defaults, options);
+
+        params.scrollable = $("#tweets-scrollable").scrollable({ 
+            onSeek: function(instance, index) {
+                if (index == this.getItems().length-1) {
+                    params.page++;
+                    generator(root, params);
+                }
+            },
+            api:true,
+            vertical:true,
+            hoverClass: 'hover',
+            keyboard: false,
+            size: 1
+        });
+        params.autoscroll = $("#tweets-scrollable").autoscroll({ autoplay: true, interval: 5000, api:true });
+        params.page = 1;
+        root.data('sparams', params);
+        generator(root, params);
+    });
+};
