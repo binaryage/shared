@@ -266,6 +266,22 @@ html {
     font: 10pt "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,sans-serif;
 }
 
+html.support {
+    height: 100%;
+}
+
+html.support #main {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 90px;
+}
+
+html.support #header {
+    -webkit-box-shadow: none; /* webkit has a bug */
+}
+
 h1 {
     font-size: 20px;
 }
@@ -276,6 +292,13 @@ h2 {
 
 h3 {
     font-size: 14px;
+}
+
+#header-wrapper {
+    width: 100%;
+    overflow: hidden; /* prevent moz-box-shadow to generate horizontal scrollbar */
+    padding-bottom: 14px;
+    margin-bottom: -14px;
 }
 
 #header {
