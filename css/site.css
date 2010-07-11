@@ -351,6 +351,7 @@ h3 {
 }
 
 .twitter-praise-wrapper {
+    display: none;
     position: absolute;
     top: -1px;
     left: 340px;
@@ -374,11 +375,12 @@ h3 {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FEFFFE', endColorstr='#DDDDDD'); /* for IE */
     background: -webkit-gradient(linear, left top, left bottom, from(#FEFFFE), to(#DDD)); /* for webkit browsers */
     background: -moz-linear-gradient(top,  #FEFFFE,  #DDD); /* for firefox 3.6+ */    
-    font-weight: bold;
     color: #666;
     cursor: pointer;
-    font-family: verdana;
-    text-transform: uppercase;
+    position: relative;
+    top: -3px;
+    padding-top: 6px;
+    padding-bottom: 4px;
 }
 
 .praise-button:hover {
@@ -394,6 +396,7 @@ h3 {
 }
  
 .twitter-icon-wrapper {
+    display: none;
     position: absolute;
     top: 40px;
     left: 340px;
@@ -408,11 +411,6 @@ h3 {
 .twitter-icon-wrapper:hover {
     -webkit-box-shadow: #1C75DB 0px 0px 2px;
     -moz-box-shadow: 0 0px 2px #1C75DB;
-}
-
-.background-highlight {
-    min-height:200px;
-    position: relative;
 }
 
 .header-bar {
@@ -438,17 +436,14 @@ h3 {
 }
 
 .header-menu {
-    font: 22px "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,sans-serif;
-    margin: 34px 0 0 0;
-    font-size: 18px;
+    font: 16px "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,sans-serif;
+    text-transform: uppercase;
+
+    margin: 0;
+    margin-top: 44px;
+    font-size: 14px;
     font-weight: bold;
     list-style-type: none;
-    line-height: 20px;
-
-    border: 1px solid #000;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    background-color: #000;
 
     float:right;
     display: block;
@@ -459,19 +454,13 @@ h3 {
 .header-menu li, .header-menu li a {
     float:left;
     display: block;
-    line-height:1;
 }
 
 .header-menu li { 
-    margin-left:1px;
-    background-color: #DFDFDF;
+    margin-left: 10px;
 }
 .header-menu li:first-child {
     margin-left: 0px;
-}
-
-.header-menu li.enabled:hover {
-    background-color: #ccc;
 }
 
 .header-menu a {
@@ -479,17 +468,140 @@ h3 {
     -webkit-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+
     text-decoration: none;
-    padding-bottom: 9px;
-    padding-top: 6px;
     padding-left: 16px;
     padding-right: 16px;
     text-decoration: none;
     display: block;
-    text-decoration:none;
     cursor: pointer;
     color:#333;
-    text-shadow:0 1px 0 rgba(255, 255, 255, 0.1);
+    text-shadow:0 1px 0 rgba(255, 255, 255, 0.5);
+    line-height: 30px;
+}
+
+.header-menu li.enabled a:hover {
+    text-decoration: none;
+    background-color: #ccc;
+    color: #000;
+}
+
+.store .menu-item-store a,
+.products .menu-item-products a,
+.blog .menu-item-blog a,
+.support .menu-item-support a {
+    background-color: #244F80 !important;
+    color:#fff !important;
+    text-shadow:0 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.menu-item-store a {
+    color: #aaa;
+    cursor: default;
+}
+
+.menu-item-store a:hover {
+    color: #aaa;
+}
+
+.item-store-badge {
+    position: absolute;
+    -moz-border-radius:2px 2px 2px 2px;
+    color:#aaa;
+    font-size: 10px;
+    line-height: 14px;
+    padding:1px 4px;
+    position:absolute;
+    right:314px;
+    top: 62px;
+    text-transform: lowercase;
+    text-shadow:0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.top-menu {
+    font: 16px "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,sans-serif;
+
+    margin: 0;
+    font-size: 10px;
+    list-style-type: none;
+
+    float:right;
+    display: block;
+    line-height:1;
+    padding: 0px;
+
+    
+    position: absolute;
+    top: 2px;
+    right: 10px;
+}
+
+.top-menu li, .top-menu li a {
+    float:left;
+    display: block;
+}
+
+.top-menu li { 
+    margin-left: 10px;
+}
+
+.top-menu a {
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    font-weight: normal;
+
+    padding-left: 6px;
+    padding-right: 6px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    color:#666;
+    text-shadow:0 1px 0 rgba(255, 255, 255, 0.5);
+    line-height: 20px;
+}
+
+.top-menu li.enabled a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+.menu-item-twitter a {
+    padding-left: 28px;
+    background: transparent url('/shared/img/twitter-icon.png') no-repeat;
+    color: #069CEB;
+}
+
+.menu-item-about a {
+    padding-left: 24px;
+    background: transparent url('/shared/img/about-icon.png') no-repeat;
+}
+
+.menu-item-twitter-praise span {
+    padding-left: 20px;
+    background: transparent url('/shared/img/reactions-icon.png') no-repeat top left;
+    padding-top: 2px;
+    line-height: 12px;
+}
+
+
+
+.menu-item-separator {
+    font-size: 14px;
+    color: #999;
+    position: relative;
+    top: 1px;
+}
+
+.about .menu-item-about a {
+    color: #000;
 }
 
 .facebook-like-button-wrapper {
@@ -509,55 +621,6 @@ h3 {
     left: 140px;
 }
 
-.header-menu li.enabled a:hover {
-    text-decoration: none;
-    color: #000;
-}
-
-.store .menu-item-store,
-.products .menu-item-products,
-.blog .menu-item-blog,
-.about .menu-item-about {
-    background-color: #282C30;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#43585F', endColorstr='#282C30'); /* for IE */
-    background: -webkit-gradient(linear, left top, left bottom, from(#43585F), to(#282C30)); /* for webkit browsers */
-    background: -moz-linear-gradient(top,  #43585F,  #282C30); /* for firefox 3.6+ */    
-}
-
-.store .menu-item-store a,
-.products .menu-item-products a,
-.blog .menu-item-blog a,
-.about .menu-item-about a {
-    -moz-box-shadow: inset 0 0px 6px #000;
-    -webkit-box-shadow: inset #000 0px 0px 6px;
-    color:#fff !important;
-    text-shadow:0 1px 0 rgba(0, 0, 0, 0.25);
-}
-
-.menu-item-store a {
-    color: #999;
-    cursor: default;
-}
-
-.menu-item-store a:hover {
-    color: #999;
-}
-
-.item-store-badge {
-    position: absolute;
-    -moz-border-radius:2px 2px 2px 2px;
-    background-color:#CC4444;
-    color:#FFFFFF;
-    font-size: 10px;
-    line-height: 14px;
-    font-weight:bold;
-    padding:1px 4px;
-    position:absolute;
-    right:290px;
-    top: 26px;
-    -webkit-transform:rotate(-5deg);
-}
-
 #gallery {
     height: 410px;
     padding-top: 30px;
@@ -571,6 +634,10 @@ h3 {
 
 #main-offer {
     padding-bottom: 20px;
+}
+
+#main-offer .container {
+    position: relative;
 }
 
 #main-offer ul, #main-offer ol {
@@ -604,20 +671,12 @@ h3 {
 }
 
 .intro-text {
-    padding: 0px 10px;
+    padding-top: 20px;
     text-align: center;
     font-family: 'Reenie Beanie', arial, serif;
-    font-size: 30px;
+    font-size: 32px;
     line-height: 40px;
-    height: 100px;
     width: 100%;
-}
-
-.intro-2 {
-    font-size: 40px;
-    line-height: 40px;
-    font-weight: bold;
-    margin-top: 20px;
 }
 
 .wf-active .intro-text {
@@ -650,7 +709,7 @@ h3 {
     font-family: 'Reenie Beanie', arial, serif;
     font-size: 40px;
     line-height: 40px;
-    margin-top: 40px;
+    margin-top: 70px;
     color: #555;
 }
 
@@ -679,12 +738,13 @@ h3 {
     color: #666;
     margin: 20px;
     padding: 10px;
-    border: 2px solid #ccc;
-    -moz-border-radius: 16px;
-    -webkit-border-radius: 16px;
-    -webkit-box-shadow: inset #ddd 0px 0px 10px;
-    -moz-box-shadow: inset 0 0px 10px #ddd;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -webkit-box-shadow: inset #aaa 0px 0px 2px;
+    -moz-box-shadow: inset 0 0px 2px #aaa;
     cursor: pointer;
+    position: relative;
+    left: 10px;
 }
 
 .qsproduct img {
@@ -697,8 +757,6 @@ h3 {
 .qsproduct:hover {
     text-decoration: none;
     color: #666;
-    -webkit-box-shadow: inset #1C75DB 0px 0px 10px;
-    -moz-box-shadow: inset 0 0px 10px #1C75DB;
 }
 
 .qsproduct:hover img {
@@ -723,8 +781,8 @@ h3 {
     margin-top: 10px;
 }
 
-.qsproduct-title:hover {
-    color: #000;
+.qsproduct:hover .qsproduct-title {
+    color: #1C75DB;
 }
 
 .qsproduct-desc {
@@ -764,9 +822,10 @@ font: 9pt "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,sans-serif
 
 -webkit-box-shadow: #ccc 0px 0px 10px;
 -moz-box-shadow: 0 0px 10px #ccc;
-position: relative;
+position: absolute;
 top: -80px;
 z-index: 1;
+width: 100%;
 
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DDDDDD', endColorstr='#CCCCCC'); /* for IE */
 background: -webkit-gradient(linear, left top, left bottom, from(#ddd), to(#ccc)); /* for webkit browsers */
@@ -886,35 +945,29 @@ margin-left:0;
 }
 
 .splitter ul li.selected-0 {
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#43585F', endColorstr='#282C30'); /* for IE */
-    background: -webkit-gradient(linear, left top, left bottom, from(#43585F), to(#282C30)); /* for webkit browsers */
-    background: -moz-linear-gradient(top,  #43585F,  #282C30); /* for firefox 3.6+ */    
+    background-color: #244F80;
 }
 
 .splitter ul li.selected-2 {
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#43585F', endColorstr='#282C30'); /* for IE */
-    background: -webkit-gradient(linear, left top, left bottom, from(#43585F), to(#282C30)); /* for webkit browsers */
-    background: -moz-linear-gradient(top,  #43585F,  #282C30); /* for firefox 3.6+ */    
+    background-color: #244F80;
 }
 
 .splitter ul li.selected-1 {
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#43585F', endColorstr='#282C30'); /* for IE */
-    background: -webkit-gradient(linear, left top, left bottom, from(#43585F), to(#282C30)); /* for webkit browsers */
-    background: -moz-linear-gradient(top,  #43585F,  #282C30); /* for firefox 3.6+ */    
+    background-color: #244F80;
 }
 
 .splitter ul li.selected-0 a {
-    -moz-box-shadow: inset 0 0px 6px #000;
-    -webkit-box-shadow: inset #000 0px 0px 6px;
+    -moz-box-shadow: inset 0 0px 6px #0E2743;
+    -webkit-box-shadow: inset #0E2743 0px 0px 6px;
 }
 
 .splitter ul li.selected-1 a {
-    -moz-box-shadow: inset 0 0px 6px #000;
-    -webkit-box-shadow: inset #000 0px 0px 6px;
+    -moz-box-shadow: inset 0 0px 6px #0E2743;
+    -webkit-box-shadow: inset #0E2743 0px 0px 6px;
 }
 .splitter ul li.selected-2 a {
-    -moz-box-shadow: inset 0 0px 6px #000;
-    -webkit-box-shadow: inset #000 0px 0px 6px;
+    -moz-box-shadow: inset 0 0px 6px #0E2743;
+    -webkit-box-shadow: inset #0E2743 0px 0px 6px;
 }
 
 #main-about .container {
@@ -2345,8 +2398,8 @@ pre code {
     border-top: none;
     font-size: 12px;
     line-height: 18px;
-    font-family: 'Reenie Beanie', arial, serif;
-    font-size: 20px;
+    font-size: 10px;
+    color: #666;
 }
 
 .blog-side-about-left {
@@ -2356,7 +2409,7 @@ pre code {
 
 .blog-side-about-right {
     float:left;
-    width: 120px;
+    width: 130px;
 }
 
 .wf-active .blog-side-about {
@@ -2400,6 +2453,16 @@ pre code {
     margin-bottom: 16px;
     position: relative;
     left: -4px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+    margin-right: 10px;
+    -webkit-border-radius: 2px 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+.blog-side-product:hover {
+    background-color: #ddd;
 }
 
 .blog-side-product img {
@@ -2424,7 +2487,7 @@ pre code {
 .blog-side-product {
     clear: both;
     border: 1px solid transparent;
-    -webkit-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
 }
 
 .posts {
@@ -2484,7 +2547,7 @@ pre code {
 .blog-image-full {
     display: block;
     padding: 5px 4px;
-    width: 638px;
+    width: 618px;
 }
 
 .blog-image-border {
@@ -2499,7 +2562,7 @@ pre code {
     background-color: #fff;
     padding: 5px 4px;
     border: 1px solid #999;
-    width: 636px;
+    width: 616px;
 }
 
 .post-content {
@@ -2570,12 +2633,8 @@ pre code {
     color: #fff !important;
 }
 
-.retweet, .facebook, .digg, .usethis, .buzz {
+.retweet, .facebook, .digg, .usethis, .buzz, .flattr {
     margin: 10px 5px;
-}
-
-.buzz {
-    margin: 0;
 }
 
 .usethis {
@@ -2731,7 +2790,7 @@ ol.statuses .thumb img{
 ol.statuses span.status-body {
     display: block;
     margin-left: 64px;
-    min-height: 50px;
+    min-height: 54px;
     overflow: hidden;
     margin-right: 8px;
 }

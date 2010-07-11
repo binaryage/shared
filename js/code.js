@@ -268,12 +268,12 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 				
 				// or append it to the overlay 
 				if (!img.length) { 
-					img = $("<img/>").attr("id", conf.imgId).css("visibility", "hidden");
+					img = $("<img/>").attr("id", conf.imgId); // .css("visibility", "hidden");
 					overlay.prepend(img);
 				}
 				
 				// make initially invisible to get it's dimensions
-				img.attr("src", url).css("visibility", "hidden"); 			
+				img.attr("src", url); // .css("visibility", "hidden"); 			
 					
 				// animate overlay to fit the image dimensions
 				var width = image.width;
@@ -302,17 +302,21 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 				//var padd = parseInt(info.css("paddingLeft"), 10) +  parseInt(info.css("paddingRight"), 10);
 				info.html(text); //.css({width: width - padd});				
 				
-				overlay.animate({
-					width: width, height: image.height, left: left}, conf.speed, function() {
-						
-					// gradually show the image
-					img.hide().css("visibility", "visible").fadeIn(function() {						
-						if (!conf.autohide) { 
-							els.fadeIn(); close.show(); 
-						}														
-					});								
-
-				}); 
+				overlay.css({
+				    width: width, height: image.height, left: left
+				});
+				els.show(); close.show();
+                // overlay.animate({
+                //  width: width, height: image.height, left: left}, 0 /*conf.speed*/, function() {
+                //      els.fadeIn(); close.show(); 
+                //  // gradually show the image
+                //                     // img.hide().css("visibility", "visible").fadeIn(0, function() {                       
+                //                      // if (!conf.autohide) { 
+                //                      //     els.fadeIn(); close.show(); 
+                //                      // }                                                       
+                //                     // });                              
+                // 
+                // }); 
 			};
 			
 			image.onerror = function() {
@@ -646,12 +650,18 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 })(jQuery,this);
 
 /**
- * writeCapture.js v0.3.4-SNAPSHOT
+ * writeCapture.js v1.0.5
  *
  * @author noah <noah.sloan@gmail.com>
  * 
  */
-(function($,global,doEvil) {
+(function($,global) {
+	var doc = global.document;
+	function doEvil(code) {
+		var div = doc.createElement('div');
+		doc.body.insertBefore(div,null);
+		$.replaceWith(div,'<script type="text/javascript">'+code+'</script>');
+	}
 	// ensure we have our support functions
 	$ = $ || (function(jQuery) {
 		/**
@@ -685,8 +695,8 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 			 * and executed if present.
 			 */
 			replaceWith: function(selector,content) {
-			    // jQuery 1.4? has a bug in replaceWith so we can't use it directly
-			    var el = jQuery(selector)[0];
+				// jQuery 1.4? has a bug in replaceWith so we can't use it directly
+				var el = jQuery(selector)[0];
 				var next = el.nextSibling, parent = el.parentNode;
 
 				jQuery(el).remove();
@@ -696,14 +706,35 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 				} else {
 					jQuery(parent).append( content );
 				}
+			},
+
+			onLoad: function(fn) {
+				jQuery(fn);
+			},
+			
+			copyAttrs: function(src,dest) {
+				var el = jQuery(dest), attrs = src.attributes;
+				for (var i = 0, len = attrs.length; i < len; i++) {
+					if(attrs[i] && attrs[i].value) {
+						try {
+							el.attr(attrs[i].name,attrs[i].value);
+						} catch(e) { }
+					}
+				}
 			}
 		};
 	})(global.jQuery);
-	
+
+	$.copyAttrs = $.copyAttrs || function() {};
+	$.onLoad = $.onLoad || function() {
+		throw "error: autoAsync cannot be used without jQuery " +
+			"or defining writeCaptureSupport.onLoad";
+	};
+
 	// utilities
 	function each(array,fn) {
 		for(var i =0, len = array.length; i < len; i++) { 
-			fn(array[i]); 
+			if( fn(array[i]) === false) return; 
 		}
 	}	
 	function isFunction(o) {
@@ -723,61 +754,85 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 		}
 		return result;
 	}
-	function defer(ctx,name) {
-		setTimeout(function() { ctx[name](); },1);
-	}
 	
-	/**
-	 * Provides a task queue for ensuring that scripts are run in order.
-	 * 
-	 * 
-	 */
-	function Q(parent) {
+	function SubQ(parent) {
 		this._queue = [];
 		this._children = [];
 		this._parent = parent;
-		if(parent) parent._register(this);
+		if(parent) parent._addChild(this);
 	}
 	
-	Q.prototype = {
-		_paused: false,
+	SubQ.prototype = {
+		_addChild: function(q) {
+			this._children.push(q);
+		},
 		push: function (task) {
 			this._queue.push(task);
-			this._next();
+			this._bubble('_doRun');
 		},
 		pause: function() {
-			this._paused = true;
+			this._bubble('_doPause');
 		},
 		resume: function() {
-			this._paused = false;
-			this._next(true);
+			this._bubble('_doResume');
 		},
-		_register: function(child) {
-			this._children.push(child);
-		},
-		_isPaused: function() {
-			return this._paused || any(this._children,isPaused);
-			function isPaused(c) {
-				return c._isPaused();
+		_bubble: function(name) {
+			var root = this;
+			while(!root[name]) {
+				root = root._parent;
 			}
+			return root[name]();
 		},
-		_next: function(resuming) {
-			var next;
-			if(!this._isPaused()) {
-				if ((next = this._queue.shift())) {
-					next();
-					this._next();
-				} else if(this._parent) {
-					// !paused and queue is empty, so let parent queue resume running
-					if(resuming) {
-						// TODO why is the defer necessary? is it safe(deterministic)? i.e., could we ever have two timeouts at the same time? [testing says no, needs a proof]
-						defer(this._parent,'_next');
-					} else {
-						this._parent._next();
-					}
-				}
+		_next: function() {
+			if(any(this._children,runNext)) return true;
+			function runNext(c) {
+				return c._next();
+			}
+			var task = this._queue.shift();
+			if(task) {
+				task();
+			}
+			return !!task;
+		}
+	};
+	
+	/**
+	 * Provides a task queue for ensuring that scripts are run in order.
+	 *
+	 * The only public methods are push, pause and resume.
+	 */
+	function Q(parent) {
+		if(parent) {
+			return new SubQ(parent);
+		}
+		SubQ.call(this);
+		this.paused = 0;
+	}
+	
+	Q.prototype = (function() {
+		function f() {}
+		f.prototype = SubQ.prototype;
+		return new f();
+	})();
+	
+	Q.prototype._doRun = function() {
+		if(!this.running) {
+			this.running = true;
+			try {
+				// just in case there is a bug, always resume 
+				// if paused is less than 1
+				while(this.paused < 1 && this._next());
+			} finally {
+				this.running = false;
 			}
 		}
+	};
+	Q.prototype._doPause= function() {
+		this.paused++;
+	};
+	Q.prototype._doResume = function() {
+		this.paused--;
+		this._doRun();
 	};
 	
 	// TODO unit tests...
@@ -823,34 +878,72 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 		}
 	};
 	
-	function capture() {
-		var state = {
-			write: global.document.write,
-			writeln: global.document.writeln,
-			getEl: global.document.getElementById,
-			tempEls: [],
-			finish: function() {
-				each(this.tempEls,function(it) {
-					var real = global.document.getElementById(it.id);
-					if(!real) throw "No element with id: " + it.id;
-					each(it.el.childNodes,function(it) {
-						real.appendChild(it);
-					});
-					if(real.contentWindow) {
-						// TODO why is the setTimeout necessary?
-						global.setTimeout(function() {
-							it.el.contentWindow.document.
-								copyTo(real.contentWindow.document);
-						},1);
-					}
-				});
-			},
-			out: ''
-		};
-		global.document.write = replacementWrite;
-		global.document.writeln = replacementWriteln;
-		if(self.proxyGetElementById) {
-			global.document.getElementById = getEl;			
+	// test for IE 6/7 issue (issue 6) that prevents us from using call
+	var canCall = (function() {
+		var f = { f: doc.getElementById };
+		try {
+			f.f.call(doc,'abc');
+			return true;
+		} catch(e) {
+			return false;
+		}
+	})();
+	
+	function unProxy(elements) {
+		each(elements,function(it) {
+			var real = doc.getElementById(it.id);
+			if(!real) {
+				logError('<proxyGetElementById - finish>',
+					'no element in writen markup with id ' + it.id);
+				return;
+			}
+
+			each(it.el.childNodes,function(it) {
+				real.appendChild(it);
+			});
+
+			if(real.contentWindow) {
+				// TODO why is the setTimeout necessary?
+				global.setTimeout(function() {
+					it.el.contentWindow.document.
+						copyTo(real.contentWindow.document);
+				},1);
+			}
+			$.copyAttrs(it.el,real);
+		});
+	}
+	
+	function getOption(name,options) {
+		if(options && options[name] === false) {
+			return false;
+		}
+		return options && options[name] || self[name];
+	}
+	
+	function capture(context,options) {
+		var tempEls = [],
+			proxy = getOption('proxyGetElementById',options),
+			writeOnGet = getOption('writeOnGetElementById',options),	
+			state = {
+				write: doc.write,
+				writeln: doc.writeln,
+				finish: function() {},
+				out: ''
+			};
+		context.state = state;
+		doc.write = replacementWrite;
+		doc.writeln = replacementWriteln;
+		if(proxy || writeOnGet) {
+			state.getEl = doc.getElementById;
+			doc.getElementById = getEl;
+			if(writeOnGet) {
+				findEl = writeThenGet;
+			} else {
+				findEl = makeTemp;
+				state.finish = function() {
+					unProxy(tempEls);
+				};
+			}
 		}
 		function replacementWrite(s) {
 			state.out +=  s;
@@ -859,23 +952,33 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 			state.out +=  s + '\n';
 		}
 		function makeTemp(id) {
-			var t = global.document.createElement('div');
-			state.tempEls.push({id:id,el:t});
+			var t = doc.createElement('div');
+			tempEls.push({id:id,el:t});
 			// mock contentWindow in case it's supposed to be an iframe
 			t.contentWindow = { document: new MockDocument() };
 			return t;
 		}
+		function writeThenGet(id) {
+			var target = $.$(context.target);
+			var div = doc.createElement('div');
+			target.parentNode.insertBefore(div,target);
+			$.replaceWith(div,state.out);
+			state.out = '';
+			return canCall ? state.getEl.call(doc,id) : 
+				state.getEl(id);
+		}
 		function getEl(id) {
-			var result = state.getEl.call(global.document,id);
-			return result || makeTemp(id);
+			var result = canCall ? state.getEl.call(doc,id) : 
+				state.getEl(id);
+			return result || findEl(id);
 		}
 		return state;
 	}
 	function uncapture(state) {
-		global.document.write = state.write;
-		global.document.writeln = state.writeln;
-		if(self.proxyGetElementById) {
-			global.document.getElementById = state.getEl;
+		doc.write = state.write;
+		doc.writeln = state.writeln;
+		if(state.getEl) {
+			doc.getElementById = state.getEl;
 		}
 		return state.out;
 	}
@@ -894,8 +997,8 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 	var logError = isFunction(global.console && console.error) ? 
 			doLog : ignore;
 	
-	function captureWrite(code) {
-		var state = capture();
+	function captureWrite(code,context,options) {
+		var state = capture(context,options);
 		try {
 			doEvil(clean(code));
 		} catch(e) {
@@ -913,7 +1016,7 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 	}
 	
 	function attrPattern(name) {
-		return new RegExp(name+'=(?:(["\'])(.*?)\\1|([^\\s>]+))','i');
+		return new RegExp(name+'=(?:(["\'])([\\s\\S]*?)\\1|([^\\s>]+))','i');
 	}
 	
 	function matchAttr(name) {
@@ -933,6 +1036,7 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 		DIV_PREFIX = "__document_write_ajax_div-",
 		TEMPLATE = "window['"+GLOBAL+"']['%d']();",
 		callbacks = global[GLOBAL] = {},
+		TEMPLATE_TAG = '<script type="text/javascript">' + TEMPLATE + '</script>',
 		global_id = 0;
 	function nextId() {
 		return (++global_id).toString();
@@ -962,6 +1066,30 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 	// very least, A will get nothing and B will get the wrong content.
 	var GLOBAL_Q = new Q();
 	
+	var debug = [];
+	var logDebug = window._debugWriteCapture ? function() {} :
+		function (type,src,data) {
+		    debug.push({type:type,src:src,data:data});
+		};
+
+	var logString = window._debugWriteCapture ? function() {} :
+		function () {
+			debug.push(arguments);
+		};
+
+	function newCallback(fn) {
+		var id = nextId();
+		callbacks[id] = function() {
+			fn();
+			delete callbacks[id];
+		};
+		return id;
+	}
+	
+	function newCallbackTag(fn) {			
+		return TEMPLATE_TAG.replace(/%d/,newCallback(fn));
+	}	
+
 	/**
 	 * Sanitize the given HTML so that the scripts will execute with a modified
 	 * document.write that will capture the output and append it in the 
@@ -976,24 +1104,25 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 	 * responsiveness, but will delay completion of the scripts and may
 	 * cause problems with some scripts, so it defaults to false.
 	 */
-	function sanitize(html,options,parentQ) {
+	function sanitize(html,options,parentQ,parentContext) {
 		// each HTML fragment has it's own queue
 		var queue = parentQ && new Q(parentQ) || GLOBAL_Q;
 		options = normalizeOptions(options);
-		var done = options.done;
+		var done = getOption('done',options);
 		var doneHtml = '';
+		
+		var fixUrls = getOption('fixUrls',options);
+		if(!isFunction(fixUrls)) {
+			fixUrls = function(src) { return src; };
+		}
 		
 		// if a done callback is passed, append a script to call it
 		if(isFunction(done)) {
-			var doneId = nextId();
-			callbacks[doneId] = function() {
-				queue.push(done);
-				delete callbacks[doneId];
-			};
 			// no need to proxy the call to done, so we can append this to the 
 			// filtered HTML
-			doneHtml = '<script type="text/javascript">' + 
-				TEMPLATE.replace(/%d/,doneId) + '</script>';
+			doneHtml = newCallbackTag(function() {
+				queue.push(done);
+			});
 		}
 		// for each tag, generate a function to load and eval the code and queue
 		// themselves
@@ -1006,26 +1135,24 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 					type.toLowerCase().indexOf('javascript') !== -1 || 
 					lang.toLowerCase().indexOf('javascript') !== -1;
 			
-			var id = nextId(), divId = DIV_PREFIX + id;
-			var run;
+			logDebug('replace',src,element);
 			
 			if(!isJs) {
 			    return element;
 			}
 			
-			// fix for the inline script that writes a script tag with encoded 
-			// ampersands hack (more comon than you'd think)
-			if(src && isFunction(self.fixUrls)) {
-			    src = self.fixUrls(src);
-			}
+			var id = newCallback(queueScript), divId = DIV_PREFIX + id,
+				run, context = { target: '#' + divId, parent: parentContext };
 			
-			callbacks[id] = queueScript;
 			function queueScript() {
 				queue.push(run);
-				delete callbacks[id]; 
 			}
 			
 			if(src) {
+				// fix for the inline script that writes a script tag with encoded 
+				// ampersands hack (more comon than you'd think)
+				src = fixUrls(src);
+								
 				openTag = openTag.replace(SRC_REGEX,'');
 				if(isXDomain(src)) {
 					// will load async via script tag injection (eval()'d on
@@ -1033,10 +1160,10 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 					run = loadXDomain;
 				} else {
 					// can be loaded then eval()d
-					if(options.asyncAll) {
+					if(getOption('asyncAll',options)) {
 						run = loadAsync();
 					} else {
-						run = loadSync; 
+						run = loadSync;
 					}
 				}
 			} else {
@@ -1051,13 +1178,21 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 				$.ajax({
 					url: src,
 					type: 'GET',
+					dataType: 'text',
 					async: false,
-					success: captureHtml	
+					success: function(html) {
+						captureHtml(html);
+					}	
 				});
 			}
 			function logAjaxError(xhr,status,error) {
 				logError("<XHR for "+src+">",error);
 				queue.resume();
+			}
+			function setupResume() {
+				return newCallbackTag(function() {
+					queue.resume();
+				});
 			}
 			function loadAsync() {
 				var ready, scriptText;
@@ -1068,17 +1203,16 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 						return;
 					}
 					try {
-						captureHtml(script);
+						captureHtml(script, setupResume());
 					} catch(e) {
 						logError(script,e);
-					} finally {
-						queue.resume();
 					}
 				}
 				// start loading the text
 				$.ajax({
 					url: src,
 					type: 'GET',
+					dataType: 'text',
 					async: true,
 					success: captureAndResume,
 					error: logAjaxError
@@ -1086,6 +1220,7 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 				return function() {
 					ready = true;
 					if(scriptText) {
+						// already loaded, so don't pause the queue and don't resume!
 						captureHtml(scriptText);
 					} else {
 						queue.pause();	
@@ -1093,8 +1228,9 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 				};
 			}
 			function loadXDomain(cb) {
-				var state = capture();
+				var state = capture(context,options);
 				queue.pause(); // pause the queue while the script loads
+				logDebug('pause',src);
 				$.ajax({
 					url: src,
 					type: 'GET',
@@ -1103,21 +1239,22 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 					error: logAjaxError
 				});
 				function captureAndResume(xhr,st,error) {
-					html(uncapture(state));
-					state.finish();
-					queue.resume();
+					logDebug('out', src, state.out);
+					html(uncapture(state), 
+						newCallbackTag(state.finish) + setupResume());
+					logDebug('resume',src);
 				}
 			}
-			function captureHtml(script) {
-				var state = captureWrite(script);
-				html(state.out);
-				state.finish();
+			function captureHtml(script, cb) {
+				var state = captureWrite(script,context,options);
+				cb = newCallbackTag(state.finish) + (cb || '');
+				html(state.out,cb);
 			}
-			function html(markup) {
-				$.replaceWith('#'+divId,sanitize(markup,null,queue));
-			}
-			return openTag + TEMPLATE.replace(/%d/,id) + 
-				'</script><div style="display: none" id="'+divId+'"></div>';
+			function html(markup,cb) {
+			 	$.replaceWith(context.target,sanitize(markup,null,queue,context) + (cb || ''));
+			} 
+			return '<div style="display: none" id="'+divId+'"></div>' + openTag +
+				TEMPLATE.replace(/%d/,id) + '</script>';
 		}
 	}
 	
@@ -1151,6 +1288,68 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 		}
 	}
 	
+	function findLastChild(el) {
+		var n = el;
+		while(n && n.nodeType === 1) {
+			el = n;
+			n = n.lastChild;
+			// last child may not be an element
+			while(n && n.nodeType !== 1) {
+				n = n.previousSibling;
+			}
+		}
+		return el;
+	}
+		
+	/**
+	  * Experimental - automatically captures document.write calls and 
+	  * defers them untill after page load.
+	  * @param {Function} [done] optional callback for when all the 
+	  * captured content has been loaded.
+	  */
+	function autoCapture(done) {
+		var write = doc.write, 
+			writeln = doc.writeln,
+			currentScript,
+			autoQ = [];
+		doc.writeln = function(s) {
+			doc.write(s+'\n');
+		};
+		var state;
+		doc.write = function(s) {
+			var scriptEl = findLastChild(doc.body);
+			if(scriptEl !== currentScript) {
+				currentScript = scriptEl;
+				autoQ.push(state = {
+					el: scriptEl,
+					out: []
+				});					
+			}
+			state.out.push(s);
+		};
+		$.onLoad(function() {			
+			// for each script, append a div immediately after it, 
+			// then replace the div with the sanitized output
+			var el, div, out, safe, doneFn;
+			done = normalizeOptions(done);
+			doneFn = done.done;
+			done.done = function() {
+				doc.write = write;
+				doc.writeln = writeln;
+				if(doneFn) doneFn();				
+			};
+			for(var i = 0, len = autoQ.length; i < len; i++ ) {
+				el = autoQ[i].el;
+				div = doc.createElement('div');
+				el.parentNode.insertBefore( div, el.nextSibling );
+				out = autoQ[i].out.join('');
+				// only the last snippet gets passed the callback
+				safe = len - i === 1 ? sanitize(out,done) : sanitize(out);
+				$.replaceWith(div,safe);
+			}
+		});
+	}
+	
 	var name = 'writeCapture';
 	var self = global[name] = {
 		_original: global[name],
@@ -1163,6 +1362,7 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 			global[name] = this._original;
 			return this;
 		},
+		debug: debug,
 		/**
 		 * Enables a fun little hack that replaces document.getElementById and
 		 * creates temporary elements for the calling code to use.
@@ -1171,6 +1371,7 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 		// this is only for testing, please don't use these
 		_forTest: {
 			Q: Q,
+			GLOBAL_Q: GLOBAL_Q,
 			$: $,
 			matchAttr: matchAttr,
 			slice: slice,
@@ -1189,17 +1390,19 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
 		load: function(selector,url,options) {
 			$.ajax({
 				url: url,
+				dataType: 'text',
 				type: "GET",
 				success: function(content) {
 					self.html(selector,content,options);
 				}
 			});
 		},
+		autoAsync: autoCapture,
 		sanitize: sanitize,
 		sanitizeSerial: sanitizeSerial
 	};
 	
-})(this.writeCaptureSupport,this,eval);
+})(this.writeCaptureSupport,this);
 
 /*
  * jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
@@ -2056,7 +2259,7 @@ $.fn.tweet = function(options) {
         $.getJSON('http://twitter.com/favorites.json?page='+params.page+'&id='+encodeURIComponent(params.user)+'&callback=?', function(data) {
             if (!$('.lovebox').is('visible')) {
                 setTimeout(function() {
-                    $('.lovebox').show();
+                    $('.lovebox').fadeIn();
                 }, 16000);
             }
             if (!data.length) {
