@@ -281,6 +281,10 @@ html.support #main {
 html.support #header {
     -webkit-box-shadow: none; /* webkit has a bug */
 }
+html.support .header-bar {
+    position: relative;
+    left: -8px;
+}
 
 h1 {
     font-size: 20px;
