@@ -281,9 +281,22 @@ html.support #main {
 html.support #header {
     -webkit-box-shadow: none; /* webkit has a bug */
 }
+
 html.support .header-bar {
     position: relative;
     left: -8px;
+}
+
+html.store .menu-item-separator-1 {
+    display: none;
+}
+
+html.store .menu-item-twitter-praise {
+    display: none;
+}
+
+body {
+    background: none !important;
 }
 
 h1 {
@@ -523,6 +536,10 @@ h3 {
     top: 62px;
     text-transform: lowercase;
     text-shadow:0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+html.store .item-store-badge {
+    display: none;
 }
 
 .top-menu {
@@ -3113,3 +3130,4 @@ ol.statuses .hentry a.fav {
 .force-right {
     float: right;
 }
+
