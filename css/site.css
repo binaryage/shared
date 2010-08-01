@@ -1038,17 +1038,19 @@ margin-left:0;
 }
 
 .about-email {
-    font-weight: 500;
+    margin-top: -6px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .about-linkedin {
+    display: none;
     margin-top: 26px;
     margin-bottom: 20px;
 }
 
 .about-github {
-    margin-top: 20px;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 .about-github img {
@@ -1061,7 +1063,7 @@ margin-left:0;
 }
 
 .about-blog {
-    font-weight: 500;
+    font-weight: bold;
     margin-bottom: 26px;
     margin-top: 4px;
 }
@@ -1075,6 +1077,32 @@ margin-left:0;
 
 .about-side {
     text-align: right;
+    position: relative;
+}
+
+.get-in-touch {
+    font-family: 'Reenie Beanie', arial, serif;
+    margin-top: 50px;
+    font-size: 22px;
+    line-height: 30px;
+    color: #555;
+    position: relative;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.wf-active .get-in-touch  {
+    visibility: visible !important;
+}
+
+.get-in-touch-arrow {
+    position: absolute;
+    width: 32px;
+    height: 21px; 
+    left: 576px;
+    top: 46px;
+    background: transparent url('/shared/img/arrows.png') no-repeat -104px 0px;
+    opacity: 0.8;
 }
 
 .facebook-like-wrapper {
@@ -1098,20 +1126,25 @@ margin-left:0;
 
 .about-side-photo {
     position: relative;
-    height: 250px;
+    height: 490px;
 }
 
 .about-side-photo img {
     display: block;
     position: absolute;
     right: 0;
-    border: 1px solid #ddd;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
+}
+
+.about-free-box {
+    display: none;
+    text-align: left;
+    position: absolute;
+    top: 496px;
+    left: -40px;
+    width: 120px;
 }
 
 .about-main {
-    background: transparent url('/shared/img/about-vseparator.png') no-repeat top right;
     margin-top: 20px;
 }
 
@@ -2407,6 +2440,7 @@ pre code {
 }
 
 .subscribe img {
+    display: none;
     position: relative;
     top: -1px;
 }
