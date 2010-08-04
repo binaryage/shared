@@ -1082,11 +1082,12 @@ margin-left:0;
 
 .get-in-touch {
     font-family: 'Reenie Beanie', arial, serif;
-    margin-top: 50px;
+    font-weight: bold;
+    margin-top: 30px;
     font-size: 22px;
     line-height: 30px;
-    color: #555;
-    position: relative;
+    color: #666;
+    position: absolute;
     margin-left: 10px;
     margin-bottom: 20px;
 }
@@ -1099,8 +1100,8 @@ margin-left:0;
     position: absolute;
     width: 32px;
     height: 21px; 
-    left: 576px;
-    top: 46px;
+    left: 586px;
+    top: 44px;
     background: transparent url('/shared/img/arrows.png') no-repeat -104px 0px;
     opacity: 0.8;
 }
