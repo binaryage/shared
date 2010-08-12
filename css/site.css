@@ -389,9 +389,6 @@ h3 {
     -webkit-border-bottom-right-radius: 4px 4px;
     -moz-border-radius-bottomleft: 4px;
     -moz-border-radius-bottomright: 4px;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FEFFFE', endColorstr='#DDDDDD'); /* for IE */
-    background: -webkit-gradient(linear, left top, left bottom, from(#FEFFFE), to(#DDD)); /* for webkit browsers */
-    background: -moz-linear-gradient(top,  #FEFFFE,  #DDD); /* for firefox 3.6+ */    
     color: #666;
     cursor: pointer;
     position: relative;
@@ -579,6 +576,7 @@ html.store .item-store-badge {
     -webkit-border-radius: 4px;
     font-weight: normal;
 
+    outline: none;
     padding-left: 6px;
     padding-right: 6px;
     text-decoration: none;
@@ -592,6 +590,12 @@ html.store .item-store-badge {
 .top-menu li.enabled a:hover {
     text-decoration: none;
     color: #000;
+}
+
+.menu-item-subscribe a {
+    padding-left: 22px;
+    background: transparent url('/shared/img/subscribe-icon.png') no-repeat;
+    color: #069CEB;
 }
 
 .menu-item-twitter a {
@@ -3166,3 +3170,146 @@ ol.statuses .hentry a.fav {
     float: right;
 }
 
+/* the overlayed element */
+.subscribe-overlay {
+    
+    display:none;
+  
+    background-image:url(../img/overlay/white.png);
+    
+    width:640px;        
+    padding:35px;
+
+    font-size:11px;
+}
+
+.subscribe-overlay .close {
+    background-image:url(../img/overlay/close.png);
+    position:absolute; right:5px; top:5px;
+    cursor:pointer;
+    height:35px;
+    width:35px;
+}
+
+.subscribe-product-box {
+    float: left;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+}
+
+.subscribe-product, .subscribe-product2 {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+}
+
+.subscribe-product-overlay {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    background-image: url('../img/overlay-no.png');
+}
+
+.subscribe-product-overlay.oo-enabled {
+    background-image: url('../img/overlay-ok.png');
+}
+
+.indicate-required {
+    display: none;
+}
+
+.text-placeholder {color: #AAA !important; }
+
+#mc-embedded-subscribe-form {
+}
+
+#mce-EMAIL {
+    margin: 0px;
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid #aaa;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;  
+}
+
+.mce_inline_error {
+    margin-top: 10px;
+    color: #a00;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.subscribe-products-box {
+    margin-bottom: 20px;
+}
+
+#mc-embedded-subscribe {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    float: right;
+}
+
+#mce-success-response {
+    margin-top: 10px;
+    color: #668;
+    font-size: 18px;
+    font-weight: bold;
+    width: 580px;
+}
+
+#mce-error-response {
+    margin-top: 10px;
+    color: #a00;
+    font-size: 18px;
+    font-weight: bold;
+    width: 580px;
+}
+
+.which-product {
+    float: left;
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.note-required {
+    display: none;
+}
+
+.subscribe-overlay fieldset {
+    margin-top: 40px;
+    border: none;
+    font-size: 18px;
+}
+
+.subscribe-overlay fieldset legend {
+    border-bottom: 2px solid #000;
+    margin-bottom: 30px;
+}
+
+.subscribe-overlay  {
+    position: relative;
+}
+
+.chimp {
+    width: 436px;
+    height: 96px;
+    position: absolute;
+    background-image: url('../img/chimp.png');
+    top: 448px;
+    left: 30px;
+}
+
+.chimp-quote {
+    font-weight: bold;
+    position: absolute;
+    left: 160px;
+    top: 20px;
+}
