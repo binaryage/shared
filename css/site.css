@@ -287,11 +287,23 @@ html.support .header-bar {
     left: -8px;
 }
 
-html.store .menu-item-separator-1 {
+#page-store-template .menu-item-separator-1 {
     display: none;
 }
 
-html.store .menu-item-twitter-praise {
+#page-store-template .menu-item-twitter-praise {
+    display: none;
+}
+
+#page-store-template .menu-item-separator-2 {
+    display: none;
+}
+
+#page-store-template .menu-item-subscribe {
+    display: none;
+}
+
+#page-store-template .menu-item-twitter {
     display: none;
 }
 
@@ -332,11 +344,6 @@ h3 {
     position: relative;
     top: -1px;
     z-index: 2;
-
-    -moz-transition: all 0.2s ease;
-    -webkit-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    transition: all 0.2s ease;
 }
 
 #header .container {
@@ -526,7 +533,7 @@ h3 {
     text-shadow:0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
-html.store .item-store-badge {
+#page-store-template .item-store-badge {
     display: none;
 }
 
