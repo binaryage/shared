@@ -2745,6 +2745,10 @@ pre code {
     margin: 10px 5px;
 }
 
+.macupdate {
+    margin-top: 14px;
+}
+
 .usethis {
     position: relative;
     left: -12px;
