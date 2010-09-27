@@ -3719,6 +3719,7 @@ ol.statuses .hentry a.fav {
 }
 
 .reasons-to-buy {
+    line-height: 12px;
     width: 300px;
     text-align: right;
 }
