@@ -1694,6 +1694,16 @@ a:hover {
     left: 470px;
 }
 
+.tf-product-actions-box {
+    position: absolute;
+    top: 290px;
+    right: 0px;
+}
+
+.tf-product-actions-box > * {
+    float: left;
+}
+
 .product-thumbs-box {
     border-top: 1px solid #DDE2E7;
     height: 90px;
@@ -3546,6 +3556,10 @@ ol.statuses .hentry a.fav {
     position: relative;
     left: 20px;
     margin-top: -120px !important;
+}
+
+.tf-main-content {
+    margin-top: 50px;
 }
 
 .tf-main-content h2 {
