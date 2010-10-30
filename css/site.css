@@ -1747,6 +1747,8 @@ a:hover {
 }
 
 .button-300 {
+    position: relative;
+    overflow: hidden;
     width: 300px;
     text-decoration: none;
     color: #888;
@@ -1775,6 +1777,10 @@ a:hover {
 
 .product-button-forum > div {
     background: transparent url('/shared/img/forum-icon.png') no-repeat 10px 4px;
+}
+
+.product-button-thumbup > div {
+    background: transparent url('/shared/img/thumbup-icon.png') no-repeat 10px 4px;
 }
 
 .product-specs {
@@ -3698,12 +3704,7 @@ ol.statuses .hentry a.fav {
 
 .product-button-download {
     color: #000;
-    position: relative;
     width: 300px;
-}
-
-.product-button-download {
-    overflow: hidden;
 }
 
 .trial-note {
