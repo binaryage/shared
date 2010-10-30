@@ -3697,7 +3697,7 @@ ol.statuses .hentry a.fav {
     width:35px;
 }
 
-.tf-main-content hr {
+.tf-main-content hr, .wikistyle hr {
     margin-top: 30px;
     margin-bottom: 30px;
 }
