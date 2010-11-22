@@ -1,17 +1,166 @@
-/*
- 
- jQuery Tools 1.2.5 / Overlay Apple effect. 
+/**
+ * @license 
+ * jQuery Tools @VERSION / Overlay Apple effect. 
+ * 
+ * NO COPYRIGHTS OR LICENSES. DO WHAT YOU LIKE.
+ * 
+ * http://flowplayer.org/tools/overlay/apple.html
+ *
+ * Since: July 2009
+ * Date: @DATE 
+ */
+(function($) { 
 
- NO COPYRIGHTS OR LICENSES. DO WHAT YOU LIKE.
+	// version number
+	var t = $.tools.overlay,
+		 w = $(window); 
+		
+	// extend global configuragion with effect specific defaults
+	$.extend(t.conf, { 
+		start: { 
+			top: null,
+			left: null
+		},
+		
+		fadeInSpeed: 'fast',
+		zIndex: 9999
+	});			
+	
+	// utility function
+	function getPosition(el) {
+		var p = el.offset();
+		return {
+			top: p.top + el.height() / 2, 
+			left: p.left + el.width() / 2
+		}; 
+	}
+	
+//{{{ load 
 
- http://flowplayer.org/tools/overlay/apple.html
+	var loadEffect = function(pos, onLoad) {
+		
+		var overlay = this.getOverlay(),
+			 conf = this.getConf(),
+			 trigger = this.getTrigger(),
+			 self = this,
+			 oWidth = overlay.outerWidth({margin:true}),
+			 img = overlay.data("img"),
+			 position = conf.fixed ? 'fixed' : 'absolute';  
+		
+		
+		// growing image is required.
+		if (!img) { 
+			var bg = overlay.css("backgroundImage");
+			
+			if (!bg) { 
+				throw "background-image CSS property not set for overlay"; 
+			}
+			
+			// url("bg.jpg") --> bg.jpg
+			bg = bg.slice(bg.indexOf("(") + 1, bg.indexOf(")")).replace(/\"/g, "");
+			overlay.css("backgroundImage", "none");
+			
+			img = $('<img src="' + bg + '"/>');
+			img.css({border:0, display:'none'}).width(oWidth);			
+			$('body').append(img); 
+			overlay.data("img", img);
+		}
+		
+		// initial top & left
+		var itop = conf.start.top || Math.round(w.height() / 2), 
+			 ileft = conf.start.left || Math.round(w.width() / 2);
+		
+		if (trigger) {
+			var p = getPosition(trigger);
+			itop = p.top;
+			ileft = p.left;
+		} 
+		
+		// put overlay into final position
+		if (conf.fixed) {
+			itop -= w.scrollTop();
+			ileft -= w.scrollLeft();
+		} else {
+			pos.top += w.scrollTop();
+			pos.left += w.scrollLeft();				
+		}
+			
+		// initialize background image and make it visible
+		img.css({
+			position: 'absolute',
+			top: itop, 
+			left: ileft,
+			width: 0,
+			zIndex: conf.zIndex
+		}).show();
+		
+		pos.position = position;
+		overlay.css(pos);
+		overlay.css({
+		    opacity: 0
+		});
+		overlay.show();
+		
+		// begin growing
+		img.animate({			
+			top: overlay.css("top"), 
+			left: overlay.css("left"), 
+			width: oWidth}, conf.speed, function() {
 
- Since: July 2009
- Date:    Wed Sep 22 06:02:10 2010 +0000 
-*/
-(function(h){function k(d){var e=d.offset();return{top:e.top+d.height()/2,left:e.left+d.width()/2}}var l=h.tools.overlay,f=h(window);h.extend(l.conf,{start:{top:null,left:null},fadeInSpeed:"fast",zIndex:9999});function o(d,e){var a=this.getOverlay(),c=this.getConf(),g=this.getTrigger(),p=this,m=a.outerWidth({margin:true}),b=a.data("img"),n=c.fixed?"fixed":"absolute";if(!b){b=a.css("backgroundImage");if(!b)throw"background-image CSS property not set for overlay";b=b.slice(b.indexOf("(")+1,b.indexOf(")")).replace(/\"/g,
-"");a.css("backgroundImage","none");b=h('<img src="'+b+'"/>');b.css({border:0,display:"none"}).width(m);h("body").append(b);a.data("img",b)}var i=c.start.top||Math.round(f.height()/2),j=c.start.left||Math.round(f.width()/2);if(g){g=k(g);i=g.top;j=g.left}if(c.fixed){i-=f.scrollTop();j-=f.scrollLeft()}else{d.top+=f.scrollTop();d.left+=f.scrollLeft()}b.css({position:"absolute",top:i,left:j,width:0,zIndex:c.zIndex}).show();d.position=n;a.css(d);b.animate({top:a.css("top"),left:a.css("left"),width:m},
-c.speed,function(){a.css("zIndex",c.zIndex+1).fadeIn(c.fadeInSpeed,function(){p.isOpened()&&!h(this).index(a)?e.call():a.hide()})}).css("position",n)}function q(d){var e=this.getOverlay().hide(),a=this.getConf(),c=this.getTrigger();e=e.data("img");var g={top:a.start.top,left:a.start.left,width:0};c&&h.extend(g,k(c));a.fixed&&e.css({position:"absolute"}).animate({top:"+="+f.scrollTop(),left:"+="+f.scrollLeft()},0);e.animate(g,a.closeSpeed,d)}l.addEffect("apple",o,q)})(jQuery);
+    		overlay.css({
+    		    opacity: 1
+    		});
+			
+			// set close button and content over the image
+			overlay.css("zIndex", conf.zIndex + 1).fadeIn(conf.fadeInSpeed, function()  { 
+					
+				if (self.isOpened() && !$(this).index(overlay)) {	
+					onLoad.call(); 
+				} else {
+					overlay.hide();	
+				} 
+			});
+			
+		}).css("position", position);
+		
+	};
+//}}}
+	
+	
+	var closeEffect = function(onClose) {
+
+		// variables
+		var overlay = this.getOverlay().hide(), 
+			 conf = this.getConf(),
+			 trigger = this.getTrigger(),
+			 img = overlay.data("img"),
+			 
+			 css = { 
+			 	top: conf.start.top, 
+			 	left: conf.start.left, 
+			 	width: 0 
+			 };
+		
+		// trigger position
+		if (trigger) { $.extend(css, getPosition(trigger)); }
+		
+		
+		// change from fixed to absolute position
+		if (conf.fixed) {
+			img.css({position: 'absolute'})
+				.animate({ top: "+=" + w.scrollTop(), left: "+=" + w.scrollLeft()}, 0);
+		}
+		 
+		// shrink image		
+		img.animate(css, conf.closeSpeed, onClose);	
+	};
+	
+	
+	// add overlay effect	
+	t.addEffect("apple", loadEffect, closeEffect); 
+	
+})(jQuery);	
+		
 
 /**
  * Overlay Gallery plugin, version: 1.0.0
