@@ -1694,13 +1694,23 @@ a:hover {
     left: 470px;
 }
 
+.product-actions-box-inner {
+    zoom: 0.75;
+    -moz-transform: scale(0.70);
+}
+
 .tf-product-actions-box {
     position: absolute;
-    top: 290px;
+    top: 310px;
     right: 0px;
 }
 
-.tf-product-actions-box > * {
+.tf-product-actions-box-inner {
+    zoom: 0.75;
+    -moz-transform: scale(0.70);
+}
+
+.tf-product-actions-box-inner > * {
     float: left;
 }
 
