@@ -3804,6 +3804,7 @@ ol.statuses .hentry a.fav {
 }
 
 .exp-title {
+	margin-top: 10px;
     font-size: 24px;
     line-height: 24px;
     font-weight: bold;
@@ -3816,8 +3817,8 @@ ol.statuses .hentry a.fav {
     margin-bottom: 10px;
 }
 
-.buy-15-box .exp-subtitle {
-    line-height: 32px;
+.exp-subtitle {
+    line-height: 22px;
 }
 
 .exp-image {
