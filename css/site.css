@@ -2766,6 +2766,7 @@ pre code {
 }
 
 .retweet, .facebook, .digg, .usethis, .buzz, .flattr {
+    cursor: pointer;
     margin: 10px 5px;
 }
 
