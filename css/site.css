@@ -2835,6 +2835,8 @@ pre code {
 .changelogx .note b { background-color: #AEAEAE; }
 .changelogx .info { display: table; padding-left: 6px; }
 
+.changelog #notice { display: none; }
+
 
 .tweet .loading img {
     position: relative;
