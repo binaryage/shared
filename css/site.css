@@ -3914,3 +3914,9 @@ ol.statuses .hentry a.fav {
     -moz-border-radius:4px;
     -webkit-border-radius:4px;
 }
+
+.blog-update {
+    color: #600;
+    font-weight: bold;
+    margin: 20px 0px;
+}
