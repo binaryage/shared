@@ -1703,6 +1703,11 @@ a:hover {
     -webkit-transform-origin: 0 0;
 }
 
+.safari .product-actions-box-inner {
+    zoom: 1.5; /* fight safari iframe zoom bug? */
+    margin-right: -16px;
+}
+
 .tf-product-actions-box {
     position: absolute;
     top: 310px;
@@ -1716,6 +1721,11 @@ a:hover {
     -o-transform-origin: 0 0;
     -webkit-transform: scale(0.75);
     -webkit-transform-origin: 0 0;
+}
+
+.safari .tf-product-actions-box-inner iframe {
+    zoom: 1.5; /* fight safari iframe zoom bug? */
+    margin-right: -16px;
 }
 
 .tf-product-actions-box-inner > * {
