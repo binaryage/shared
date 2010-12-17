@@ -2831,9 +2831,25 @@ pre code {
 .changelogx ul.changes{margin:0;padding-left:85px;list-style-type:none;padding-right:10px;padding-top:6px;}
 .changelogx ul.changes li{margin-bottom:5px;}
 
-.changelogx .titlebox { margin-top: 50px; line-height: 20px;border-bottom: 1px solid #D4D7DF;}
-.changelogx h4{
-    float:left;font-size: 20px;padding:0px 8px;line-height:30px;font-weight: bold; padding-right:6px; width: 100px; margin-right: 14px; background-color: #eee; white-space:nowrap; text-align:center; position: relative; top: -8px;}
+.changelogx .titlebox { line-height:30px;margin-top: 50px; line-height: 20px;border-bottom: 0px solid #ddd; background-color: #ddd;
+}
+
+.changelogx h4 {
+}
+
+.changelogx h4 a {
+    background:url('/images/downico.png') no-repeat 6px 8px;
+    font-size: 20px;padding:0px 8px;line-height:34px;font-weight: bold; padding-right:6px; width: 120px; margin-right: 14px; white-space:nowrap; text-align:center; position: relative; top: -12px;
+    display: block;
+    background-color: #ddd;
+    float:left;
+    text-align: left;
+    padding-left: 32px;
+ -moz-border-radius-topright:3px;
+ -moz-border-radius-topleft:3px;
+ -webkit-border-top-right-radius:3px;
+ -webkit-border-top-left-radius:3px;  
+    }
 .changelogx h5{margin:0;padding:0;padding:3px;margin-left:6px;font-size:11px;color:#666;line-height:16px;font-weight:normal;}
 
 .changelogx .sticker { float: left; width: 70px; display: block; text-align: right; background:none;}
@@ -2846,7 +2862,15 @@ pre code {
 .changelogx .info { display: table; padding-left: 6px; }
 
 .changelog #notice { display: none; }
-
+.changelogx .blog-post-pointer {
+    background-color: #FCFFEA;
+    margin-bottom: 14px !important;
+    margin-top: -6px;
+    padding: 3px 16px;
+    margin-left: 70px;
+    display: inline-block;
+    -moz-border-radius: 3px; -webkit-border-radius: 3px;
+}
 
 .tweet .loading img {
     position: relative;
