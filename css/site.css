@@ -3751,12 +3751,13 @@ ol.statuses .hentry a.fav {
 
 .teaser-overlay {
     display:none;
-    background-image:url(../img/overlay/white.png);
-    width:640px;
+    background-image:url(../img/overlay/white-teaser.png);
+    width:690px;
+    height: 434px;
 }
 
 .teaser-overlay .overlay-content {
-    margin: 25px;
+    margin: 25px; /* shadows */
     position: absolute;
 }
 
