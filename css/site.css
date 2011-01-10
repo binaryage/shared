@@ -1713,11 +1713,15 @@ a:hover {
     position: absolute;
     left: 640px;
     bottom: -32px;
-    white-space: nowrap;
+    white-space:nowrap;
 }
 
 .gecko .tf-product-actions-box {
     width: 420px; /* firefox 4 bug related to zoom/scale transform */
+}
+
+.safari .tf-product-actions-box {
+    bottom: -64px; /* safari bug? */
 }
 
 .tf-product-actions-box-inner {
