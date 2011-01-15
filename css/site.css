@@ -434,20 +434,58 @@ h3 {
     -moz-box-shadow: 0 0px 2px #1C75DB;
 }
 
+.intro-tip {
+    position: absolute;
+    left: 61px;
+    top: 28px;
+    background: transparent url('/shared/img/intro-tip.png') no-repeat top left;
+    width: 10px;
+    height: 21px;
+}
+
+.intro-1 {
+    height: 30px;
+    left: 70px;
+    margin-top: 1px;
+    padding: 2px 16px;
+    background-color: #f5f5f5;
+    -webkit-border-radius: 2px 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border: 1px solid #ddd;
+}
+
+.intro-about {
+    float: left;
+    margin-left: 14px;
+    width: 50px;
+}
+
+.intro-about img {
+    display: block;
+    margin-right: 10px;
+    padding: 2px;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 2px 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+
 .header-bar {
     position: relative;
 }
 
 .header-logo {
     background: transparent url('/shared/img/main-logo.png') no-repeat top left;
-    width: 270px;
-    height: 55px;
+    width: 196px;
+    height: 40px;
     margin-left: 1px;
-    margin-top: 17px;
+    margin-top: 32px;
 }
 
 .header-logo:hover {
-    background-position: 0 -55px;
+    background-position: 0 -40px;
     cursor: pointer;
 }
 
@@ -631,6 +669,7 @@ h3 {
     position: absolute;
     left: 6px;
     top: -5px;
+    width: 650px;
 }
 
 .blog-side-subscribe {
@@ -695,15 +734,16 @@ h3 {
 
 .intro-text {
     padding-top: 20px;
-    text-align: center;
     font-family: 'Reenie Beanie', arial, serif;
-    font-size: 32px;
-    line-height: 40px;
-    width: 100%;
+    font-size: 28px;
+    line-height: 32px;
+    position: relative;
+    font-weight: normal;
 }
 
-.wf-active .intro-text {
-    visibility: visible !important;
+.wf-active .intro-1 {
+    position: absolute;
+    display: block !important;
 }
 
 .want-more div {
@@ -791,6 +831,28 @@ h3 {
 
 .qsproduct-icon {
     margin: auto;
+    display: block;
+}
+
+.qsproduct-badge {
+    display: none;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: white;
+    font-weight: bold;
+    background-color: #F79318;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -o-border-radius: 16px;
+    line-height: 26px;
+    font-size: 14px;
+    padding: 4px 4px;
+    -webkit-box-shadow: #F0B35F 0px 0px 10px;
+    -moz-box-shadow: 0 0px 10px #F0B35F;
+}
+
+.qsproduct:hover .qsproduct-badge {
     display: block;
 }
 
@@ -1012,6 +1074,7 @@ margin-left:0;
 #main-product {
     z-index: 1;
     position: relative;
+    min-height: 370px;
 }
 
 .about-intro, .about-story {
@@ -1360,17 +1423,35 @@ margin-left:0;
 
 #t1 {
     position:relative;
-/*    left: -16px;
-*/}
+}
+
 
 .navi {
-    position:absolute;
-    left:20px;
-    top: -1px;
+    position: absolute;
+    left: 198px;
+    top: 336px;
+    height:20px;
 }
 
 .navi a {
-    text-decoration: none;
+    width:8px;
+    height:8px;
+    float:left;
+    margin:3px;
+    background:url(../img/scrollable/arrow/navigator.png) 0 0 no-repeat;
+    display:block;
+    font-size:1px;
+    outline: none;
+}
+
+.navi a:hover {
+    outline: none;
+    background-position:0 -8px;      
+}
+
+.navi a.active {
+    outline: none;
+    background-position:0 -16px;     
 }
 
 .lovetext {
@@ -1743,7 +1824,7 @@ a:hover {
 }
 
 .product-thumbs-box {
-    border-top: 1px solid #DDE2E7;
+    display: none;
     height: 90px;
     position: relative;
 }
@@ -2806,6 +2887,11 @@ pre code {
 
 .main-product-right {
     position: relative;
+    left: -50px;
+}
+
+.product-totalfinder .main-product-right {
+    left: 0px;
 }
 
 .tf-ad-1 {
@@ -3273,20 +3359,14 @@ ol.statuses .hentry a.fav {
 }
 
 .main-screenshot * {
-    max-width: 470px;
-    max-height: 325px;
+    max-width: 500px;
+    max-height: 340px;
 }
 
 .screenshot-box img {
-    -moz-transition: all 0.5s ease;
-    -webkit-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    opacity: 0.8;
-}
-
-.screenshot-box img:hover {
-    opacity: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 .force-right {
@@ -3882,7 +3962,7 @@ ol.statuses .hentry a.fav {
 }
 
 .exp-title {
-	margin-top: 10px;
+    margin-top: 10px;
     font-size: 24px;
     line-height: 24px;
     font-weight: bold;
