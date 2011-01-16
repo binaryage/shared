@@ -346,6 +346,34 @@ h3 {
     z-index: 2;
 }
 
+.image404 {
+    margin-top: -50px;
+    display: block;
+    width: 950px;
+    height: 150px; 
+    background: transparent url('/shared/img/matrix404.png') no-repeat 0px 0px;
+}
+
+.error404 {
+    font-weight: bold;
+    margin-top: 30px;
+    font-size: 28px;
+    text-align: center;
+}
+
+.desc404 {
+    margin-top: 0px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.home404 {
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
 #header .container {
     height: 90px;
 }
