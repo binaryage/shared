@@ -389,6 +389,16 @@ h3 {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
     opacity: 0.2;
+    position: relative;
+}
+
+.main-overlay {
+    z-index: 9;
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
 }
 
 .praise-section {
@@ -1663,6 +1673,7 @@ margin-left:0;
 }
 
 #tweets-section {
+    z-index: 10;
     position: absolute;
     top: 105px;
     width: 100%;
@@ -1796,9 +1807,7 @@ a:hover {
 }
 
 .tf-product-actions-box {
-    position: absolute;
-    left: 640px;
-    bottom: -32px;
+    position: relative;
     white-space:nowrap;
 }
 
@@ -1807,10 +1816,13 @@ a:hover {
 }
 
 .safari .tf-product-actions-box {
-    bottom: -64px; /* safari bug? */
+    bottom: -32px; /* safari bug? */
 }
 
 .tf-product-actions-box-inner {
+    position: absolute;
+    left: 640px;
+    bottom: -32px;
     -moz-transform: scale(0.75);
     -moz-transform-origin: 0 0;
     -o-transform: scale(0.75);

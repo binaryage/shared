@@ -4490,7 +4490,8 @@ $.fn.tweet = function(options) {
         params.page = 1;
         root.data('sparams', params);
         
-        $("#main").addClass('main-dim');
+        $("#main").addClass('main-dim').append('<div class="main-overlay"></div>');
+        
         // wait for CSS effect... which is set to 0.5s
         setTimeout(function() {
             ready = true;
