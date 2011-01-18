@@ -1815,10 +1815,6 @@ a:hover {
     white-space:nowrap;
 }
 
-.gecko .tf-product-actions-box {
-    width: 420px; /* firefox 4 bug related to zoom/scale transform */
-}
-
 .safari .tf-product-actions-box {
     bottom: -32px; /* safari bug? */
 }
@@ -1833,6 +1829,10 @@ a:hover {
     -o-transform-origin: 0 0;
     -webkit-transform: scale(0.75);
     -webkit-transform-origin: 0 0;
+}
+
+.gecko .tf-product-actions-box-inner {
+    width: 420px; /* firefox 4 bug related to zoom/scale transform */
 }
 
 .safari .tf-product-actions-box-inner iframe {
