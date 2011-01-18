@@ -270,6 +270,10 @@ html.support {
     height: 100%;
 }
 
+html.support #footer {
+    display: none;
+}
+
 html.support #main {
     position: fixed;
     left: 0;

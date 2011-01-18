@@ -4407,7 +4407,8 @@ $.fn.tweet = function(options) {
             var container = $("#main .container");
             var availWidth = 950 - 300;
             var availHeight = container.height() - 80;
-            if (availHeight>800) availHeight = 800;
+            if (availHeight<200) availHeight = 200;
+            if (availHeight>600) availHeight = 600;
 
             var gen = function(item) {
                 index++;
