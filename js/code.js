@@ -4375,7 +4375,9 @@ function prepareTweetLoader(msg) {
 }
 
 $.fn.tweet = function(options) {
-
+    var index = 0;
+    var ready = false;
+    var prevCard;
     var generator = function(root, params) {
         var itemTemplate = '\
             <li id="status_--id--" class="hentry status">\
@@ -4394,39 +4396,86 @@ $.fn.tweet = function(options) {
                 </span>\
             </li>';
 
-        $.getJSON('http://twitter.com/favorites.json?page='+params.page+'&id='+encodeURIComponent(params.user)+'&callback=?', function(data) {
-            if (!$('.lovebox').is('visible')) {
+        var worker = function(data) {
+            if (!ready) {
                 setTimeout(function() {
-                    $('.lovebox').fadeIn();
-                }, 16000);
+                    worker(data);
+                }, 100);
+                return;
             }
-            if (!data.length) {
-                $('#tweet-loader .tweet-msg').html('No more tweets!<br/><a href="http://twitter.com">What do you think about apps from BinaryAge?</a>');
-                $('.tweet-loader .thumb').hide();
-            } else {
-                root.children().slice(0, -1).remove();
-                for (var i=0; i<data.length; i++) {
-                    var item = data[i];
+            
+            var container = $("#main .container");
+            var availWidth = 950 - 300;
+            var availHeight = container.height() - 80;
+            if (availHeight>800) availHeight = 800;
 
-                    var li = itemTemplate;
-                    li = li.replace(/--id--/g, item.id);
-                    li = li.replace(/--text--/g, item.text);
-                    li = li.replace(/--avatar--/g, item.user.profile_image_url);
-                    li = li.replace(/--username--/g, item.user.name);
-                    li = li.replace(/--userscreenname--/g, item.user.screen_name);
-                    li = li.replace(/--source--/g, item.source);
-                    li = li.replace(/--createdat--/g, item.created_at);
-                    root.append($(li));
+            var gen = function(item) {
+                index++;
+                
+                if (prevCard) {
+                    prevCard.addClass('card-fade-out');
                 }
-                root.find('.published').relatizeDate();
-                root.find('.entry-content').autolink().autohash();
-                $('#tweets').append(prepareTweetLoader('Loading even more tweets ...'));
 
-                jQuery.fx.off = true;
-                params.scrollable.reload().begin();
-                jQuery.fx.off = false;
+                var li = itemTemplate;
+                li = li.replace(/--id--/g, item.id);
+                li = li.replace(/--text--/g, item.text);
+                li = li.replace(/--avatar--/g, item.user.profile_image_url);
+                li = li.replace(/--username--/g, item.user.name);
+                li = li.replace(/--userscreenname--/g, item.user.screen_name);
+                li = li.replace(/--source--/g, item.source);
+                li = li.replace(/--createdat--/g, item.created_at);
+                var el = $(li);
+                var rot = Math.round(Math.random()*3) + 3;
+                if (index % 2 == 0) {
+                    rot = -rot;
+                }
+                el.css({
+                    left: Math.random()*availWidth,
+                    top: Math.random()*availHeight,
+                    "-webkit-transform": "rotate("+rot+"deg)",
+                    "-moz-transform": "rotate("+rot+"deg)"
+                });
+                root.append(el);
+                prevCard = el;
+
+                el.find('.published').relatizeDate();
+                el.find('.entry-content').autolink().autohash();
             }
-        });
+
+            if (!data.length) {
+                return;
+            } else {
+                var children = root.children();
+                
+                if (children.length>60) { // don't push browser to it's limits and do some cleanup
+                    children.slice(0, data.length).fadeOut(6000, function() {
+                        $(this).remove();
+                    });
+                }
+                var cur = -1;
+                var step = function() {
+                    cur++;
+                    if (cur>=data.length) {
+                        params.page++;
+                        generator(root, params);
+                        return;
+                    }
+                    var item = data[cur];
+                    gen(item);
+                    
+                    // prefetch next one
+                    var nextItem = data[cur+1];
+                    if (nextItem) {
+                        var im = new Image();
+                        im.src = item.user.profile_image_url;
+                    }
+                    setTimeout(step, 3000);
+                };
+                step();
+            }
+        };
+
+        $.getJSON('http://twitter.com/favorites.json?page='+params.page+'&id='+encodeURIComponent(params.user)+'&callback=?', worker);
     }
 
 
@@ -4438,23 +4487,15 @@ $.fn.tweet = function(options) {
             count: 5
         };
         var params = $.extend(defaults, options);
-
-        params.scrollable = $("#tweets-scrollable").scrollable({ 
-            onSeek: function(instance, index) {
-                if (index == this.getItems().length-1) {
-                    params.page++;
-                    generator(root, params);
-                }
-            },
-            api:true,
-            vertical:true,
-            hoverClass: 'hover',
-            keyboard: false,
-            size: 1
-        });
-        params.autoscroll = $("#tweets-scrollable").autoscroll({ autoplay: true, interval: 5000, api:true });
         params.page = 1;
         root.data('sparams', params);
+        
+        $("#main").addClass('main-dim');
+        // wait for CSS effect... which is set to 0.5s
+        setTimeout(function() {
+            ready = true;
+        }, 500); 
+        
         generator(root, params);
     });
 };

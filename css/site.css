@@ -383,54 +383,34 @@ h3 {
     margin-top: 100px;
 }
 
-.lovebox-arrow {
-    position: absolute;
-    width: 32px;
-    height: 21px; 
-    left: 0px;
-    top: 30px;
-    background: transparent url('/shared/img/arrows.png') no-repeat -67px 0px;
+.main-dim {
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    opacity: 0.2;
 }
 
-.lovebox {
-    text-align: right;
-    right: 0;
+.praise-section {
     position: absolute;
-    top: -90px;
-    font-family: 'Reenie Beanie', arial, serif;
-    font-size: 28px;
-    line-height: 30px;
-    color: #555;
-}
-
-.twitter-praise-wrapper {
-    display: none;
-    position: absolute;
-    top: -1px;
-    left: 340px;
-    min-width: 160px;
-    text-align: center;
-}
-
-.ie .twitter-praise-wrapper {
-    display: none;
+    bottom: 0px;
+    left: 48px;
 }
 
 .praise-button {
-    text-shadow:0px 1px 0px #fff;
-    padding: 2px 10px;
-    border: 1px solid #ccc;
-    border-top: 1px solid #ccc;
-    -webkit-border-bottom-left-radius: 4px 4px;
-    -webkit-border-bottom-right-radius: 4px 4px;
-    -moz-border-radius-bottomleft: 4px;
-    -moz-border-radius-bottomright: 4px;
-    color: #666;
+    text-shadow:0px 1px 0px #efefef;
+    padding: 0px 7px;
+    padding-top: 0px;
+    padding-bottom: 2px;
+    border-bottom: none;
+    -webkit-border-top-left-radius: 4px 4px;
+    -webkit-border-top-right-radius: 4px 4px;
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright: 4px;
+    color: #aaa;
     cursor: pointer;
     position: relative;
-    top: -3px;
-    padding-top: 6px;
-    padding-bottom: 4px;
+    font-size: 9px;
 }
 
 .praise-button:hover {
@@ -443,24 +423,6 @@ h3 {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DDDDDD', endColorstr='#DDDDDD'); /* for IE */
     background: -webkit-gradient(linear, left top, left bottom, from(#ddd), to(#ddd)); /* for webkit browsers */
     background: -moz-linear-gradient(top,  #ddd,  #ddd); /* for firefox 3.6+ */    
-}
- 
-.twitter-icon-wrapper {
-    display: none;
-    position: absolute;
-    top: 40px;
-    left: 340px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-}
-
-.twitter-icon-wrapper img {
-    display: block;
-}
-
-.twitter-icon-wrapper:hover {
-    -webkit-box-shadow: #1C75DB 0px 0px 2px;
-    -moz-box-shadow: 0 0px 2px #1C75DB;
 }
 
 .intro-tip {
@@ -506,6 +468,7 @@ h3 {
 }
 
 .header-logo {
+    display: inline-block;
     background: transparent url('/shared/img/main-logo.png') no-repeat top left;
     width: 196px;
     height: 40px;
@@ -1695,27 +1658,40 @@ margin-left:0;
     font-size: 11px;
 }
 
-
-#tweets-scrollable {
-    position:relative; 
-    overflow:hidden; 
-    height: 78px; 
-    width: 430px;
-    margin-left: 6px;
-    margin-top: 10px;
-}
-
 #tweets {
     position: absolute;
 }
 
+#tweets-section {
+    position: absolute;
+    top: 105px;
+    width: 100%;
+}
+
 .hentry {
-    position: relative;
+    position: absolute;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
-    min-height: 60px;
-    line-height: 16px;
+    font-size: 12px;
     padding: 8px 8px;
+    width: 300px;
+    background-color: #fff;
+    font-size: 11px;
+    margin: 10px;
+    -webkit-box-shadow: #aaa 0px 0px 4px;
+    -moz-box-shadow: 0px 0px 4px #aaa;
+}
+
+.opera .hentry {
+    border: 1px solid #aaa;
+}
+
+.card-fade-out > * {
+    -moz-transition: all 6.0s ease;
+    -webkit-transition: all 6.0s ease;
+    -o-transition: all 6.0s ease;
+    transition: all 6.0s ease;
+    opacity: 0.3;
 }
 
 #tweets .hover {
@@ -3018,7 +2994,6 @@ pre code {
 
 ol.statuses {
     width: 100%;
-    font-size: 1.1em;
     list-style-image: none;
     list-style-position: outside;
     list-style-type: none;
@@ -3045,9 +3020,8 @@ ol.loading {
 }
 
 ol.statuses li.status, ol.statuses li.direct_message {
-    line-height: 1.1em;
+    line-height: 13px;
     padding: 0.7em 0 0.6em;
-    position: relative;
 }
 
 ol.statuses > li:first-child {
@@ -3128,7 +3102,7 @@ ol.statuses .embedded_picture img {
 .meta {
     color: #999999;
     display: block;
-    font-size: 11px;
+    font-size: 9px;
     margin: 3px 0 0;
 }
 .meta a {
@@ -3149,9 +3123,6 @@ ol.statuses .actions {
 }
 .actions a {
     text-decoration: none;
-}
-ol.statuses li {
-    position: relative;
 }
 ol.statuses li:hover .actions span, ol.statuses li.hover .actions span, ol.statuses li.perma-hover .actions span, ol.statuses li:hover .actions a, ol.statuses li.hover .actions a, ol.statuses li.perma-hover .actions a {
     visibility: visible;
@@ -4116,7 +4087,7 @@ ol.statuses .hentry a.fav {
     width: 460px;
     margin: 20px auto;
     -webkit-box-shadow: #999 0px 0px 4px;
-    -moz-box-shadow: 0 0px 14px #999;
+    -moz-box-shadow: 0 0px 4px #999;
     padding: 10px 20px;
     background-color: #F3E300;
     -webkit-border-radius: 2px 2px;
