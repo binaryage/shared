@@ -278,8 +278,9 @@ html.support #main {
     top: 90px;
 }
 
-html.support #header {
-    -webkit-box-shadow: none; /* webkit has a bug */
+html.support.safari #header {
+    /* safari webkit has a bug when scrolling iframe the shadow leaves visual glitches*/
+    -webkit-box-shadow: none; 
 }
 
 html.support .header-bar {
@@ -4084,4 +4085,81 @@ ol.statuses .hentry a.fav {
     color: #600;
     font-weight: bold;
     margin: 20px 0px;
+}
+
+.beyellow {
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+
+.beyellow-box {
+    -webkit-box-shadow: #999 0px 0px 4px;
+    -moz-box-shadow: 0 0px 14px #999;
+    padding: 3px 10px;
+    background-color: #F3E300;
+    -webkit-border-radius: 2px 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+#main-yellow {
+    margin-top: 40px;
+}
+
+.yellow-box-wrapper {
+    width: 640px;
+    margin: auto;
+}
+
+.yellow-phone-box {
+    width: 460px;
+    margin: 20px auto;
+    -webkit-box-shadow: #999 0px 0px 4px;
+    -moz-box-shadow: 0 0px 14px #999;
+    padding: 10px 20px;
+    background-color: #F3E300;
+    -webkit-border-radius: 2px 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+.yellow-intro {
+    text-align: center;
+    font-size: 22px;
+}
+
+.yellow-panic {
+    text-align: center;
+    font-size: 20px;
+}
+
+.yellow-phone {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.yellow-desc {
+    font-size: 11px;
+    text-align: center;
+    color: #666;
+}
+
+.yellow-other {
+    border-top: 1px solid #ccc;
+    margin-top: 40px;
+    padding-top: 20px;
+    width: 640px;
+    margin: 40px auto 0px auto;
+}
+
+.yellow-other #gsfn_content {
+    margin-top: 10px;
+}
+
+.yellow-other .time {
+    color: #999;
+    padding-left: 8px;
+    font-size: 11px;
 }
