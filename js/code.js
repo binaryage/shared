@@ -936,7 +936,7 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
 			try {
 				// just in case there is a bug, always resume 
 				// if paused is less than 1
-				while(this.paused < 1 && this._next());
+				while(this.paused < 1 && this._next()){}
 			} finally {
 				this.running = false;
 			}
@@ -1143,6 +1143,7 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
 	}
 	
 	var SCRIPT_TAGS = /(<script[\s\S]*?>)([\s\S]*?)<\/script>/ig, 
+		SCRIPT_2 = /<script[\s\S]*?\/>/ig,
 		SRC_REGEX = attrPattern('src'),
 		SRC_ATTR = matchAttr('src'),
 		TYPE_ATTR = matchAttr('type'),
@@ -1241,7 +1242,11 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
 		}
 		// for each tag, generate a function to load and eval the code and queue
 		// themselves
-		return html.replace(SCRIPT_TAGS,proxyTag) + doneHtml;
+		return html.replace(SCRIPT_TAGS,proxyTag).replace(SCRIPT_2,proxyBodyless) + doneHtml;
+		function proxyBodyless(tag) {
+			// hack in a bodyless tag...
+			return proxyTag(tag,tag.substring(0,tag.length-2)+'>','');
+		}
 		function proxyTag(element,openTag,code) {
 			var src = SRC_ATTR(openTag),
 				type = TYPE_ATTR(openTag) || '',
@@ -1365,8 +1370,18 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
 				cb = newCallbackTag(state.finish) + (cb || '');
 				html(state.out,cb);
 			}
+			function safeOpts(options) {
+				var copy = {};
+				for(var i in options) {
+					if(options.hasOwnProperty(i)) {
+						copy[i] = options[i];
+					}
+				}
+				delete copy.done;
+				return copy;
+			}
 			function html(markup,cb) {
-			 	$.replaceWith(context.target,sanitize(markup,null,queue,context) + (cb || ''));
+			 	$.replaceWith(context.target,sanitize(markup,safeOpts(options),queue,context) + (cb || ''));
 			} 
 			return '<div style="display: none" id="'+divId+'"></div>' + openTag +
 				TEMPLATE.replace(/%d/,id) + '</script>';
@@ -1465,6 +1480,37 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
 		});
 	}
 	
+	function extsrc(cb) {
+		var scripts = document.getElementsByTagName('script'),
+			s,o, html, q, ext, async, doneCount = 0,
+			done = cb ? newCallbackTag(function() {
+				if(++doneCount >= exts.length) {
+					cb();
+				}
+			}) : '',
+			exts = [];
+			
+		for(var i = 0, len = scripts.length; i < len; i++) {
+			s = scripts[i];
+			ext = s.getAttribute('extsrc');
+			async = s.getAttribute('asyncsrc');
+			if(ext || async) {
+				exts.push({ext:ext,async:async,s:s});
+			}
+		}
+
+		for(i = 0, len = exts.length; i < len; i++) {
+			o = exts[i];
+			if(o.ext) {
+				html = '<script type="text/javascript" src="'+o.ext+'"> </script>';
+				$.replaceWith(o.s,sanitize(html) + done);				
+			} else if(o.async) {
+				html = '<script type="text/javascript" src="'+o.async+'"> </script>';
+				$.replaceWith(o.s,sanitize(html,{asyncAll:true}, new Q()) + done);
+			}
+		}
+	}
+	
 	var name = 'writeCapture';
 	var self = global[name] = {
 		_original: global[name],
@@ -1512,6 +1558,7 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
 				}
 			});
 		},
+		extsrc: extsrc,
 		autoAsync: autoCapture,
 		sanitize: sanitize,
 		sanitizeSerial: sanitizeSerial
