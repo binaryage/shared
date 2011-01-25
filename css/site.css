@@ -1823,6 +1823,9 @@ a:hover {
     position: absolute;
     left: 640px;
     bottom: -32px;
+}
+ 
+.tf-product-actions-box-inner {
     -moz-transform: scale(0.75);
     -moz-transform-origin: 0 0;
     -o-transform: scale(0.75);
@@ -1838,6 +1841,17 @@ a:hover {
 .safari .tf-product-actions-box-inner iframe {
     zoom: 1.5; /* fight safari iframe zoom bug? */
     margin-right: -16px;
+}
+
+.chrome .retweet > iframe {
+    width: 80px !important;
+    height: 90px !important;
+    margin-right: -16px;
+    margin-bottom: -10px;
+}
+
+.chrome .tf-product-actions-box-inner {
+    bottom: -52px;
 }
 
 .tf-product-actions-box-inner > * {
