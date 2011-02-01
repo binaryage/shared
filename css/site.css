@@ -3865,7 +3865,7 @@ ol.statuses .hentry a.fav {
 
 .teaser-overlay {
     display:none;
-    background-image:url(../img/overlay/white-teaser.png);
+    background-image:url('../img/overlay/white-teaser.png');
     width:690px;
     height: 434px;
 }
@@ -3876,12 +3876,16 @@ ol.statuses .hentry a.fav {
 }
 
 .teaser-overlay .close {
-    background-image:url(../img/overlay/close.png);
+    background-image:url('../img/overlay/close.png');
     position:absolute; right:5px; top:5px;
     z-index: 30000;
     cursor:pointer;
     height:35px;
     width:35px;
+}
+
+.overlay-content {
+    padding-top: 2px;
 }
 
 .tf-main-content hr, .wikistyle hr {
