@@ -2613,6 +2613,12 @@ pre code {
     left: -2px;
 }
 
+.blog-side-icon2 {
+    height: 28px;
+    width: 28px;
+    margin: 0px auto;
+}
+
 .blog-ba-icon {
     position: relative;
     top: 4px;
@@ -3403,77 +3409,112 @@ ol.statuses .hentry a.fav {
     float: right;
 }
 
-/* the overlayed element */
-.subscribe-overlay {
-    
-    display:none;
-  
-    background-image:url(../img/overlay/white.png);
-    
-    width:640px;        
-    padding:35px;
+.text-placeholder {color: #AAA !important; }
 
-    font-size:11px;
+.dwn-overlay .overlay-content {
+    text-align: center;
 }
 
-.subscribe-overlay .close {
-    background-image:url(../img/overlay/close.png);
-    position:absolute; right:5px; top:5px;
-    cursor:pointer;
-    height:35px;
-    width:35px;
-}
-
-.subscribe-product-box {
+.subscribe-twitter {
     float: left;
-    margin-right: 10px;
-    position: relative;
-    cursor: pointer;
-    width: 32px;
-    height: 32px;
+    margin-right: 8px;
+    height: 220px;
 }
 
-.subscribe-product, .subscribe-product2 {
+#twitter-box-placeholder .twtr-doc {
+    height: 230px;
+    
+}
+
+.while-downloading {
+    font-size: 30px;
+}
+.stay-in-touch {
+    font-size: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #999;
+    margin-bottom: 20px;
+}
+
+.subscribe-blog {
+    background-color: #ccc;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;  
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px;
+    height: 210px;
     position: absolute;
-    width: 32px;
-    height: 32px;
+    right: 218px;
 }
 
-.subscribe-product-overlay {
-    width: 32px;
-    height: 32px;
+.subscribe-blog a {
+    font-size: 16px;
+    margin-left: 6px;
+    margin-bottom: 10px;
+}
+
+.subscribe-button2 {
+    margin-top: 10px;
+}
+
+.mailchimp-box {
+    background-color: #ccc;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;  
     position: absolute;
-    background-image: url('../img/overlay-no.png');
+    right: 20px;
+    float: left;
+    width: 190px;
+    padding-bottom: 10px;
+    height: 220px;
 }
 
-.subscribe-product-overlay.oo-enabled {
-    background-image: url('../img/overlay-ok.png');
+#mc-embedded-subscribe-form {
 }
 
-.indicate-required {
+#mc_embed_close {
     display: none;
 }
 
-.text-placeholder {color: #AAA !important; }
+#mc_embed_signup fieldset {
+    border: 0;
+    margin: 0;
+    padding: 10px;
+}
 
-#mc-embedded-subscribe-form {
+.subscribe-twitter a {
+    color: #3A6394 !important;
+    text-decoration: none;
+}
+
+.subscribe-twitter a:hover {
+    color: #1C75DB !important;
+    text-decoration: none !important;
+}
+
+.twtr-timeline {
+    margin: 0px 4px;
 }
 
 #mce-EMAIL {
     margin: 0px;
     width: 100%;
-    font-size: 30px;
+    font-size: 12px;
+    line-height: 18px;
     text-align: center;
     font-weight: bold;
     border: 2px solid #aaa;
     -moz-border-radius:5px;
     -webkit-border-radius:5px;  
+    margin-top: 6px;
 }
 
 .mce_inline_error {
     margin-top: 10px;
     color: #a00;
-    font-size: 18px;
+    font-size: 10px;
     font-weight: bold;
 }
 
@@ -3482,8 +3523,8 @@ ol.statuses .hentry a.fav {
 }
 
 #mc-embedded-subscribe {
-    margin-top: 20px;
-    font-size: 16px;
+    margin-top: 6px;
+    font-size: 14px;
     font-weight: bold;
     float: right;
 }
@@ -3491,7 +3532,7 @@ ol.statuses .hentry a.fav {
 #mce-success-response {
     margin-top: 10px;
     color: #668;
-    font-size: 18px;
+    font-size: 10px;
     font-weight: bold;
     width: 580px;
 }
@@ -3499,7 +3540,7 @@ ol.statuses .hentry a.fav {
 #mce-error-response {
     margin-top: 10px;
     color: #a00;
-    font-size: 18px;
+    font-size: 10px;
     font-weight: bold;
     width: 580px;
 }
@@ -3529,22 +3570,6 @@ ol.statuses .hentry a.fav {
 
 .subscribe-overlay  {
     position: relative;
-}
-
-.chimp {
-    width: 436px;
-    height: 96px;
-    position: absolute;
-    background-image: url('../img/chimp.png');
-    top: 448px;
-    left: 30px;
-}
-
-.chimp-quote {
-    font-weight: bold;
-    position: absolute;
-    left: 160px;
-    top: 20px;
 }
 
 #tf-header {
@@ -3863,6 +3888,29 @@ ol.statuses .hentry a.fav {
     font-size: 16px;
 }
 
+.dwn-overlay {
+    display:none;
+    background-image:url('../img/overlay/white-teaser.png');
+    width:690px;
+    height: 434px;
+}
+
+.dwn-overlay .overlay-content {
+    width: 600px;
+    margin: 25px; /* shadows */
+    padding: 20px;
+    position: absolute;
+}
+
+.dwn-overlay .close {
+    background-image:url('../img/overlay/close.png');
+    position:absolute; right:5px; top:5px;
+    z-index: 30000;
+    cursor:pointer;
+    height:35px;
+    width:35px;
+}
+
 .teaser-overlay {
     display:none;
     background-image:url('../img/overlay/white-teaser.png');
@@ -3873,6 +3921,7 @@ ol.statuses .hentry a.fav {
 .teaser-overlay .overlay-content {
     margin: 25px; /* shadows */
     position: absolute;
+    padding-top: 2px;
 }
 
 .teaser-overlay .close {
@@ -3882,10 +3931,6 @@ ol.statuses .hentry a.fav {
     cursor:pointer;
     height:35px;
     width:35px;
-}
-
-.overlay-content {
-    padding-top: 2px;
 }
 
 .tf-main-content hr, .wikistyle hr {
