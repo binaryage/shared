@@ -3376,6 +3376,13 @@ ol.statuses .hentry a.fav {
     display: none !important;
 }
 
+.overlay-lesk {
+    position: absolute;
+    top: 64px;
+    right: 284px;
+    z-index: 500;
+    opacity: 0.5;
+}
 
 .product-separator {
     background: transparent url('/shared/img/product-separator.png') 0 0 no-repeat;
