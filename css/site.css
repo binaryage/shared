@@ -3241,9 +3241,7 @@ ol.statuses .hentry a.fav {
     border:3px solid #000;
     -moz-border-radius:3px;
     -webkit-border-radius:3px;  
-/*    -moz-box-shadow:0 0 90px 5px #000;
-    -webkit-box-shadow: 0 0 90px #000;  
-*/}
+}
 
 .simple_overlay .close {
     background-image:url(/shared/img/overlay/close.png);
@@ -3275,7 +3273,7 @@ ol.statuses .hentry a.fav {
 }
 
 .overlay-prev {
-    left:0;
+    left:0px;
     border-left:0;
     -moz-border-radius-topleft:0;
     -moz-border-radius-bottomleft:0;
@@ -3284,7 +3282,7 @@ ol.statuses .hentry a.fav {
 }
 
 .overlay-next {
-    right:0;
+    right:0px;
     border-right:0;
     -moz-border-radius-topright:0;
     -moz-border-radius-bottomright:0;
@@ -3324,6 +3322,60 @@ ol.statuses .hentry a.fav {
 .overlay-next, .overlay-prev, .overlay-info {
     background:#000 !important;
 }
+
+.air-overlay {
+    display:none;
+
+    z-index:10000;
+
+    width:1590px;    
+    height:880px;
+    
+    background-image: url('/shared/img/nbair1.png');
+}
+
+.air-overlay .overlay-progress {
+    left:280px;
+    top:22px;
+}
+
+.air-overlay .close {
+    background-image: url('/shared/img/overlay/close.png');
+    position:absolute;
+    left:238px;
+    top:18px;
+    cursor:pointer;
+    height:35px;
+    width:35px;
+}
+
+.air-overlay #img {
+    top: 64px;
+    left: 282px;
+    position: relative;
+}
+
+.air-overlay .overlay-next, .air-overlay .overlay-prev {
+    border:2px solid #666;  
+    width: 30px;
+    padding:10px;
+}
+
+.air-overlay .overlay-prev {
+    left:220px;
+}
+
+.air-overlay .overlay-next {
+    right:220px;
+}
+
+.air-overlay .overlay-next:hover, .air-overlay .overlay-prev:hover {
+}
+
+.air-overlay .overlay-info {
+    display: none !important;
+}
+
 
 .product-separator {
     background: transparent url('/shared/img/product-separator.png') 0 0 no-repeat;

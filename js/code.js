@@ -114,6 +114,314 @@ e.fn.oninvalid=function(a){return this[a?"bind":"trigger"]("OI",a)};h.fn(":email
 function(a,b){if(b===""||r&&a.is(":date"))return true;a=a.attr("min");return parseFloat(b)>=parseFloat(a)?true:[a]});h.fn("[required]","Please complete this mandatory field.",function(a,b){if(a.is(":checkbox"))return a.is(":checked");return!!b});h.fn("[pattern]",function(a){var b=new RegExp("^"+a.attr("pattern")+"$");return b.test(a.val())});e.fn.validator=function(a){var b=this.data("validator");if(b){b.destroy();this.removeData("validator")}a=e.extend(true,{},h.conf,a);if(this.is("form"))return this.each(function(){var c=
 e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,this.eq(0).closest("form"),a);return this.data("validator",b)}}})(jQuery);
 
+
+/**
+ * @license 
+ * jQuery Tools 1.2.5 Overlay - Overlay base. Extend it.
+ * 
+ * NO COPYRIGHTS OR LICENSES. DO WHAT YOU LIKE.
+ * 
+ * http://flowplayer.org/tools/overlay/
+ *
+ * Since: March 2008
+ * Date:    Wed Sep 22 06:02:10 2010 +0000 
+ */
+(function($) { 
+
+	// static constructs
+	$.tools = $.tools || {version: '1.2.5'};
+	
+	$.tools.overlay = {
+		
+		addEffect: function(name, loadFn, closeFn) {
+			effects[name] = [loadFn, closeFn];	
+		},
+	
+		conf: {  
+			close: null,	
+			closeOnClick: true,
+			closeOnEsc: true,			
+			closeSpeed: 'fast',
+			effect: 'default',
+			
+			// since 1.2. fixed positioning not supported by IE6
+			fixed: !$.browser.msie || $.browser.version > 6, 
+			
+			left: 'center',		
+			load: false, // 1.2
+			mask: null,  
+			oneInstance: true,
+			speed: 'normal',
+			target: null, // target element to be overlayed. by default taken from [rel]
+			top: '10%'
+		}
+	};
+
+	
+	var instances = [], effects = {};
+		
+	// the default effect. nice and easy!
+	$.tools.overlay.addEffect('default', 
+		
+		/* 
+			onLoad/onClose functions must be called otherwise none of the 
+			user supplied callback methods won't be called
+		*/
+		function(pos, onLoad) {
+			
+			var conf = this.getConf(),
+				 w = $(window);				 
+				
+			if (!conf.fixed)  {
+				pos.top += w.scrollTop();
+				pos.left += w.scrollLeft();
+			} 
+				
+			pos.position = conf.fixed ? 'fixed' : 'absolute';
+			this.getOverlay().css(pos).fadeIn(conf.speed, onLoad); 
+			
+		}, function(onClose) {
+			this.getOverlay().fadeOut(this.getConf().closeSpeed, onClose); 			
+		}		
+	);		
+
+	
+	function Overlay(trigger, conf) {		
+		
+		// private variables
+		var self = this,
+			 fire = trigger.add(self),
+			 w = $(window), 
+			 closers,            
+			 overlay,
+			 opened,
+			 maskConf = $.tools.expose && (conf.mask || conf.expose),
+			 uid = Math.random().toString().slice(10);		
+		
+			 
+		// mask configuration
+		if (maskConf) {			
+			if (typeof maskConf == 'string') { maskConf = {color: maskConf}; }
+			maskConf.closeOnClick = maskConf.closeOnEsc = false;
+		}			 
+		 
+		// get overlay and triggerr
+		var jq = conf.target || trigger.attr("rel");
+		overlay = jq ? $(jq) : null || trigger;	
+		
+		// overlay not found. cannot continue
+		if (!overlay.length) { throw "Could not find Overlay: " + jq; }
+		
+		// trigger's click event
+		if (trigger && trigger.index(overlay) == -1) {
+			trigger.click(function(e) {				
+				self.load(e);
+				return e.preventDefault();
+			});
+		}   			
+		
+		// API methods  
+		$.extend(self, {
+
+			load: function(e) {
+				
+				// can be opened only once
+				if (self.isOpened()) { return self; }
+				
+				// find the effect
+		 		var eff = effects[conf.effect];
+		 		if (!eff) { throw "Overlay: cannot find effect : \"" + conf.effect + "\""; }
+				
+				// close other instances?
+				if (conf.oneInstance) {
+					$.each(instances, function() {
+						this.close(e);
+					});
+				}
+				
+				// onBeforeLoad
+				e = e || $.Event();
+				e.type = "onBeforeLoad";
+				fire.trigger(e);				
+				if (e.isDefaultPrevented()) { return self; }				
+
+				// opened
+				opened = true;
+				
+				// possible mask effect
+				if (maskConf) { $(overlay).expose(maskConf); }				
+				
+				// position & dimensions 
+				var top = conf.top,					
+					 left = conf.left,
+					 oWidth = overlay.outerWidth({margin:true}),
+					 oHeight = overlay.outerHeight({margin:true}); 
+					 
+			    var winw = w.width();
+			    var winh = w.height();
+			    
+			    var zoom = 1;
+			    if (winw<oWidth || winh<oHeight) {
+			        zoom = 1/Math.max(oWidth/winw, oHeight/winh);
+			    }
+			    
+	            overlay.css('zoom', zoom);
+				 oWidth *= zoom;
+  			     oHeight *= zoom;
+  			     
+				if (typeof top == 'string')  {
+					top = top == 'center' ? Math.max((w.height() - oHeight) / 2, 0) : parseInt(top, 10) / 100 * w.height();
+				}				
+				
+				if (left == 'center') { left = Math.max((w.width() - oWidth) / 2, 0); }
+		        left /= zoom;
+		        top /= zoom;
+		        top = parseInt(top);
+		        left = parseInt(left);
+				
+				// load effect
+				eff[0].call(self, {top: top, left: left}, function() {
+					if (opened) {
+						e.type = "onLoad";
+						fire.trigger(e);
+					}
+				});
+
+				// mask.click closes overlay
+				if (maskConf && conf.closeOnClick) {
+					$.mask.getMask().one("click", self.close); 
+				}
+				
+				// when window is clicked outside overlay, we close
+				if (conf.closeOnClick) {
+					$(document).bind("click." + uid, function(e) { 
+						if (!$(e.target).parents(overlay).length) { 
+							self.close(e); 
+						}
+					});						
+				}						
+			
+				// keyboard::escape
+				if (conf.closeOnEsc) { 
+
+					// one callback is enough if multiple instances are loaded simultaneously
+					$(document).bind("keydown." + uid, function(e) {
+						if (e.keyCode == 27) { 
+							self.close(e);	 
+						}
+					});			
+				}
+
+				
+				return self; 
+			}, 
+			
+			close: function(e) {
+
+				if (!self.isOpened()) { return self; }
+				
+				e = e || $.Event();
+				e.type = "onBeforeClose";
+				fire.trigger(e);				
+				if (e.isDefaultPrevented()) { return; }				
+				
+				opened = false;
+				
+				// close effect
+				effects[conf.effect][1].call(self, function() {
+					e.type = "onClose";
+					fire.trigger(e); 
+				});
+				
+				// unbind the keyboard / clicking actions
+				$(document).unbind("click." + uid).unbind("keydown." + uid);		  
+				
+				if (maskConf) {
+					$.mask.close();		
+				}
+				 
+				return self;
+			}, 
+			
+			getOverlay: function() {
+				return overlay;	
+			},
+			
+			getTrigger: function() {
+				return trigger;	
+			},
+			
+			getClosers: function() {
+				return closers;	
+			},			
+
+			isOpened: function()  {
+				return opened;
+			},
+			
+			// manipulate start, finish and speeds
+			getConf: function() {
+				return conf;	
+			}			
+			
+		});
+		
+		// callbacks	
+		$.each("onBeforeLoad,onStart,onLoad,onBeforeClose,onClose".split(","), function(i, name) {
+				
+			// configuration
+			if ($.isFunction(conf[name])) { 
+				$(self).bind(name, conf[name]); 
+			}
+
+			// API
+			self[name] = function(fn) {
+				if (fn) { $(self).bind(name, fn); }
+				return self;
+			};
+		});
+		
+		// close button
+		closers = overlay.find(conf.close || ".close");		
+		
+		if (!closers.length && !conf.close) {
+			closers = $('<a class="close"></a>');
+			overlay.prepend(closers);	
+		}		
+		
+		closers.click(function(e) { 
+			self.close(e);  
+		});	
+		
+		// autoload
+		if (conf.load) { self.load(); }
+		
+	}
+	
+	// jQuery plugin initialization
+	$.fn.overlay = function(conf) {   
+		
+		// already constructed --> return API
+		var el = this.data("overlay");
+		if (el) { return el; }	  		 
+		
+		if ($.isFunction(conf)) {
+			conf = {onBeforeLoad: conf};	
+		}
+
+		conf = $.extend(true, {}, $.tools.overlay.conf, conf);
+		
+		this.each(function() {		
+			el = new Overlay($(this), conf);
+			instances.push(el);
+			$(this).data("overlay", el);	
+		});
+		
+		return conf.api ? el: this;		
+	}; 
+	
+})(jQuery);
+
 /**
  * @license 
  * jQuery Tools @VERSION / Overlay Apple effect. 
@@ -140,7 +448,7 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
 		
 		fadeInSpeed: 'fast',
 		zIndex: 9999
-	});			
+	});
 	
 	// utility function
 	function getPosition(el) {
@@ -177,7 +485,7 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
 			overlay.css("backgroundImage", "none");
 			
 			img = $('<img src="' + bg + '"/>');
-			img.css({border:0, display:'none'}).width(oWidth);			
+			img.css({border:0, display:'none'}).width(oWidth);
 			$('body').append(img); 
 			overlay.data("img", img);
 		}
@@ -198,10 +506,11 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
 			ileft -= w.scrollLeft();
 		} else {
 			pos.top += w.scrollTop();
-			pos.left += w.scrollLeft();				
+			pos.left += w.scrollLeft();
 		}
-			
+		
 		// initialize background image and make it visible
+		
 		img.css({
 			position: 'absolute',
 			top: itop, 
@@ -218,7 +527,7 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
 		overlay.show();
 		
 		// begin growing
-		img.animate({			
+		img.animate({
 			top: overlay.css("top"), 
 			left: overlay.css("left"), 
 			width: oWidth}, conf.speed, function() {
@@ -230,7 +539,7 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
 			// set close button and content over the image
 			overlay.css("zIndex", conf.zIndex + 1).fadeIn(conf.fadeInSpeed, function()  { 
 					
-				if (self.isOpened() && !$(this).index(overlay)) {	
+				if (self.isOpened() && !$(this).index(overlay)) {
 					onLoad.call(); 
 				} else {
 					overlay.hide();	
@@ -293,8 +602,6 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
  */
 (function($) { 
 		
-	// TODO: next(), prev(), getIndex(), onChange event
-	
 	// version number
 	var t = $.tools.overlay; 
 	t.plugins = t.plugins || {};
@@ -321,7 +628,7 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
 	$.fn.gallery = function(opts) {
 		
 		var conf = $.extend({}, t.plugins.gallery.conf), api;
-		$.extend(conf, opts);   	
+		$.extend(conf, opts);
 
 		// common variables for all gallery images
 		api = this.overlay();
@@ -333,7 +640,7 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
 			 info = overlay.find(conf.info),
 			 progress = overlay.find(conf.progress),
 			 els = prev.add(next).add(info).css({opacity: conf.opacity}),
-			 close = api.getClosers(), 			 
+			 close = api.getClosers(),
 			 index;
 		
 		
@@ -341,7 +648,10 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
 
 		function load(el) {
 			
-			progress.fadeIn();
+			var timr = setTimeout(function() {
+    			progress.fadeIn();
+    			timr = null;
+			}, 200);
 			els.hide(); close.hide();
 			
 			var url = el.attr("href"); 
@@ -350,8 +660,12 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
 			var image = new Image();
 			
 			image.onload = function() {
-				
-				progress.fadeOut();
+			    if (timr) {
+			        clearTimeout(timr);
+			        timr = null;
+			    } else {
+				    progress.fadeOut();
+			    }
 				
 				// find image inside overlay
 				var img = $("#" + conf.imgId, overlay); 
@@ -363,14 +677,14 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
 				}
 				
 				// make initially invisible to get it's dimensions
-				img.attr("src", url); // .css("visibility", "hidden"); 			
-					
+				img.attr("src", url); // .css("visibility", "hidden");
+				
 				// animate overlay to fit the image dimensions
 				var width = image.width;
 				var left = ($(window).width() - width) / 2;
 					
 				// calculate index number
-				index = links.index(links.filter("[href=" +url+ "]"));	
+				index = links.index(links.filter("[href=" +url+ "]"));
 				
 				// activate trigger
 				links.removeClass(conf.activeClass).eq(index).addClass(conf.activeClass);
@@ -390,12 +704,17 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
 					.replace("${total}", links.length);
 					
 				//var padd = parseInt(info.css("paddingLeft"), 10) +  parseInt(info.css("paddingRight"), 10);
-				info.html(text); //.css({width: width - padd});				
+				info.html(text); //.css({width: width - padd});
 				
-				overlay.css({
-				    width: width, height: image.height, left: left
-				});
+                // overlay.css({
+                //     width: width, height: image.height, left: left
+                // });
+                
+                
+                
+                
 				els.show(); close.show();
+				
                 // overlay.animate({
                 //  width: width, height: image.height, left: left}, 0 /*conf.speed*/, function() {
                 //      els.fadeIn(); close.show(); 
@@ -418,12 +737,11 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
 			if (conf.preload) {
 				links.filter(":eq(" +(index-1)+ "), :eq(" +(index+1)+ ")").each(function()  {
 					var img = new Image();
-					img.src = $(this).attr("href");					
+					img.src = $(this).attr("href");
 				});
 			}
 			
 		}
-		
 //}}}
 
 
@@ -432,15 +750,15 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
 			
 			el.click(function() {
 					
-				if (el.hasClass(conf.disabledClass)) { return; }				
+				if (el.hasClass(conf.disabledClass)) { return; }
 				
 				// find the triggering link
-				var trigger = links.eq(i = index + (isNext ? 1 : -1));			
+				var trigger = links.eq(i = index + (isNext ? 1 : -1));
 					 
 				// if found load it's href
 				if (trigger.length) { load(trigger); }
 				
-			});				
+			});
 		}
 
 		// assign next/prev click handlers
@@ -453,24 +771,24 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
 				
 			if (!overlay.is(":visible") || evt.altKey || evt.ctrlKey) { return; }
 			
-			if (evt.keyCode == 37 || evt.keyCode == 39) {					
+			if (evt.keyCode == 37 || evt.keyCode == 39) {
 				var btn = evt.keyCode == 37 ? prev : next;
 				btn.click();
 				return evt.preventDefault();
 			}	
-			return true;			
+			return true;
 		});		
 		
 		function showEls() {
 			if (!overlay.is(":animated")) {
-				els.show(); close.show();		
+				els.show(); close.show();
 			}	
 		}
 		
 		// autohide functionality
 		if (conf.autohide) { 
 			overlay.hover(showEls, function() { els.fadeOut();	close.hide(); }).mousemove(showEls);
-		}		
+		}
 		
 		// load a proper gallery image when overlay trigger is clicked
 		var ret;
@@ -484,15 +802,15 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
 			});
 			
 			api.onClose(function() {
-				links.removeClass(conf.activeClass);	
-			});			
-		});  		
+				links.removeClass(conf.activeClass);
+			});
+		});
 		
 		return conf.api ? ret : this;
 		
 	};
 	
-})(jQuery);	
+})(jQuery);
 
 /*!
  * jQuery hashchange event - v1.2 - 2/11/2010
