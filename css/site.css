@@ -1796,7 +1796,7 @@ a:hover {
     left: 470px;
 }
 
-.product-actions-box-inner {
+.product-actions-box-inner, .tf-product-actions-box-inner {
     -moz-transform: scale(0.75);
     -moz-transform-origin: 0 0;
     -o-transform: scale(0.75);
@@ -1805,9 +1805,16 @@ a:hover {
     -webkit-transform-origin: 0 0;
 }
 
-.safari .product-actions-box-inner {
+.safari .product-actions-box-inner iframe {
     zoom: 1.5; /* fight safari iframe zoom bug? */
     margin-right: -16px;
+    margin-bottom: -16px;
+}
+
+.chrome .product-actions-box-inner iframe {
+    zoom: 1.5; /* fight safari iframe zoom bug? */
+    margin-right: -16px;
+    margin-bottom: -16px;
 }
 
 .tf-product-actions-box {
@@ -1825,15 +1832,6 @@ a:hover {
     bottom: -32px;
 }
  
-.tf-product-actions-box-inner {
-    -moz-transform: scale(0.75);
-    -moz-transform-origin: 0 0;
-    -o-transform: scale(0.75);
-    -o-transform-origin: 0 0;
-    -webkit-transform: scale(0.75);
-    -webkit-transform-origin: 0 0;
-}
-
 .gecko .tf-product-actions-box-inner {
     width: 420px; /* firefox 4 bug related to zoom/scale transform */
 }
@@ -1841,13 +1839,13 @@ a:hover {
 .safari .tf-product-actions-box-inner iframe {
     zoom: 1.5; /* fight safari iframe zoom bug? */
     margin-right: -16px;
+    margin-bottom: -16px;
 }
 
-.chrome .retweet > iframe {
-    width: 80px !important;
-    height: 90px !important;
+.chrome .tf-product-actions-box-inner iframe {
+    zoom: 1.5; /* fight safari iframe zoom bug? */
     margin-right: -16px;
-    margin-bottom: -10px;
+    margin-bottom: -16px;
 }
 
 .chrome .tf-product-actions-box-inner {
