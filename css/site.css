@@ -4126,7 +4126,7 @@ ol.statuses .hentry a.fav {
     font-size: 10px;
     line-height: 14px;
     color: #444;
-    min-height: 56px;
+    min-height: 84px;
 }
 
 .buy-15-box .exp-image {
@@ -4137,6 +4137,11 @@ ol.statuses .hentry a.fav {
 .buy-30-box .exp-image {
     background-image:url('../img/totalfinder-buy-30.png');
     width: 200px;
+}
+
+.buy-15-box .exp-deal {
+    padding-top: 20px;
+    min-height: 64px;
 }
 
 .exp-link {
