@@ -1916,6 +1916,7 @@ a:hover {
 }
 
 .product-button-play > div {
+    background: transparent url('/shared/img/teaser-icon.png') no-repeat 10px 4px;
 }
 
 .product-button-doc > div {
