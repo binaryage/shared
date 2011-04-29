@@ -1868,6 +1868,7 @@ a:hover {
 }
 
 .button {
+	cursor: pointer;
     display: inline-block;
     border: 1px solid #ccc;
     border-bottom-color: #C1C1C1;
