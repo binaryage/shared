@@ -3667,22 +3667,26 @@ ol.statuses .hentry a.fav {
 }
 
 .doc-image {
-    height: 479px;
-    width: 1016px;
+    padding-top: 20px;
+    width: 750px;
     position: relative;
-    left: -42px;
+    left: -22px;
     margin-bottom: -20px;
 }
 
 .doc-image1 {
     position: relative;
-    left: -42px;
+    padding-top: 20px;
+    left: -22px;
     margin-bottom: -20px;
+    width: 380px;
 }
 
 .doc-image2 {
+    padding-top: 20px;
     position: absolute;
-    left: 455px;
+    width: 380px;
+    left: 355px;
     margin-bottom: -20px;
 }
 
@@ -3706,7 +3710,7 @@ ol.statuses .hentry a.fav {
 }
 
 .keyboard-shortcuts {
-    width: 500px;
+    width: 400px;
     background-color: #fff;
     -moz-border-radius:5px;
     -webkit-border-radius:5px;  
@@ -3714,9 +3718,18 @@ ol.statuses .hentry a.fav {
     margin-bottom: 20px;
 }
 
+.keyboard-shortcuts.full {
+    width: 690px;
+}
+
 .keyboard-shortcuts table {
     margin: 0;
-    width: 100%;
+    width: 380px;
+    margin-left: 10px;
+}
+
+.keyboard-shortcuts.full table {
+    width: 670px;
 }
 
 .keyboard-shortcuts th {
@@ -3738,8 +3751,21 @@ ol.statuses .hentry a.fav {
 
 .doc-side {
     float: right;
-    width: 390px;
-    margin-left:30px;
+    margin-left: 20px;
+    position: relative;
+    left: 10px;
+    margin-bottom: -300px;
+    min-height: 700px;
+}
+
+.doc-side-inner {
+    width: 280px;
+    -moz-transform: scale(0.7);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.7);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.7);
+    -webkit-transform-origin: 0 0;
 }
 
 .doc-side h2 {
@@ -3754,12 +3780,13 @@ ol.statuses .hentry a.fav {
 
 .doc-home-side {
     float: right;
-    width: 480px;
-    margin-left:20px;
+    width: 680px;
+    margin-left: 20px;
+    margin-top: 0px;
 }
 
 .doc-home-side div#gsfn_list_widget {
-    width: 480px;
+    width: 660px;
     border: none;
     margin-bottom: 20px;
 }
@@ -4276,3 +4303,46 @@ ol.statuses .hentry a.fav {
     padding-left: 8px;
     font-size: 11px;
 }
+
+.tf-doc .sidebar {
+    float: left;
+    margin-right: 29px;
+    width: 200px;
+    overflow: hidden;
+    border-right: 1px solid #CCC;
+}
+
+.doc-page {
+    float: left;
+    padding-left: 10px;
+    width: 690px;
+    margin-top: 20px;
+}
+
+.doc-page h2 {
+    margin-top: 0;
+}
+
+.doc-back {
+    float:left;
+    width: 240px;
+    position: relative;
+    top: 24px;
+}
+
+.doc-double {
+    position: relative;
+    margin: 0 0 1.5em;
+}
+
+div#gsfn_list_widget img { border: none; }
+div#gsfn_list_widget { font-size: 12px; width: 250px; border: 6px solid #DDD; padding: 10px; }
+div#gsfn_list_widget a.widget_title { color: #000; display: block; margin-bottom: 10px; font-weight: bold; }
+div#gsfn_list_widget .powered_by { margin-top: 8px; padding-top: 8px; border-top: 1px solid #DDD; }
+div#gsfn_list_widget .powered_by a { color: #333; font-size: 90%; }
+div#gsfn_list_widget div#gsfn_content { }
+div#gsfn_list_widget div#gsfn_content li { text-align:left; margin-bottom: 3px; }
+div#gsfn_list_widget div#gsfn_content a.gsfn_link { line-height: 1; }
+div#gsfn_list_widget div#gsfn_content span.time { font-size: 90%; padding-left: 3px; }
+div#gsfn_list_widget div#gsfn_content p.gsfn_summary { margin-top: 2px }
+div#gsfn_list_widget span.time { color: #999; margin-left: 3px; }
