@@ -3667,7 +3667,6 @@ ol.statuses .hentry a.fav {
 }
 
 .doc-image {
-    padding-top: 20px;
     width: 750px;
     position: relative;
     left: -22px;
@@ -3676,14 +3675,12 @@ ol.statuses .hentry a.fav {
 
 .doc-image1 {
     position: relative;
-    padding-top: 20px;
     left: -22px;
     margin-bottom: -20px;
     width: 380px;
 }
 
 .doc-image2 {
-    padding-top: 20px;
     position: absolute;
     width: 380px;
     left: 355px;
@@ -4346,3 +4343,18 @@ div#gsfn_list_widget div#gsfn_content a.gsfn_link { line-height: 1; }
 div#gsfn_list_widget div#gsfn_content span.time { font-size: 90%; padding-left: 3px; }
 div#gsfn_list_widget div#gsfn_content p.gsfn_summary { margin-top: 2px }
 div#gsfn_list_widget span.time { color: #999; margin-left: 3px; }
+
+.google-pray p {
+    font-size: 10px !important;
+    color: #eee;
+}
+
+.google-pray p::-moz-selection {
+       background-color: #eee;
+       color: #eee;
+}
+
+.google-pray p::selection {
+    background-color: #eee;
+    color: #eee;
+}
