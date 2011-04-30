@@ -339,7 +339,7 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
 				self.load(e);
 				return e.preventDefault();
 			});
-		}   			
+		}
 		
 		// API methods  
 		$.extend(self, {
@@ -348,6 +348,8 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
 				
 				// can be opened only once
 				if (self.isOpened()) { return self; }
+				
+				_gaq.push(['_trackPageview', '/overlays/'+trigger.attr('id')]);
 				
 				if (window.SSTracker) {
 				    SSTracker.pushState(trigger.attr('id'));
