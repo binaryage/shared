@@ -1,0 +1,212 @@
+@import 'blueprint'
+@import 'nib'
+
+@import 'constants'
+@import 'helpers'
+@import 'components'
+
+///////////////////////////////
+
+// temporary
+#footer
+    display none
+    
+.google-pray
+    display none
+
+.teaser-overlay,
+.dwn-overlay,
+.dwn-overlay, 
+.air-overlay,
+.tf-product-actions-box
+    display none
+
+
+//////////////////////////////
+
+html
+    height 101%
+
+body
+    background #f2f2f2 url('/shared/img2/background.png') repeat top left;
+    
+#topbar
+    height 5px
+    background-color topbar-bg-color
+    
+    .topbar
+        relative()
+        
+        .topbar-buttons
+            absolute(right)
+
+            .topbar-testimonials
+                topbar-button(276px, 62px)
+
+            .topbar-labs
+                topbar-button(276px, 93px)
+    
+#header
+    height 90px
+    background-color header-bg-color
+    clear both
+    border-bottom 1px solid header-separator-color
+    
+    .header
+        relative()
+    
+        .header-logo
+            sprite(0px, 0px, 190px, 56px)
+            margin-top 25px
+        
+            :hover
+                cursor: pointer;
+    
+        .header-motto
+            sprite(216px, 10px, 126px, 30px)
+            margin-top 18px
+            margin-left 174px
+
+        .header-selector
+            sprite(0px, 213px, 22px, 11px)
+            margin-top 80px 
+            display none
+
+        .header-menu
+            absolute(right)
+            display block
+            padding 0px
+            margin: 0px
+            margin-top 44px
+            margin-right -10px
+            list-style-type none
+        
+            .menu-item-store
+                menu-button(-6px, 129px)
+            
+            .menu-item-products
+                menu-button(-4px, 97px)
+            
+            .menu-item-blog
+                menu-button(-4px, 63px)
+        
+            .menu-item-support
+                menu-button(-0px, 162px)
+                
+
+// selected menu items
+.menu-products .header-selector
+    right 230px
+    display block !important
+                
+.menu-store .menu-item-store a,
+.menu-products .menu-item-products a,
+.menu-blog .menu-item-blog a,
+.menu-support .menu-item-support a
+    color:menu-selected-color !important;
+    
+// main section
+#main .container
+    margin-top 50px
+    
+    .product-logo-box
+        relative()
+        padding-top 10px
+        padding-right 20px
+        padding-left: 85px;
+    
+        .product-icon
+            absolute(left 0px)
+            width: 64px;
+            height: 64px;
+        
+        .product-title
+            font product-title-font
+            color: product-title-color
+            line-height 40px
+            margin 0px
+            margin-top 2px
+        
+        .product-subtitle
+            font product-subtitle-font
+            color product-subtitle-color
+            line-height 20px
+
+        .facebook-like-box
+            margin 0px
+            margin-top 16px
+            min-height 40px
+        
+    .product-buttons-box
+        margin-top: 14px;
+        margin-left: 85px;
+        
+        .product-buttons
+            relative()
+            width 302px
+        
+            .product-button-play
+                product-button(-16px, 244px)
+
+            .product-button-download
+                overflow hidden
+                product-button(-16px, 302px)
+
+            .product-button-buy
+                product-button(-16px, 358px)
+            
+            .product-price-tag
+                sprite(464px, 255px, 70px, 30px)
+                absolute(right -14px top 11px)
+            
+            .reasons-to-buy
+                text-align: right;
+                font-size 10px;
+
+                a
+                    color #999
+                    text-decoration none
+
+    .main-product-right
+        relative()
+        
+        .product-thumbs-box
+            display: none;
+            height: 90px;
+            position: relative;
+
+        .main-screenshot
+            relative(left 12px)
+
+        .navi
+            height:20px;
+            absolute(top 340px left 200px)
+
+        .navi a
+            width:8px;
+            height:8px;
+            float:left;
+            margin:3px;
+            background:url('../img/scrollable/arrow/navigator.png') 0 0 no-repeat;
+            display:block;
+            font-size:1px;
+            outline: none;
+
+        .navi a:hover
+            outline: none;
+            background-position:0 -8px;      
+
+        .navi a.active
+            outline: none;
+            background-position:0 -16px;     
+
+        .main-screenshot *
+            max-width: 500px;
+            max-height: 340px;
+
+        .screenshot-box img
+            absolute(right)
+
+
+
+            

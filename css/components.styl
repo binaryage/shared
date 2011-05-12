@@ -1,0 +1,90 @@
+-reset()
+    margin: 0
+    user-select: none
+    display: inline-block
+    text-decoration: none
+
+topbar-button(iconx=276px, icony=62px, bg = topbar-bg-color, img='/shared/img2/assets.png')
+    -reset()
+    background transparent url(img) no-repeat (-(iconx)) (-(icony))
+    float right
+    background-color bg
+    color topbar-color
+    font topbar-font
+    height 22px
+    line-height 22px
+    border-radius bottom 6px
+    padding 0px 8px 0px 26px
+    margin-left 5px
+    text-shadow: 0 1px 0 darken(bg, 30%)
+    
+    &:hover
+        cursor pointer
+    
+menu-button(iconx=-10px, icony=63px, img='/shared/img2/assets.png')
+    -reset()
+    margin-left 12px
+    & a
+        text-shadow: 0 1px 0 #fff
+        background transparent url(img) no-repeat (-(iconx)) (-(icony))
+        display: inline-block
+        padding 0px 10px 0px 34px
+        height 26px
+        cursor pointer
+        color menu-color
+        font menu-font
+        line-height 24px
+        text-decoration none
+
+product-button(iconx=-16px, icony=242px, img='/shared/img2/assets.png')
+    -reset()
+    relative()
+    cursor pointer
+    width 100%
+    font product-button-font
+    color product-button-color
+    border 1px solid product-button-border-color
+    padding 2px 0px 2px 0px
+    text-shadow #FFF 1px 2px 2px
+    border-radius 8px
+    min-height 38px
+    line-height 38px
+    margin-bottom 12px
+    box-shadow 0px 1px 3px #CCC
+    background linear-gradient(top, #f9f9f9, #eaeaea)
+    
+    & > div
+        background transparent url(img) no-repeat (-(iconx)) (-(icony))
+
+    & > div > div
+        margin-left: 40px;
+        text-align: left;
+        padding: 0px 20px;
+        white-space:nowrap;
+        
+    & .product-specs
+        font product-specs-font
+        color: #555;
+        margin: 0;
+        line-height: 10px;
+        margin-bottom: 6px;
+        margin-top: -4px;
+        
+    & .trial-note {
+        padding: 4px 30px;
+        background-color: #D9DFE6;
+        text-shadow: none;
+        font-weight: normal;
+        color: #999;
+        font-size: 8px;
+        line-height: 9px;
+        text-align: center;
+        absolute(top 13px right -31px)
+        -webkit-transform: rotate(45deg); 
+        -moz-transform: rotate(45deg);
+        display: none;
+    }
+
+    .webkit & .trial-note, 
+    .gecko & .trial-note
+        display: block;
