@@ -40,12 +40,11 @@ product-button(iconx=-16px, icony=242px, img='/shared/img2/assets.png')
     -reset()
     relative()
     cursor pointer
-    width 100%
     font product-button-font
     color product-button-color
     border 1px solid product-button-border-color
     padding 2px 0px 2px 0px
-    text-shadow #FFF 1px 2px 2px
+    text-shadow #FFF 0px 1px 1px
     border-radius 8px
     min-height 38px
     line-height 38px
@@ -60,13 +59,15 @@ product-button(iconx=-16px, icony=242px, img='/shared/img2/assets.png')
         margin-left: 40px;
         text-align: left;
         padding: 0px 20px;
+        line-height 38px
         white-space:nowrap;
         
     & .product-specs
         font product-specs-font
-        color: #555;
+        color: #777;
+        text-shadow #fff 0px 1px 1px
         margin: 0;
-        line-height: 10px;
+        line-height: 16px;
         margin-bottom: 6px;
         margin-top: -4px;
         
@@ -88,3 +89,36 @@ product-button(iconx=-16px, icony=242px, img='/shared/img2/assets.png')
     .webkit & .trial-note, 
     .gecko & .trial-note
         display: block;
+
+minor-button(iconx=-16px, icony=242px, img='/shared/img2/assets.png')
+    product-button(iconx, icony, img)
+    font minor-button-font
+    color minor-button-color
+
+popup-button(img='/shared/img2/assets.png')
+    product-button(0px, 0px, img)
+
+    & > div
+        background none
+
+    & > div > div
+        margin-left: 0px;
+
+
+tiny-button(img='/shared/img2/assets.png')
+    product-button(0px, 0px, img)
+
+    font tiny-button-font
+    color tiny-button-color
+    height 22px
+    min-height 22px
+    border-radius 4px
+    box-shadow 0px 1px 2px #CCC
+    padding 0px 4px
+
+    & > div
+        background none
+
+    & > div > div
+        margin-left: 0px;
+    
