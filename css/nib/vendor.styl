@@ -15,7 +15,7 @@ no-wrap = unquote('nowrap')
  * Default vendor prefixes.
  */
 
-vendor-prefixes ?= webkit moz official
+vendor-prefixes ?= webkit moz o official
 
 /*
  * Vendor support for the given prop / arguments,
@@ -80,6 +80,9 @@ box-sizing()
 transform()
   vendor('transform', arguments)
 
+transform-origin()
+    vendor('transform-origin', arguments)
+
 /*
  * Vendor "border-image" support.
  */
@@ -92,7 +95,7 @@ border-image()
  */
 
 transition()
-  vendor('transition', arguments, only: webkit moz)
+  vendor('transition', arguments)
 
 /*
  * Opacity with conditional IE support.

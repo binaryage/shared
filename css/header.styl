@@ -1,0 +1,57 @@
+#header
+    height 90px
+    background linear-gradient(top, #ffffff, #f5f5f5)
+    clear both
+    border-bottom 1px solid header-separator-color
+    
+    .header
+        relative()
+    
+        .header-logo
+            sprite(0px, 0px, 190px, 56px)
+            margin-top 25px
+        
+            :hover
+                cursor: pointer;
+    
+        .header-motto
+            sprite(216px, 10px, 126px, 30px)
+            margin-top 18px
+            margin-left 174px
+
+        .header-selector
+            sprite(0px, 213px, 22px, 11px)
+            margin-top 80px 
+            display none
+
+        .header-menu
+            absolute(right)
+            display block
+            padding 0px
+            margin: 0px
+            margin-top 44px
+            margin-right -10px
+            list-style-type none
+        
+            .menu-item-store
+                menu-button(-6px, 129px)
+            
+            .menu-item-products
+                menu-button(-4px, 97px)
+            
+            .menu-item-blog
+                menu-button(-4px, 63px)
+        
+            .menu-item-support
+                menu-button(-0px, 162px)
+                
+// selected menu items
+.menu-products .header-selector
+    right 230px
+    display block !important
+                
+.menu-store .menu-item-store a,
+.menu-products .menu-item-products a,
+.menu-blog .menu-item-blog a,
+.menu-support .menu-item-support a
+    color:menu-selected-color !important;
