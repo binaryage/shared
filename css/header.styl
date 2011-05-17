@@ -8,11 +8,17 @@
         relative()
     
         .header-logo
-            sprite(0px, 0px, 190px, 56px)
-            margin-top 25px
-        
-            :hover
-                cursor: pointer;
+            sprite(0px, 0px, 196px, 56px)
+            absolute(top 25px)
+            cursor pointer
+
+            .header-logo-hover
+                sprite(752px, 0px, 196px, 56px)
+                transition all 0.33s ease 0s
+                opacity 0
+
+                &:hover
+                    opacity 1
     
         .header-motto
             sprite(216px, 10px, 126px, 30px)

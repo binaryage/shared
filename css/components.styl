@@ -4,6 +4,13 @@
     display: inline-block
     text-decoration: none
 
+sprite(x=0px, y=0px, w='auto', h='auto', img='/shared/img2/assets.png')
+    background transparent url(img) no-repeat (-(x)) (-(y)) !important
+    width w
+    height h
+    display block
+    absolute()
+    
 topbar-button(iconx=276px, icony=62px, bg = topbar-bg-color, img='/shared/img2/assets.png')
     -reset()
     background transparent url(img) no-repeat (-(iconx)) (-(icony))
@@ -51,6 +58,11 @@ product-button(iconx=-16px, icony=242px, img='/shared/img2/assets.png')
     margin-bottom 12px
     box-shadow 0px 1px 3px #CCC
     background linear-gradient(top, #f9f9f9, #eaeaea)
+    transition all 0.33s ease 0s
+    
+    &:hover
+        background linear-gradient(top, #fff, #f3f3f3)
+        border-color selection-color
     
     & > div
         background transparent url(img) no-repeat (-(iconx)) (-(icony))
@@ -64,31 +76,32 @@ product-button(iconx=-16px, icony=242px, img='/shared/img2/assets.png')
         
     & .product-specs
         font product-specs-font
-        color: #777;
+        color #777
         text-shadow #fff 0px 1px 1px
-        margin: 0;
-        line-height: 16px;
-        margin-bottom: 6px;
-        margin-top: -4px;
+        margin 0
+        line-height 16px
+        margin-bottom 6px
+        margin-top -4px
         
     & .trial-note {
-        padding: 4px 30px;
-        background-color: #D9DFE6;
-        text-shadow: none;
-        font-weight: normal;
-        color: #999;
-        font-size: 8px;
-        line-height: 9px;
-        text-align: center;
-        absolute(top 13px right -31px)
-        -webkit-transform: rotate(45deg); 
-        -moz-transform: rotate(45deg);
-        display: none;
+        padding 4px 30px
+        background-color #2572c7
+        text-shadow none
+        font-weight normal
+        font-family arial
+        color #fff
+        font-size 9px
+        line-height 10px
+        text-align center
+        absolute(top 12px right -30px)
+        transform rotate(45deg)
+        display none
     }
 
-    .webkit & .trial-note, 
+    .webkit & .trial-note 
     .gecko & .trial-note
-        display: block;
+    .opera & .trial-note
+        display block
 
 minor-button(iconx=-16px, icony=242px, img='/shared/img2/assets.png')
     product-button(iconx, icony, img)

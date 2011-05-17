@@ -11,8 +11,13 @@
         relative()
 
         .copyright
+            transition all 0.33s ease 0s
+            opacity 0.6
             absolute(left 4px)
             z-index 2
+            
+            &:hover
+                opacity 1
 
         .copyright a
             display block
