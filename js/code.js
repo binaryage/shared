@@ -175,9 +175,9 @@ e(this);b=new u(c.find(":input"),c,a);c.data("validator",b)});else{b=new u(this,
 				var href = $(this).attr("href");
 				
 				var firstHref = $(this).parents('ul').children().eq(0).find('a').attr('href');
-				if (href == firstHref) {
-				    href = "#";
-				}
+                // if (href == firstHref) {
+                //     href = "#";
+                // }
 
 				if (window.SSTracker) {
 				    SSTracker.setState(href.substring(1));
