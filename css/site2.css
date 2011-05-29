@@ -4487,7 +4487,7 @@ html.support #main * {
   line-height: 12px;
   font-size: 10px;
   color: #666;
-  height: 120px;
+  height: 100px;
 }
 #blog .blog-side .blog-side-about .blog-side-about-left {
   float: left;
@@ -5741,5 +5741,8 @@ html.support #main * {
 .topbar-labs,
 #free-software .bottom-divider,
 .labs-button {
+  display: none !important;
+}
+.arrow {
   display: none !important;
 }
