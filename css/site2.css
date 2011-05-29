@@ -4158,6 +4158,7 @@ div#gsfn_list_widget span.time {
   position: absolute;
   left: 274px;
   top: 70px;
+  display: none;
 }
 #main-offer .main-box .title {
   font: bold 38px "Droid Sans", arial, serif;
