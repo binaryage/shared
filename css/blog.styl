@@ -156,6 +156,7 @@
             line-height 44px
             font-weight bold
             text-shadow #FFF 0px 1px 1px
+            relative()
 
             a
                 color blog-post-title-color
@@ -170,7 +171,7 @@
                 background: transparent url('/shared/img/icons-blog.png') -29px 0 no-repeat;
             
             .subscribe-button
-                float right
+                absolute(top 0px right 0px)
                 margin-right 12px
                 margin-top 8px
 
@@ -254,7 +255,7 @@
             list-style-type none
             
             li
-                clear both
+                relative()
                 
             .post-separator
                 sprite(0px, 17px, 660px, 17px, blog-assets)
@@ -264,20 +265,24 @@
     font blog-post-title-font
     color blog-post-title-color
     text-shadow #FFF 0px 1px 1px
-    padding-top 14px
-    padding-bottom 6px
+    padding-top 16px
+    padding-bottom 3px
     text-transform none
     line-height 20px
+    margin 15px 0px 15px 44px
     display block
-    margin-top 15px
-    margin-bottom 15px
-    margin-left 44px
-        
+    
+.ie6 .post-title,
+.ie7 .post-title,
+.ie8 .post-title,
+    padding-top 0px
+    margin 0
+    
 .calendar
+    float left
     border 1px solid #d5d5d5
     background-color #fafafa
     font-family arial
-    float left
     width 30px
     font-size 12px
     line-height 12px

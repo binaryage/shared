@@ -1,6 +1,7 @@
 #header
     height 90px
-    background linear-gradient(top, #ffffff, #f5f5f5)
+    background-color #f7f7f7
+    background linear-gradient(top, #ffffff, #f7f7f7)
     clear both
     border-bottom 1px solid header-separator-color
     box-shadow 0px 1px 5px #dadada
@@ -39,6 +40,10 @@
             margin-top 44px
             margin-right -10px
             list-style-type none
+            
+            li
+                display block
+                float left
         
             .menu-item-store
                 menu-button(-6px, 129px)
@@ -51,6 +56,18 @@
         
             .menu-item-support
                 menu-button(-0px, 162px)
+                
+                
+.ie
+    #header
+        background-color #ffffff
+        
+        .header-menu
+            li
+                background-color #ffffff
+                
+        .header-logo-hover
+            display none !important
                 
 // selected menu items
 .menu-store .header-selector
