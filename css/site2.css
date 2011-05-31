@@ -2947,14 +2947,14 @@ div#gsfn_list_widget span.time {
   background-color: #3aaa00;
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .price-tag {
-  background: transparent url("/shared/img2/assets.png") no-repeat -464px -255px !important;
-  width: 70px;
-  height: 30px;
+  background: transparent url("/shared/img2/assets.png") no-repeat -464px -253px !important;
+  width: 68px;
+  height: 28px;
   display: block;
   position: absolute;
   position: absolute;
   right: -14px;
-  top: 10px;
+  top: 8px;
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .reasons-to-buy {
   text-align: right;
@@ -3616,14 +3616,14 @@ div#gsfn_list_widget span.time {
   top: 60px;
 }
 #buy.overlay .buy-single .price-tag {
-  background: transparent url("/shared/img2/assets.png") no-repeat -464px -255px !important;
-  width: 70px;
-  height: 30px;
+  background: transparent url("/shared/img2/assets.png") no-repeat -464px -253px !important;
+  width: 68px;
+  height: 28px;
   display: block;
   position: absolute;
   position: absolute;
   right: -14px;
-  top: 10px;
+  top: 8px;
 }
 #buy.overlay .buy-pack .button {
   width: 190px;
@@ -3639,14 +3639,14 @@ div#gsfn_list_widget span.time {
   top: 60px;
 }
 #buy.overlay .buy-pack .price-tag {
-  background: transparent url("/shared/img2/assets.png") no-repeat -464px -222px !important;
-  width: 70px;
-  height: 30px;
+  background: transparent url("/shared/img2/assets.png") no-repeat -464px -221px !important;
+  width: 68px;
+  height: 28px;
   display: block;
   position: absolute;
   position: absolute;
   right: -14px;
-  top: 10px;
+  top: 8px;
 }
 #teaser.overlay {
   background-image: url("/shared/img2/overlay-664x400.png");
