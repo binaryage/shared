@@ -2957,13 +2957,15 @@ div#gsfn_list_widget span.time {
   top: 8px;
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .reasons-to-buy {
+  position: relative;
+  top: -3px;
   text-align: right;
   text-shadow: #fff 0px 1px 1px;
   font-size: 10px;
-  line-height: 12px;
+  line-height: 13px;
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .reasons-to-buy a {
-  color: #999;
+  color: #777;
 }
 .main-product .main-product-right {
   position: relative;
@@ -4333,7 +4335,7 @@ div#gsfn_list_widget span.time {
 }
 #free-software .products .product .desc {
   font: 10px "Droid Sans", arial, serif;
-  color: #999;
+  color: #777;
   text-shadow: #fff 0px 2px 1px;
   line-height: 16px;
 }
@@ -4640,7 +4642,7 @@ html.support #main * {
   padding-left: 48px;
   font-size: 10px;
   font-weight: normal;
-  color: #999;
+  color: #777;
   text-shadow: #fff 0px 1px 1px;
   padding-bottom: 2px;
 }
