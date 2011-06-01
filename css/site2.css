@@ -1047,7 +1047,7 @@ html {
 }
 body {
   background: #f2f2f2 url("/shared/img2/background.png") repeat top left;
-  font: 12px "Droid Sans", arial, serif;
+  font: 12px "Play", arial, serif;
 }
 a {
   color: #4f6393;
@@ -1160,7 +1160,7 @@ pre code {
   float: right;
   background-color: #61656f;
   color: #aaa;
-  font: bold 11px "Droid Sans", arial, serif;
+  font: bold 11px "Play", arial, serif;
   height: 22px;
   line-height: 22px;
   -moz-border-radius-bottomleft: 6px;
@@ -1190,7 +1190,7 @@ pre code {
   float: right;
   background-color: #61656f;
   color: #aaa;
-  font: bold 11px "Droid Sans", arial, serif;
+  font: bold 11px "Play", arial, serif;
   height: 22px;
   line-height: 22px;
   -moz-border-radius-bottomleft: 6px;
@@ -1301,7 +1301,7 @@ pre code {
   height: 26px;
   cursor: pointer;
   color: #6c717b;
-  font: bold 14px "Droid Sans", arial, serif;
+  font: bold 14px "Play", arial, serif;
   line-height: 24px;
   text-decoration: none;
 }
@@ -1323,7 +1323,7 @@ pre code {
   height: 26px;
   cursor: pointer;
   color: #6c717b;
-  font: bold 14px "Droid Sans", arial, serif;
+  font: bold 14px "Play", arial, serif;
   line-height: 24px;
   text-decoration: none;
 }
@@ -1345,7 +1345,7 @@ pre code {
   height: 26px;
   cursor: pointer;
   color: #6c717b;
-  font: bold 14px "Droid Sans", arial, serif;
+  font: bold 14px "Play", arial, serif;
   line-height: 24px;
   text-decoration: none;
 }
@@ -1367,7 +1367,7 @@ pre code {
   height: 26px;
   cursor: pointer;
   color: #6c717b;
-  font: bold 14px "Droid Sans", arial, serif;
+  font: bold 14px "Play", arial, serif;
   line-height: 24px;
   text-decoration: none;
 }
@@ -1406,7 +1406,7 @@ pre code {
   clear: both;
   padding-bottom: 20px;
   margin-top: 30px;
-  font: 12px "Droid Sans", arial, serif;
+  font: 12px "Play", arial, serif;
   color: #d4d4d4;
   text-shadow: #fff 0px 1px 1px;
 }
@@ -1475,6 +1475,7 @@ pre code {
 }
 #tweets {
   position: absolute;
+  font-family: arial, serif;
 }
 .tweet .loading img {
   position: relative;
@@ -1867,7 +1868,7 @@ ol.statuses .hentry a.fav {
   text-decoration: none;
   position: relative;
   cursor: pointer;
-  font: bold 20px "Droid Sans", arial, serif;
+  font: bold 20px "Play", arial, serif;
   color: #8d9198;
   border: 1px solid #ccc;
   padding: 2px 0px 2px 0px;
@@ -1891,7 +1892,7 @@ ol.statuses .hentry a.fav {
   -moz-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
-  font: bold 10px "Droid Sans", arial, serif;
+  font: bold 10px "Play", arial, serif;
   color: #8d9198;
   height: 22px;
   min-height: 22px;
@@ -1924,7 +1925,7 @@ ol.statuses .hentry a.fav {
   white-space: nowrap;
 }
 .doc-content .sidebar .header-sidebar .back-button .product-specs {
-  font: 10px "Droid Sans", arial, serif;
+  font: 10px "Play", arial, serif;
   color: #777;
   text-shadow: #fff 0px 1px 1px;
   margin: 0;
@@ -1975,7 +1976,7 @@ ol.statuses .hentry a.fav {
   background: transparent url("/shared/img2/assets.png") no-repeat -5px -605px;
 }
 .doc-content .sidebar h2 {
-  font: bold 18px "Droid Sans", arial, serif;
+  font: bold 18px "Play", arial, serif;
   color: #4a4c53;
   text-shadow: #fff 0px 1px 1px;
   line-height: 16px;
@@ -1986,7 +1987,7 @@ ol.statuses .hentry a.fav {
   list-style-type: none;
 }
 .doc-content .sidebar li {
-  font: bold 12px "Droid Sans", arial, serif;
+  font: bold 12px "Play", arial, serif;
   padding-left: 28px;
   line-height: 22px;
   background: transparent url("/shared/img2/assets.png") no-repeat -470px -387px;
@@ -2033,7 +2034,7 @@ ol.statuses .hentry a.fav {
   margin-bottom: 26px;
 }
 .doc-content .doc-page .header-content .title {
-  font: bold 30px "Droid Sans", arial, serif;
+  font: bold 30px "Play", arial, serif;
   color: #393d44;
   text-shadow: #fff 0px 2px 1px;
   line-height: 30px;
@@ -2390,7 +2391,7 @@ div#gsfn_list_widget span.time {
   text-decoration: none;
   position: relative;
   cursor: pointer;
-  font: bold 20px "Droid Sans", arial, serif;
+  font: bold 20px "Play", arial, serif;
   color: #8d9198;
   border: 1px solid #ccc;
   padding: 2px 0px 2px 0px;
@@ -2414,7 +2415,7 @@ div#gsfn_list_widget span.time {
   -moz-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
-  font: bold 16px "Droid Sans", arial, serif;
+  font: bold 16px "Play", arial, serif;
   color: minor-button-color;
   line-height: 26px;
   float: left;
@@ -2439,7 +2440,7 @@ div#gsfn_list_widget span.time {
   white-space: nowrap;
 }
 .changelogx h4 .product-specs {
-  font: 10px "Droid Sans", arial, serif;
+  font: 10px "Play", arial, serif;
   color: #777;
   text-shadow: #fff 0px 1px 1px;
   margin: 0;
@@ -2558,7 +2559,7 @@ div#gsfn_list_widget span.time {
   height: 64px;
 }
 .main-product .main-product-left .product-logo-box .product-title {
-  font: bold 38px "Droid Sans", arial, serif;
+  font: bold 38px "Play", arial, serif;
   color: #393d44;
   text-shadow: #fff 0px 1px 1px;
   line-height: 40px;
@@ -2566,8 +2567,8 @@ div#gsfn_list_widget span.time {
   margin-top: 2px;
 }
 .main-product .main-product-left .product-logo-box .product-subtitle {
-  font: 14px "Droid Sans", arial, serif;
-  color: #4a4c53;
+  font: 16px "Play", arial, serif;
+  color: #303137;
   text-shadow: #fff 0px 2px 1px;
   line-height: 20px;
   margin-top: 0px;
@@ -2615,7 +2616,7 @@ div#gsfn_list_widget span.time {
   text-decoration: none;
   position: relative;
   cursor: pointer;
-  font: bold 20px "Droid Sans", arial, serif;
+  font: bold 20px "Play", arial, serif;
   color: #8d9198;
   border: 1px solid #ccc;
   padding: 2px 0px 2px 0px;
@@ -2658,7 +2659,7 @@ div#gsfn_list_widget span.time {
   white-space: nowrap;
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .product-button-play .product-specs {
-  font: 10px "Droid Sans", arial, serif;
+  font: 10px "Play", arial, serif;
   color: #777;
   text-shadow: #fff 0px 1px 1px;
   margin: 0;
@@ -2700,7 +2701,7 @@ div#gsfn_list_widget span.time {
   text-decoration: none;
   position: relative;
   cursor: pointer;
-  font: bold 20px "Droid Sans", arial, serif;
+  font: bold 20px "Play", arial, serif;
   color: #8d9198;
   border: 1px solid #ccc;
   padding: 2px 0px 2px 0px;
@@ -2743,7 +2744,7 @@ div#gsfn_list_widget span.time {
   white-space: nowrap;
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .product-button-download .product-specs {
-  font: 10px "Droid Sans", arial, serif;
+  font: 10px "Play", arial, serif;
   color: #777;
   text-shadow: #fff 0px 1px 1px;
   margin: 0;
@@ -2784,7 +2785,7 @@ div#gsfn_list_widget span.time {
   text-decoration: none;
   position: relative;
   cursor: pointer;
-  font: bold 20px "Droid Sans", arial, serif;
+  font: bold 20px "Play", arial, serif;
   color: #8d9198;
   border: 1px solid #ccc;
   padding: 2px 0px 2px 0px;
@@ -2827,7 +2828,7 @@ div#gsfn_list_widget span.time {
   white-space: nowrap;
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .product-button-buy .product-specs {
-  font: 10px "Droid Sans", arial, serif;
+  font: 10px "Play", arial, serif;
   color: #777;
   text-shadow: #fff 0px 1px 1px;
   margin: 0;
@@ -2869,7 +2870,7 @@ div#gsfn_list_widget span.time {
   text-decoration: none;
   position: relative;
   cursor: pointer;
-  font: bold 20px "Droid Sans", arial, serif;
+  font: bold 20px "Play", arial, serif;
   color: #8d9198;
   border: 1px solid #ccc;
   padding: 2px 0px 2px 0px;
@@ -2912,7 +2913,7 @@ div#gsfn_list_widget span.time {
   white-space: nowrap;
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .product-button-thumbup .product-specs {
-  font: 10px "Droid Sans", arial, serif;
+  font: 10px "Play", arial, serif;
   color: #777;
   text-shadow: #fff 0px 1px 1px;
   margin: 0;
@@ -3521,7 +3522,7 @@ div#gsfn_list_widget span.time {
   text-decoration: none;
   position: relative;
   cursor: pointer;
-  font: bold 20px "Droid Sans", arial, serif;
+  font: bold 20px "Play", arial, serif;
   color: #8d9198;
   border: 1px solid #ccc;
   padding: 2px 0px 2px 0px;
@@ -3564,7 +3565,7 @@ div#gsfn_list_widget span.time {
   white-space: nowrap;
 }
 #buy.overlay .button .product-specs {
-  font: 10px "Droid Sans", arial, serif;
+  font: 10px "Play", arial, serif;
   color: #777;
   text-shadow: #fff 0px 1px 1px;
   margin: 0;
@@ -3701,7 +3702,7 @@ div#gsfn_list_widget span.time {
 }
 #download.overlay .while-downloading {
   color: #393d44;
-  font: 12px "Droid Sans", arial, serif;
+  font: 12px "Play", arial, serif;
   font-size: 20px;
   font-weight: bold;
 }
@@ -3709,7 +3710,7 @@ div#gsfn_list_widget span.time {
   padding-top: 2px;
   padding-bottom: 10px;
   margin-bottom: 26px;
-  font: 12px "Droid Sans", arial, serif;
+  font: 12px "Play", arial, serif;
   font-size: 14px;
   color: #8d9198;
 }
@@ -3960,7 +3961,7 @@ div#gsfn_list_widget span.time {
   text-decoration: none;
   position: relative;
   cursor: pointer;
-  font: bold 20px "Droid Sans", arial, serif;
+  font: bold 20px "Play", arial, serif;
   color: #8d9198;
   border: 1px solid #ccc;
   padding: 2px 0px 2px 0px;
@@ -3984,7 +3985,7 @@ div#gsfn_list_widget span.time {
   -moz-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
-  font: bold 10px "Droid Sans", arial, serif;
+  font: bold 10px "Play", arial, serif;
   color: #8d9198;
   height: 22px;
   min-height: 22px;
@@ -4018,7 +4019,7 @@ div#gsfn_list_widget span.time {
   white-space: nowrap;
 }
 #download.overlay .viral-boxes .mailchimp-box #mc-embedded-subscribe .product-specs {
-  font: 10px "Droid Sans", arial, serif;
+  font: 10px "Play", arial, serif;
   color: #777;
   text-shadow: #fff 0px 1px 1px;
   margin: 0;
@@ -4163,14 +4164,14 @@ div#gsfn_list_widget span.time {
   display: none;
 }
 #main-offer .main-box .title {
-  font: bold 38px "Droid Sans", arial, serif;
+  font: bold 38px "Play", arial, serif;
   color: #4f6393;
   text-shadow: #fff 0px 2px 1px;
   line-height: 38px;
 }
 #main-offer .main-box .subtitle {
-  font: 14px "Droid Sans", arial, serif;
-  color: #4a4c53;
+  font: 16px "Play", arial, serif;
+  color: #303137;
   text-shadow: #fff 0px 2px 1px;
   line-height: 20px;
 }
@@ -4210,7 +4211,7 @@ div#gsfn_list_widget span.time {
   text-decoration: none;
   position: relative;
   cursor: pointer;
-  font: bold 20px "Droid Sans", arial, serif;
+  font: bold 20px "Play", arial, serif;
   color: #8d9198;
   border: 1px solid #ccc;
   padding: 2px 0px 2px 0px;
@@ -4234,7 +4235,7 @@ div#gsfn_list_widget span.time {
   -moz-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
-  font: bold 10px "Droid Sans", arial, serif;
+  font: bold 10px "Play", arial, serif;
   color: #8d9198;
   height: 22px;
   min-height: 22px;
@@ -4269,7 +4270,7 @@ div#gsfn_list_widget span.time {
   white-space: nowrap;
 }
 #free-software .labs-button .product-specs {
-  font: 10px "Droid Sans", arial, serif;
+  font: 10px "Play", arial, serif;
   color: #777;
   text-shadow: #fff 0px 1px 1px;
   margin: 0;
@@ -4328,13 +4329,13 @@ div#gsfn_list_widget span.time {
   -moz-transition: color 0.5s ease 0s;
   -o-transition: color 0.5s ease 0s;
   transition: color 0.5s ease 0s;
-  font: bold 20px "Droid Sans", arial, serif;
+  font: bold 20px "Play", arial, serif;
   color: #4f6393;
   text-shadow: #fff 0px 2px 1px;
   line-height: 28px;
 }
 #free-software .products .product .desc {
-  font: 10px "Droid Sans", arial, serif;
+  font: 10px "Play", arial, serif;
   color: #777;
   text-shadow: #fff 0px 2px 1px;
   line-height: 16px;
@@ -4679,7 +4680,7 @@ html.support #main * {
   text-decoration: none;
   position: relative;
   cursor: pointer;
-  font: bold 20px "Droid Sans", arial, serif;
+  font: bold 20px "Play", arial, serif;
   color: #8d9198;
   border: 1px solid #ccc;
   padding: 2px 0px 2px 0px;
@@ -4703,7 +4704,7 @@ html.support #main * {
   -moz-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
-  font: bold 16px "Droid Sans", arial, serif;
+  font: bold 16px "Play", arial, serif;
   color: minor-button-color;
   line-height: 24px;
   min-height: 16px;
@@ -4732,7 +4733,7 @@ html.support #main * {
 }
 #blog .blog-content .paging .older .product-specs,
 #blog .blog-content .paging .newer .product-specs {
-  font: 10px "Droid Sans", arial, serif;
+  font: 10px "Play", arial, serif;
   color: #777;
   text-shadow: #fff 0px 1px 1px;
   margin: 0;
@@ -4787,7 +4788,7 @@ html.support #main * {
   position: static;
 }
 .post-title {
-  font: bold 20px "Droid Sans", arial, serif;
+  font: bold 20px "Play", arial, serif;
   color: #444951;
   text-shadow: #fff 0px 1px 1px;
   padding-top: 16px;
@@ -4990,7 +4991,7 @@ html.support #main * {
 }
 .store-box .store-header .store-header-title {
   color: #b5b5b5;
-  font: bold 20px "Droid Sans", arial, serif;
+  font: bold 20px "Play", arial, serif;
   line-height: 50px;
   margin-left: 62px;
 }
@@ -5050,12 +5051,12 @@ html.support #main * {
 }
 .store-box .core-window .product-row .product-info .product-title {
   color: #393e46;
-  font: bold 24px "Droid Sans", arial, serif;
+  font: bold 24px "Play", arial, serif;
   margin-bottom: 10px;
 }
 .store-box .core-window .product-row .product-info .product-description {
   color: #6c6c6c;
-  font: 12px "Droid Sans", arial, serif;
+  font: 12px "Play", arial, serif;
   line-height: 18px;
   padding-right: 20px;
 }
@@ -5068,14 +5069,14 @@ html.support #main * {
 .store-box .core-window .product-row .product-actions .product-price {
   color: #6c6c6c;
   white-space: nowrap;
-  font: bold 16px "Droid Sans", arial, serif;
+  font: bold 16px "Play", arial, serif;
   margin-bottom: 12px;
   background-color: #fff;
   display: inline-block;
 }
 .store-box .core-window .product-row .product-actions .product-buy .store-action .store-action-title {
   color: #fff;
-  font: bold 11px "Droid Sans", arial, serif;
+  font: bold 11px "Play", arial, serif;
   display: inline-block;
   margin: auto;
   background-color: #399fd2;
@@ -5306,7 +5307,7 @@ html.support #main * {
 .store-box .store-product-detail-action-order .store-action-title {
   text-align: center;
   color: #fff;
-  font: bold 11px "Droid Sans", arial, serif;
+  font: bold 11px "Play", arial, serif;
   display: inline-block;
   margin: auto;
   background-color: #399fd2;
@@ -5416,7 +5417,7 @@ html.support #main * {
   display: block;
   margin: 0px;
   color: #393e46;
-  font: bold 24px "Droid Sans", arial, serif;
+  font: bold 24px "Play", arial, serif;
   padding-top: 54px;
 }
 .store-product-detail .store-product-detail-image {
@@ -5433,7 +5434,7 @@ html.support #main * {
 }
 .store-product-detail .store-product-detail-description-short {
   color: #6c6c6c;
-  font: 12px "Droid Sans", arial, serif;
+  font: 12px "Play", arial, serif;
   line-height: 18px;
 }
 .store-product-detail .store-product-detail-quantity {
@@ -5555,14 +5556,14 @@ html.support #main * {
   margin: 0;
   margin-top: 6px;
   margin-bottom: 6px;
-  font: bold 14px "Droid Sans", arial, serif;
+  font: bold 14px "Play", arial, serif;
   color: #393d44;
   text-shadow: #fff 0px 1px 1px;
   line-height: 15px;
 }
 #content-totalfinder .highlights .highlight .highlight-content p {
   margin: 0;
-  font: 12px "Droid Sans", arial, serif;
+  font: 12px "Play", arial, serif;
   color: #8d9198;
   text-shadow: #fff 0px 1px 1px;
   line-height: 17px;
@@ -5593,7 +5594,7 @@ html.support #main * {
   text-decoration: none;
   position: relative;
   cursor: pointer;
-  font: bold 20px "Droid Sans", arial, serif;
+  font: bold 20px "Play", arial, serif;
   color: #8d9198;
   border: 1px solid #ccc;
   padding: 2px 0px 2px 0px;
@@ -5617,7 +5618,7 @@ html.support #main * {
   -moz-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
-  font: bold 16px "Droid Sans", arial, serif;
+  font: bold 16px "Play", arial, serif;
   color: minor-button-color;
   width: 290px;
   margin-right: 34px;
@@ -5640,7 +5641,7 @@ html.support #main * {
   white-space: nowrap;
 }
 #content-totalfinder .more-info .product-button-doc .product-specs {
-  font: 10px "Droid Sans", arial, serif;
+  font: 10px "Play", arial, serif;
   color: #777;
   text-shadow: #fff 0px 1px 1px;
   margin: 0;
@@ -5681,7 +5682,7 @@ html.support #main * {
   text-decoration: none;
   position: relative;
   cursor: pointer;
-  font: bold 20px "Droid Sans", arial, serif;
+  font: bold 20px "Play", arial, serif;
   color: #8d9198;
   border: 1px solid #ccc;
   padding: 2px 0px 2px 0px;
@@ -5705,7 +5706,7 @@ html.support #main * {
   -moz-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
-  font: bold 16px "Droid Sans", arial, serif;
+  font: bold 16px "Play", arial, serif;
   color: minor-button-color;
   width: 290px;
 }
@@ -5727,7 +5728,7 @@ html.support #main * {
   white-space: nowrap;
 }
 #content-totalfinder .more-info .product-button-changes .product-specs {
-  font: 10px "Droid Sans", arial, serif;
+  font: 10px "Play", arial, serif;
   color: #777;
   text-shadow: #fff 0px 1px 1px;
   margin: 0;
