@@ -1052,10 +1052,10 @@ body {
 a {
   color: #4f6393;
   text-decoration: none;
-  -webkit-transition: color 0.33s ease 0s;
-  -moz-transition: color 0.33s ease 0s;
-  -o-transition: color 0.33s ease 0s;
-  transition: color 0.33s ease 0s;
+  -webkit-transition: color 0.5s ease 0s;
+  -moz-transition: color 0.5s ease 0s;
+  -o-transition: color 0.5s ease 0s;
+  transition: color 0.5s ease 0s;
 }
 a:hover,
 a:focus {
@@ -1140,10 +1140,10 @@ pre code {
   right: 0;
 }
 #topbar .topbar .topbar-buttons div {
-  -webkit-transition: all 0.33s ease 0s;
-  -moz-transition: all 0.33s ease 0s;
-  -o-transition: all 0.33s ease 0s;
-  transition: all 0.33s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
 }
 #topbar .topbar .topbar-buttons div:hover {
   color: #ccc;
@@ -1240,10 +1240,10 @@ pre code {
   height: 56px;
   display: block;
   position: absolute;
-  -webkit-transition: all 0.33s ease 0s;
-  -moz-transition: all 0.33s ease 0s;
-  -o-transition: all 0.33s ease 0s;
-  transition: all 0.33s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
   opacity: 0;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
 }
@@ -1415,10 +1415,10 @@ pre code {
   position: relative;
 }
 #footer .footerbox .copyright {
-  -webkit-transition: all 0.33s ease 0s;
-  -moz-transition: all 0.33s ease 0s;
-  -o-transition: all 0.33s ease 0s;
-  transition: all 0.33s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
   opacity: 0.6;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   position: absolute;
@@ -1887,10 +1887,10 @@ ol.statuses .hentry a.fav {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(1, #eaeaea));
   background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
   background: linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
-  -webkit-transition: all 0.33s ease 0s;
-  -moz-transition: all 0.33s ease 0s;
-  -o-transition: all 0.33s ease 0s;
-  transition: all 0.33s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
   font: bold 10px "Droid Sans", arial, serif;
   color: #8d9198;
   height: 22px;
@@ -2410,10 +2410,10 @@ div#gsfn_list_widget span.time {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(1, #eaeaea));
   background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
   background: linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
-  -webkit-transition: all 0.33s ease 0s;
-  -moz-transition: all 0.33s ease 0s;
-  -o-transition: all 0.33s ease 0s;
-  transition: all 0.33s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
   font: bold 16px "Droid Sans", arial, serif;
   color: minor-button-color;
   line-height: 26px;
@@ -2635,10 +2635,10 @@ div#gsfn_list_widget span.time {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(1, #eaeaea));
   background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
   background: linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
-  -webkit-transition: all 0.33s ease 0s;
-  -moz-transition: all 0.33s ease 0s;
-  -o-transition: all 0.33s ease 0s;
-  transition: all 0.33s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .product-button-play:hover {
   background-color: #f3f3f3;
@@ -2720,10 +2720,10 @@ div#gsfn_list_widget span.time {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(1, #eaeaea));
   background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
   background: linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
-  -webkit-transition: all 0.33s ease 0s;
-  -moz-transition: all 0.33s ease 0s;
-  -o-transition: all 0.33s ease 0s;
-  transition: all 0.33s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .product-button-download:hover {
   background-color: #f3f3f3;
@@ -2804,10 +2804,10 @@ div#gsfn_list_widget span.time {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(1, #eaeaea));
   background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
   background: linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
-  -webkit-transition: all 0.33s ease 0s;
-  -moz-transition: all 0.33s ease 0s;
-  -o-transition: all 0.33s ease 0s;
-  transition: all 0.33s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .product-button-buy:hover {
   background-color: #f3f3f3;
@@ -2889,10 +2889,10 @@ div#gsfn_list_widget span.time {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(1, #eaeaea));
   background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
   background: linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
-  -webkit-transition: all 0.33s ease 0s;
-  -moz-transition: all 0.33s ease 0s;
-  -o-transition: all 0.33s ease 0s;
-  transition: all 0.33s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .product-button-thumbup:hover {
   background-color: #f3f3f3;
@@ -2992,10 +2992,10 @@ div#gsfn_list_widget span.time {
   left: 0px;
 }
 .main-product .main-product-right .screenshot-controls .teaser-box .teaser-button div {
-  -webkit-transition: opacity 0.33s ease 0s;
-  -moz-transition: opacity 0.33s ease 0s;
-  -o-transition: opacity 0.33s ease 0s;
-  transition: opacity 0.33s ease 0s;
+  -webkit-transition: opacity 0.5s ease 0s;
+  -moz-transition: opacity 0.5s ease 0s;
+  -o-transition: opacity 0.5s ease 0s;
+  transition: opacity 0.5s ease 0s;
   opacity: 0.6;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   background: transparent url("/shared/img2/assets.png") no-repeat -279px -152px !important;
@@ -3111,10 +3111,10 @@ div#gsfn_list_widget span.time {
   position: absolute;
   top: 40%;
   left: 45%;
-  -webkit-transition: opacity 0.33s ease 0s;
-  -moz-transition: opacity 0.33s ease 0s;
-  -o-transition: opacity 0.33s ease 0s;
-  transition: opacity 0.33s ease 0s;
+  -webkit-transition: opacity 0.5s ease 0s;
+  -moz-transition: opacity 0.5s ease 0s;
+  -o-transition: opacity 0.5s ease 0s;
+  transition: opacity 0.5s ease 0s;
   opacity: 0;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
 }
@@ -3539,10 +3539,10 @@ div#gsfn_list_widget span.time {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(1, #eaeaea));
   background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
   background: linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
-  -webkit-transition: all 0.33s ease 0s;
-  -moz-transition: all 0.33s ease 0s;
-  -o-transition: all 0.33s ease 0s;
-  transition: all 0.33s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
 }
 #buy.overlay .button:hover {
   background-color: #f3f3f3;
@@ -3978,10 +3978,10 @@ div#gsfn_list_widget span.time {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(1, #eaeaea));
   background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
   background: linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
-  -webkit-transition: all 0.33s ease 0s;
-  -moz-transition: all 0.33s ease 0s;
-  -o-transition: all 0.33s ease 0s;
-  transition: all 0.33s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
   font: bold 10px "Droid Sans", arial, serif;
   color: #8d9198;
   height: 22px;
@@ -4228,10 +4228,10 @@ div#gsfn_list_widget span.time {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(1, #eaeaea));
   background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
   background: linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
-  -webkit-transition: all 0.33s ease 0s;
-  -moz-transition: all 0.33s ease 0s;
-  -o-transition: all 0.33s ease 0s;
-  transition: all 0.33s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
   font: bold 10px "Droid Sans", arial, serif;
   color: #8d9198;
   height: 22px;
@@ -4322,10 +4322,10 @@ div#gsfn_list_widget span.time {
   transition: all 0.2s ease;
 }
 #free-software .products .product .title {
-  -webkit-transition: color 0.33s ease 0s;
-  -moz-transition: color 0.33s ease 0s;
-  -o-transition: color 0.33s ease 0s;
-  transition: color 0.33s ease 0s;
+  -webkit-transition: color 0.5s ease 0s;
+  -moz-transition: color 0.5s ease 0s;
+  -o-transition: color 0.5s ease 0s;
+  transition: color 0.5s ease 0s;
   font: bold 20px "Droid Sans", arial, serif;
   color: #4f6393;
   text-shadow: #fff 0px 2px 1px;
@@ -4624,10 +4624,10 @@ html.support #main * {
   transition: all 0.2s ease;
 }
 #blog .blog-side .blog-side-products .blog-side-product .title {
-  -webkit-transition: color 0.33s ease 0s;
-  -moz-transition: color 0.33s ease 0s;
-  -o-transition: color 0.33s ease 0s;
-  transition: color 0.33s ease 0s;
+  -webkit-transition: color 0.5s ease 0s;
+  -moz-transition: color 0.5s ease 0s;
+  -o-transition: color 0.5s ease 0s;
+  transition: color 0.5s ease 0s;
   font-weight: bold;
   font-size: 14px;
   padding-top: 5px;
@@ -4697,10 +4697,10 @@ html.support #main * {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(1, #eaeaea));
   background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
   background: linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
-  -webkit-transition: all 0.33s ease 0s;
-  -moz-transition: all 0.33s ease 0s;
-  -o-transition: all 0.33s ease 0s;
-  transition: all 0.33s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
   font: bold 16px "Droid Sans", arial, serif;
   color: minor-button-color;
   line-height: 24px;
@@ -5505,10 +5505,10 @@ html.support #main * {
   border-radius: 5px;
   background-color: #fff;
   display: block;
-  -webkit-transition: all 0.33s ease 0s;
-  -moz-transition: all 0.33s ease 0s;
-  -o-transition: all 0.33s ease 0s;
-  transition: all 0.33s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
   border: 1px solid #ccc;
   opacity: 0.7;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
@@ -5611,10 +5611,10 @@ html.support #main * {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(1, #eaeaea));
   background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
   background: linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
-  -webkit-transition: all 0.33s ease 0s;
-  -moz-transition: all 0.33s ease 0s;
-  -o-transition: all 0.33s ease 0s;
-  transition: all 0.33s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
   font: bold 16px "Droid Sans", arial, serif;
   color: minor-button-color;
   width: 290px;
@@ -5699,10 +5699,10 @@ html.support #main * {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(1, #eaeaea));
   background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
   background: linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
-  -webkit-transition: all 0.33s ease 0s;
-  -moz-transition: all 0.33s ease 0s;
-  -o-transition: all 0.33s ease 0s;
-  transition: all 0.33s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
   font: bold 16px "Droid Sans", arial, serif;
   color: minor-button-color;
   width: 290px;
