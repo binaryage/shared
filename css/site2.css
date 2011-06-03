@@ -2578,6 +2578,11 @@ div#gsfn_list_widget span.time {
   line-height: 40px;
   margin: 0px;
   margin-top: 2px;
+  display: inline-block;
+}
+.main-product .main-product-left .product-logo-box .plusone-wrapper {
+  margin-left: 20px;
+  display: inline-block;
 }
 .main-product .main-product-left .product-logo-box .product-subtitle {
   font: 16px "Play", arial, serif;
