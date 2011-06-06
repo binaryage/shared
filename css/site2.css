@@ -2390,6 +2390,7 @@ div#gsfn_list_widget span.time {
 }
 .changelogx ul.changes li {
   margin-bottom: 1px;
+  clear: both;
 }
 .changelogx .titlebox {
   line-height: 20px;
