@@ -1042,7 +1042,7 @@ hr.space {
 .clear {
   clear: both;
 }
-.wf {
+.js .wf {
   opacity: 0;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   -webkit-transition: opacity 0.5s ease 0s;
