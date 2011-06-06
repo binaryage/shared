@@ -4351,13 +4351,13 @@ div#gsfn_list_widget span.time {
   font: bold 20px "Play", arial, serif;
   color: #4f6393;
   text-shadow: #fff 0px 2px 1px;
-  line-height: 28px;
+  line-height: 30px;
 }
 #free-software .products .product .desc {
   font: 10px "Play", arial, serif;
   color: #777;
   text-shadow: #fff 0px 2px 1px;
-  line-height: 16px;
+  line-height: 13px;
 }
 #free-software .products .product:hover .title {
   color: #0f56b3 !important;
