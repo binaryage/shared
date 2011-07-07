@@ -3014,42 +3014,17 @@ div#gsfn_list_widget span.time {
   left: 0px;
 }
 .main-product .main-product-right .screenshot-controls .teaser-box .teaser-button div {
-  -webkit-transition: opacity 0.5s ease 0s;
-  -moz-transition: opacity 0.5s ease 0s;
-  -o-transition: opacity 0.5s ease 0s;
-  transition: opacity 0.5s ease 0s;
-  opacity: 0.6;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
-  background: transparent url("/shared/img2/assets.png") no-repeat -279px -152px !important;
-  width: 23px;
-  height: 23px;
-  display: block;
+  width: 1px;
+  height: 1px;
   position: absolute;
-  position: absolute;
-  top: 0px;
-  left: 96px;
+  top: -290px;
+  left: 370px;
   cursor: pointer;
-}
-.main-product .main-product-right .screenshot-controls .teaser-box .teaser-button div:hover {
-  opacity: 1;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-}
-.main-product .main-product-right .screenshot-controls .teaser-box .teaser-separator {
-  background: transparent url("/shared/img2/assets.png") no-repeat -310px -148px !important;
-  width: 8px;
-  height: 38px;
-  display: block;
-  position: absolute;
-  position: absolute;
-  top: -8px;
-  left: 130px;
-  opacity: 0.2;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
 }
 .main-product .main-product-right .screenshot-controls .navi-box {
   position: absolute;
   top: 4px;
-  left: 178px;
+  left: 156px;
   width: 100px;
 }
 .main-product .main-product-right .screenshot-controls .navi-box .navi-hint {
@@ -3118,6 +3093,9 @@ div#gsfn_list_widget span.time {
 .main-product .main-product-right .main-screenshot .screenshot-box.no-shadow .overlayable {
   overflow: visible;
 }
+.main-product .main-product-right .main-screenshot .screenshot-box.no-shadow .video-icon {
+  display: none;
+}
 .main-product .main-product-right .main-screenshot .screenshot-box img {
   position: absolute;
   top: -14px;
@@ -3143,6 +3121,38 @@ div#gsfn_list_widget span.time {
 .main-product .main-product-right .main-screenshot .screenshot-box:hover .zoom-icon {
   opacity: 1;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+}
+.main-product .main-product-right .main-screenshot .screenshot-box .video-icon {
+  -webkit-transition: opacity 0.5s ease 0s;
+  -moz-transition: opacity 0.5s ease 0s;
+  -o-transition: opacity 0.5s ease 0s;
+  transition: opacity 0.5s ease 0s;
+  cursor: pointer;
+  padding: 6px 30px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 30px;
+  right: -34px;
+  text-shadow: #999 0px 1px 1px;
+  -webkit-box-shadow: 0px 1px 4px #666;
+  -moz-box-shadow: 0px 1px 4px #666;
+  -o-box-shadow: 0px 1px 4px #666;
+  box-shadow: 0px 1px 4px #666;
+  line-height: 16px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #72b210;
+  -webkit-transition: background-color 0.5s ease 0s;
+  -moz-transition: background-color 0.5s ease 0s;
+  -o-transition: background-color 0.5s ease 0s;
+  transition: background-color 0.5s ease 0s;
+  color: #fff;
+}
+.main-product .main-product-right .main-screenshot .screenshot-box .video-icon:hover {
+  background-color: #4e8a00;
 }
 #main-tabs {
   position: relative;
