@@ -1761,6 +1761,9 @@ ol.statuses .hentry a.fav {
   top: 0px;
   left: 124px;
 }
+.webkit .social-box .social-box-inner .flattr {
+  display: none;
+}
 .social-box .social-box-inner .macupdate {
   position: absolute;
   top: 6px;
@@ -1897,10 +1900,10 @@ ol.statuses .hentry a.fav {
   -moz-box-shadow: 0px 1px 4px #ccc;
   -o-box-shadow: 0px 1px 4px #ccc;
   box-shadow: 0px 1px 4px #ccc;
-  background-color: #f9f9f9;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(1, #eaeaea));
-  background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
-  background: linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
+  background-color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f4f4f4));
+  background: -moz-linear-gradient(top, #fff 0%, #f4f4f4 100%);
+  background: linear-gradient(top, #fff 0%, #f4f4f4 100%);
   -webkit-transition: all 0.5s ease 0s;
   -moz-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
@@ -1922,9 +1925,9 @@ ol.statuses .hentry a.fav {
 }
 .doc-content .sidebar .header-sidebar .back-button:hover {
   background-color: #f3f3f3;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f3f3f3));
-  background: -moz-linear-gradient(top, #fff 0%, #f3f3f3 100%);
-  background: linear-gradient(top, #fff 0%, #f3f3f3 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f8f8f8));
+  background: -moz-linear-gradient(top, #fff 0%, #f8f8f8 100%);
+  background: linear-gradient(top, #fff 0%, #f8f8f8 100%);
   border-color: #0f56b3;
 }
 .doc-content .sidebar .header-sidebar .back-button > div {
@@ -1947,17 +1950,17 @@ ol.statuses .hentry a.fav {
   margin-top: -4px;
 }
 .doc-content .sidebar .header-sidebar .back-button .trial-note {
-  padding: 4px 30px;
+  padding: 4px 29px;
   background-color: #2572c7;
   text-shadow: none;
   font-weight: normal;
   color: #fff;
-  font-size: 10px;
-  line-height: 9px;
+  font-size: 9px;
+  line-height: 8px;
   text-align: center;
   position: absolute;
-  top: 14px;
-  right: -34px;
+  top: 13px;
+  right: -33px;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
@@ -2421,10 +2424,10 @@ div#gsfn_list_widget span.time {
   -moz-box-shadow: 0px 1px 4px #ccc;
   -o-box-shadow: 0px 1px 4px #ccc;
   box-shadow: 0px 1px 4px #ccc;
-  background-color: #f9f9f9;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(1, #eaeaea));
-  background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
-  background: linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
+  background-color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f4f4f4));
+  background: -moz-linear-gradient(top, #fff 0%, #f4f4f4 100%);
+  background: linear-gradient(top, #fff 0%, #f4f4f4 100%);
   -webkit-transition: all 0.5s ease 0s;
   -moz-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
@@ -2438,9 +2441,9 @@ div#gsfn_list_widget span.time {
 }
 .changelogx h4:hover {
   background-color: #f3f3f3;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f3f3f3));
-  background: -moz-linear-gradient(top, #fff 0%, #f3f3f3 100%);
-  background: linear-gradient(top, #fff 0%, #f3f3f3 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f8f8f8));
+  background: -moz-linear-gradient(top, #fff 0%, #f8f8f8 100%);
+  background: linear-gradient(top, #fff 0%, #f8f8f8 100%);
   border-color: #0f56b3;
 }
 .changelogx h4 > div {
@@ -2463,17 +2466,17 @@ div#gsfn_list_widget span.time {
   margin-top: -4px;
 }
 .changelogx h4 .trial-note {
-  padding: 4px 30px;
+  padding: 4px 29px;
   background-color: #2572c7;
   text-shadow: none;
   font-weight: normal;
   color: #fff;
-  font-size: 10px;
-  line-height: 9px;
+  font-size: 9px;
+  line-height: 8px;
   text-align: center;
   position: absolute;
-  top: 14px;
-  right: -34px;
+  top: 13px;
+  right: -33px;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
@@ -2565,6 +2568,7 @@ div#gsfn_list_widget span.time {
   padding-top: 10px;
   padding-right: 20px;
   padding-left: 85px;
+  padding-bottom: 10px;
 }
 .main-product .main-product-left .product-logo-box .product-icon {
   position: absolute;
@@ -2651,10 +2655,10 @@ div#gsfn_list_widget span.time {
   -moz-box-shadow: 0px 1px 4px #ccc;
   -o-box-shadow: 0px 1px 4px #ccc;
   box-shadow: 0px 1px 4px #ccc;
-  background-color: #f9f9f9;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(1, #eaeaea));
-  background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
-  background: linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
+  background-color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f4f4f4));
+  background: -moz-linear-gradient(top, #fff 0%, #f4f4f4 100%);
+  background: linear-gradient(top, #fff 0%, #f4f4f4 100%);
   -webkit-transition: all 0.5s ease 0s;
   -moz-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
@@ -2662,9 +2666,9 @@ div#gsfn_list_widget span.time {
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .product-button-play:hover {
   background-color: #f3f3f3;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f3f3f3));
-  background: -moz-linear-gradient(top, #fff 0%, #f3f3f3 100%);
-  background: linear-gradient(top, #fff 0%, #f3f3f3 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f8f8f8));
+  background: -moz-linear-gradient(top, #fff 0%, #f8f8f8 100%);
+  background: linear-gradient(top, #fff 0%, #f8f8f8 100%);
   border-color: #0f56b3;
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .product-button-play > div {
@@ -2687,17 +2691,17 @@ div#gsfn_list_widget span.time {
   margin-top: -4px;
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .product-button-play .trial-note {
-  padding: 4px 30px;
+  padding: 4px 29px;
   background-color: #2572c7;
   text-shadow: none;
   font-weight: normal;
   color: #fff;
-  font-size: 10px;
-  line-height: 9px;
+  font-size: 9px;
+  line-height: 8px;
   text-align: center;
   position: absolute;
-  top: 14px;
-  right: -34px;
+  top: 13px;
+  right: -33px;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
@@ -2736,10 +2740,10 @@ div#gsfn_list_widget span.time {
   -moz-box-shadow: 0px 1px 4px #ccc;
   -o-box-shadow: 0px 1px 4px #ccc;
   box-shadow: 0px 1px 4px #ccc;
-  background-color: #f9f9f9;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(1, #eaeaea));
-  background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
-  background: linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
+  background-color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f4f4f4));
+  background: -moz-linear-gradient(top, #fff 0%, #f4f4f4 100%);
+  background: linear-gradient(top, #fff 0%, #f4f4f4 100%);
   -webkit-transition: all 0.5s ease 0s;
   -moz-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
@@ -2747,9 +2751,9 @@ div#gsfn_list_widget span.time {
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .product-button-download:hover {
   background-color: #f3f3f3;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f3f3f3));
-  background: -moz-linear-gradient(top, #fff 0%, #f3f3f3 100%);
-  background: linear-gradient(top, #fff 0%, #f3f3f3 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f8f8f8));
+  background: -moz-linear-gradient(top, #fff 0%, #f8f8f8 100%);
+  background: linear-gradient(top, #fff 0%, #f8f8f8 100%);
   border-color: #0f56b3;
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .product-button-download > div {
@@ -2772,17 +2776,17 @@ div#gsfn_list_widget span.time {
   margin-top: -4px;
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .product-button-download .trial-note {
-  padding: 4px 30px;
+  padding: 4px 29px;
   background-color: #2572c7;
   text-shadow: none;
   font-weight: normal;
   color: #fff;
-  font-size: 10px;
-  line-height: 9px;
+  font-size: 9px;
+  line-height: 8px;
   text-align: center;
   position: absolute;
-  top: 14px;
-  right: -34px;
+  top: 13px;
+  right: -33px;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
@@ -2820,10 +2824,10 @@ div#gsfn_list_widget span.time {
   -moz-box-shadow: 0px 1px 4px #ccc;
   -o-box-shadow: 0px 1px 4px #ccc;
   box-shadow: 0px 1px 4px #ccc;
-  background-color: #f9f9f9;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(1, #eaeaea));
-  background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
-  background: linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
+  background-color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f4f4f4));
+  background: -moz-linear-gradient(top, #fff 0%, #f4f4f4 100%);
+  background: linear-gradient(top, #fff 0%, #f4f4f4 100%);
   -webkit-transition: all 0.5s ease 0s;
   -moz-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
@@ -2831,9 +2835,9 @@ div#gsfn_list_widget span.time {
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .product-button-buy:hover {
   background-color: #f3f3f3;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f3f3f3));
-  background: -moz-linear-gradient(top, #fff 0%, #f3f3f3 100%);
-  background: linear-gradient(top, #fff 0%, #f3f3f3 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f8f8f8));
+  background: -moz-linear-gradient(top, #fff 0%, #f8f8f8 100%);
+  background: linear-gradient(top, #fff 0%, #f8f8f8 100%);
   border-color: #0f56b3;
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .product-button-buy > div {
@@ -2856,17 +2860,17 @@ div#gsfn_list_widget span.time {
   margin-top: -4px;
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .product-button-buy .trial-note {
-  padding: 4px 30px;
+  padding: 4px 29px;
   background-color: #2572c7;
   text-shadow: none;
   font-weight: normal;
   color: #fff;
-  font-size: 10px;
-  line-height: 9px;
+  font-size: 9px;
+  line-height: 8px;
   text-align: center;
   position: absolute;
-  top: 14px;
-  right: -34px;
+  top: 13px;
+  right: -33px;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
@@ -2905,10 +2909,10 @@ div#gsfn_list_widget span.time {
   -moz-box-shadow: 0px 1px 4px #ccc;
   -o-box-shadow: 0px 1px 4px #ccc;
   box-shadow: 0px 1px 4px #ccc;
-  background-color: #f9f9f9;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(1, #eaeaea));
-  background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
-  background: linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
+  background-color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f4f4f4));
+  background: -moz-linear-gradient(top, #fff 0%, #f4f4f4 100%);
+  background: linear-gradient(top, #fff 0%, #f4f4f4 100%);
   -webkit-transition: all 0.5s ease 0s;
   -moz-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
@@ -2916,13 +2920,13 @@ div#gsfn_list_widget span.time {
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .product-button-thumbup:hover {
   background-color: #f3f3f3;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f3f3f3));
-  background: -moz-linear-gradient(top, #fff 0%, #f3f3f3 100%);
-  background: linear-gradient(top, #fff 0%, #f3f3f3 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f8f8f8));
+  background: -moz-linear-gradient(top, #fff 0%, #f8f8f8 100%);
+  background: linear-gradient(top, #fff 0%, #f8f8f8 100%);
   border-color: #0f56b3;
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .product-button-thumbup > div {
-  background: transparent url("/shared/img2/assets.png") no-repeat -575px -70px;
+  background: transparent url("/shared/img2/assets.png") no-repeat -573px -70px;
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .product-button-thumbup > div > div {
   margin-left: 40px;
@@ -2941,17 +2945,17 @@ div#gsfn_list_widget span.time {
   margin-top: -4px;
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .product-button-thumbup .trial-note {
-  padding: 4px 30px;
+  padding: 4px 29px;
   background-color: #2572c7;
   text-shadow: none;
   font-weight: normal;
   color: #fff;
-  font-size: 10px;
-  line-height: 9px;
+  font-size: 9px;
+  line-height: 8px;
   text-align: center;
   position: absolute;
-  top: 14px;
-  right: -34px;
+  top: 13px;
+  right: -33px;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
@@ -2996,7 +3000,7 @@ div#gsfn_list_widget span.time {
 .main-product .main-product-right .screenshot-controls {
   position: absolute;
   top: 330px;
-  left: 40px;
+  left: 39px;
 }
 .main-product .main-product-right .screenshot-controls .teaser-box {
   position: absolute;
@@ -3567,10 +3571,10 @@ div#gsfn_list_widget span.time {
   -moz-box-shadow: 0px 1px 4px #ccc;
   -o-box-shadow: 0px 1px 4px #ccc;
   box-shadow: 0px 1px 4px #ccc;
-  background-color: #f9f9f9;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(1, #eaeaea));
-  background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
-  background: linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
+  background-color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f4f4f4));
+  background: -moz-linear-gradient(top, #fff 0%, #f4f4f4 100%);
+  background: linear-gradient(top, #fff 0%, #f4f4f4 100%);
   -webkit-transition: all 0.5s ease 0s;
   -moz-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
@@ -3578,9 +3582,9 @@ div#gsfn_list_widget span.time {
 }
 #buy.overlay .button:hover {
   background-color: #f3f3f3;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f3f3f3));
-  background: -moz-linear-gradient(top, #fff 0%, #f3f3f3 100%);
-  background: linear-gradient(top, #fff 0%, #f3f3f3 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f8f8f8));
+  background: -moz-linear-gradient(top, #fff 0%, #f8f8f8 100%);
+  background: linear-gradient(top, #fff 0%, #f8f8f8 100%);
   border-color: #0f56b3;
 }
 #buy.overlay .button > div {
@@ -3603,17 +3607,17 @@ div#gsfn_list_widget span.time {
   margin-top: -4px;
 }
 #buy.overlay .button .trial-note {
-  padding: 4px 30px;
+  padding: 4px 29px;
   background-color: #2572c7;
   text-shadow: none;
   font-weight: normal;
   color: #fff;
-  font-size: 10px;
-  line-height: 9px;
+  font-size: 9px;
+  line-height: 8px;
   text-align: center;
   position: absolute;
-  top: 14px;
-  right: -34px;
+  top: 13px;
+  right: -33px;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
@@ -4006,10 +4010,10 @@ div#gsfn_list_widget span.time {
   -moz-box-shadow: 0px 1px 4px #ccc;
   -o-box-shadow: 0px 1px 4px #ccc;
   box-shadow: 0px 1px 4px #ccc;
-  background-color: #f9f9f9;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(1, #eaeaea));
-  background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
-  background: linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
+  background-color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f4f4f4));
+  background: -moz-linear-gradient(top, #fff 0%, #f4f4f4 100%);
+  background: linear-gradient(top, #fff 0%, #f4f4f4 100%);
   -webkit-transition: all 0.5s ease 0s;
   -moz-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
@@ -4032,9 +4036,9 @@ div#gsfn_list_widget span.time {
 }
 #download.overlay .viral-boxes .mailchimp-box #mc-embedded-subscribe:hover {
   background-color: #f3f3f3;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f3f3f3));
-  background: -moz-linear-gradient(top, #fff 0%, #f3f3f3 100%);
-  background: linear-gradient(top, #fff 0%, #f3f3f3 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f8f8f8));
+  background: -moz-linear-gradient(top, #fff 0%, #f8f8f8 100%);
+  background: linear-gradient(top, #fff 0%, #f8f8f8 100%);
   border-color: #0f56b3;
 }
 #download.overlay .viral-boxes .mailchimp-box #mc-embedded-subscribe > div {
@@ -4057,17 +4061,17 @@ div#gsfn_list_widget span.time {
   margin-top: -4px;
 }
 #download.overlay .viral-boxes .mailchimp-box #mc-embedded-subscribe .trial-note {
-  padding: 4px 30px;
+  padding: 4px 29px;
   background-color: #2572c7;
   text-shadow: none;
   font-weight: normal;
   color: #fff;
-  font-size: 10px;
-  line-height: 9px;
+  font-size: 9px;
+  line-height: 8px;
   text-align: center;
   position: absolute;
-  top: 14px;
-  right: -34px;
+  top: 13px;
+  right: -33px;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
@@ -4256,10 +4260,10 @@ div#gsfn_list_widget span.time {
   -moz-box-shadow: 0px 1px 4px #ccc;
   -o-box-shadow: 0px 1px 4px #ccc;
   box-shadow: 0px 1px 4px #ccc;
-  background-color: #f9f9f9;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(1, #eaeaea));
-  background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
-  background: linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
+  background-color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f4f4f4));
+  background: -moz-linear-gradient(top, #fff 0%, #f4f4f4 100%);
+  background: linear-gradient(top, #fff 0%, #f4f4f4 100%);
   -webkit-transition: all 0.5s ease 0s;
   -moz-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
@@ -4283,9 +4287,9 @@ div#gsfn_list_widget span.time {
 }
 #free-software .labs-button:hover {
   background-color: #f3f3f3;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f3f3f3));
-  background: -moz-linear-gradient(top, #fff 0%, #f3f3f3 100%);
-  background: linear-gradient(top, #fff 0%, #f3f3f3 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f8f8f8));
+  background: -moz-linear-gradient(top, #fff 0%, #f8f8f8 100%);
+  background: linear-gradient(top, #fff 0%, #f8f8f8 100%);
   border-color: #0f56b3;
 }
 #free-software .labs-button > div {
@@ -4308,17 +4312,17 @@ div#gsfn_list_widget span.time {
   margin-top: -4px;
 }
 #free-software .labs-button .trial-note {
-  padding: 4px 30px;
+  padding: 4px 29px;
   background-color: #2572c7;
   text-shadow: none;
   font-weight: normal;
   color: #fff;
-  font-size: 10px;
-  line-height: 9px;
+  font-size: 9px;
+  line-height: 8px;
   text-align: center;
   position: absolute;
-  top: 14px;
-  right: -34px;
+  top: 13px;
+  right: -33px;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
@@ -4725,10 +4729,10 @@ html.support #main * {
   -moz-box-shadow: 0px 1px 4px #ccc;
   -o-box-shadow: 0px 1px 4px #ccc;
   box-shadow: 0px 1px 4px #ccc;
-  background-color: #f9f9f9;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(1, #eaeaea));
-  background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
-  background: linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
+  background-color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f4f4f4));
+  background: -moz-linear-gradient(top, #fff 0%, #f4f4f4 100%);
+  background: linear-gradient(top, #fff 0%, #f4f4f4 100%);
   -webkit-transition: all 0.5s ease 0s;
   -moz-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
@@ -4743,9 +4747,9 @@ html.support #main * {
 #blog .blog-content .paging .older:hover,
 #blog .blog-content .paging .newer:hover {
   background-color: #f3f3f3;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f3f3f3));
-  background: -moz-linear-gradient(top, #fff 0%, #f3f3f3 100%);
-  background: linear-gradient(top, #fff 0%, #f3f3f3 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f8f8f8));
+  background: -moz-linear-gradient(top, #fff 0%, #f8f8f8 100%);
+  background: linear-gradient(top, #fff 0%, #f8f8f8 100%);
   border-color: #0f56b3;
 }
 #blog .blog-content .paging .older > div,
@@ -4772,17 +4776,17 @@ html.support #main * {
 }
 #blog .blog-content .paging .older .trial-note,
 #blog .blog-content .paging .newer .trial-note {
-  padding: 4px 30px;
+  padding: 4px 29px;
   background-color: #2572c7;
   text-shadow: none;
   font-weight: normal;
   color: #fff;
-  font-size: 10px;
-  line-height: 9px;
+  font-size: 9px;
+  line-height: 8px;
   text-align: center;
   position: absolute;
-  top: 14px;
-  right: -34px;
+  top: 13px;
+  right: -33px;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
@@ -5639,10 +5643,10 @@ html.support #main * {
   -moz-box-shadow: 0px 1px 4px #ccc;
   -o-box-shadow: 0px 1px 4px #ccc;
   box-shadow: 0px 1px 4px #ccc;
-  background-color: #f9f9f9;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(1, #eaeaea));
-  background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
-  background: linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
+  background-color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f4f4f4));
+  background: -moz-linear-gradient(top, #fff 0%, #f4f4f4 100%);
+  background: linear-gradient(top, #fff 0%, #f4f4f4 100%);
   -webkit-transition: all 0.5s ease 0s;
   -moz-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
@@ -5654,9 +5658,9 @@ html.support #main * {
 }
 #content-totalfinder .more-info .product-button-doc:hover {
   background-color: #f3f3f3;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f3f3f3));
-  background: -moz-linear-gradient(top, #fff 0%, #f3f3f3 100%);
-  background: linear-gradient(top, #fff 0%, #f3f3f3 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f8f8f8));
+  background: -moz-linear-gradient(top, #fff 0%, #f8f8f8 100%);
+  background: linear-gradient(top, #fff 0%, #f8f8f8 100%);
   border-color: #0f56b3;
 }
 #content-totalfinder .more-info .product-button-doc > div {
@@ -5679,17 +5683,17 @@ html.support #main * {
   margin-top: -4px;
 }
 #content-totalfinder .more-info .product-button-doc .trial-note {
-  padding: 4px 30px;
+  padding: 4px 29px;
   background-color: #2572c7;
   text-shadow: none;
   font-weight: normal;
   color: #fff;
-  font-size: 10px;
-  line-height: 9px;
+  font-size: 9px;
+  line-height: 8px;
   text-align: center;
   position: absolute;
-  top: 14px;
-  right: -34px;
+  top: 13px;
+  right: -33px;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
@@ -5727,10 +5731,10 @@ html.support #main * {
   -moz-box-shadow: 0px 1px 4px #ccc;
   -o-box-shadow: 0px 1px 4px #ccc;
   box-shadow: 0px 1px 4px #ccc;
-  background-color: #f9f9f9;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9f9f9), color-stop(1, #eaeaea));
-  background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
-  background: linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
+  background-color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f4f4f4));
+  background: -moz-linear-gradient(top, #fff 0%, #f4f4f4 100%);
+  background: linear-gradient(top, #fff 0%, #f4f4f4 100%);
   -webkit-transition: all 0.5s ease 0s;
   -moz-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
@@ -5741,9 +5745,9 @@ html.support #main * {
 }
 #content-totalfinder .more-info .product-button-changes:hover {
   background-color: #f3f3f3;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f3f3f3));
-  background: -moz-linear-gradient(top, #fff 0%, #f3f3f3 100%);
-  background: linear-gradient(top, #fff 0%, #f3f3f3 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #f8f8f8));
+  background: -moz-linear-gradient(top, #fff 0%, #f8f8f8 100%);
+  background: linear-gradient(top, #fff 0%, #f8f8f8 100%);
   border-color: #0f56b3;
 }
 #content-totalfinder .more-info .product-button-changes > div {
@@ -5766,17 +5770,17 @@ html.support #main * {
   margin-top: -4px;
 }
 #content-totalfinder .more-info .product-button-changes .trial-note {
-  padding: 4px 30px;
+  padding: 4px 29px;
   background-color: #2572c7;
   text-shadow: none;
   font-weight: normal;
   color: #fff;
-  font-size: 10px;
-  line-height: 9px;
+  font-size: 9px;
+  line-height: 8px;
   text-align: center;
   position: absolute;
-  top: 14px;
-  right: -34px;
+  top: 13px;
+  right: -33px;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
