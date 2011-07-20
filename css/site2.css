@@ -2971,7 +2971,7 @@ div#gsfn_list_widget span.time {
   background-color: #3aaa00;
 }
 .main-product .main-product-left .product-buttons-box .product-buttons .price-tag {
-  background: transparent url("/shared/img2/assets.png") no-repeat -464px -253px !important;
+  background: transparent url("/shared/img2/assets.png") no-repeat -544px -253px !important;
   width: 68px;
   height: 28px;
   display: block;
@@ -3652,7 +3652,7 @@ div#gsfn_list_widget span.time {
   top: 60px;
 }
 #buy.overlay .buy-single .price-tag {
-  background: transparent url("/shared/img2/assets.png") no-repeat -464px -253px !important;
+  background: transparent url("/shared/img2/assets.png") no-repeat -544px -253px !important;
   width: 68px;
   height: 28px;
   display: block;
@@ -3675,7 +3675,7 @@ div#gsfn_list_widget span.time {
   top: 60px;
 }
 #buy.overlay .buy-pack .price-tag {
-  background: transparent url("/shared/img2/assets.png") no-repeat -464px -221px !important;
+  background: transparent url("/shared/img2/assets.png") no-repeat -544px -221px !important;
   width: 68px;
   height: 28px;
   display: block;
