@@ -1,6 +1,5 @@
 .main-product
     margin-top 50px
-    min-height 350px
     
     .social-box
         absolute(left 86px)
@@ -57,8 +56,9 @@
             .product-note
                 text-shadow #FFF 0px 1px 1px
                 font-size 12px
-                line-height 12px
+                line-height 14px
                 margin-bottom 30px
+                width 302px
 
             .product-buttons
                 relative()
@@ -70,6 +70,10 @@
                 .product-button-play
                     product-button(-16px, 244px)
 
+                .product-button-warning
+                    overflow hidden
+                    product-button(958px, 68px)
+
                 .product-button-download
                     overflow hidden
                     product-button(-16px, 302px)
@@ -80,7 +84,7 @@
                 .product-button-thumbup
                     overflow hidden
                     product-button(573px, 70px)
-                    
+
                     .trial-note
                         background-color #3AAA00
             
