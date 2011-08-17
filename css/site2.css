@@ -5558,6 +5558,9 @@ html.support #main * {
 #tabs-firelogger {
   margin-top: 150px;
 }
+#product-firelogger {
+  min-height: 350px;
+}
 #product-firelogger .screenshot-box .zoom-icon {
   position: absolute;
   top: 50%;
