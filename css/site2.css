@@ -5566,6 +5566,9 @@ html.support #main * {
   top: 50%;
   left: 42%;
 }
+#product-visor {
+  min-height: 350px;
+}
 #product-totalfinder .screenshot-box img {
   position: absolute;
   left: -24px;
