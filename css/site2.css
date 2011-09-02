@@ -1257,6 +1257,8 @@ pre code {
   left: 280px;
 }
 #header .header .header-ad img {
+  width: 194px;
+  height: 40px;
   -webkit-transition: all 0.5s ease 0s;
   -moz-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
