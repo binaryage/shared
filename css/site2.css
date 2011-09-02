@@ -5566,6 +5566,9 @@ html.support #main * {
   top: 50%;
   left: 42%;
 }
+#product-firequery {
+  min-height: 340px;
+}
 #product-visor {
   min-height: 350px;
 }
