@@ -1251,6 +1251,23 @@ pre code {
   opacity: 1;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
 }
+#header .header .header-ad {
+  position: absolute;
+  top: 20px;
+  left: 280px;
+}
+#header .header .header-ad img {
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+  opacity: 0.5;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+}
+#header .header .header-ad:hover img {
+  opacity: 1;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+}
 #header .header .header-motto {
   background: transparent url("/shared/img2/assets.png") no-repeat -216px -10px !important;
   width: 126px;
@@ -5568,6 +5585,9 @@ html.support #main * {
 }
 #product-firequery {
   min-height: 340px;
+}
+#product-xrefresh {
+  min-height: 300px;
 }
 #product-visor {
   min-height: 350px;
