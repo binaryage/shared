@@ -5585,11 +5585,14 @@ html.support #main * {
   top: 50%;
   left: 42%;
 }
+#product-drydrop {
+  min-height: 310px;
+}
 #product-firequery {
   min-height: 350px;
 }
 #product-xrefresh {
-  min-height: 300px;
+  min-height: 290px;
 }
 #product-visor {
   min-height: 350px;
