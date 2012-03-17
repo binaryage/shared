@@ -5637,6 +5637,9 @@ html.support #main * {
 #product-asepsis {
   min-height: 300px;
 }
+#product-restatic {
+  min-height: 320px;
+}
 #product-totalfinder .screenshot-box img {
   position: absolute;
   left: -24px;
