@@ -4952,8 +4952,7 @@ html.support #main * {
 .ie6 .post-title,
 .ie7 .post-title,
 .ie8 .post-title,
- {
-  padding-top: 0px;
+padding-top 0px {
   margin: 0;
 }
 .calendar {
@@ -5504,8 +5503,8 @@ html.support #main * {
   right: 0px;
   top: -9px;
 }
-.store-action .store-action-title,
- .store-action-title {
+.store-action,
+.store-action-title {
   font-size: 11px;
   display: inline-block;
   height: 16px;
