@@ -4,13 +4,18 @@
     .great-plugin
         sprite(374px, 40px, 190px, 30px)
         absolute(top 64px left 170px)
+        
+    .main-box-wrapper
+        relative()
+        margin auto
+        width 800px
 
     .main-box
         relative()
         display block
         width 400px
-        margin auto
         text-align center
+        float left
 
         .icon
             height 324px
@@ -23,7 +28,6 @@
                 absolute(left 10px top 16px)
                 
             .face
-                sprite(0px, 0px, 256px, 256px, '/shared/img/icons/totalfinder-256.png')
                 relative(top 50px)
                 margin auto
             
@@ -49,6 +53,14 @@
 
         &:hover .icon
             transform scale(1.15)
+            
+    .totalfinder
+        .face
+            sprite(0px, 0px, 256px, 256px, '/shared/img/icons/totalfinder-256.png')
+
+    .totalspaces
+        .face
+            sprite(0px, 0px, 256px, 256px, '/shared/img/icons/totalspaces-256.png')
             
 
 #free-software

@@ -4267,12 +4267,17 @@ div#gsfn_list_widget span.time {
   top: 64px;
   left: 170px;
 }
+#main-offer .main-box-wrapper {
+  position: relative;
+  margin: auto;
+  width: 800px;
+}
 #main-offer .main-box {
   position: relative;
   display: block;
   width: 400px;
-  margin: auto;
   text-align: center;
+  float: left;
 }
 #main-offer .main-box .icon {
   height: 324px;
@@ -4294,11 +4299,6 @@ div#gsfn_list_widget span.time {
   top: 16px;
 }
 #main-offer .main-box .icon .face {
-  background: transparent url("/shared/img/icons/totalfinder-256.png") no-repeat 0px 0px !important;
-  width: 256px;
-  height: 256px;
-  display: block;
-  position: absolute;
   position: relative;
   top: 50px;
   margin: auto;
@@ -4334,6 +4334,20 @@ div#gsfn_list_widget span.time {
   -moz-transform: scale(1.15);
   -o-transform: scale(1.15);
   transform: scale(1.15);
+}
+#main-offer .totalfinder .face {
+  background: transparent url("/shared/img/icons/totalfinder-256.png") no-repeat 0px 0px !important;
+  width: 256px;
+  height: 256px;
+  display: block;
+  position: absolute;
+}
+#main-offer .totalspaces .face {
+  background: transparent url("/shared/img/icons/totalspaces-256.png") no-repeat 0px 0px !important;
+  width: 256px;
+  height: 256px;
+  display: block;
+  position: absolute;
 }
 #free-software .top-divider {
   background: transparent url("/shared/img2/assets.png") no-repeat 0px -535px !important;
