@@ -2470,7 +2470,7 @@ div#gsfn_list_widget span.time {
   line-height: 26px;
   float: left;
   min-height: 26px;
-  min-width: 100px;
+  min-width: 110px;
 }
 .changelogx h4:hover {
   background-color: #f3f3f3;
@@ -2551,7 +2551,7 @@ div#gsfn_list_widget span.time {
 }
 .changelogx .sticker {
   float: left;
-  width: 70px;
+  width: 80px;
   display: block;
   text-align: right;
   background: none;
@@ -2582,6 +2582,9 @@ div#gsfn_list_widget span.time {
 }
 .changelogx .note b {
   background-color: #aeaeae;
+}
+.changelogx .known_bug b {
+  background-color: #f98d02;
 }
 .changelogx .info {
   display: table;
