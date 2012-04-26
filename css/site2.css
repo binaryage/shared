@@ -3101,6 +3101,16 @@ div#gsfn_list_widget span.time {
   right: -14px;
   top: 8px;
 }
+.main-product .main-product-left .product-buttons-box .product-buttons .price-tag-totalspaces {
+  background: transparent url("/shared/img2/assets.png") no-repeat -544px -283px !important;
+  width: 68px;
+  height: 28px;
+  display: block;
+  position: absolute;
+  position: absolute;
+  right: -14px;
+  top: 8px;
+}
 .main-product .main-product-left .product-buttons-box .product-buttons .reasons-to-buy {
   position: relative;
   top: -3px;
