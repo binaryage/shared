@@ -2527,6 +2527,9 @@ div#gsfn_list_widget span.time {
   position: relative;
   top: 1px;
 }
+.changelogx h4 span {
+  padding: 0px 6px 0px 32px;
+}
 .changelogx h5 {
   margin: 0;
   font-size: 11px;
