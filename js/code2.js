@@ -4421,7 +4421,7 @@ $.fn.tweet = function(options) {
             }
         };
 
-        $.getJSON('http://twitter.com/favorites.json?page='+params.page+'&id='+encodeURIComponent(params.user)+'&callback=?', worker);
+        $.getJSON('http://api.twitter.com/1/favorites.json?page='+params.page+'&id='+encodeURIComponent(params.user)+'&callback=?', worker);
     }
 
 
