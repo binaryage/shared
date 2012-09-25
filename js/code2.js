@@ -4394,7 +4394,7 @@ $.fn.tweet = function(options) {
                 var children = root.children();
                 
                 if (children.length>60) { // don't push browser to it's limits and do some cleanup
-                    children.slice(0, data.length).fadeOut(6000, function() {
+                    children.slice(0, data.length).fadeOut(3000, function() {
                         $(this).remove();
                     });
                 }
