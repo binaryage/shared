@@ -4409,11 +4409,13 @@ $.fn.tweet = function(options) {
                     var item = data[cur];
                     gen(item);
                     
-                    // prefetch next one
-                    var nextItem = data[cur+1];
-                    if (nextItem) {
-                        var im = new Image();
-                        im.src = item.user.profile_image_url;
+                    // prefetch next 5 images
+                    for (var c=1; c<=5; c++) {
+                        var futureItem = data[cur+c];
+                        if (futureItem) {
+                            var im = new Image();
+                            im.src = futureItem.user.profile_image_url;
+                        }
                     }
                     setTimeout(step, 3000);
                 };
