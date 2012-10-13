@@ -1,0 +1,98 @@
+---
+layout: hints
+---
+
+<div class="blog-articles">
+    <a href="/">« Read more articles</a>
+</div>
+<div id="post">
+    <div class="post-titlebar">
+        <div class="calendar">
+            <div class="month">{{ page.date | date:"%b" }}</div>
+            <div class="day">{{ page.date | date:"%d" }}</div>
+            <div class="year">{{ page.date | date:"%Y" }}</div>
+        </div>
+        <h1 class="post-title">{{ page.title }}</h1>
+        <div class="clear"></div>
+    </div>
+    <!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_email"></a>
+<a class="addthis_button_compact"></a>
+<a class="addthis_counter addthis_bubble_style"></a>
+<a class="addthis_button_google_plusone"></a>
+</div>
+<div style="float:right"><a href="https://plus.google.com/{{ page.google_plus }}?rel=author"><class="post-author">By: {{ page.author_name }}</a></div>
+<div style="float:left"><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f4f2b211c2d0f54"></script></div>
+    <div class="post-content">{{ content }}</div>
+</div>
+
+<div class="simple_overlay" id="overlay-gallery" style="display:none"> 
+    <a class="overlay-prev">prev</a> 
+    <a class="overlay-next">next</a> 
+    <div class="overlay-info"></div>
+    <img class="overlay-progress" src="{{site.url}}/shared/img/twitter-loader.gif" /> 
+</div>
+
+<script>
+// this code is responsible for turning image links into lightbox
+(function() {
+    var postContent = $('.post-content');
+    var images = $('.blog-image', postContent).add('.blog-image-full', postContent).add('.blog-image-border', postContent).add('.blog-image-full-border', postContent);
+    if (!images.length) return;
+    
+    var anchors = [];
+    images.each(function() {
+        var el = $(this);
+        var wrapper = $('<a/>').attr('href', el.attr('src'));
+        var origTitle = el.attr('title');
+        if (origTitle) wrapper.attr('title', origTitle);
+        el.wrap(wrapper);
+    });
+
+    images.parent().overlay({
+        effect: 'apple',
+        expose: '#f1f1f1',
+        target: '#overlay-gallery'
+    }).gallery({
+        disabledClass: 'disabled-overlay',
+        prev: '.overlay-prev',
+        next: '.overlay-next',
+        info: '.overlay-info',
+        progress: '.overlay-progress',
+        opacity: 1,
+        speed: 200, 
+        template: '[${index}/${total}] ${title}'
+    });
+})();
+</script>
+
+<div class="master-separator"></div>
+<div id="comments">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'binaryage-hints';
+	var disqus_url = "http://hints.binaryage.com{{page.url}}/";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<h2>Recent Posts</h2>
+
+<div id="post_links">
+    <ul>
+        {% for post in site.posts limit:12 %}
+    	    <li><span>{{ post.date | date_to_string }}</span>  <a href="{{ post.url }}">{{ post.title }}</a></li>
+    	{% endfor %}
+    	<br/>
+    	For more posts, visit the full archive <a href="{{site.url}}/archive">here.</a>
+    </ul>
+</div>
