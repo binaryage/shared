@@ -2,8 +2,6 @@
 note: "this is needed for processing by jekyll"
 ---
 
-prepareTweetLoader = (msg) ->
-  ["<li class=\"hentry status\" id=\"tweet-loader\">", "<span class=\"thumb vcard author\"><img width=\"31\" height=\"31\" src=\"/shared/img/twitter-loader.gif\"></span>", "<span class=\"status-body\"><span class=\"tweet-msg\">" + msg + "</span><a class=\"more-praise\" target=\"_blank\" href=\"http://twitter.com/binaryage/favorites\">show all recent</a></span>", "</li>"].join ""
 $.fn.tweet = (options) ->
   index = 0
   ready = false
@@ -63,7 +61,7 @@ $.fn.tweet = (options) ->
             return
           item = data[cur]
           gen item
-          
+
           # prefetch next 5 images
           c = 1
 
@@ -89,7 +87,7 @@ $.fn.tweet = (options) ->
     params.page = 1
     root.data "sparams", params
     $("#main").addClass("main-dim").append "<div class=\"main-overlay\"></div>"
-    
+
     # wait for CSS effect... which is set to 0.5s
     setTimeout (->
       ready = true
