@@ -77,9 +77,9 @@ menu: products
                 {% for shot in page.shots %}
                 <div id="screenshot-box-{{forloop.index}}" class="screenshot-box no-shadow" {% if forloop.index0 > 0 %}style="display:none"{% endif %}>
                     {% if shot.full %}
-                    <a id="o-shot{{forloop.index}}" href="{{site.url}}{{shot.full}}" class="overlayable" title="{{shot.title}}">
+                    <a id="o-shot{{forloop.index}}" href="{{shot.full}}" class="overlayable" title="{{shot.title}}">
                     {% endif %}
-                        <img src="{{site.url}}{{shot.thumb}}"/>
+                        <img src="{{shot.thumb}}"/>
                         {% if shot.full %}
                         <div class="zoom-icon"></div>
                         {% endif %}
@@ -164,7 +164,7 @@ $(function() {
     <a class="overlay-prev">prev</a> 
     <a class="overlay-next">next</a> 
     <div class="overlay-info"></div>
-    <img class="overlay-progress" src="{{site.url}}/shared/img/twitter-loader.gif" /> 
+    <img class="overlay-progress" src="/shared/img/twitter-loader.gif" /> 
 </div>
 
 <script>

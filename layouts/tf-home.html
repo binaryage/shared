@@ -41,8 +41,8 @@ menu: products
             <div class="main-screenshot">
                 {% for shot in page.shots %}
                 <div id="screenshot-box-{{forloop.index}}" class="screenshot-box {{shot.klass}}" {% if forloop.index0 > 0 %}style="display:none"{% endif %}>
-                    <a id="o-shot{{forloop.index}}" href="{{site.url}}{{shot.full}}" class="overlayable" title="{{shot.title}}">
-                        <img src="{{site.url}}{{shot.thumb}}"/>
+                    <a id="o-shot{{forloop.index}}" href="{{shot.full}}" class="overlayable" title="{{shot.title}}">
+                        <img src="{{shot.thumb}}"/>
                         <div class="zoom-icon"></div>
                     </a>
                 </div>
@@ -68,7 +68,7 @@ menu: products
                 <div class="product-thumbs-scrollable"> 
                     <div class="product-thumbs-items">
                         {% for shot in page.shots %}
-                        <img src="{{site.url}}{{shot.thumb}}" rel="#screenshot-box-{{forloop.index}}"/>
+                        <img src="{{shot.thumb}}" rel="#screenshot-box-{{forloop.index}}"/>
                         {% endfor %}
                     </div>
                 </div>
@@ -194,11 +194,11 @@ menu: products
 </div>
 
 <div id="gallery" class="overlay" style="display:none"> 
-    <img class="overlay-lesk" src="{{site.url}}/shared/img/nbair1-lesk.png" /> 
+    <img class="overlay-lesk" src="/shared/img/nbair1-lesk.png" /> 
     <a class="overlay-prev">prev</a> 
     <a class="overlay-next">next</a> 
     <div class="overlay-info"></div>
-    <img class="overlay-progress" src="{{site.url}}/shared/img/twitter-loader.gif" /> 
+    <img class="overlay-progress" src="/shared/img/twitter-loader.gif" /> 
 </div>
 
 <script type="text/javascript">
