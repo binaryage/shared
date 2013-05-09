@@ -18,6 +18,9 @@ menu: products
             <div class="product-buttons-box">
                 <div class="product-click-here arrow"></div>
                 <div class="product-buttons">
+                  <a href="http://cdn.binaryage.com/totalspaces-intro.mov" id="o-teaser" rel="#ts-teaser" class="button product-button-thumbup">
+                      <div><div>Watch the Video<div class="product-specs">to see the major features in action</div></div></div>
+                  </a>
                     <div id="o-download" rel="#download"></div>
                     <a href="{{page.download}}" id="o-download-button" rel="#download" class="button product-button-download">
                         <div><div><div class="trial-note">14 day trial</div>{{page.downloadtitle}}<div class="product-specs">to enjoy your 14 day trial before buying</div></div></div>
@@ -48,7 +51,7 @@ menu: products
                 <div class="teaser-box">
                     <div class="teaser-hint arrow"></div>
                     <div class="teaser-button">
-                        <a href="http://cdn.binaryage.com/totalspaces-teaser.mov" id="o-teaser" rel="#teaser" class="teaser-play">
+                        <a href="http://cdn.binaryage.com/totalspaces-intro.mov" id="o-teaser" rel="#teaser" class="teaser-play">
                             <div></div>
                         </a>
                     </div>
@@ -119,43 +122,19 @@ menu: products
     </div>
 </div>
 
-<div id="teaser" class="overlay" style="display:none">
+<div id="ts-teaser" class="overlay" style="display:none">
     <div class="overlay-content">
-        <OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" width="640" height="375" CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab">
-            <PARAM name="SRC" VALUE="http://cdn.binaryage.com/totalspaces-teaser.mov">
+        <OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" width="640" height="415" CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab">
+            <PARAM name="SRC" VALUE="http://cdn.binaryage.com/totalspaces-intro.mov">
             <PARAM name="AUTOPLAY" VALUE="true">
-            <EMBED SRC="http://cdn.binaryage.com/totalspaces-teaser.mov" width="640" height="375" AUTOPLAY="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
+            <EMBED SRC="http://cdn.binaryage.com/totalspaces-intro.mov" width="640" height="415" AUTOPLAY="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
             
             </EMBED>
         </OBJECT>
     </div>
 </div>
 
-<div id="download" class="overlay" style="display:none">
-    <div class="overlay-content">
-        <div class="while-downloading">While you are downloading&hellip;</div>
-        <div class="stay-in-touch">you may want to do a few more clicks to stay in touch</div>
-        <div class="viral-boxes">
-            <div class="viral-box twitter-box">
-                <div id="twitter-box-placeholder"></div>
-                <script src="/shared/js/twitter.js"></script>
-            </div>
-            <div class="viral-box blog-box">
-                <div class="title">Subscribe to our blog</div>
-                <a target="_blank" href="http://blog.binaryage.com">Ideas from BinaryAge</a>
-                <a href="http://feeds.feedburner.com/binaryage-blog">
-                    <div class="rss-button">
-                        <div class="rss-icon"></div>
-                        <img src="http://feeds.feedburner.com/~fc/binaryage-blog?bg=dddddd&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" />
-                    </div>
-                </a>
-            </div>
-            <div class="viral-box mailchimp-box">
-                <!-- deferred -->
-            </div>
-        </div>
-    </div>
-</div>
+
 
 <div id="gallery" class="overlay" style="display:none"> 
     <img class="overlay-lesk" src="/shared/img/nbair1-lesk.png" /> 
@@ -174,52 +153,6 @@ menu: products
         };
         $("#o-teaser").overlay({top: 110, effect: 'apple', expose: exposeEffect});
         $("#o-buy").overlay({top: 110, effect: 'apple', expose: exposeEffect});
-        $("#o-download").overlay({top: 110, effect: 'apple', expose: exposeEffect}); // prevents default, see the trick below
-        $("#o-download-button").bind('click', function(e) {
-            var host = document.location.host;
-            if (host.substring(host.length-3)=='org') {
-                console.log('prevented download in debug mode');
-                e.preventDefault();
-            }
-            setTimeout(function() { // this is needed for webkit based browsers
-                if (!firstClick) {
-                    firstClick = true;
-                    TWTR.Widget.hasLoadedStyleSheet = true; // let's do all styles ourselves
-                    new TWTR.Widget({
-                        id: 'twitter-box-placeholder',
-                        version: 2,
-                        type: 'profile',
-                        rpp: 10,
-                        interval: 6000,
-                        width: 'auto',
-                        theme: {
-                            shell: {
-                                background: '#f1f1f1',
-                                color: '#393d44'
-                            },
-                            tweets: {
-                                background: '#fafafa',
-                                color: '#8d9198',
-                                links: '#3A6394'
-                            }
-                        },
-                        features: {
-                            scrollbar: false,
-                            loop: false,
-                            live: false,
-                            hashtags: true,
-                            timestamp: false,
-                            avatars: false,
-                            behavior: 'all'
-                        }
-                    }).render().setUser('binaryage').start();
-                    $('.mailchimp-box').load('mailchimp.html?x='+((Math.random()+"").substring(2)));
-                }
-                
-                $("#o-download").trigger('click');
-            }, 1000);
-            // does not prevent default and triggers browser's download action
-        });
         $('.video-icon').bind('click', function(e) {
             $("#o-teaser").trigger('click');
             return false;
