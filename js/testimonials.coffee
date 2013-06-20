@@ -2,6 +2,10 @@
 note: "this is needed for processing by jekyll"
 ---
 
+cb = new Codebird()
+cb.setConsumerKey('lE7iNxF0PTBECR2gC5yWvw', 'lsuUKQLDziDQZHh9ujTQTq5jfIHgWBGWrTIhm6RQqTA')
+cb.setToken('28596139-xZsNjHrgmhvgaMgueyg6bpWJcWuR837XegCtGCOQ', 'azEN2xRuQkTi0zNuzYEjcCqWPn7GR7ezn00JOMHMsY')
+
 $.fn.tweet = (options) ->
   index = 0
   ready = false
@@ -53,13 +57,15 @@ $.fn.tweet = (options) ->
             $(this).remove()
 
         cur = -1
+        last_item = null
         step = ->
           cur++
           if cur >= data.length
-            params.page++
+            params.max_id = last_item["id"]-1
             generator root, params
             return
           item = data[cur]
+          last_item = item
           gen item
 
           # prefetch next 5 images
@@ -75,16 +81,22 @@ $.fn.tweet = (options) ->
 
         step()
 
-    $.getJSON "http://api.twitter.com/1/favorites.json?page=" + params.page + "&id=" + encodeURIComponent(params.user) + "&callback=?", worker
+    twitter_params =
+      'screen_name': params.user
+      'count': params.count
+
+    if params.max_id
+      twitter_params['max_id'] = params.max_id
+
+    cb.__call 'favorites_list', twitter_params, worker
 
   @each ->
     root = $(this)
     defaults =
       user: "binaryage"
-      count: 5
+      count: 100
 
     params = $.extend(defaults, options)
-    params.page = 1
     root.data "sparams", params
     $("#main").addClass("main-dim").append "<div class=\"main-overlay\"></div>"
 
