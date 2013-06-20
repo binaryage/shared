@@ -28,7 +28,7 @@
         if (!env) {
             env = {};
         }
-        
+
         env.u = document.location.href;
         var w = $(window);
         env.bw = w.width();
@@ -45,18 +45,18 @@
         if (document.referrer && document.referrer != "") {
             env.ref = document.referrer;
         }
-        
+
         if (this.states.length) {
             env.state = this.states[this.states.length-1];
         }
-        
+
         // console.warn("SS: tracking ", env);
         {% if site.url contains ".com" %}
         var image = new Image();
         image.src = "http://173.255.237.194:8000/tracking_pixel.gif?" + jQuery.param(env);
         {% endif %}
     };
-    
+
     $('html').bind('click', function(e) {
         try {
             SSTracker.track({e:'click', px:e.pageX, py:e.pageY});
@@ -64,7 +64,7 @@
             console.log('unable to process SS click');
         }
     });
-            
+
     SSTracker.track({e:'hit'});
 </script>
 {% endif %}

@@ -7,7 +7,7 @@
           bacookie("bareferrer", referrer, {path: '/', expires: 14});
       }
   })();
-  
+
   // cross-domain tracking
   // http://code.google.com/apis/analytics/docs/tracking/gaTrackingSite.html
   $('a').live('click', function() {
@@ -19,7 +19,7 @@
       }
       var current = document.location+"";
       // just for switching domains between binaryage.com <-> fastspring.com
-      if ((current.match(/fastspring\.com/) && href.match(/binaryage\.com/)) || 
+      if ((current.match(/fastspring\.com/) && href.match(/binaryage\.com/)) ||
           (current.match(/binaryage\.com/) && href.match(/fastspring\.com/))) {
           _gaq.push(['_link', href]);
           return false;

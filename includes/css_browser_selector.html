@@ -15,11 +15,11 @@
         function fn() {
             opera.postError(arguments);
         };
-        ['log', 'debug', 'info', 'warn', 'error', 'assert', 'dir', 'dirxml', 'group', 'groupEnd', 
+        ['log', 'debug', 'info', 'warn', 'error', 'assert', 'dir', 'dirxml', 'group', 'groupEnd',
         'time', 'timeEnd', 'count', 'trace', 'profile', 'profileEnd'].forEach(function(name) {
             window.console[name] = fn;
         });
-    }            
+    }
     (function() {
             var names = ["log", "debug", "info", "warn", "error", "assert", "dir", "dirxml", "group", "groupEnd", "time", "timeEnd", "count", "trace", "profile", "profileEnd"];
             if(!window.console){

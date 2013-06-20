@@ -10,13 +10,13 @@ $(function() {
                     href = href.replace('binaryage.com', 'binaryage.org');
                 }
                 var loc = document.location+"";
-                if (href.substring(0, 4)!="http" && href.match(/\/[^.]+$/i)) { 
+                if (href.substring(0, 4)!="http" && href.match(/\/[^.]+$/i)) {
                     // this is for local jekyll server inconsistency
-                    if (host.substring(loc.length-1)=="2") { 
+                    if (host.substring(loc.length-1)=="2") {
                         // next website version
                         href += "2";
                     }
-                    if (loc.substring(loc.length-6)=="2.html") { 
+                    if (loc.substring(loc.length-6)=="2.html") {
                         // next website version
                         href += "2";
                     }
