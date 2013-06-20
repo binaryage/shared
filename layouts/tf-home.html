@@ -65,7 +65,7 @@ menu: products
             </div>
             <div class="product-thumbs-box">
                 <a class="prevPage browse left"></a>
-                <div class="product-thumbs-scrollable"> 
+                <div class="product-thumbs-scrollable">
                     <div class="product-thumbs-items">
                         {% for shot in page.shots %}
                         <img src="{{shot.thumb}}" rel="#screenshot-box-{{forloop.index}}"/>
@@ -85,7 +85,7 @@ menu: products
             <div class="social-box-inner">
                 {% if page.retweet %}
                 <div class="retweet">
-                    <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="binaryage">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>                
+                    <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="binaryage">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
                 </div>
                 {% endif %}
                 {% if page.facebook and false %}
@@ -120,7 +120,7 @@ menu: products
                 {% endif %}
             </div>
             <div class="clear"></div>
-        </div>    
+        </div>
     </div>
 </div>
 
@@ -130,35 +130,9 @@ menu: products
             <PARAM name="SRC" VALUE="http://cdn.binaryage.com/totalfinder-teaser.mov">
             <PARAM name="AUTOPLAY" VALUE="true">
             <EMBED SRC="http://cdn.binaryage.com/totalfinder-teaser.mov" width="640" height="375" AUTOPLAY="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
-            
+
             </EMBED>
         </OBJECT>
-    </div>
-</div>
-
-<div id="download" class="overlay" style="display:none">
-    <div class="overlay-content">
-        <div class="while-downloading">While you are downloading&hellip;</div>
-        <div class="stay-in-touch">you may want to do a few more clicks to stay in touch</div>
-        <div class="viral-boxes">
-            <div class="viral-box twitter-box">
-                <div id="twitter-box-placeholder"></div>
-                <script src="/shared/js/twitter.js"></script>
-            </div>
-            <div class="viral-box blog-box">
-                <div class="title">Subscribe to our blog</div>
-                <a target="_blank" href="http://blog.binaryage.com">Ideas from BinaryAge</a>
-                <a href="http://feeds.feedburner.com/binaryage-blog">
-                    <div class="rss-button">
-                        <div class="rss-icon"></div>
-                        <img src="http://feeds.feedburner.com/~fc/binaryage-blog?bg=dddddd&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" />
-                    </div>
-                </a>
-            </div>
-            <div class="viral-box mailchimp-box">
-                <!-- deferred -->
-            </div>
-        </div>
     </div>
 </div>
 
@@ -193,12 +167,12 @@ menu: products
     </div>
 </div>
 
-<div id="gallery" class="overlay" style="display:none"> 
-    <img class="overlay-lesk" src="/shared/img/nbair1-lesk.png" /> 
-    <a class="overlay-prev">prev</a> 
-    <a class="overlay-next">next</a> 
+<div id="gallery" class="overlay" style="display:none">
+    <img class="overlay-lesk" src="/shared/img/nbair1-lesk.png" />
+    <a class="overlay-prev">prev</a>
+    <a class="overlay-next">next</a>
     <div class="overlay-info"></div>
-    <img class="overlay-progress" src="/shared/img/twitter-loader.gif" /> 
+    <img class="overlay-progress" src="/shared/img/twitter-loader.gif" />
 </div>
 
 <script type="text/javascript">
@@ -210,52 +184,6 @@ menu: products
         };
         $("#o-teaser").overlay({top: 110, effect: 'apple', expose: exposeEffect});
         $("#o-buy").overlay({top: 110, effect: 'apple', expose: exposeEffect});
-        $("#o-download").overlay({top: 110, effect: 'apple', expose: exposeEffect}); // prevents default, see the trick below
-        $("#o-download-button").bind('click', function(e) {
-            var host = document.location.host;
-            if (host.substring(host.length-3)=='org') {
-                console.log('prevented download in debug mode');
-                e.preventDefault();
-            }
-            setTimeout(function() { // this is needed for webkit based browsers
-                if (!firstClick) {
-                    firstClick = true;
-                    TWTR.Widget.hasLoadedStyleSheet = true; // let's do all styles ourselves
-                    new TWTR.Widget({
-                        id: 'twitter-box-placeholder',
-                        version: 2,
-                        type: 'profile',
-                        rpp: 10,
-                        interval: 6000,
-                        width: 'auto',
-                        theme: {
-                            shell: {
-                                background: '#f1f1f1',
-                                color: '#393d44'
-                            },
-                            tweets: {
-                                background: '#fafafa',
-                                color: '#8d9198',
-                                links: '#3A6394'
-                            }
-                        },
-                        features: {
-                            scrollbar: false,
-                            loop: false,
-                            live: false,
-                            hashtags: true,
-                            timestamp: false,
-                            avatars: false,
-                            behavior: 'all'
-                        }
-                    }).render().setUser('binaryage').start();
-                    $('.mailchimp-box').load('mailchimp.html?x='+((Math.random()+"").substring(2)));
-                }
-                
-                $("#o-download").trigger('click');
-            }, 1000);
-            // does not prevent default and triggers browser's download action
-        });
         $('.video-icon').bind('click', function(e) {
             $("#o-teaser").trigger('click');
             return false;
@@ -276,10 +204,10 @@ menu: products
                 box.fadeIn();
             }
         }).navigator();
-        
+
         var api = $(".product-thumbs-scrollable").data("scrollable");
         var showcaseSwitchTimer;
-        
+
         $('.highlight').each(function() {
             var el = $(this);
             var showcaseIndex = el.attr('data-showcase');
@@ -301,7 +229,7 @@ menu: products
             });
         });
     });
-    
+
     $(function() {
         $('.overlayable').overlay({
             expose: '#f1f1f1',
@@ -314,7 +242,7 @@ menu: products
             info: '.overlay-info',
             progress: '.overlay-progress',
             opacity: 1,
-            speed: 200, 
+            speed: 200,
             template: '[${index}/${total}] ${title}'
         });
     });
