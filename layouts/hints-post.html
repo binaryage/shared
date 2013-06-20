@@ -15,17 +15,7 @@ layout: hints
         <h1 class="post-title">{{ page.title }}</h1>
         <div class="clear"></div>
     </div>
-    <!-- AddThis Button BEGIN -->
-<div class="addthis_toolbox addthis_default_style ">
-<a class="addthis_button_facebook"></a>
-<a class="addthis_button_twitter"></a>
-<a class="addthis_button_email"></a>
-<a class="addthis_button_compact"></a>
-<a class="addthis_counter addthis_bubble_style"></a>
-<a class="addthis_button_google_plusone"></a>
-</div>
-<div style="float:right"><a href="https://plus.google.com/{{ page.google_plus }}?rel=author"><class="post-author">By: {{ page.author_name }}</a></div>
-<div style="float:left"><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f4f2b211c2d0f54"></script></div>
+    <div style="float:right"><a href="https://plus.google.com/{{ page.google_plus }}?rel=author"><class="post-author">By: {{ page.author_name }}</a></div>
     <div class="post-content">{{ content }}</div>
 </div>
 
@@ -74,7 +64,7 @@ layout: hints
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'binaryage-hints';
-	var disqus_url = "http://hints.binaryage.com{{page.url}}/";
+    var disqus_url = "http://hints.binaryage.com{{page.url}}/";
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
@@ -90,9 +80,9 @@ layout: hints
 <div id="post_links">
     <ul>
         {% for post in site.posts limit:12 %}
-    	    <li><span>{{ post.date | date_to_string }}</span>  <a href="{{ post.url }}">{{ post.title }}</a></li>
-    	{% endfor %}
-    	<br/>
-    	For more posts, visit the full archive <a href="/archive">here.</a>
+            <li><span>{{ post.date | date_to_string }}</span>  <a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+        <br/>
+        For more posts, visit the full archive <a href="/archive">here.</a>
     </ul>
 </div>
