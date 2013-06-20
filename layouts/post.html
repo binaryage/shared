@@ -18,11 +18,11 @@ layout: blog
     <div class="post-content">{{ content }}</div>
 </div>
 
-<div class="simple_overlay" id="overlay-gallery" style="display:none"> 
-    <a class="overlay-prev">prev</a> 
-    <a class="overlay-next">next</a> 
+<div class="simple_overlay" id="overlay-gallery" style="display:none">
+    <a class="overlay-prev">prev</a>
+    <a class="overlay-next">next</a>
     <div class="overlay-info"></div>
-    <img class="overlay-progress" src="/shared/img/twitter-loader.gif" /> 
+    <img class="overlay-progress" src="/shared/img/twitter-loader.gif" />
 </div>
 
 <script>
@@ -30,7 +30,7 @@ layout: blog
     var postContent = $('.post-content');
     var images = $('.blog-image', postContent).add('.blog-image-full', postContent).add('.blog-image-border', postContent).add('.blog-image-full-border', postContent);
     if (!images.length) return;
-    
+
     var anchors = [];
     images.each(function() {
         var el = $(this);
@@ -51,7 +51,7 @@ layout: blog
         info: '.overlay-info',
         progress: '.overlay-progress',
         opacity: 1,
-        speed: 200, 
+        speed: 200,
         template: '[${index}/${total}] ${title}'
     });
 })();

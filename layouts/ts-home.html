@@ -63,7 +63,7 @@ menu: products
             </div>
             <div class="product-thumbs-box">
                 <a class="prevPage browse left"></a>
-                <div class="product-thumbs-scrollable"> 
+                <div class="product-thumbs-scrollable">
                     <div class="product-thumbs-items">
                         {% for shot in page.shots %}
                         <img src="{{shot.thumb}}" rel="#screenshot-box-{{forloop.index}}"/>
@@ -83,7 +83,7 @@ menu: products
             <div class="social-box-inner">
                 {% if page.retweet %}
                 <div class="retweet">
-                    <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="binaryage">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>                
+                    <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="binaryage">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
                 </div>
                 {% endif %}
                 {% if page.facebook and false %}
@@ -128,7 +128,7 @@ menu: products
             <PARAM name="SRC" VALUE="http://cdn.binaryage.com/totalspaces-intro.mov">
             <PARAM name="AUTOPLAY" VALUE="true">
             <EMBED SRC="http://cdn.binaryage.com/totalspaces-intro.mov" width="640" height="415" AUTOPLAY="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
-            
+
             </EMBED>
         </OBJECT>
     </div>
@@ -136,12 +136,12 @@ menu: products
 
 
 
-<div id="gallery" class="overlay" style="display:none"> 
-    <img class="overlay-lesk" src="/shared/img/nbair1-lesk.png" /> 
-    <a class="overlay-prev">prev</a> 
-    <a class="overlay-next">next</a> 
+<div id="gallery" class="overlay" style="display:none">
+    <img class="overlay-lesk" src="/shared/img/nbair1-lesk.png" />
+    <a class="overlay-prev">prev</a>
+    <a class="overlay-next">next</a>
     <div class="overlay-info"></div>
-    <img class="overlay-progress" src="/shared/img/twitter-loader.gif" /> 
+    <img class="overlay-progress" src="/shared/img/twitter-loader.gif" />
 </div>
 
 <script type="text/javascript">
@@ -173,10 +173,10 @@ menu: products
                 box.fadeIn();
             }
         }).navigator();
-        
+
         var api = $(".product-thumbs-scrollable").data("scrollable");
         var showcaseSwitchTimer;
-        
+
         $('.highlight').each(function() {
             var el = $(this);
             var showcaseIndex = el.attr('data-showcase');
@@ -198,7 +198,7 @@ menu: products
             });
         });
     });
-    
+
     $(function() {
         $('.overlayable').overlay({
             expose: '#f1f1f1',
@@ -211,7 +211,7 @@ menu: products
             info: '.overlay-info',
             progress: '.overlay-progress',
             opacity: 1,
-            speed: 200, 
+            speed: 200,
             template: '[${index}/${total}] ${title}'
         });
     });

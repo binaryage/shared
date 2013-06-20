@@ -70,7 +70,7 @@ menu: products
                     {% endif %}
                 </div>
                 <div class="clear"></div>
-            </div>    
+            </div>
         </div>
         <div class="main-product-right span-12 last">
             <div class="main-screenshot">
@@ -97,7 +97,7 @@ menu: products
 <div class="main-tabs" id="tabs-{{page.product}}">
     <div class="container">
         <div class="tab-bar">
-            <ul class="tabs"></ul> 
+            <ul class="tabs"></ul>
         </div>
         <div class="panes"></div>
     </div>
@@ -108,7 +108,7 @@ menu: products
 </div>
 
 <script>
-$(function() { 
+$(function() {
     var panes = $('.panes');
     var tabs = $('.tabs');
     var cur;
@@ -160,11 +160,11 @@ $(function() {
     });
 </script>
 
-<div class="simple_overlay" id="overlay-gallery" style="display:none"> 
-    <a class="overlay-prev">prev</a> 
-    <a class="overlay-next">next</a> 
+<div class="simple_overlay" id="overlay-gallery" style="display:none">
+    <a class="overlay-prev">prev</a>
+    <a class="overlay-next">next</a>
     <div class="overlay-info"></div>
-    <img class="overlay-progress" src="/shared/img/twitter-loader.gif" /> 
+    <img class="overlay-progress" src="/shared/img/twitter-loader.gif" />
 </div>
 
 <script>
@@ -179,7 +179,7 @@ $(function() {
         info: '.overlay-info',
         progress: '.overlay-progress',
         opacity: 1,
-        speed: 200, 
+        speed: 200,
         template: '[${index}/${total}] ${title}'
     });
 })();
