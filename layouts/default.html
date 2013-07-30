@@ -9,6 +9,7 @@ note: "leave the YAML front matter here, we want this to be processed as jekyll 
     <head>
         <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
         <title>{{page.title}}</title>
+        {% base_include redirect.html %}
         {% base_include canonical.html %}
         {% base_include facebook_metas.html %}
         {% base_include feedburner.html %}
