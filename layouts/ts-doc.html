@@ -1,5 +1,6 @@
 ---
 layout: default
+satisfaction: 1
 product_title: TotalSpaces
 menu: products
 ---
@@ -11,34 +12,38 @@ menu: products
                 <div class="back"><a class="back-button" href="/">« Back to Homepage</a></div>
                 <div class="hseparator"></div>
             </div>
-
-            <h2>Release notes</h2>
-            <ul>
-                <li><a href="/changes">Latest changes</a></li>
-            </ul>
-            <h2>About TotalSpaces</h2>
-            <ul>
-                <li><a href="/documentation">What is TotalSpaces</a></li>
-                <li><a href="/layout">Grid Layout</a></li>
-                <li><a href="/overview">Overview grid</a></li>
-                <li><a href="/overview-backgrounds">Overview grid backgrounds</a></li>
-                <li><a href="/navigation">Navigation</a></li>
-                <li><a href="/multi-monitors">Multi-monitors</a></li>
-                <li><a href="/hotkeys">Hotkeys</a></li>
+            
+            <h2>Release notes</h2> 
+            <ul> 
+                <li><a href="/changes">Latest changes</a></li> 
+            </ul> 
+            <h2>About TotalSpaces</h2> 
+            <ul> 
+                <li><a href="/documentation">What is TotalSpaces</a></li> 
+                <li><a href="/layout">Grid Layout</a></li> 
+                <li><a href="/overview">Overview grid</a></li> 
+                <li><a href="/overview-backgrounds">Overview grid backgrounds</a></li> 
+                <li><a href="/navigation">Navigation</a></li> 
+                <li><a href="/multi-monitors">Multi-monitors</a></li> 
+                <li><a href="/hotkeys">Hotkeys</a></li> 
                 <li><a href="/swipe">Swiping</a></li>
                 <li><a href="/mouse-edges">Mouse navigation</a></li>
-                <li><a href="/transitions">Transitions</a></li>
+                <li><a href="/transitions">Transitions</a></li> 
                 <li><a href="/hotcorners">Hot corners</a></li>
-                <li><a href="/apps">App assignments</a></li>
-                <li><a href="/full-screen-desktops">Full screen desktops</a></li>
+                <li><a href="/apps">App assignments</a></li>                
+                <li><a href="/full-screen-desktops">Full screen desktops</a></li> 
                 <li><a href="/overview-grid-app">Overview grid app</a></li>
-                <li><a href="/faq">FAQ</a></li>
-            </ul>
-            <h2>Licenses</h2>
+                <li><a href="/faq">FAQ</a></li> 
+            </ul> 
+            <h2>Articles</h2>
             <ul>
-                <li><a href="/licensing">Licensing</a></li>
-                <li><a href="/registration">Registration</a></li>
+              <li><a href="/mavericks">Mavericks compatibility</a></li>
             </ul>
+            <h2>Licenses</h2> 
+            <ul> 
+                <li><a href="/licensing">Licensing</a></li> 
+                <li><a href="/registration">Registration</a></li> 
+            </ul> 
 
             <div class="vseparator-top"></div>
             <div class="vseparator-body"></div>
@@ -49,7 +54,7 @@ menu: products
                 <h1 class="title">{{page.subtitle}}</h1>
                 <div class="hseparator"></div>
             </div>
-
+            
             {{ content }}
         </div>
     </div>
@@ -60,7 +65,7 @@ menu: products
         $(".hoverable-input").bind('click', function(e){
             this.select();
         });
-
+        
         // mark selected item, timeout needed for dev transformation of urls
         setTimeout(function() {
             var loc = document.location.pathname+"";
