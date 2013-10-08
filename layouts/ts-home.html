@@ -20,8 +20,7 @@ menu: products
                   <a href="http://cdn.binaryage.com/totalspaces-intro.mov" id="o-teaser" rel="#ts-teaser" class="button product-button-thumbup">
                       <div><div>Watch the Video<div class="product-specs">to see the major features in action</div></div></div>
                   </a>
-                    <div id="o-download" rel="#download"></div>
-                    <a href="{{page.download}}" id="o-download-button" rel="#download" class="button product-button-download">
+                    <a href="{{page.download}}" id="o-download-button" class="button product-button-download">
                         <div><div><div class="trial-note">14 day trial</div>{{page.downloadtitle}}<div class="product-specs">to enjoy your 14 day trial before buying</div></div></div>
                     </a>
                     <a href="https://sites.fastspring.com/switchstep/instant/totalspaces" id="o-buy-direct" rel="#buy" class="button product-button-buy">
@@ -152,6 +151,9 @@ menu: products
         };
         $("#o-teaser").overlay({top: 110, effect: 'apple', expose: exposeEffect});
         $("#o-buy").overlay({top: 110, effect: 'apple', expose: exposeEffect});
+        $("#o-download-button").bind('click', function(e) {
+          _gaq.push(['_trackPageview', '/overlays/o-download']);
+        });
         $('.video-icon').bind('click', function(e) {
             $("#o-teaser").trigger('click');
             return false;
