@@ -10,13 +10,15 @@ menu: products
             <div class="product-logo-box">
                 <img class="product-icon" src="/shared/img/icons/{{page.product_title|downcase}}-64.png">
                 <div class="product-tagline">
-                    <h1 class="product-title">{{page.product_title}}</h1><div class="plusone-wrapper"><g:plusone size="medium"></g:plusone></div>
+                    <h1 class="product-title">{{page.product_title}}</h1>
                     <h2 class="product-subtitle">{{page.product_subtitle}}</h2>
                 </div>
             </div>
             <div class="product-buttons-box">
                 <div class="product-click-here arrow"></div>
                 <div class="product-buttons">
+
+
                   <a href="http://cdn.binaryage.com/totalspaces-intro.mov" id="o-teaser" rel="#ts-teaser" class="button product-button-thumbup">
                       <div><div>Watch the Video<div class="product-specs">to see the major features in action</div></div></div>
                   </a>
@@ -25,11 +27,8 @@ menu: products
                     </a>
                     <a href="https://sites.fastspring.com/switchstep/instant/totalspaces" id="o-buy-direct" rel="#buy" class="button product-button-buy">
                         <div class="price-tag-totalspaces"></div>
-                        <div><div>Buy TotalSpaces<div class="product-specs">works on both Lion and Mountain Lion</div></div></div>
+                        <div><div>Buy TotalSpaces<div class="product-specs">for OSX Lion or Mountain Lion</div></div></div>
                     </a>
-                    <!-- div class="reasons-to-buy">
-                        <a href="/free-licenses">I'm also giving away free licenses!</a><br>
-                    </div -->
                 </div>
             </div>
         </div>
@@ -61,7 +60,7 @@ menu: products
             </div>
             <div class="product-thumbs-box">
                 <a class="prevPage browse left"></a>
-                <div class="product-thumbs-scrollable">
+                <div class="product-thumbs-scrollable"> 
                     <div class="product-thumbs-items">
                         {% for shot in page.shots %}
                         <img src="{{shot.thumb}}" rel="#screenshot-box-{{forloop.index}}"/>
@@ -74,49 +73,20 @@ menu: products
     </div>
 </div>
 
+<div id="ts2-notice">
+  <div class="container">
+    <img src="/shared/img/icons/totalspaces2-64.png" style="display:inline-block;vertical-align:middle;">
+    <div style="display:inline-block; margin-left:10px; vertical-align:middle;">
+      <b>TotalSpaces is for OSX Lion and Mountain Lion only.</b>
+      <br>
+      See <b><a href="/index2">TotalSpaces2</a></b> for OSX Mavericks.
+    </div>
+  </div>
+</div>
+
 <div id="content-totalspaces" class="main-content">
     <div class="container">
         {{ content }}
-        <!-- <div class="social-box">
-            <div class="social-box-inner">
-                {% if page.retweet %}
-                <div class="retweet">
-                    <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="binaryage">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-                </div>
-                {% endif %}
-                {% if page.facebook and false %}
-                <div class="facebook">
-                    <fb:share-button class="url" href="{{page.ogmeta.url}}/" type="box_count"></fb:share-button>
-                </div>
-                {% endif %}
-                {% if page.buzz and false %}
-                <div class="buzz"></div>
-                <script>
-                    $(".buzz").html(writeCapture.sanitize('<a title="Post on Google Buzz" class="google-buzz-button" href="http://www.google.com/buzz/post" data-button-style="normal-count" data-url="{{page.ogmeta.url}}" data-imageurl="{{page.ogmeta.image}}"></a><scr'+'ipt type="text/javascript" src="http://www.google.com/buzz/api/button.js"></scr'+'ipt>'));
-                </script>
-                {% endif %}
-                <a href="http://www.macupdate.com/info.php/id/33373/totalspaces">
-                    <div class="macupdate"></div>
-                </a>
-                <script>
-                    $(".macupdate").html(writeCapture.sanitize('<scri'+'pt type="text/javascript" src="http://www.macupdate.com/developers/badge/33373"></scr'+'ipt>'));
-                </script>
-                {% if page.usethis %}
-                <div class="usethis"></div>
-                <script>
-                    $('.usethis').html(writeCapture.sanitize('<scr'+'ipt type="text/javascript" src="http://osx.iusethis.com/app/include/{{page.usethis}}/8"></scr'+'ipt>'));
-                </script>
-                {% endif %}
-                {% if page.flattr %}
-                <div class="flattr">
-                <script type="text/javascript">
-                    document.write('<iframe width="50" scrolling="no" height="60" frameborder="0" src="http://api.flattr.com/button/view/?uid=0&amp;url='+encodeURIComponent('{{page.flattr}}')+'&amp;language=&amp;hidden=0&amp;title=&amp;category=&amp;tags=&amp;description=" border="0" marginheight="0" marginwidth="0" allowtransparency="true"></iframe>')
-                </script>
-                </div>
-                {% endif %}
-            </div>
-            <div class="clear"></div>
-        </div>     -->
     </div>
 </div>
 
@@ -126,7 +96,7 @@ menu: products
             <PARAM name="SRC" VALUE="http://cdn.binaryage.com/totalspaces-intro.mov">
             <PARAM name="AUTOPLAY" VALUE="true">
             <EMBED SRC="http://cdn.binaryage.com/totalspaces-intro.mov" width="640" height="415" AUTOPLAY="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
-
+            
             </EMBED>
         </OBJECT>
     </div>
@@ -134,12 +104,12 @@ menu: products
 
 
 
-<div id="gallery" class="overlay" style="display:none">
-    <img class="overlay-lesk" src="/shared/img/nbair1-lesk.png" />
-    <a class="overlay-prev">prev</a>
-    <a class="overlay-next">next</a>
+<div id="gallery" class="overlay" style="display:none"> 
+    <img class="overlay-lesk" src="/shared/img/nbair1-lesk.png" /> 
+    <a class="overlay-prev">prev</a> 
+    <a class="overlay-next">next</a> 
     <div class="overlay-info"></div>
-    <img class="overlay-progress" src="/shared/img/twitter-loader.gif" />
+    <img class="overlay-progress" src="/shared/img/twitter-loader.gif" /> 
 </div>
 
 <script type="text/javascript">
@@ -174,10 +144,10 @@ menu: products
                 box.fadeIn();
             }
         }).navigator();
-
+        
         var api = $(".product-thumbs-scrollable").data("scrollable");
         var showcaseSwitchTimer;
-
+        
         $('.highlight').each(function() {
             var el = $(this);
             var showcaseIndex = el.attr('data-showcase');
@@ -199,7 +169,7 @@ menu: products
             });
         });
     });
-
+    
     $(function() {
         $('.overlayable').overlay({
             expose: '#f1f1f1',
@@ -212,7 +182,7 @@ menu: products
             info: '.overlay-info',
             progress: '.overlay-progress',
             opacity: 1,
-            speed: 200,
+            speed: 200, 
             template: '[${index}/${total}] ${title}'
         });
     });
