@@ -47,14 +47,6 @@ menu: products
                 <div class="clear"></div>
             </div>
             <div class="screenshot-controls">
-                <div class="teaser-box">
-                    <div class="teaser-hint arrow"></div>
-                    <div class="teaser-button">
-                        <a href="http://cdn.binaryage.com/totalspaces-intro.mov" id="o-teaser" rel="#teaser" class="teaser-play">
-                            <div></div>
-                        </a>
-                    </div>
-                </div>
                 <div class="navi-box">
                     <div class="navi-hint arrow"></div>
                     <div class="navi"></div>
@@ -81,7 +73,7 @@ menu: products
     <div style="display:inline-block; margin-left:10px; vertical-align:middle;">
       <b>TotalSpaces2 is for OSX Mavericks only.</b>
       <br>
-      See <a href="/totalspaces1">TotalSpaces</a> for OSX Lion and Mountain Lion.
+      See <b><a href="/">TotalSpaces</a></b> for OSX Lion and Mountain Lion.
     </div>
   </div>
 </div>
@@ -91,19 +83,6 @@ menu: products
         {{ content }}
     </div>
 </div>
-
-<div id="ts-teaser" class="overlay" style="display:none">
-    <div class="overlay-content">
-        <OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" width="640" height="415" CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab">
-            <PARAM name="SRC" VALUE="http://cdn.binaryage.com/totalspaces-intro.mov">
-            <PARAM name="AUTOPLAY" VALUE="true">
-            <EMBED SRC="http://cdn.binaryage.com/totalspaces-intro.mov" width="640" height="415" AUTOPLAY="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
-            
-            </EMBED>
-        </OBJECT>
-    </div>
-</div>
-
 
 
 <div id="gallery" class="overlay" style="display:none"> 
@@ -121,12 +100,12 @@ menu: products
             opacity: 0.3,
             color: '#000'
         };
-        $("#o-teaser").overlay({top: 110, effect: 'apple', expose: exposeEffect});
+//        $("#o-teaser").overlay({top: 110, effect: 'apple', expose: exposeEffect});
         $("#o-buy").overlay({top: 110, effect: 'apple', expose: exposeEffect});
-        $('.video-icon').bind('click', function(e) {
-            $("#o-teaser").trigger('click');
-            return false;
-        });
+//        $('.video-icon').bind('click', function(e) {
+//            $("#o-teaser").trigger('click');
+//            return false;
+//        });
     });
 
     $(function() {
