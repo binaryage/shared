@@ -111,7 +111,7 @@
 				// can be opened only once
 				if (self.isOpened()) { return self; }
 
-				_gaq.push(['_trackPageview', '/overlays/'+trigger.attr('id')]);
+				ga('send', 'pageview', '/overlays/'+trigger.attr('id'));
 
 				if (window.SSTracker) {
 				    SSTracker.pushState(trigger.attr('id'));

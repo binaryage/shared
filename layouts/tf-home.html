@@ -182,7 +182,7 @@ menu: products
         $("#o-teaser").overlay({top: 110, effect: 'apple', expose: exposeEffect});
         $("#o-buy").overlay({top: 110, effect: 'apple', expose: exposeEffect});
         $("#o-download-button").bind('click', function(e) {
-          _gaq.push(['_trackPageview', '/overlays/o-download']);
+          ga('send', 'pageview', '/overlays/o-download');
         });
         $('.video-icon').bind('click', function(e) {
             $("#o-teaser").trigger('click');
