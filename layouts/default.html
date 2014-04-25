@@ -19,13 +19,10 @@ note: "leave the YAML front matter here, we want this to be processed as jekyll 
         {% base_include stylesheets.html %}
         {% base_include css_browser_selector.html %}
         {% base_include jquery.html %}
-        {% base_include bacookie.html %}
         {% base_include parse_uri.html %}
-        {% base_include website_optimizer.html %}
         {% base_include webfont.html %}
         {% base_include code.html %}
         {% base_include google_analytics.html %}
-        {% base_include sixthsense.html %}
         {% base_include google_plus.html %}
     </head>
     <body id="page-{{ site.url | remove: 'https' | remove: 'http' | remove: ':' | remove: '/' | remove: '.com' | remove: '.org' | remove: '.binaryage' }}-{{ page.url | remove: '/' | remove: '.html' }}">
@@ -33,7 +30,6 @@ note: "leave the YAML front matter here, we want this to be processed as jekyll 
         {% base_include header.html %}
         {% base_include main.html %}
         {% base_include tweets.html %}
-        {% base_include ribbon.html %}
         {% base_include footer.html %}
 
         {% base_include pray.html %}
@@ -43,7 +39,6 @@ note: "leave the YAML front matter here, we want this to be processed as jekyll 
         {% base_include testimonials.html %}
         {% base_include triggering.html %}
         {% base_include local_url_rewriting.html %}
-        {% base_include website_optimizer2.html %}
         {% base_include gauges.html %}
         {% base_include livereload.html %}
     </body>
