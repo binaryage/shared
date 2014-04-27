@@ -2,12 +2,14 @@
 note: "leave the YAML front matter here, we want this to be processed as jekyll page"
 ---
 <!DOCTYPE html>
-<html xmlns:og="http://opengraphprotocol.org/schema/"
+<html lang="en"
+      xmlns:og="http://opengraphprotocol.org/schema/"
       xmlns:fb="http://developers.facebook.com/schema/"
       {% if page.id %}class="{{page.id}}"{% endif %}
 >
     <head>
         <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{page.title}}</title>
         {% base_include redirect.html %}
         {% base_include canonical.html %}
@@ -18,7 +20,6 @@ note: "leave the YAML front matter here, we want this to be processed as jekyll 
         {% base_include fastspring.html %}
         {% base_include stylesheets.html %}
         {% base_include css_browser_selector.html %}
-        {% base_include jquery.html %}
         {% base_include parse_uri.html %}
         {% base_include webfont.html %}
         {% base_include code.html %}
@@ -32,8 +33,6 @@ note: "leave the YAML front matter here, we want this to be processed as jekyll 
         {% base_include tweets.html %}
         {% base_include footer.html %}
 
-        {% base_include pray.html %}
-        {% base_include show_grid.html %}
         {% base_include fbsdk.html %}
         {% base_include disqus.html %}
         {% base_include testimonials.html %}
