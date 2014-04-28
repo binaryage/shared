@@ -5,71 +5,71 @@ menu: products
 ---
 
 <div class="doc-content">
-    <div class="container">
-        <div class="sidebar">
-            <div class="header-sidebar">
-                <div class="back"><a class="back-button" href="/index1">« Back to Homepage</a></div>
-                <div class="hseparator"></div>
-            </div>
-            
-            <h2>Release notes</h2> 
-            <ul> 
-                <li><a href="/changes">Latest changes</a></li> 
-            </ul> 
-            <h2>About TotalSpaces</h2> 
-            <ul> 
-                <li><a href="/documentation">What is TotalSpaces</a></li> 
-                <li><a href="/layout">Grid Layout</a></li> 
-                <li><a href="/overview">Overview grid</a></li> 
-                <li><a href="/overview-backgrounds">Overview grid backgrounds</a></li> 
-                <li><a href="/navigation">Navigation</a></li> 
-                <li><a href="/multi-monitors">Multi-monitors</a></li> 
-                <li><a href="/hotkeys">Hotkeys</a></li> 
-                <li><a href="/swipe">Swiping</a></li>
-                <li><a href="/mouse-edges">Mouse navigation</a></li>
-                <li><a href="/transitions">Transitions</a></li> 
-                <li><a href="/hotcorners">Hot corners</a></li>
-                <li><a href="/apps">App assignments</a></li>                
-                <li><a href="/full-screen-desktops">Full screen desktops</a></li> 
-                <li><a href="/overview-grid-app">Overview grid app</a></li>
-                <li><a href="/faq">FAQ</a></li> 
-            </ul> 
-            <h2>Articles</h2>
-            <ul>
-              <li><a href="/mavericks">Mavericks compatibility</a></li>
-            </ul>
-            <h2>Licenses</h2> 
-            <ul> 
-                <li><a href="/licensing">Licensing</a></li> 
-                <li><a href="/registration">Registration</a></li> 
-            </ul> 
+  <div class="container">
+    <div class="sidebar">
+      <div class="header-sidebar">
+        <div class="back"><a class="back-button" href="/index1">« Back to Homepage</a></div>
+        <div class="hseparator"></div>
+      </div>
+      
+      <h2>Release notes</h2> 
+      <ul> 
+        <li><a href="/changes">Latest changes</a></li> 
+      </ul> 
+      <h2>About TotalSpaces</h2> 
+      <ul> 
+        <li><a href="/documentation">What is TotalSpaces</a></li> 
+        <li><a href="/layout">Grid Layout</a></li> 
+        <li><a href="/overview">Overview grid</a></li> 
+        <li><a href="/overview-backgrounds">Overview grid backgrounds</a></li> 
+        <li><a href="/navigation">Navigation</a></li> 
+        <li><a href="/multi-monitors">Multi-monitors</a></li> 
+        <li><a href="/hotkeys">Hotkeys</a></li> 
+        <li><a href="/swipe">Swiping</a></li>
+        <li><a href="/mouse-edges">Mouse navigation</a></li>
+        <li><a href="/transitions">Transitions</a></li> 
+        <li><a href="/hotcorners">Hot corners</a></li>
+        <li><a href="/apps">App assignments</a></li>        
+        <li><a href="/full-screen-desktops">Full screen desktops</a></li> 
+        <li><a href="/overview-grid-app">Overview grid app</a></li>
+        <li><a href="/faq">FAQ</a></li> 
+      </ul> 
+      <h2>Articles</h2>
+      <ul>
+        <li><a href="/mavericks">Mavericks compatibility</a></li>
+      </ul>
+      <h2>Licenses</h2> 
+      <ul> 
+        <li><a href="/licensing">Licensing</a></li> 
+        <li><a href="/registration">Registration</a></li> 
+      </ul> 
 
-            <div class="vseparator-top"></div>
-            <div class="vseparator-body"></div>
-            <div class="vseparator-bottom"></div>
-        </div>
-        <div class="page-content doc-page">
-            <div class="header-content">
-                <h1 class="title">{{page.subtitle}}</h1>
-                <div class="hseparator"></div>
-            </div>
-            
-            {{ content }}
-        </div>
+      <div class="vseparator-top"></div>
+      <div class="vseparator-body"></div>
+      <div class="vseparator-bottom"></div>
     </div>
+    <div class="page-content doc-page">
+      <div class="header-content">
+        <h1 class="title">{{page.subtitle}}</h1>
+        <div class="hseparator"></div>
+      </div>
+      
+      {{ content }}
+    </div>
+  </div>
 </div>
 
 <script type="text/javascript">
-    $(function() {
-        $(".hoverable-input").bind('click', function(e){
-            this.select();
-        });
-        
-        // mark selected item, timeout needed for dev transformation of urls
-        setTimeout(function() {
-            var loc = document.location.pathname+"";
-            var item = $('.sidebar a[href*="'+loc+'"]');
-            item.parent().addClass('selected');
-        }, 100);
+  $(function() {
+    $(".hoverable-input").bind('click', function(e){
+      this.select();
     });
+    
+    // mark selected item, timeout needed for dev transformation of urls
+    setTimeout(function() {
+      var loc = document.location.pathname+"";
+      var item = $('.sidebar a[href*="'+loc+'"]');
+      item.parent().addClass('selected');
+    }, 100);
+  });
 </script>

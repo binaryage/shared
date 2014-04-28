@@ -1,16 +1,3 @@
 ../bower_components/jquery/dist/jquery
 ../bower_components/bootstrap/dist/js/bootstrap
-jquery_tools_min
-history
-overlay
-hash_change
-write_capture
-validation
-form
-easing
-select
-relatize_date
-placeholder
-sha1
-codebird
-testimonials
+../bower_components/fancybox/source/jquery.fancybox

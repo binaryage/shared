@@ -3,42 +3,42 @@ note: "leave the YAML front matter here, we want this to be processed as jekyll 
 ---
 <!DOCTYPE html>
 <html lang="en"
-      xmlns:og="http://opengraphprotocol.org/schema/"
-      xmlns:fb="http://developers.facebook.com/schema/"
-      {% if page.id %}class="{{page.id}}"{% endif %}
+    xmlns:og="http://opengraphprotocol.org/schema/"
+    xmlns:fb="http://developers.facebook.com/schema/"
+    {% if page.id %}class="{{page.id}}"{% endif %}
 >
-    <head>
-        <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{page.title}}</title>
-        {% base_include redirect.html %}
-        {% base_include canonical.html %}
-        {% base_include facebook_metas.html %}
-        {% base_include feedburner.html %}
-        {% base_include favicon.html %}
-        {% base_include fading.html %}
-        {% base_include fastspring.html %}
-        {% base_include stylesheets.html %}
-        {% base_include css_browser_selector.html %}
-        {% base_include parse_uri.html %}
-        {% base_include webfont.html %}
-        {% base_include code.html %}
-        {% base_include google_analytics.html %}
-        {% base_include google_plus.html %}
-    </head>
-    <body id="page-{{ site.url | remove: 'https' | remove: 'http' | remove: ':' | remove: '/' | remove: '.com' | remove: '.org' | remove: '.binaryage' }}-{{ page.url | remove: '/' | remove: '.html' }}">
-        {% base_include topbar.html %}
-        {% base_include header.html %}
-        {% base_include main.html %}
-        {% base_include tweets.html %}
-        {% base_include footer.html %}
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{page.title}}</title>
+    {% base_include redirect.html %}
+    {% base_include canonical.html %}
+    {% base_include facebook_metas.html %}
+    {% base_include feedburner.html %}
+    {% base_include favicon.html %}
+    {% base_include fading.html %}
+    {% base_include fastspring.html %}
+    {% base_include stylesheets.html %}
+    {% base_include css_browser_selector.html %}
+    {% base_include parse_uri.html %}
+    {% base_include webfont.html %}
+    {% base_include code.html %}
+    {% base_include google_analytics.html %}
+    {% base_include google_plus.html %}
+  </head>
+  <body id="page-{{ site.url | remove: 'https' | remove: 'http' | remove: ':' | remove: '/' | remove: '.com' | remove: '.org' | remove: '.binaryage' }}-{{ page.url | remove: '/' | remove: '.html' }}">
+    {% base_include topbar.html %}
+    {% base_include header.html %}
+    {% base_include main.html %}
+    {% base_include tweets.html %}
+    {% base_include footer.html %}
 
-        {% base_include fbsdk.html %}
-        {% base_include disqus.html %}
-        {% base_include testimonials.html %}
-        {% base_include triggering.html %}
-        {% base_include local_url_rewriting.html %}
-        {% base_include gauges.html %}
-        {% base_include livereload.html %}
-    </body>
+    {% base_include fbsdk.html %}
+    {% base_include disqus.html %}
+    {% base_include testimonials.html %}
+    {% base_include triggering.html %}
+    {% base_include local_url_rewriting.html %}
+    {% base_include gauges.html %}
+    {% base_include livereload.html %}
+  </body>
 </html>
