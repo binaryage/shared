@@ -1,40 +1,28 @@
 #footer
-  clear both
-  padding-bottom 20px
-  margin-top 30px
-  font footer-font
-  color #d4d4d4
-  text-shadow #FFF 0px 1px 1px
+  margin-bottom 50px // just to allocate some extra space below footer
+  margin-top 10px
 
   .footerbox
-    padding 20px 0px
+    border-top 1px solid #ddd
+    font footer-font
+    color footer-link-color
+    text-shadow #FFF 0px 1px 1px
+    padding 4px 10px 4px 10px
+    float right
     relative()
+    
+    a
+      color footer-link-color
+    
+    & > *
+      display inline-block
 
     .copyright
-      transition all tspeed ease 0s
       opacity 0.6
-      absolute(left 4px)
-      z-index 2
+      transition all tspeed ease 0s
       
       &:hover
         opacity 1
 
-    .copyright a
-      display block
-
-    .copyright img
-      display block
-
-    .footer-links
-      text-align right
-
     .footer-links a
-      margin 0px 8px
-      
-    .facebook-like-button-wrapper
-      float left
-      relative(top -5px)
-      
-  .footer-separator
-    sprite(0px, 486px, 950px, 50px)
-
+      margin-left 10px

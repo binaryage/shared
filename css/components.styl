@@ -11,9 +11,8 @@ sprite(x=0px, y=0px, w='auto', h='auto', img='/shared/img2/assets.png')
   display block
   absolute()
   
-topbar-button(iconx=276px, icony=62px, bg = topbar-bg-color, img='/shared/img2/assets.png')
+topbar-button(bg=topbar-bg-color)
   -reset()
-  background transparent url(img) no-repeat (-(iconx)) (-(icony))
   float right
   background-color bg
   color topbar-color
@@ -21,21 +20,32 @@ topbar-button(iconx=276px, icony=62px, bg = topbar-bg-color, img='/shared/img2/a
   height 22px
   line-height 22px
   border-radius bottom 6px
-  padding 0px 8px 0px 26px
+  padding 0px 8px
   margin-left 5px
   text-shadow: 0 1px 0 darken(bg, 30%)
+  cursor pointer
   
+  a
+    color topbar-color
+    
   &:hover
-    cursor pointer
+    color #ccc !important
+
+  a:hover
+    color #ccc !important
+    text-decoration none
+  
+  i 
+    margin-right 4px
+  
   
 menu-button(iconx=-10px, icony=63px, img='/shared/img2/assets.png')
   -reset()
-  margin-left 12px
+  margin-left 20px
   & a
     text-shadow: 0 1px 0 #fff
-    background transparent url(img) no-repeat (-(iconx)) (-(icony))
     display: inline-block
-    padding 0px 10px 0px 34px
+    padding 0px 10px
     height 26px
     cursor pointer
     color menu-color
@@ -46,11 +56,12 @@ menu-button(iconx=-10px, icony=63px, img='/shared/img2/assets.png')
 product-button(iconx=-16px, icony=242px, img='/shared/img2/assets.png')
   -reset()
   relative()
+  overflow hidden
   cursor pointer
   font product-button-font
   color product-button-color
   border 1px solid #ccc
-  padding 2px 0px 2px 0px
+  padding 2px 0px
   text-shadow #FFF 0px 1px 1px
   border-radius 8px
   min-height 38px
@@ -65,36 +76,27 @@ product-button(iconx=-16px, icony=242px, img='/shared/img2/assets.png')
     background-color #f3f3f3
     background linear-gradient(top, #fff, #f8f8f8)
     border-color selection-color
+    
+  i
+    transition all tspeed ease 0s
+    margin-right 10px
   
   & > div
-    background transparent url(img) no-repeat (-(iconx)) (-(icony))
-
-  & > div > div
-    margin-left: 40px;
     text-align: left;
-    padding: 0px 20px;
+    padding: 0px 14px;
     line-height 38px
     white-space:nowrap;
     
-  & .product-specs
-    font product-specs-font
-    color #777
-    text-shadow #fff 0px 1px 1px
-    margin 0
-    line-height 12px
-    margin-bottom 6px
-    margin-top -4px
-    
   & .trial-note
-    padding 4px 29px
-    background-color #2572c7
+    padding 3px 29px
+    background-color #658bbb
     text-shadow none
     font-weight normal
     color #fff
     font-size 9px
     line-height 8px
     text-align center
-    absolute(top 13px right -33px)
+    absolute(top 11px right -32px)
     transform rotate(45deg)
     display none
 
@@ -104,9 +106,10 @@ product-button(iconx=-16px, icony=242px, img='/shared/img2/assets.png')
     display block
 
 minor-button(iconx=-16px, icony=242px, img='/shared/img2/assets.png')
-  product-button(iconx, icony, img)
+  product-button()
   font minor-button-font
   color minor-button-color
+  line-height 30px
 
 popup-button(img='/shared/img2/assets.png')
   product-button(0px, 0px, img)

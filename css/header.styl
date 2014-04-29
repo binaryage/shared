@@ -22,59 +22,28 @@
         &:hover
           opacity 1
   
-    .header-selector
-      sprite(0px, 213px, 22px, 11px)
-      margin-top 80px 
-      display none
-
     .header-menu
-      absolute(right)
-      display block
-      padding 0px
-      margin: 0px
+      float right
       margin-top 44px
-      margin-right -10px
       list-style-type none
       
       li
         display block
+        border-radius 4px
         float left
-    
-      .menu-item-store
-        menu-button(-6px, 129px)
-      
-      .menu-item-products
-        menu-button(-4px, 97px)
-      
-      .menu-item-blog
-        menu-button(-4px, 63px)
-    
-      .menu-item-hints
-        menu-button(146px, 62px)
-    
-      .menu-item-support
-        menu-button(-0px, 162px)
+        menu-button()
         
-// selected menu items
-.menu-store .header-selector
-  right 310px
-  display block !important
-
-.menu-products .header-selector
-  right 210px
-  display block !important
-
-.menu-blog .header-selector
-  right 110px
-  display block !important
-
-.menu-support .header-selector
-  right 20px
-  display block !important
+        i 
+          margin-right 6px
+          
+      li:hover
+        border-bottom 2px solid #999
         
 .menu-store .menu-item-store a,
 .menu-products .menu-item-products a,
 .menu-blog .menu-item-blog a,
-.menu-hints .menu-item-hints a,
 .menu-support .menu-item-support a
-  color:menu-selected-color !important;
+  color menu-selected-color !important
+  
+.menu-products .menu-item-products
+  border-bottom 2px solid black !important

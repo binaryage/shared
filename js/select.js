@@ -26,8 +26,6 @@ $.fn.select = function(select) {
     });
 };
 
-})(jQuery);
-
 $.fn.autolink = function () {
     return $(this).each(function() {
         var el = $(this);
