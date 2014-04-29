@@ -1,7 +1,6 @@
-# bower deps TODO: move them?
-../bower_components/jquery/dist/jquery
-../bower_components/bootstrap/dist/js/bootstrap
-../bower_components/fancybox/source/jquery.fancybox
+vendor/jquery
+vendor/bootstrap
+vendor/jquery.fancybox
 
 navigen
 #testimonials
