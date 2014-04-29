@@ -1,0 +1,25 @@
+---
+layout: tf-doc
+---
+{% if page.doc-image %}
+<div class="main-image">
+  <img src="{{page.doc-image}}" class="doc-image" style="margin-bottom: 0px">
+</div>
+{% endif %}
+<div class="main-content">
+  <div class="doc-col">
+    {{content}}
+  </div>
+  <div class="doc-side">
+    <div class="doc-side-inner">
+      <h2>Preferences</h2>
+      {% if page.pref-image %}
+      <img src="/images/preferences-menu.png" class="doc-pref-menu">
+      <img src="{{page.pref-image}}" class="doc-pref">
+      {% endif %}
+      {% if page.pref-comment %}
+      <p>{{page.pref-comment}}</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
