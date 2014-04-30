@@ -1,10 +1,28 @@
 hovered-highlight-background-color = #f5f5f5
 active-highlight-background-color = #fff
+natural-screenshot-width = 650px
+natural-screenshot-height = 430px
+
+.showcase
+  margin-top 20px
 
 .screenshot-box
+
+  .screenshot
+    width natural-screenshot-width
+    display inline-block
+
+  &.tf-shadow .screenshot
+    box-shadow 0px 0px 20px #666
+    border-radius 4px
+    
+  &.no-shadow .screenshot
+    box-shadow none
+
   a
     img
       width 100%
+      display block
 
   .zoom-icon
     cursor pointer
@@ -14,11 +32,9 @@ active-highlight-background-color = #fff
     opacity 0
 
   &:hover .zoom-icon
-    opacity 1         
+    opacity 1
     
-.showcase
-  relative(left 54px)
-
+  
 .screenshot-controls
   absolute(left 404px top 560px)
 
@@ -67,33 +83,6 @@ active-highlight-background-color = #fff
   .highlight-icon div
     width: 60px;
     height: 60px;
-
-  .highlight-icon .thumb-tabs
-    background-image: url('/images/thumb-tabs.png');
-
-  .highlight-icon .thumb-dual
-    background-image: url('/images/thumb-dual.png');
-
-  .highlight-icon .thumb-fot
-    background-image: url('/images/thumb-fot.png');
-
-  .highlight-icon .thumb-ssf
-    background-image: url('/images/thumb-ssf.png');
-
-  .highlight-icon .thumb-visor
-    background-image: url('/images/thumb-visor.png');
-
-  .highlight-icon .thumb-asepsis
-    background-image: url('/images/thumb-asepsis.png');
-
-  .highlight-icon .thumb-stabs
-    background-image: url('/images/thumb-stabs.png');
-
-  .highlight-icon .thumb-cut
-    background-image: url('/images/thumb-cut.png');
-
-  .highlight-icon .thumb-term
-    background-image: url('/images/thumb-term.png');
 
   .highlight-content h3
     margin 0

@@ -8,7 +8,7 @@ menu: products
     <div class="row">
       <div class="col-md-6">
         <div class="product-logo-box">
-          <img class="product-icon" src="/shared/img/icons/{{page.product_title|downcase}}-256.png">
+          <img class="product-icon" src="{{page.product_icon}}">
           <div class="product-tagline">
             <h1 class="product-title">{{page.product_title}}</h1>
             <h2 class="product-subtitle">{{page.product_subtitle}}</h2>
@@ -65,12 +65,12 @@ menu: products
   <div class="container">
     <div class="row">
       <div class="generic-separator"></div>
-      <div class="col-md-4">
+      <div class="col-md-5">
         <div class="highlights">
           {% for highlight in page.highlights %}
           <div class="highlight{% if highlight.screenshot %} highlight-selectable{% endif %} {% if forloop.index0 == 0 %}active{% endif %}" {% if highlight.screenshot %}data-showcase="{{highlight.screenshot}}"{% endif %}>
             <div class="highlight-icon" title="{{highlight.tooltip}}">
-              <div class="{{highlight.klass}}"></div>
+              <div {% if highlight.style %}style="{{highlight.style}}"{% endif %} {% if highlight.klass %}class="{{highlight.klass}}"{% endif %}></div>
             </div>
             <div class="highlight-content wf">
               <h3>{{highlight.title}}</h3>
@@ -80,7 +80,7 @@ menu: products
           {% endfor %}
         </div>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-7">
         <div class="showcase">
           <div class="main-screenshot">
             {% for shot in page.shots %}
