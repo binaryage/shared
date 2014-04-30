@@ -1,15 +1,19 @@
+// natural-screenshot-width = 650px
+// natural-screenshot-height = 430px
+
+highlights-shift = 30px
+
 hovered-highlight-background-color = #f5f5f5
 active-highlight-background-color = #fff
-natural-screenshot-width = 650px
-natural-screenshot-height = 430px
 
 .showcase
   margin-top 20px
+  padding-left 3px // width in max layout should be 650px (showcase is 653px in max layout)
 
 .screenshot-box
 
   .screenshot
-    width natural-screenshot-width
+    width 100%
     display inline-block
 
   &.tf-shadow .screenshot
@@ -59,15 +63,18 @@ natural-screenshot-height = 430px
 
 
 .highlights
-  relative(left 120px)
   margin-top 20px
+
+@media (min-width: 1200px)
+  .highlights
+    relative(left highlights-shift)
     
 .highlight
   width 290px
+  height 75px
   position relative
   border-radius 3px
   padding 5px
-  display inline-block
   
   .highlight-icon
     float left
@@ -79,15 +86,13 @@ natural-screenshot-height = 430px
     transition all tspeed ease 0s
     border 1px solid #ccc
     opacity 0.7
-  
+    
   .highlight-icon div
     width: 60px;
     height: 60px;
 
   .highlight-content h3
-    margin 0
-    margin-top 2px
-    margin-bottom 6px
+    margin 2px 0px
     font highlight-title-font
     color highlight-title-color
     text-shadow #FFF 0px 1px 1px

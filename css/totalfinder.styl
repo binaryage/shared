@@ -18,28 +18,18 @@
   margin-top 20px
   relative()
 
-  .more-info
-    relative(left 126px top -20px)
-    margin-top 12px
+  .button
+    minor-button()
+    margin-right 20px
     
-    .button
-      minor-button()
-      margin-right 20px
-      
-    .manual-button-box,
-    .teaser-button-box
-      display inline-block
     
+  @media (min-width: 1200px)
     .manual-button-box
-      relative(left 70px)
+      relative(left highlights-shift)
 
-    .teaser-button-box
-      relative(left 66px)
-    
-      
 .product-button-buy
   width 240px
   
 .product-button-download
   width 260px
-  overflow hidden // needed for trial-note      
+  overflow hidden // needed for trial-note

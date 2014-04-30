@@ -2,12 +2,13 @@
   height 5px
   background-color topbar-bg-color
   
-  .topbar
-    .topbar-buttons
-      absolute()
-      z-index 100
-      float right
+  .relativizer
+    relative()
+  
+  .topbar-buttons
+    absolute(right 0px)
+    z-index 100
 
-      div
-        topbar-button()
-        transition all tspeed ease 0s
+    div
+      topbar-button()
+      transition all tspeed ease 0s

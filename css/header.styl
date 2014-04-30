@@ -5,25 +5,26 @@
   border-bottom 1px solid header-separator-color
   box-shadow 0px 1px 5px #dadada
   
-  .header
+  .relativizer
     relative()
+  
+  .header-menu
+    absolute(right 0px)
+    //text-align right
+    margin-top 44px
+    list-style-type none
+    white-space nowrap
     
-    .header-menu
-      float right
-      margin-top 44px
-      list-style-type none
+    li
+      display block
+      border-radius 4px
+      menu-button()
       
-      li
-        display block
-        border-radius 4px
-        float left
-        menu-button()
+      i 
+        margin-right 6px
         
-        i 
-          margin-right 6px
-          
-      li:hover
-        border-bottom 2px solid #999
+    li:hover
+      border-bottom 2px solid #999
         
 .menu-store .menu-item-store a,
 .menu-products .menu-item-products a,
