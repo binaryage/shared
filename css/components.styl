@@ -42,16 +42,21 @@ topbar-button(bg=topbar-bg-color)
 menu-button(iconx=-10px, icony=63px, img='/shared/img2/assets.png')
   -reset()
   margin-left 20px
-  & a
+  a
     text-shadow: 0 1px 0 #fff
     display: inline-block
-    padding 0px 10px
+    padding 0px 4px
     height 26px
     cursor pointer
     color menu-color
-    font menu-font
+    font small-menu-font
     line-height 24px
     text-decoration none
+    
+  @media logo-menu-not-clashing
+    a
+      padding 0px 10px
+      font menu-font
 
 product-button(iconx=-16px, icony=242px, img='/shared/img2/assets.png')
   -reset()

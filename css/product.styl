@@ -57,12 +57,12 @@
     
     .button-container
       float right
-      margin-top 20px
+      margin-top 14px
       margin-left 20px
       
       .button-note
         padding-right 10px
-        relative(top -3px)
+        relative(top -2px)
         text-align right
         text-shadow #FFF 0px 1px 1px
         font-size 10px
@@ -73,3 +73,11 @@
           
       .button
         product-button()
+        
+  @media (max-width: 520px)
+    .product-social
+      display none
+      
+    .product-logo-box
+      zoom 0.7
+
