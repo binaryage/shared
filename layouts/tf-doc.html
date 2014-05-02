@@ -46,3 +46,12 @@ si-markup: '<i class="fa-li fa fa-circle-o"></i>'
 {% endcontentfor %}
 
 {{content}}
+
+<script>
+$(function() {
+  $(".doc-image").wrap(function() {
+    return "<a class='wrapped-doc-image' data-fancybox-group='doc' href='" + $(this).attr('src') + "'></div>";
+  });
+  $(".wrapped-doc-image").fancybox();
+});
+</script>
