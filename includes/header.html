@@ -1,19 +1,33 @@
-<div id="header" class="menu-{{page.menu}}">
+{% contentfor header-logo %}
+<div class="relativize">
+  <a href="http://www.binaryage.com" title="BinaryAge Software">
+    {% base_include logo.html %}
+  </a>
+</div>
+{% endcontentfor %}
+
+{% contentfor header-menu %}
+<div class="relativize">
+  <ul class="header-menu menu-selected-{{page.menu}}">
+    <li class="menu-item-store"><a href="http://www.binaryage.com/store"><i class="fa fa-shopping-cart"></i><span>store</span></a></li>
+    <li class="menu-item-products"><a href="http://www.binaryage.com"><i class="fa fa-star"></i><span>products</span></a></li>
+    <li class="menu-item-blog"><a href="http://blog.binaryage.com"><i class="fa fa-bullhorn"></i><span>blog</span></a></li>
+    <li class="menu-item-support"><a href="http://discuss.binaryage.com"><i class="fa fa-comments"></i><span>support</span></a></li>
+  </ul>
+</div>
+{% endcontentfor %}
+
+{% contentfor header %}
+<div id="header">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="relativizer">
-          <a href="http://www.binaryage.com" title="BinaryAge Software">
-            {% base_include logo.html %}
-          </a>
-          <ul class="header-menu">
-            <li class="menu-item-store"><a href="http://www.binaryage.com/store"><i class="fa fa-shopping-cart"></i><span>store</span></a></li>
-            <li class="menu-item-products"><a href="http://www.binaryage.com"><i class="fa fa-star"></i><span>products</span></a></li>
-            <li class="menu-item-blog"><a href="http://blog.binaryage.com"><i class="fa fa-bullhorn"></i><span>blog</span></a></li>
-            <li class="menu-item-support"><a href="http://discuss.binaryage.com"><i class="fa fa-comments"></i><span>support</span></a></li>
-          </ul>
-        </div>
+        {% firstcontentblock header-logo %}
+        {% firstcontentblock header-menu %}
       </div>
     </div>
   </div>
 </div>
+{% endcontentfor %}
+
+{% firstcontentblock header %}

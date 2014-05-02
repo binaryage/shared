@@ -1,21 +1,27 @@
+{% contentfor footer-right %}
+<div class="footer-box-right">
+  <div class="footer-copyright">
+    <div class="footer-license">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0"><img title="the website license" alt="Creative Commons License" style="border-width:0" src="/shared/img/byccnd.png" /></a>
+    </div>
+    <a href="http://www.binaryage.com/about">BinaryAge Limited</a>
+  </div>
+</div>
+{% endcontentfor %}
+
+{% contentfor footer %}
 <div id="footer">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
+        {% firstcontentblock footer-left %}
       </div>
       <div class="col-md-4">
-        <div class="footerbox">
-          <div class="copyright">
-            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0"><img title="the website license" alt="Creative Commons License" style="border-width:0" src="/shared/img/byccnd.png" /></a>
-          </div>
-          <div class="footer-links">
-            {% if page.repo %}
-            <a href="{{page.repo}}">source code</a> |
-            {% endif %}
-            <a href="http://www.binaryage.com/about">contact</a>
-          </div>
-        </div>
+        {% firstcontentblock footer-right %}
       </div>
     </div>
   </div>
 </div>
+{% endcontentfor %}
+
+{% firstcontentblock footer %}

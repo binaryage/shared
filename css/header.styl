@@ -5,9 +5,6 @@
   border-bottom 1px solid header-separator-color
   box-shadow 0px 1px 5px #dadada
   
-  .relativizer
-    relative()
-  
   .header-menu
     absolute(right 0px) // needed for responsive design, header should not break with small width
     margin-top 44px
@@ -25,11 +22,11 @@
     li:hover
       border-bottom 2px solid #999
         
-.menu-store .menu-item-store a,
-.menu-products .menu-item-products a,
-.menu-blog .menu-item-blog a,
-.menu-support .menu-item-support a
-  color menu-selected-color !important
-  
-.menu-products .menu-item-products
+.menu-selected-store .menu-item-store,
+.menu-selected-products .menu-item-products,
+.menu-selected-blog .menu-item-blog,
+.menu-selected-support .menu-item-support
   border-bottom 2px solid black !important
+  
+  a
+    color menu-selected-color !important
