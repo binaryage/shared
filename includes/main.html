@@ -1,12 +1,11 @@
-<div id="main">
+<div id="main" class="cf">
   {% if page.gwo %}
-  <script>utmx_section("content")</script>
+    <script>utmx_section("content")</script>
   {% endif %}
   <div class="wf">
-  {{content}}
+    {{content}}
   </div>
   {% if page.gwo %}
-  </noscript>
+    </noscript>
   {% endif %}
-  <div class="clear"></div>
 </div>

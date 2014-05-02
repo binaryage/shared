@@ -1,0 +1,17 @@
+<div class="social-box">
+  {% if page.product-fblike %}
+  <div class="fblike-wrapper">
+    {% base_include fblike_button.html %}
+  </div>
+  {% endif %}
+  {% if page.product-tweet %}
+  <div class="twitter-wrapper">
+    {% base_include twitter_button.html %}
+  </div>
+  {% endif %}
+  {% if page.product-plusone %}
+  <div class="plusone-wrapper">
+    {% base_include plusone_button.html %}
+  </div>
+  {% endif %}
+</div>

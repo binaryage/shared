@@ -15,20 +15,11 @@ $.fn.navigen = (options) ->
   $(@).each ->
     i++
     el = $(@)
-    button = $("<a>")
-    button.addClass 'active' if (el.css('display')!='none')
-    button.on 'click', ->
-      el.trigger('activate')
-    
     index = i
     el.on 'activate', ->
       el.parent().children().css('display', 'none')
       el.css('display', 'block')
-      button.parent().children().removeClass 'active'
-      button.addClass 'active'
       updateShowcase(index)
-    
-    target.append(button)
     
 $.fn.showcase = (options) ->
   $(@).each ->

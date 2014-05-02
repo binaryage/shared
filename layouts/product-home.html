@@ -1,0 +1,95 @@
+---
+layout: default
+menu: products
+---
+
+{% contentfor product-box %}
+<div class="product-box">
+  <img class="product-icon" src="{{page.product_icon}}">
+  <div class="product-tagline">
+    <h1 class="product-title">{{page.product_title}}</h1>
+    <h2 class="product-subtitle">{{page.product_subtitle}}</h2>
+    <div class="product-social">
+      {% base_include social_box.html %}
+    </div>
+  </div>
+</div>
+{% endcontentfor %}
+
+{% contentfor highlights %}
+<div class="highlights">
+  {% for highlight in page.highlights %}
+  <div class="highlight{% if highlight.screenshot %} highlight-selectable{% endif %} {% if forloop.index0 == 0 %}active{% endif %}" {% if highlight.screenshot %}data-showcase="{{highlight.screenshot}}"{% endif %}>
+    <div class="highlight-icon" title="{{highlight.tooltip}}">
+      <div {% if highlight.style %}style="{{highlight.style}}"{% endif %} {% if highlight.klass %}class="{{highlight.klass}}"{% endif %}></div>
+    </div>
+    <div class="highlight-content wf">
+      <h3>{{highlight.title}}</h3>
+      <p>{{highlight.description}}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endcontentfor %}
+
+{% contentfor showcase %}
+<div class="showcase">
+  <div class="main-screenshot">
+    {% for shot in page.shots %}
+    <div id="screenshot-box-{{forloop.index}}" class="screenshot-box {{shot.klass}}" {% if forloop.index0 > 0 %}style="display:none"{% endif %}>
+      <a id="o-shot{{forloop.index}}" href="{{shot.full}}" data-fancybox-group="gallery" class="screenshot" title="{{shot.title}}">
+        <img src="{{shot.thumb}}">
+        <div class="zoom-icon"></div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endcontentfor %}
+
+{% contentfor product-header %}
+<div id="{{page.product}}-header" class="product-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        {% firstcontentblock product-box %}
+      </div>
+      <div class="col-md-6">
+        {% firstcontentblock product-buttons %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endcontentfor %}
+
+{% contentfor product-showcase %}
+<div id="{{page.product}}-showcase" class="product-showcase">
+  <div class="container">
+    <div class="row">
+      <div class="generic-separator"></div>
+      <div class="col-md-4 col-md-offset-1">
+        {% firstcontentblock highlights %}
+      </div>
+      <div class="col-md-7">
+        {% firstcontentblock showcase %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endcontentfor %}
+
+{% if page.product_title %}
+  {% firstcontentblock product-header %}
+{% endif %}
+
+{% if page.shots %}
+  {% firstcontentblock product-showcase %}
+{% endif %}
+
+<div id="{{page.product}}-content" class="product-content">
+  <div class="container">
+    {{ content }}
+  </div>
+</div>
+
+{% contentblock overlays %}
