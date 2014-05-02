@@ -1,7 +1,4 @@
 .doc-page
-  .right
-     float right
-     
   h2
     margin-top 40px
     font-weight bold
@@ -14,8 +11,8 @@
   h2:before
     clear both
     
-  p
-    margin-left 20px
+  .page-content > p
+    padding-left 20px
      
   .keyboard-shortcuts
     width 400px
@@ -43,11 +40,31 @@
       width 670px
 
   .license-desk
+    box-shadow 0px 0px 4px #666
+    margin-left 20px
     background-color: #fff
     border-radius 5px
-    border: 2px solid #aaa
-    margin-bottom: 20px
-    padding: 20px
+    margin-bottom 10px
+    padding 14px
+    display inline-block
+    
+    .choice
+      margin-top 10px
+    
+    .example
+      font-size 11px
+      color #999
+      padding-left 10px
+      
+    .note
+      font-size 11px
+      color #999
+
+  .exclamation
+    font-weight bold
+    color #fff
+    background-color #a00
+    display block
 
   .doc-pref
     position: relative
@@ -55,24 +72,16 @@
     top: -20px
     left: -26px
 
-  .license-warning
-    background-color: #fff
-    border-radius 5px
-    border: 2px solid #f00
-    margin-bottom: 20px
-    padding: 20px
-
-  .license-exclamation
-    background-color: #fff
-    border-radius 5px
-    border: 2px solid #f00
-    margin-bottom: 20px
-    padding: 20px
-    
-  .doc-image-add-shadow
+  .doc-image
     margin 10px 10px 20px 20px
     border-radius 5px
-    box-shadow 0px 0px 10px #666
+    box-shadow 0px 0px 2px #666
+    
+  .add-shadow
+    box-shadow 0px 0px 10px #999
+    
+  .no-shadow
+    box-shadow none
 
   .doc-inline-image
     display block
@@ -89,7 +98,7 @@
     margin-bottom: -40px
     width 50%
     
-  .doc-image
+  .doc-main-image
     max-width 100%
     margin-bottom: 0px
     
