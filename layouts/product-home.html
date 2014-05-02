@@ -3,6 +3,22 @@ layout: default
 menu: products
 ---
 
+{% contentfor product-buttons %}
+<div class="product-buttons">
+  <!-- just a sample button, see totalfinder-web/index.md for real-world usafe -->
+  <div class="button-container">
+    <a href="/some/download/url" id="o-download-button" class="button product-button-download">
+      <span><i class="fa fa-download fa-lg"></i>Download TotalFinder</span><span class="trial-note">14-day trial</span>
+    </a>
+    <div class="button-note">
+      <i class="fa fa-laptop"></i> Compatible with OS X 10.8 and 10.9<br>
+      <a href="/some-link"><i class="fa fa-trash-o"></i> Looking for an older version?</a><br>
+      <a href="/some-other-link"><i class="fa fa-flask"></i> Looking for a beta version?</a>
+    </div>
+  </div>
+</div>
+{% endcontentfor %}
+
 {% contentfor product-box %}
 <div class="product-box">
   <img class="product-icon" src="{{page.product_icon}}">
@@ -23,7 +39,7 @@ menu: products
     <div class="highlight-icon" title="{{highlight.tooltip}}">
       <div {% if highlight.style %}style="{{highlight.style}}"{% endif %} {% if highlight.klass %}class="{{highlight.klass}}"{% endif %}></div>
     </div>
-    <div class="highlight-content wf">
+    <div class="highlight-content">
       <h3>{{highlight.title}}</h3>
       <p>{{highlight.description}}</p>
     </div>
