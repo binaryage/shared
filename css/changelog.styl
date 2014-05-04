@@ -1,7 +1,7 @@
-.changelogx
-  #notice
-    display none
+.betaswitch
+  margin-bottom 20px
 
+.changelogx
   body,h1,h2,h3,h4,p,table
     padding 0
     margin 0
@@ -30,32 +30,25 @@
     font-size 9pt
     line-height 14pt
 
-  div.infobox
+  .infobox
     border 0px solid silver
     margin-bottom 10px
     clear both
 
-  div.infobox h3
+  .infobox h3
     font-size 8pt
     border-bottom 1px solid silver
     background-color #e2ecfe
     padding 3px 5px
     color #000
 
-  div.infobox p
-    padding 5px
-    font-size 8pt
-
-  div.infobox img.left
-    float left
-
-  ul.changes
+  .changes
     margin 0 !important
     padding-left 30px
     list-style-type none
     padding-right 0px
 
-  ul.changes li
+  .changes li
     margin-bottom 1px
     clear both
 
@@ -68,11 +61,23 @@
     float left
     min-height 26px
     min-width 110px
+    text-align center
 
     a
-      background url('/shared/img2/icon-download.png') no-repeat 6px 0px
-      padding 0px 6px 0px 32px
-      relative(top 1px)
+      padding 0px 6px 0px 6px
+      text-decoration none
+    
+    a:before
+      padding-right 6px
+      display: inline-block;
+      font-family: FontAwesome;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "\f019"; // fa-download
+    
     span
       padding 0px 6px 0px 32px
 
@@ -109,6 +114,7 @@
     border-radius 3px
     font-size 10px
     position relative
+    text-transform uppercase
     top -1px
 
   .fixed b
@@ -132,3 +138,16 @@
   .info
     display table
     padding-left 16px
+    
+  .changes i
+    color: #999;
+    font-style: normal;
+    font-size: 10px;
+  
+  .changes em
+    font-style: normal;
+    background-color: #FCFFDD;
+    padding: 0px 2px;
+    border: 1px solid #ccc;
+    color: #999;
+    border-radius: 2px;

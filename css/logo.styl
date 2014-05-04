@@ -5,13 +5,14 @@ logo-orange-color = #f9a538
 .binaryage-logo
   absolute() // needed for responsive design, header should not break with small width
   margin-top 6px
-  transition all tspeed ease 0s
   opacity 0.2
-
+  transition opacity tspeed ease 0s
+  transform: scale(0.6)
+  transform-origin: 0 0;
+  
   .logo
     width 260px
     height 56px
-    zoom 0.6
     fill-rule: evenodd
 
     .logo-badge
