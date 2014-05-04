@@ -1,15 +1,13 @@
 {% contentfor main %}
 <div id="main" class="cf">
   {% if page.gwo %}
-    <script>utmx_section("content")</script>
+  <script>utmx_section("content")</script>
   {% endif %}
-  <div>
-    {{content}}
-  </div>
+  {{content}}
   {% if page.gwo %}
-    </noscript>
+  </noscript>
   {% endif %}
 </div>
-{% endcontentfor%}
+{% endcontentfor %}
 
 {% firstcontentblock main %}
