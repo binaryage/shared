@@ -2,10 +2,6 @@
   $(function() {
     var initialized;
     $('.topbar-testimonials').bind('click', function() {
-      if (window.SSTracker) {
-        SSTracker.pushState('praise');
-      }
-
       if (!initialized) {
         $("#tweets").tweet({
           user: "binaryage"
