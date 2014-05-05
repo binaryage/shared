@@ -32,7 +32,11 @@
   // auto linker is responsible to pass ga cookie when user jumps between fastspring.com and binaryage.com
   // https://developers.google.com/analytics/devguides/collection/analyticsjs/cross-domain
   ga('require', 'linker');
-  ga('linker:autoLink', ['fastspring.com', 'binaryage.com'], true);
+  {% if site.url contains "binaryage.com" %}
+  ga('linker:autoLink', ['fastspring.com'], true);
+  {% else %}
+  ga('linker:autoLink', ['binaryage.com'], true);
+  {% endif %}
 </script>
 {% endif %}
 {% endif %}
