@@ -1,3 +1,15 @@
+techstack-icon-color = #ccc
+
+#page-www-index
+  #welcome
+    display none // homepage does not need explanatory welcome icon
+
+.page-icon
+  margin-top 10px
+  font-size 3em
+  font-weight bold
+  color techstack-icon-color
+
 .icon-box
   width 400px
   margin 40px auto
@@ -7,10 +19,11 @@
 
   .face
     transition all 0.2s ease
-    width 300px
     margin auto
-      
+    width 260px
+    
   .title 
+    display inline-block
     font product-title-font
     color link-color
     text-shadow #FFF 0px 2px 1px
@@ -18,10 +31,21 @@
     text-decoration none
   
   .subtitle
+    relative()
+    display inline-block
     font product-subtitle-font
     color product-subtitle-color
     text-shadow #FFF 0px 2px 1px
     line-height 24px
+
+  .tech
+    display none
+    text-shadow #FFF 0px 2px 1px
+    margin-top 6px
+    
+    i
+      font-size 24px
+      color techstack-icon-color
     
   &:hover .title
     color selection-color !important
@@ -49,6 +73,8 @@
       width 80px
       height 80px
       transition all 0.2s ease
+      display block
+      margin auto
       
     .title
       transition color tspeed ease 0s
@@ -56,12 +82,23 @@
       color link-color
       text-shadow #FFF 0px 2px 1px
       line-height 24px
+      display block
     
     .desc
       font product-info-font
       color product-subtitle-color
       text-shadow #FFF 0px 2px 1px
       line-height 13px
+      display block
+      
+    .tech
+      display none
+      text-shadow #FFF 0px 2px 1px
+      margin-top 6px
+      
+      i
+        font-size 18px
+        color techstack-icon-color
       
     &:hover .title
       color selection-color !important
