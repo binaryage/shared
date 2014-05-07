@@ -1,69 +1,57 @@
 ---
 layout: blog
+blog-back-button-text: "« back to articles"
 ---
 
-<div class="blog-articles">
-  <a href="/">« Read more articles</a>
-</div>
-<div id="post">
-  <div class="post-titlebar">
-    <div class="calendar">
-      <div class="month">{{ page.date | date:"%b" }}</div>
-      <div class="day">{{ page.date | date:"%d" }}</div>
-      <div class="year">{{ page.date | date:"%Y" }}</div>
+<div class="row">
+  <div class="col-md-2">
+    <div class="blog-leftbar">
+      <a class="back-button" href="/">{{page.blog-back-button-text}}</a>
     </div>
-    <h1 class="post-title">{{ page.title }}</h1>
-    <div class="clear"></div>
+    <div class="content-leftbar">
+      <div class="article-info">
+        <span class="article-posted">published</span>
+        <span class="article-date">on {{page.date | date: '%B %d, %Y'}}</span>
+        <span class="article-author">by <a href="{{page.author_uri}}">{{page.author_name}}</a></span>
+      </div>
+    </div>
   </div>
-  <div class="post-content">{{ content }}</div>
-</div>
-
-<div class="simple_overlay" id="overlay-gallery" style="display:none">
-  <a class="overlay-prev">prev</a>
-  <a class="overlay-next">next</a>
-  <div class="overlay-info"></div>
-  <img class="overlay-progress" src="/shared/img/twitter-loader.gif" />
+  <div class="col-md-10">
+    <div id="post">
+      <div class="post-titlebar">
+        <span class="post-title">{{ page.title }}</span>
+      </div>
+      <div class="generic-separator"></div>
+      <div class="post-content">
+        {{ content }}
+      </div>
+    </div>
+    <div class="generic-separator"></div>
+    <div id="comments">
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'binaryage'; // required: replace example with your forum shortname
+        var disqus_url = "http://blog.binaryage.com{{page.url}}/";
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>    
+  </div>
 </div>
 
 <script>
 (function() {
-  var postContent = $('.post-content');
-  var images = $('.blog-image', postContent).add('.blog-image-full', postContent).add('.blog-image-border', postContent).add('.blog-image-full-border', postContent);
-  if (!images.length) return;
-
-  var anchors = [];
-  images.each(function() {
-    var el = $(this);
-    var wrapper = $('<a/>').attr('href', el.attr('src'));
-    var origTitle = el.attr('title');
-    if (origTitle) wrapper.attr('title', origTitle);
-    el.wrap(wrapper);
+  $(".blog-image").wrap(function() {
+    return $("<a class='wrapped-blog-image' data-fancybox-group='blog'></div>")
+      .attr('href', $(this).attr('src'))
+      .attr('title', $(this).attr('title'))
+      ;
   });
-
-  images.parent().overlay({
-    effect: 'apple',
-    expose: '#f1f1f1',
-    target: '#overlay-gallery'
-  }).gallery({
-    disabledClass: 'disabled-overlay',
-    prev: '.overlay-prev',
-    next: '.overlay-next',
-    info: '.overlay-info',
-    progress: '.overlay-progress',
-    opacity: 1,
-    speed: 200,
-    template: '[${index}/${total}] ${title}'
-  });
+  $(".wrapped-blog-image").fancybox();
 })();
 </script>
-
-<div class="master-separator"></div>
-<div id="comments">
-  <div id="disqus_thread"></div>
-  <div id="disqus_script"></div>
-  <script type="text/javascript" charset="utf-8">
-    var disqus_url = "http://blog.binaryage.com{{page.url}}/";
-    $("#disqus_script").html(writeCapture.sanitize('<scr'+'ipt type="text/javascript" src="http://disqus.com/forums/binaryage/embed.js"></sc'+'ript>')); // async
-  </script>
-  <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-</div>

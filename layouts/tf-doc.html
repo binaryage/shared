@@ -45,7 +45,10 @@ si-markup: '<i class="fa-li fa fa-circle-o"></i>'
 <script>
 $(function() {
   $(".doc-image").wrap(function() {
-    return "<a class='wrapped-doc-image' data-fancybox-group='doc' href='" + $(this).attr('src') + "'></div>";
+    return $("<a class='wrapped-doc-image' data-fancybox-group='doc'></div>")
+      .attr('href', $(this).attr('src'))
+      .attr('title', $(this).attr('title'))
+      ;
   });
   $(".wrapped-doc-image").fancybox();
 });
