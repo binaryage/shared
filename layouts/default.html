@@ -23,6 +23,7 @@ note: "leave the YAML front matter here, we want this to be processed as jekyll 
     {% base_include code.html %}
     {% base_include google_analytics.html %}
     {% base_include google_plus.html %}
+    {% inline_styles %}
   </head>
   <body id="page-{{ site.url | remove: 'https' | remove: 'http' | remove: ':' | remove: '/' | remove: '.com' | remove: '.org' | remove: '.binaryage' }}-{{ page.url | remove: '/' | remove: '.html' }}">
     {% base_include topbar.html %}
