@@ -94,12 +94,26 @@ menu: products
 </div>
 {% endcontentfor %}
 
+{% contentfor product-tabs %}
+<div class="product-tabs-wrapper" id="tabs-{{page.product}}">
+  <div class="container">
+    <div class="product-tabs doc-page">
+      <ul></ul>
+    </div>
+  </div>
+</div>
+{% endcontentfor %}
+
 {% if page.product_title %}
   {% firstcontentblock product-header %}
 {% endif %}
 
 {% if page.shots %}
   {% firstcontentblock product-showcase %}
+{% endif %}
+
+{% if page.build_tabs %}
+  {% firstcontentblock product-tabs %}
 {% endif %}
 
 <div id="{{page.product}}-content" class="product-content">

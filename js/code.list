@@ -1,6 +1,6 @@
 vendor/jquery
+vendor/jquery-ui
 vendor/bootstrap
 vendor/jquery.fancybox
 
-navigen
-#testimonials
+tabs
