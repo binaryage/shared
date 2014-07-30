@@ -97,7 +97,7 @@ menu: products
 {% contentfor product-tabs %}
 <div class="product-tabs-wrapper" id="tabs-{{page.product}}">
   <div class="container">
-    <div class="product-tabs doc-page">
+    <div class="product-tabs doc-page" style="display:none">
       <ul></ul>
     </div>
   </div>
@@ -116,7 +116,7 @@ menu: products
   {% firstcontentblock product-tabs %}
 {% endif %}
 
-<div id="{{page.product}}-content" class="product-content">
+<div id="{{page.product}}-content" class="product-content"{% if page.build_tabs %} style="display:none"{% endif %}>
   <div class="container">
     {{ content }}
   </div>

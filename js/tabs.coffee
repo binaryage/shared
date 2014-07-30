@@ -50,6 +50,9 @@ transformContentIntoTabsAndPanes = (contentSelector, tabsSelector) ->
     index = tabs.find("a[href=\"#{location.hash}\"]").parent().index()
     ignoreActivate = true
     tabs.tabs "option", "active", index
+    
+  $('html').addClass('product-tabs-present')
+  tabs.show()
 
 $ ->
   transformContentIntoTabsAndPanes(".product-content .container > *", ".product-tabs")
