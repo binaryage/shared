@@ -26,7 +26,6 @@ note: "leave the YAML front matter here, we want this to be processed as jekyll 
     {% inline_styles %}
   </head>
   <body id="page-{{ site.url | remove: 'https' | remove: 'http' | remove: ':' | remove: '/' | remove: '.com' | remove: '.org' | remove: '.binaryage' }}-{{ page.url | remove: '/' | remove: '.html' }}">
-    {% base_include topbar.html %}
     {% base_include header.html %}
     {% base_include main.html %}
     {% base_include footer.html %}
