@@ -10,13 +10,13 @@ menu-selected-color = #000
   
   .header-menu
     absolute(right 0px) // needed for responsive design, header should not break with small width
-    margin-top 44px
+    margin-top 41px
     list-style-type none
     white-space nowrap
     
     li
-      display block
-      border-radius 4px
+      border 1px solid transparent
+      border-radius 2px
       menu-button()
       
       a
@@ -26,13 +26,15 @@ menu-selected-color = #000
         margin-right 6px
         
     li:hover
-      border-bottom 2px solid #999
+      border-color link-color
         
-.menu-selected-store .menu-item-store,
-.menu-selected-products .menu-item-products
-.menu-selected-blog .menu-item-blog,
-.menu-selected-support .menu-item-support
-  border-bottom 2px solid !important
+
+  .menu-selected-store .menu-item-store,
+  .menu-selected-products .menu-item-products,
+  .menu-selected-blog .menu-item-blog,
+  .menu-selected-support .menu-item-support
+    background-color link-color
   
-  a
-    color menu-selected-color !important
+    a
+      text-shadow none
+      color #fff !important
