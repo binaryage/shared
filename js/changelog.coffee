@@ -71,7 +71,7 @@ note: "this is needed for processing by jekyll"
     release = changelog[i]
     $separator = $("<div class=\"separator\"/>") unless i == changelog.length - 1
     i--
-    $release = $("<div class=\"release\"/>").attr('id', release.version)
+    $release = $("<div class=\"release\"/>").attr('id', "v"+release.version)
     $titlebox = $("<div class=\"titlebox\"/>")
     $version = $("<h4/>")
     $a = $("<a>#{release.version}</a>").attr("href", getDownloadLinkForVersion(release.version))

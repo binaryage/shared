@@ -4,5 +4,6 @@ vendor/bootstrap
 vendor/jquery.fancybox
 
 tabs
-showcase
+# release-selection must be included after tabs
 release-selection
+showcase

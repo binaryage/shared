@@ -2,8 +2,6 @@
 note: "this is needed for processing by jekyll"
 ---
 
-window.changelogTabName = "changelog"
-
 hashToSelector = (h) -> h.replace /\./g, "\\." # http://stackoverflow.com/a/9930611/84283
 
 isVersion = (s) ->
@@ -18,23 +16,29 @@ selectTab = (name) ->
   tabs.tabs "option", "active", index
   
 selectVersion = (version) ->
-  selectTab(window.changelogTabName)
   # http://stackoverflow.com/a/13952352/84283
-  $release = $(hashToSelector("##{version}"))
+  $release = $(hashToSelector("#v#{version}"))
+  return unless $release.length>0
+  
+  # if tabs are present, switch tab panel to show changelog content
+  $tabPanel = $release.parents('.ui-tabs-panel')
+  if not $tabPanel.is(":visible")
+    tabName = $tabPanel.attr('id')
+    selectTab(tabName) if tabName
+
   $release.addClass('highlighted')
   $(document.body).animate
     scrollTop: $release.offset().top - 10 # 10px margin
     , 1000
-  
-$(window).on "hashchange", ->
+    
+selectRelease = ->
   $releases = $(".changelog .release").removeClass('highlighted')
   version = location.hash[1..-1]
   return unless isVersion version
   selectVersion version
-
-recogniseVersionRef = ->
-  version = location.hash[1..-1]
-  return unless isVersion version
-  selectVersion version
-
-$(recogniseVersionRef)
+  
+selectReleaseAfterTabsGetInitialized = -> $(selectRelease)
+  
+$(window).on "hashchange", selectReleaseAfterTabsGetInitialized
+$(window).on "changelog-rendered", selectReleaseAfterTabsGetInitialized
+  
