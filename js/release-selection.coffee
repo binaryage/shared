@@ -35,6 +35,9 @@ selectVersion = (version) ->
 selectRelease = ->
   $releases = $(".changelog .release").removeClass('highlighted')
   version = location.hash[1..-1]
+  if version=="latest"
+    version = $(".changelog .release").first().attr("id")[1..-1]
+    
   return unless isVersion version
   selectVersion version
   
