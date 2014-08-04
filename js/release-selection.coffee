@@ -12,8 +12,9 @@ selectTab = (name) ->
   tab = tabs.find("a[href=\"##{name}\"]")
   return unless tab.length>0
   index = tab.parent().index()
-  tabs.data("ignoreActivate", true)
-  tabs.tabs "option", "active", index
+  if index != tabs.tabs "option", "active"
+    tabs.data("ignoreActivate", true)
+    tabs.tabs "option", "active", index
   
 selectVersion = (version) ->
   # http://stackoverflow.com/a/13952352/84283
