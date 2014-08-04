@@ -69,6 +69,7 @@ note: "this is needed for processing by jekyll"
 
   while i >= 0
     release = changelog[i]
+    $separator = $("<div class=\"separator\"/>") unless i == changelog.length - 1
     i--
     $release = $("<div class=\"release\"/>").attr('id', release.version)
     $titlebox = $("<div class=\"titlebox\"/>")
@@ -113,4 +114,4 @@ note: "this is needed for processing by jekyll"
       
     $infobox.append $changes
     $release.append $infobox
-    $root.prepend $release
+    $root.prepend $release, $separator

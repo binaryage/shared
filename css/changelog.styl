@@ -10,9 +10,17 @@
     margin-bottom 5px
 
   .release
-    margin-bottom 20px
-    padding-bottom 10px
-    border-bottom 1px dashed #ccc
+    padding 10px 16px
+    border 2px solid transparent
+    border-radius 4px
+    
+    &.highlighted
+      border 2px solid darken(highligh-color, 20)
+      background-color highligh-color 
+      
+  .separator
+    margin 10px 0px
+    border-bottom 2px dashed #ccc
 
   h1
     font-size 12pt
@@ -32,7 +40,6 @@
 
   .infobox
     border 0px solid silver
-    margin-bottom 10px
     clear both
 
   .infobox h3
@@ -69,14 +76,14 @@
     
     a:before
       padding-right 6px
-      display: inline-block;
-      font-family: FontAwesome;
-      font-style: normal;
-      font-weight: normal;
-      line-height: 1;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      content: "\f019"; // fa-download
+      display inline-block
+      font-family FontAwesome
+      font-style normal
+      font-weight normal
+      line-height 1
+      -webkit-font-smoothing antialiased
+      -moz-osx-font-smoothing grayscale
+      content "\f019" // fa-download
     
     span
       padding 0px 6px 0px 32px

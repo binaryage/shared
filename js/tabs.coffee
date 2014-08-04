@@ -31,11 +31,10 @@ transformContentIntoTabsAndPanes = (contentSelector, tabsSelector) ->
     else
       cur.append el  if cur
 
-  ignoreActivate = false
   tabs.tabs activate: (event, ui) ->
-    if ignoreActivate
+    if tabs.data("ignoreActivate")
       # tab was activated when going back in history
-      ignoreActivate = false
+      tabs.data("ignoreActivate", false)
       return
     # add tab location into history, also prevents page jump
     # http://lea.verou.me/2011/05/change-url-hash-without-page-jump
@@ -47,8 +46,10 @@ transformContentIntoTabsAndPanes = (contentSelector, tabsSelector) ->
 
   # hash changes should reflect in tab selection, but without adding new item into history
   $(window).on "hashchange", ->
-    index = tabs.find("a[href=\"#{location.hash}\"]").parent().index()
-    ignoreActivate = true
+    tab = tabs.find("a[href=\"#{location.hash}\"]")
+    return unless tab.length>0
+    index = tab.parent().index()
+    tabs.data("ignoreActivate", true)
     tabs.tabs "option", "active", index
     
   $('html').addClass('product-tabs-present')
