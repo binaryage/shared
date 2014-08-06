@@ -26,6 +26,7 @@ doc-side-title-font = bold 18px font-name, arial, serif
       
     h2
       margin-top 20px
+      margin-bottom 8px
       font doc-side-title-font
       color doc-side-title-color
       text-shadow #FFF 0px 1px 1px
@@ -33,18 +34,29 @@ doc-side-title-font = bold 18px font-name, arial, serif
       
     ul, ol
       list-style-type none
+      margin-left 6px
       
     li 
       font doc-side-font
-      line-height 15px
-      
-    li.selected
-      
-      i:before
-        content "\f192" // fa-dot-circle-o
+      line-height 18px
+      margin-bottom 2px
       
       a
-        color selection-color
+        padding 1px 6px
+        transition none
+        border 1px solid transparent
+        text-decoration none !important
+        white-space nowrap
+        
+      a:hover
+        border-color link-color !important
+        
+      
+    li.selected
+      a
+        background-color link-color
+        color menu-item-selected-color !important
+        border-radius 2px
 
 .doc-page
   .header-content

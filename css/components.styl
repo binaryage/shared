@@ -11,34 +11,6 @@ sprite(x=0px, y=0px, w='auto', h='auto', img='/shared/img2/assets.png')
   display block
   absolute()
   
-topbar-button(bg=topbar-bg-color)
-  -reset()
-  float right
-  background-color bg
-  color topbar-color
-  font topbar-font
-  height 22px
-  line-height 22px
-  border-radius bottom 6px
-  padding 0px 8px
-  margin-left 5px
-  text-shadow: 0 1px 0 darken(bg, 30%)
-  cursor pointer
-  
-  a
-    color topbar-color
-    
-  &:hover
-    color #ccc !important
-
-  a:hover
-    color #ccc !important
-    text-decoration none
-  
-  i 
-    margin-right 4px
-  
-  
 menu-button(iconx=-10px, icony=63px, img='/shared/img2/assets.png')
   -reset()
   margin-left 20px
