@@ -99,10 +99,10 @@ note: "this is needed for processing by jekyll"
         continue
         
       $li = $("<li/>")
-      change.text = change.text.replace(/\(.*?\)/, (m) ->
+      change.text = change.text.replace(/\(.*?\)/g, (m) ->
         "<i>" + m + "</i>"
       )
-      change.text = change.text.replace(/\[(.*?)\]/, (m, $1) ->
+      change.text = change.text.replace(/\[(.*?)\]/g, (m, $1) ->
         "<em>" + $1 + "</em>"
       )
       $b = $("<b/>").text(change.kind)
