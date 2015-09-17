@@ -104,7 +104,13 @@ menu: products
 </div>
 {% endcontentfor %}
 
-<div class="el-warning">WARNING: Not fully compatible with OSX 10.11 El Capitan. <a href="http://blog.binaryage.com/el-capitan-update/">Read more here.</a></div>
+{% if page.product == "totalspaces" %}
+<div class="el-warning">WARNING: Not fully compatible with OSX 10.11 El Capitan. <a href="http://totalspaces.binaryage.com/elcapitan">Read more here.</a></div>
+{% endif %}
+
+{% if page.product == "totalfinder" %}
+<div class="el-warning">WARNING: Not compatible with OSX 10.11 El Capitan. <a href="http://blog.binaryage.com/el-capitan-update/">Read more here.</a></div>
+{% endif %}
 
 {% if page.product_title %}
   {% firstcontentblock product-header %}
