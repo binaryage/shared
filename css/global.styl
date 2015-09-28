@@ -13,6 +13,15 @@ a
 a:hover,
 a:focus
   color selection-color !important
+
+a.red
+  color red-link-color
+  text-decoration none
+  transition color tspeed ease 0s
+  
+a.red:hover,
+a.red:focus
+  color red-selection-color !important
   
 .container
   relative() // important for absolute positioned elements inside main area
@@ -51,3 +60,9 @@ blockquote
   height 1px
   box-shadow rgba(255, 255, 255, 0.75) 0 1px 1px
   background-color #ddd
+  
+hr
+  margin-top 20px
+  margin-bottom 20px
+  border 0
+  border-top 1px solid #ddd
