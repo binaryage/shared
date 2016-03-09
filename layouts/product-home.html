@@ -104,8 +104,8 @@ menu: products
 </div>
 {% endcontentfor %}
 
-{% if page.product == "totalspaces" %}
-<div class="el-warning">WARNING: Not fully compatible with OSX 10.11 El Capitan. <a href="http://totalspaces.binaryage.com/elcapitan">Read more here.</a></div>
+{% if page.warning %}
+<div class="warning-banner">{{page.warning}}</div>
 {% endif %}
 
 {% if page.product_title %}
