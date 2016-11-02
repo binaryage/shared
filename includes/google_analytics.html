@@ -2,7 +2,7 @@
     window['ga'] = function() {};
 </script>
 {% if page.noga != 1 %}
-{% if site.url contains ".com" %}
+{% if site.target_url contains ".com" %}
 <script>
   window['ga'] = undefined;
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -32,7 +32,7 @@
   // auto linker is responsible to pass ga cookie when user jumps between fastspring.com and binaryage.com
   // https://developers.google.com/analytics/devguides/collection/analyticsjs/cross-domain
   ga('require', 'linker');
-  {% if site.url contains "binaryage.com" %}
+  {% if site.target_url contains "binaryage.com" %}
   ga('linker:autoLink', ['fastspring.com'], true);
   {% else %}
   ga('linker:autoLink', ['binaryage.com'], true);

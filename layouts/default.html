@@ -25,7 +25,7 @@ note: "leave the YAML front matter here, we want this to be processed as jekyll 
     {% base_include google_plus.html %}
     {% inline_styles %}
   </head>
-  <body id="page-{{ site.url | remove: 'https' | remove: 'http' | remove: ':' | remove: '/' | remove: '.com' | remove: '.org' | remove: '.binaryage' }}-{% if page.url == "/" %}index{% else %}{{ page.url | remove: '/' | remove: '.html' }}{% endif %}">
+  <body id="page-{{ site.target_url | remove: 'https' | remove: 'http' | remove: ':' | remove: '/' | remove: '.com' | remove: '.org' | remove: '.binaryage' }}-{% if page.url == "/" %}index{% else %}{{ page.url | remove: '/' | remove: '.html' }}{% endif %}">
     {% base_include header.html %}
     {% base_include main.html %}
     {% base_include footer.html %}
