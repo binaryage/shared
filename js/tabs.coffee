@@ -9,7 +9,7 @@ normalizeHash = (raw) ->
   raw.replace(/[-]+/, "-").match(/^[-]*(.*?)[-]*$/)[1]
 
 # product pages which want to render tabs have to define build_tabs: 1 in yaml front matter
-# this will cause inclusion of .tabs template (see product-home.html)
+# this will cause inclusion of .tabs template (see product.html)
 # here we go through the content and convert every new H2 tag into a new tab with same name
 # tabs are implemented using jQuery UI tabs component
 transformContentIntoTabsAndPanes = (contentSelector, tabsSelector) ->
