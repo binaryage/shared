@@ -37,7 +37,7 @@ menu: products
           <div class="retweet">
           </div>
           <script>
-            $(".retweet").html(writeCapture.sanitize('<a href="http://twitter.com/share" class="twitter-share-button retweet" data-count="vertical" data-via="binaryage">Tweet</a><scr'+'ipt type="text/javascript" src="http://platform.twitter.com/widgets.js"></scr'+'ipt>'));
+            $(".retweet").html(writeCapture.sanitize('<a href="http://twitter.com/share" class="twitter-share-button retweet" data-count="vertical" data-via="binaryage">Tweet</a><scr'+'ipt type="text/javascript" src="//platform.twitter.com/widgets.js"></scr'+'ipt>'));
           </script>
           {% endif %}
           {% if page.facebook and false %}
@@ -49,14 +49,14 @@ menu: products
           <div class="buzz">
           </div>
           <script>
-            $(".buzz").html(writeCapture.sanitize('<a title="Post on Google Buzz" class="google-buzz-button" href="http://www.google.com/buzz/post" data-button-style="normal-count" data-url="{{page.ogmeta.url}}" data-imageurl="{{page.ogmeta.image}}"></a><scr'+'ipt type="text/javascript" src="http://www.google.com/buzz/api/button.js"></scr'+'ipt>'));
+            $(".buzz").html(writeCapture.sanitize('<a title="Post on Google Buzz" class="google-buzz-button" href="http://www.google.com/buzz/post" data-button-style="normal-count" data-url="{{page.ogmeta.url}}" data-imageurl="{{page.ogmeta.image}}"></a><scr'+'ipt type="text/javascript" src="//www.google.com/buzz/api/button.js"></scr'+'ipt>'));
           </script>
           {% endif %}
           {% if page.usethis %}
           <div class="usethis">
           </div>
           <script>
-            $('.usethis').html(writeCapture.sanitize('<scr'+'ipt type="text/javascript" src="http://osx.iusethis.com/app/include/{{page.usethis}}/8"></scr'+'ipt>'));
+            $('.usethis').html(writeCapture.sanitize('<scr'+'ipt type="text/javascript" src="//osx.iusethis.com/app/include/{{page.usethis}}/8"></scr'+'ipt>'));
           </script>
           {% endif %}
           {% if page.flattr %}
