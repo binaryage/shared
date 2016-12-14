@@ -1,12 +1,6 @@
 {% contentfor main %}
 <div id="main" class="cf">
-  {% if page.gwo %}
-  <script>utmx_section("content")</script>
-  {% endif %}
   {{content}}
-  {% if page.gwo %}
-  </noscript>
-  {% endif %}
 </div>
 {% endcontentfor %}
 
