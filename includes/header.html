@@ -8,7 +8,7 @@
 
 {% contentfor header-menu %}
 <div class="relativize">
-  <ul class="header-menu menu-selected-{{page.menu}}">
+  <ul class="header-menu menu-selected-{% if page.menu %}{{page.menu}}{% else %}{{layout.menu}}{% endif %}">
     <li class="menu-item-store"><a href="http://www.binaryage.com/store"><i class="fa fa-shopping-cart"></i><span>store</span></a></li>
     <li class="menu-item-products"><a href="http://www.binaryage.com"><i class="fa fa-star"></i><span>products</span></a></li>
     <li class="menu-item-blog"><a href="http://blog.binaryage.com"><i class="fa fa-bullhorn"></i><span>blog</span></a></li>
