@@ -2,11 +2,7 @@
 note: "leave the YAML front matter here, we want this to be processed as jekyll page"
 ---
 <!DOCTYPE html>
-<html lang="en"
-    xmlns:og="http://opengraphprotocol.org/schema/"
-    xmlns:fb="http://developers.facebook.com/schema/"
-    class="ba{% if page.id %} {{page.id|remove: '/'|remove: '.'|remove: ':'|remove: ';'}}{% endif %}"
->
+<html lang="en" class="ba{% if page.id %} {{page.id|remove: '/'|remove: '.'|remove: ':'|remove: ';'}}{% endif %}">
   <head>
     <title>{{page.title}}</title>
     {% base_include canonical.html %}
