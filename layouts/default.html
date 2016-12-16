@@ -7,6 +7,7 @@ note: "leave the YAML front matter here, we want this to be processed as jekyll 
     <title>{{page.title}}</title>
     {% base_include canonical.html %}
     {% base_include favicon.html %}
+    {% base_include webfont.html %}
     {% base_include stylesheets.html %}
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +17,6 @@ note: "leave the YAML front matter here, we want this to be processed as jekyll 
     {% base_include feedburner.html %}
     {% base_include fastspring.html %}
     {% base_include parse_uri.html %}
-    {% base_include webfont.html %}
     {% base_include defer_jquery.html %}
     {% inline_styles %}
   </head>
