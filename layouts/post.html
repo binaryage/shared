@@ -46,13 +46,12 @@ disqus_url: http://blog.binaryage.com
 </div>
 
 <script>
-(function() {
-  $(".blog-image").wrap(function() {
-    return $("<a class='wrapped-blog-image' data-fancybox-group='blog'></div>")
-      .attr('href', $(this).attr('src'))
-      .attr('title', $(this).attr('title'))
-      ;
+  defer$(function() {
+    $(".blog-image").wrap(function() {
+      return $("<a class='wrapped-blog-image' data-fancybox-group='blog'></div>")
+        .attr('href', $(this).attr('src'))
+        .attr('title', $(this).attr('title'));
+    });
+    $(".wrapped-blog-image").fancybox();
   });
-  $(".wrapped-blog-image").fancybox();
-})();
 </script>

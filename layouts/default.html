@@ -17,6 +17,7 @@ note: "leave the YAML front matter here, we want this to be processed as jekyll 
     {% base_include fastspring.html %}
     {% base_include parse_uri.html %}
     {% base_include webfont.html %}
+    {% base_include defer_jquery.html %}
     {% inline_styles %}
   </head>
   <body id="page-{{ site.target_url | remove: 'https' | remove: 'http' | remove: ':' | remove: '/' | remove: '.com' | remove: '.org' | remove: '.binaryage' }}-{% if page.url == "/" %}index{% else %}{{ page.url | remove: '/' | remove: '.html' }}{% endif %}">

@@ -113,77 +113,79 @@ menu: products
 </div>
 
 <script type="text/javascript">
-  $(function() {
-    var firstClick;
-    var exposeEffect = {
-      opacity: 0.3,
-      color: '#000'
-    };
-    $("#o-teaser").overlay({top: 110, effect: 'apple', expose: exposeEffect});
-    $("#o-buy").overlay({top: 110, effect: 'apple', expose: exposeEffect});
-    $("#o-download-button").bind('click', function(e) {
-      ga('send', 'pageview', '/overlays/o-download');
+  defer$(function() {
+    $(function() {
+      var firstClick;
+      var exposeEffect = {
+        opacity: 0.3,
+        color: '#000'
+      };
+      $("#o-teaser").overlay({top: 110, effect: 'apple', expose: exposeEffect});
+      $("#o-buy").overlay({top: 110, effect: 'apple', expose: exposeEffect});
+      $("#o-download-button").bind('click', function(e) {
+        ga('send', 'pageview', '/overlays/o-download');
+      });
+      $('.video-icon').bind('click', function(e) {
+        $("#o-teaser").trigger('click');
+        return false;
+      });
     });
-    $('.video-icon').bind('click', function(e) {
-      $("#o-teaser").trigger('click');
-      return false;
-    });
-  });
 
-  $(function() {
-    var lastIndex = -1;
-    $(".product-thumbs-scrollable").scrollable({
-      speed: 0,
-      onSeek: function(e, index) {
-        if (index==lastIndex) return;
-        var img = $('.product-thumbs-items img').eq(index);
-        var visible = $('.screenshot-box:visible');
-        var box = $(img.attr('rel'));
-        if (box[0] === visible[0]) return; // optimization to not fade when clicked same image or during initial load
-        visible.fadeOut();
-        box.fadeIn();
-      }
-    }).navigator();
-    
-    var api = $(".product-thumbs-scrollable").data("scrollable");
-    var showcaseSwitchTimer;
-    
-    $('.highlight').each(function() {
-      var el = $(this);
-      var showcaseIndex = el.attr('data-showcase');
-      if (!showcaseIndex) return;
-      showcaseIndex = parseInt(showcaseIndex, 10) - 1;
-      el.bind('mouseenter', function() {
-        if (showcaseSwitchTimer) {
-          clearTimeout(showcaseSwitchTimer);
+    $(function() {
+      var lastIndex = -1;
+      $(".product-thumbs-scrollable").scrollable({
+        speed: 0,
+        onSeek: function(e, index) {
+          if (index == lastIndex) return;
+          var img = $('.product-thumbs-items img').eq(index);
+          var visible = $('.screenshot-box:visible');
+          var box = $(img.attr('rel'));
+          if (box[0] === visible[0]) return; // optimization to not fade when clicked same image or during initial load
+          visible.fadeOut();
+          box.fadeIn();
         }
-        showcaseSwitchTimer = setTimeout(function() {
-          api.seekTo(showcaseIndex, 0);
-        }, 1000);
-      });
-      el.bind('mouseleave', function() {
-        if (showcaseSwitchTimer) {
-          clearTimeout(showcaseSwitchTimer);
-          showcaseSwitchTimer = null;
-        }
+      }).navigator();
+
+      var api = $(".product-thumbs-scrollable").data("scrollable");
+      var showcaseSwitchTimer;
+
+      $('.highlight').each(function() {
+        var el = $(this);
+        var showcaseIndex = el.attr('data-showcase');
+        if (!showcaseIndex) return;
+        showcaseIndex = parseInt(showcaseIndex, 10) - 1;
+        el.bind('mouseenter', function() {
+          if (showcaseSwitchTimer) {
+            clearTimeout(showcaseSwitchTimer);
+          }
+          showcaseSwitchTimer = setTimeout(function() {
+            api.seekTo(showcaseIndex, 0);
+          }, 1000);
+        });
+        el.bind('mouseleave', function() {
+          if (showcaseSwitchTimer) {
+            clearTimeout(showcaseSwitchTimer);
+            showcaseSwitchTimer = null;
+          }
+        });
       });
     });
-  });
-  
-  $(function() {
-    $('.overlayable').overlay({
-      expose: '#f1f1f1',
-      target: '#gallery'
-    }).gallery({
-      preventResize: true,
-      disabledClass: 'disabled-overlay',
-      prev: '.overlay-prev',
-      next: '.overlay-next',
-      info: '.overlay-info',
-      progress: '.overlay-progress',
-      opacity: 1,
-      speed: 200, 
-      template: '[${index}/${total}] ${title}'
+
+    $(function() {
+      $('.overlayable').overlay({
+        expose: '#f1f1f1',
+        target: '#gallery'
+      }).gallery({
+        preventResize: true,
+        disabledClass: 'disabled-overlay',
+        prev: '.overlay-prev',
+        next: '.overlay-next',
+        info: '.overlay-info',
+        progress: '.overlay-progress',
+        opacity: 1,
+        speed: 200,
+        template: '[${index}/${total}] ${title}'
+      });
     });
   });
 </script>

@@ -1,0 +1,12 @@
+<script>
+  // http://stackoverflow.com/a/17914854/84283
+  function defer$(fn) {
+    if (window.jQuery) {
+      fn();
+    } else {
+      setTimeout(function() {
+        defer$(fn)
+      }, 50);
+    }
+  }
+</script>

@@ -44,13 +44,15 @@ product_title: TotalFinder
 {{content}}
 
 <script>
-$(function() {
-  $(".doc-image").wrap(function() {
-    return $("<a class='wrapped-doc-image' data-fancybox-group='doc'></div>")
-      .attr('href', $(this).attr('src'))
-      .attr('title', $(this).attr('title'))
-      ;
+  defer$(function() {
+    $(function() {
+      $(".doc-image").wrap(function() {
+        return $("<a class='wrapped-doc-image' data-fancybox-group='doc'></div>")
+          .attr('href', $(this).attr('src'))
+          .attr('title', $(this).attr('title'))
+          ;
+      });
+      $(".wrapped-doc-image").fancybox();
+    });
   });
-  $(".wrapped-doc-image").fancybox();
-});
 </script>
