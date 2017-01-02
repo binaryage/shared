@@ -4,7 +4,45 @@
 .store-security
   display none
 
+.core-window
+  margin 24px 20px 20px 20px
+  color #666
+
+  .core-section
+    relative()
+
+  .core-section-header
+    border-bottom 1px solid #ccc
+    font-size 16px
+    font-weight bold
+    padding-top 0px
+    margin-bottom 20px
+
+  .core-section-body
+    padding 0
+    padding-left 10px
+
+  .core-form-field-group-header
+    margin-top 20px
+    margin-bottom 16px
+    font-size 14px
+    border-bottom 1px solid #eee
+
+  .core-form-field-group-body
+    margin-left 10px
+
+  .core-form-field
+    font-size 12px
+
+    label
+      font-weight normal
+
+  .core-form-field-label
+    width 90px
+    whitespace nowrap
+
 .store-box
+  font store-font
   background-color #fff
   border-radius 12px
   border 1px solid #ddd7d7
@@ -33,128 +71,22 @@
   .store-tools
     absolute(top 4px right 22px)
 
-  .core-window
-    padding 24px 20px 20px 20px
+  .store-product-option-title
+    table
+      width 300px
 
-    .store-product-option-title
-      table
-        width 300px
+  .store-product-detail-description-pricing
+    margin-top 0
+    float right
 
-    .store-product-detail-description-pricing
-      margin-top 0
-      float right
+  .store-product-option-display
+    color store-product-title-color
+    font-weight bold !important
+    font-size 16px
 
-    .store-product-option-display
-      color store-product-title-color
-      font-weight bold !important
-      font-size 16px
-
-    .store-product-option-price
-      text-align right
-      display inline-block
-
-    .product-row
-      border-bottom 1px dashed #ddd
-
-      &.last-row
-        border-bottom none
-
-      .product-image
-        float left
-        width 170px
-
-        img
-          margin 14px auto !important
-          padding 0
-          display block
-
-      .product-info
-        float left
-        width 318px
-        padding 10px 16px
-        padding-top 44px
-
-        .product-title
-          color store-product-title-color
-          font store-product-title-font
-          margin-bottom 10px
-
-        .product-description
-          color store-product-description-color
-          font store-product-description-font
-          line-height 18px
-          padding-right 20px
-          margin-bottom 10px
-
-      .product-actions
-        float left
-        width 100px
-        padding-top 50px
-        text-align center
-
-        .product-price
-          color store-product-price-color
-          white-space nowrap
-          font store-product-price-font
-          margin-bottom 12px
-          background-color #fff
-          display inline-block
-
-        .product-buy
-          .store-action
-            .store-action-title
-              color store-product-button-color
-              font store-product-button-font
-              display inline-block
-              margin auto
-              background-color #399fd2
-              background linear-gradient(top, #399fd2, #2688c5)
-              border 1px solid #2381bf
-              border-radius 7px
-              line-height 14px
-              white-space normal
-              padding 6px 8px
-              text-transform uppercase
-              text-shadow #226699 0px 1px 2px
-              box-shadow 0px 1px 2px #999
-              height auto !important
-
-              &:hover
-                color #FEF79A
-
-.core-section-header
-  font-weight bold
-  font-size 16px
-  line-height 16px
-  margin 0
-  margin-bottom 16px
-
-.store-order-item-group
-  padding-top 10px !important
-  padding-bottom 10px
-  padding-right 20px
-  padding-left 2px
-  margin 0 !important
-  margin-top 10px !important
-  border-top none !important
-  border-bottom 1px dashed #e5e5e5
-  relative()
-
-  .store-order-item-group-action-list
-    absolute(top 8px right 120px)
-
-.core-section,
-.store-product-detail
-  clear both
-
-  .core-section-header
-    display none
-
-  .core-section-body
-    padding-left 0px
-
-.store-box
-  font store-font
+  .store-product-option-price
+    text-align right
+    display inline-block
 
   .store-action-command
     padding 0 !important
@@ -188,18 +120,10 @@
   select
     width 100%
 
-  .store-order-item-base-title
-    font-size 16px
-    line-height 16px
-
   .store-value-money
+    white-space nowrap
     font-weight bold
-
-  .store-order-price
-    .store-value-money
-      font-size 16px
-      line-height 16px
-      font-weight bold
+    color #000
 
   .store-product-pricing-tiered-table
     border 1px solid #ddd
@@ -207,38 +131,31 @@
     line-height 18px
 
     td
-      padding 0px 6px
+      padding 0 6px
 
     th
-      padding 0px 6px
+      padding 0 6px
       border-bottom 1px solid #ddd
       background-color #eee
 
   .store-order-pricing
     margin 0
-    padding-top 20px
+    padding-top 10px
     border-top 1px solid #e5e5e5
     relative(top -1px)
 
-    .store-order-price-value
-      padding-right 20px
+    .store-section-vat-exemption
+      white-space nowrap
+      font-size 12px
+      absolute(right 300px top 28px)
+
+      input
+        margin-left 26px
+        width 80px
 
     .store-order-price-label
-      font-size 14px
-      line-height 18px
       font-weight normal
       color #999
-
-  .core-form-field
-    font-size 12px
-    color #999
-
-    label
-      font-weight normal
-
-  .core-form-field-label
-    width 90px
-    whitespace nowrap
 
   .store-section-customer-details
     .core-form-field-area-right,
@@ -246,13 +163,13 @@
       width 300px
 
     .core-form-field-area-right
-      relative(left 40px)
+      relative(left 30px)
 
     input,
     select
       float right
       width 180px
-      margin 3px 0px
+      margin 3px 0
       relative(top -26px)
 
     .core-form-field-body-note
@@ -261,13 +178,11 @@
       color #aaa
       relative(top -22px)
 
+  .store-payment-method-title
+    display inline-block
+
   .store-payment-method-list
     list-style-type none
-
-    .store-payment-method-cc,
-    .store-payment-method-pp
-      .store-payment-method-list-description
-        relative(top 4px)
 
   .store-action-next,
   .store-action-complete,
@@ -305,6 +220,19 @@
   .store-order-item-child
     display none
 
+.store-order-item-group
+  padding-top 10px !important
+  padding-bottom 2px
+  padding-left 2px
+  margin 0 !important
+  margin-top 10px !important
+  border-top none !important
+  border-bottom 1px dashed #e5e5e5
+  relative()
+
+  .store-order-item-group-action-list
+    absolute(top 8px right 120px)
+
 .store-action
   .store-action-title
     font-size 11px
@@ -325,11 +253,6 @@
   .store-order-action-more
     absolute(top -28px left 2px)
     display none
-
-.core-form-field-group-header
-  margin-top 20px
-  margin-bottom 16px
-  font-size 14px
 
 .store-payment-method-list
   padding 0
@@ -368,58 +291,66 @@
 
 .store-product-detail
   relative()
+  height 70px
 
-  .store-product-detail-title
-    display block
-    margin 0px
-    color store-product-title-color
-    font store-product-title-font
-    padding-top 54px
-
+  // have to use absolute positioning to make it look like I want
   .store-product-detail-image
-    float left
-    width 170px
-    margin-right 10px
+    absolute(left 0px top 0px)
 
     img
-      margin 14px auto !important
       padding 0
       display block
-      width 128px
-      height 128px
+      width 64px
+      height 64px
+
+  .store-product-detail-title
+    absolute(left 80px top 10px)
+    margin 0
+    padding 0
+    color store-product-title-color
+    font store-product-title-font
 
   .store-product-detail-description
-    width 100%
+    absolute(left 80px top 28px)
+    margin 0
+    padding 0
     color store-product-description-color
     font store-product-description-font
-    line-height 18px
-
-  .store-product-detail-quantity
-    absolute(right 0px top 92px)
 
   .store-product-detail-pricing
-    absolute(right 0px top 50px)
+    absolute(right 0px top 16px)
+    margin 0
+    padding 0
 
-  .store-product-detail-description-pricing
-    absolute(right 0px top 120px)
+  .store-product-detail-quantity
+    absolute(right 0px top 40px)
+    margin 0
+    padding 0
 
   .store-product-detail-offers
-    margin-top 0px
+    absolute(right -6px top 65px)
+    margin 0
+    padding 0
+
+  .store-product-detail-description-pricing
+    absolute(right 0px top 110px)
+    margin 0
+    padding 0
 
   .store-product-pricing-tiered-table
     td, th
-      padding 0px 6px
+      padding 0 6px
 
 .store-footer
   padding-top 20px
   margin-top 30px
   border-top 1px solid #eee
   font-size 10px
-  color #666
+  color #999
 
 .store-portal
   .store-page-navigation
-    absolute(right 0px top 78px)
+    absolute(right 0px top 30px)
 
 .store-section-payment-details-cc
   .core-form-field-group-body .core-clearfix > *
@@ -436,10 +367,11 @@
 .store-section-payment-details-billing
   #ccShippingAddressDisplay
     font-size 12px
+    line-height 18px
 
     div:first-child
       display inline-block
-      padding 4px 6px
+      padding 6px 10px
       background-color #eee
       border 1px solid #ddd
       border-radius 3px
