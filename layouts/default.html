@@ -2,11 +2,12 @@
 note: "leave the YAML front matter here, we want this to be processed as jekyll page"
 ---
 <!DOCTYPE html>
-<html lang="en" class="ba{% if page.id %} {{page.id|remove: '/'|remove: '.'|remove: ':'|remove: ';'}}{% endif %}">
+<html lang="en" class="ba{% if page.id %} {{page.id|remove: '/'|remove: '.'|remove: ':'|remove: ';'}}{% endif %}{% if layout.html_class %} {{layout.html_class}}{% endif %}{% if page.html_class %} {{page.html_class}}{% endif %}">
   <head>
     <title>{{page.title}}</title>
     {% base_include canonical.html %}
     {% base_include favicon.html %}
+    {% base_include fastspring.html %}
     {% base_include webfont.html %}
     {% base_include stylesheets.html %}
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -15,12 +16,14 @@ note: "leave the YAML front matter here, we want this to be processed as jekyll 
     {% base_include google_metas.html %}
     {% base_include facebook_metas.html %}
     {% base_include feedburner.html %}
-    {% base_include fastspring.html %}
     {% base_include parse_uri.html %}
     {% base_include defer_jquery.html %}
     {% inline_styles %}
   </head>
-  <body id="page-{{ site.target_url | remove: 'https' | remove: 'http' | remove: ':' | remove: '/' | remove: '.com' | remove: '.org' | remove: '.binaryage' }}-{% if page.url == "/" %}index{% else %}{{ page.url | remove: '/' | remove: '.html' }}{% endif %}">
+  <body id="page-{{ site.target_url | remove: 'https' | remove: 'http' | remove: ':' | remove: '/' | remove: '.com' | remove: '.org' | remove: '.binaryage' }}-{% if page.url == "/" %}index{% else %}{{ page.url | remove: '/' | remove: '.html' }}{% endif %}"
+        {% if layout.body_class %} class="{{layout.body_class}}"{% endif %}
+        {% if page.body_class %} class="{{page.body_class}}"{% endif %}>
+    {% if page.fastspring %}{% base_include webfont.html %}{% endif %}
     {% base_include header.html %}
     {% base_include main.html %}
     {% base_include footer.html %}
