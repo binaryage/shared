@@ -1,4 +1,6 @@
+{% unless page.fastspring %}
 <script src="/shared/js/code.js"></script>
+{% endunless %}
 {% if page.scripts %}
   {% for s in page.scripts %}
     <script src="{{s}}"></script>
