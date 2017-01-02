@@ -111,7 +111,6 @@
               background linear-gradient(top, #399fd2, #2688c5)
               border 1px solid #2381bf
               border-radius 7px
-              width 80px
               line-height 14px
               white-space normal
               padding 6px 8px
@@ -130,17 +129,6 @@
   margin 0
   margin-bottom 16px
 
-.store-order-item-offers
-  padding 0
-  margin 0
-  clear both
-
-.store-order-price-label
-  width 500px
-
-.store-order-items
-  relative()
-
 .store-order-item-group
   padding-top 10px !important
   padding-bottom 10px
@@ -152,33 +140,8 @@
   border-bottom 1px dashed #e5e5e5
   relative()
 
-.store-order-item-group-action-list
-  absolute(top -1px right 114px)
-  padding 0
-  margin 0
-  clear both
-
-.store-order-item-action-delete
-  .store-action-title
-    overflow hidden
-    max-width 0px
-    sprite(598px, 158px, 18px, 18px)
-    absolute(top 9px right -122px)
-
-.store-order-item-action-quantity
-  .store-action-input
-    overflow hidden
-    width 30px
-    absolute(top 1px right 26px)
-
-.store-order-item-action-quantity
-  .store-action-title
-    overflow hidden
-    max-width 0px
-    absolute(top 10px right 0px)
-
-.store-order-price
-  margin-top 4px
+  .store-order-item-group-action-list
+    absolute(top 8px right 120px)
 
 .core-section,
 .store-product-detail
@@ -229,23 +192,27 @@
     font-size 16px
     line-height 16px
 
-  .store-product-detail-pricing
+  .store-value-money
+    font-weight bold
+
+  .store-order-price
     .store-value-money
       font-size 16px
       line-height 16px
       font-weight bold
 
-  .store-order-price
-    .store-value-money
-      color #000
-
-  .store-product-detail-description-pricing
+  .store-product-pricing-tiered-table
     border 1px solid #ddd
-    border-radius 3px
+    font-size 12px
+    line-height 18px
 
-  .store-product-pricing-tiered-table th
-    border-bottom 1px solid #ddd
-    background-color #eee
+    td
+      padding 0px 6px
+
+    th
+      padding 0px 6px
+      border-bottom 1px solid #ddd
+      background-color #eee
 
   .store-order-pricing
     margin 0
@@ -319,10 +286,8 @@
       background linear-gradient(top, #399fd2, #2688c5)
       border 1px solid #2381bf
       border-radius 7px
-      width 80px
-      line-height 14px
       white-space nowrap
-      padding 5px 8px 5px 6px
+      padding 5px 8px
       text-transform uppercase
       text-shadow #226699 0px 1px 2px
       box-shadow 0px 1px 2px #999
@@ -340,22 +305,17 @@
   .store-order-item-child
     display none
 
-  .core-form-field-group-body
-
-    .store-field-cc-expire
-      absolute(right 0px top -9px)
-
-.store-action,
+.store-action
   .store-action-title
     font-size 11px
     display inline-block
     height 16px
 
-.store-product-detail-offer
-  .store-product-detail-offer-title
-    font-size 11px
-    display inline-block
-    height 16px
+.store-product-detail-offer-title,
+.store-order-item-offer-title
+  font-size 11px
+  display inline-block
+  height 16px
 
 .store-order-action-list
   margin 0
@@ -460,3 +420,26 @@
 .store-portal
   .store-page-navigation
     absolute(right 0px top 78px)
+
+.store-section-payment-details-cc
+  .core-form-field-group-body .core-clearfix > *
+    margin-top 0
+    margin-right 50px
+    float left
+
+  .store-field-cc-number
+    relative()
+
+    .core-form-field-body-note
+      display none
+
+.store-section-payment-details-billing
+  #ccShippingAddressDisplay
+    font-size 12px
+
+    div:first-child
+      display inline-block
+      padding 4px 6px
+      background-color #eee
+      border 1px solid #ddd
+      border-radius 3px
