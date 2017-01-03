@@ -9,7 +9,7 @@
           var href = el.attr('href');
           if (href) {
             if (href.match('binaryage.com')) {
-              href = href.replace('binaryage.com', 'binaryage.org');
+              href = href.replace('binaryage.com', 'binaryage.org').replace('https://', 'http://');
             }
             el.attr('href', href);
           }
