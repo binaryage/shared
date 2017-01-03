@@ -3,7 +3,7 @@
   defer$(function() {
     $(function() {
       var host = document.location.host;
-      if (host.substring(host.length - 3) == 'org') {
+      if (host.substring(host.length - 3) === 'org') {
         $('a').each(function() {
           var el = $(this);
           var href = el.attr('href');
