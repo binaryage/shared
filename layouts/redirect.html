@@ -1,0 +1,25 @@
+---
+note: leave the YAML front matter here, we want this to be processed as jekyll page
+info: for redirection info see https://github.com/jekyll/jekyll-redirect-from
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include page_title.html %}
+    {% include canonical.html %}
+    {% include favicon.html %}
+    {% include meta_refresh.html %}
+  </head>
+  <body>
+    <div id="redirect-info" style="display:none;font-family:Arial,Helvetica Neue,Helvetica,sans-serif;">
+      <p><b>Not redirected?</b> Please go to <a href="{{page.redirect.to}}">{{page.redirect.to}}</a>.</p>
+    </div>
+    <script>
+      // wait some time before displaying the redirect info
+      function displayRedirectInfo() {
+        document.getElementById("redirect-info").style.display = "block";
+      }
+      setTimeout(displayRedirectInfo, 3000);
+    </script>
+  </body>
+</html>
