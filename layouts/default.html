@@ -4,14 +4,14 @@ note: "leave the YAML front matter here, we want this to be processed as jekyll 
 <!DOCTYPE html>
 <html lang="en" class="ba{% if page.id %} {{page.id|remove: '/'|remove: '.'|remove: ':'|remove: ';'}}{% endif %}{% if layout.html_class %} {{layout.html_class}}{% endif %}{% if page.html_class %} {{page.html_class}}{% endif %}">
   <head>
-    <title>{{page.title}}</title>
+    {% include page_title.html %}
     {% include canonical.html %}
     {% include favicon.html %}
     {% include fastspring.html %}
     {% include webfont.html %}
     {% include stylesheets.html %}
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include content_type.html %}
+    {% include viewport.html %}
     {% include redirect.html %}
     {% include google_metas.html %}
     {% include facebook_metas.html %}
