@@ -1,7 +1,13 @@
 <link rel="stylesheet" href="/shared/css/site.css" type="text/css">
 
+{% if layout.styles %}
+{% for s in layout.styles %}
+<link rel="stylesheet" href="{{s}}.css" type="text/css">
+{% endfor %}
+{% endif %}
+
 {% if page.styles %}
-  {% for s in page.styles %}
-    <link rel="stylesheet" href="{{s}}.css" type="text/css">
-  {% endfor %}
+{% for s in page.styles %}
+<link rel="stylesheet" href="{{s}}.css" type="text/css">
+{% endfor %}
 {% endif %}
