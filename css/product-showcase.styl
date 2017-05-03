@@ -18,9 +18,9 @@ active-highlight-background-color = #fff
     display inline-block
 
   &.tf-shadow .screenshot
-    box-shadow 0px 0px 20px #666
+    box-shadow 0 0 20px #666
     border-radius 4px
-    
+
   &.no-shadow .screenshot
     box-shadow none
 
@@ -31,15 +31,14 @@ active-highlight-background-color = #fff
 
   .zoom-icon
     cursor pointer
-    sprite(0px, 0px, 74px, 74px, "/shared/img2/zoom.png")
+    sprite(0, 0, 74px, 74px, "/shared/img2/zoom.png")
     absolute(top 40% left 45%)
     transition opacity tspeed ease 0s
     opacity 0
 
   &:hover .zoom-icon
     opacity 1
-    
-  
+
 .screenshot-controls
   absolute(left 404px top 560px)
 
@@ -62,18 +61,17 @@ active-highlight-background-color = #fff
     a.active
       background-color #666
 
-
 .highlights
   padding-top 20px
 
 @media (min-width: 1200px)
   .highlights
     relative(left highlights-shift)
-    
+
 @media (max-width: 992px)
   .highlight
     margin-right 25px
-    
+
 .highlight
   width 290px
   height 75px
@@ -81,7 +79,7 @@ active-highlight-background-color = #fff
   border-radius 3px
   padding 5px
   float left
-  
+
   .highlight-icon
     float left
     margin-right 10px
@@ -92,23 +90,23 @@ active-highlight-background-color = #fff
     transition all tspeed ease 0s
     border 1px solid #ccc
     opacity 0.7
-    
+
   .highlight-icon div
     width: 60px;
     height: 60px;
 
   .highlight-content h3
-    margin 2px 0px
+    margin 2px 0
     font highlight-title-font
     color highlight-title-color
-    text-shadow #FFF 0px 1px 1px
+    text-shadow #FFF 0 1px 1px
     line-height 15px
 
   .highlight-content p
     margin: 0;
     font highlight-text-font
     color highlight-text-color
-    text-shadow #FFF 0px 1px 1px
+    text-shadow #FFF 0 1px 1px
     line-height 14px
 
 .highlight-selectable
@@ -134,8 +132,8 @@ active-highlight-background-color = #fff
     &:hover:after
       border-left-color hovered-highlight-background-color
       border-width 36px
-      margin-top -36px    
-    
+      margin-top -36px
+
     &.active:after, .active:before
       left 100%
       top 50%
@@ -150,4 +148,3 @@ active-highlight-background-color = #fff
       border-left-color active-highlight-background-color !important
       border-width 36px
       margin-top -36px
-    

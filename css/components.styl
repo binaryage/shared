@@ -4,35 +4,35 @@
   display: inline-block
   text-decoration: none
 
-sprite(x=0px, y=0px, w='auto', h='auto', img='/shared/img2/assets.png')
+sprite(x = 0, y = 0, w = 'auto', h = 'auto', img = '/shared/img2/assets.png')
   background transparent url(img) no-repeat (-(x)) (-(y)) !important
   width w
   height h
   display block
   absolute()
-  
-menu-button(iconx=-10px, icony=63px, img='/shared/img2/assets.png')
+
+menu-button(iconx = -10px, icony = 63px, img = '/shared/img2/assets.png')
   -reset()
   margin-left 20px
   relative(top 10px)
-  
+
   a
     text-shadow 0 1px 0 #fff
     display inline-block
-    padding 0px 4px
+    padding 0 4px
     cursor pointer
     font small-menu-font
     line-height 20px !important
     text-decoration none
-    
+
   @media logo-menu-not-clashing
-    relative(top 0px)
+    relative(top 0)
     a
-      padding 0px 10px
+      padding 0 10px
       line-height 26px !important
       font menu-font
 
-product-button(iconx=-16px, icony=242px, img='/shared/img2/assets.png')
+product-button(iconx = -16px, icony = 242px, img = '/shared/img2/assets.png')
   -reset()
   relative()
   cursor pointer
@@ -40,27 +40,27 @@ product-button(iconx=-16px, icony=242px, img='/shared/img2/assets.png')
   color product-button-color
   border 1px solid #ccc
   padding 2px 14px
-  text-shadow #FFF 0px 1px 1px
+  text-shadow #FFF 0 1px 1px
   text-align: left;
   border-radius 8px
   min-height 38px
   line-height 38px
   margin-bottom 12px
-  box-shadow 0px 1px 4px #CCC
+  box-shadow 0 1px 4px #CCC
   background-color #fff
   background linear-gradient(top, #fff, #f4f4f4)
-  white-space:nowrap
+  white-space: nowrap
   transition all tspeed ease 0s
-  
+
   &:hover
     background-color #f3f3f3
     background linear-gradient(top, #fff, #f8f8f8)
     border-color selection-color
-    
+
   i
     transition all tspeed ease 0s
     margin-right 10px
-  
+
   & .trial-note
     padding 3px 29px
     background-color #658bbb
@@ -85,23 +85,22 @@ product-button(iconx=-16px, icony=242px, img='/shared/img2/assets.png')
     absolute(top 11px right -20px)
     transform rotate(45deg)
 
-minor-button(iconx=-16px, icony=242px, img='/shared/img2/assets.png')
+minor-button(iconx = -16px, icony = 242px, img = '/shared/img2/assets.png')
   product-button()
   font minor-button-font
   color minor-button-color
   line-height 30px
 
-popup-button(img='/shared/img2/assets.png')
-  product-button(0px, 0px, img)
+popup-button(img = '/shared/img2/assets.png')
+  product-button(0, 0, img)
 
   & > div
     background none
 
   & > div > div
-    margin-left: 0px;
+    margin-left: 0;
 
-
-tiny-button-icon(iconx=0px, icony=0px, img='/shared/img2/assets.png')
+tiny-button-icon(iconx = 0, icony = 0, img = '/shared/img2/assets.png')
   product-button(iconx, icony, img)
 
   font tiny-button-font
@@ -110,15 +109,15 @@ tiny-button-icon(iconx=0px, icony=0px, img='/shared/img2/assets.png')
   height 22px
   min-height 22px
   border-radius 4px
-  box-shadow 0px 1px 2px #CCC
-  padding 0px 4px
+  box-shadow 0 1px 2px #CCC
+  padding 0 4px
 
   & > div
-    padding: 0px 4px;
+    padding: 0 4px;
     margin-left: 22px;
 
-tiny-button(img='/shared/img2/assets.png')
-  tiny-button-icon(0px, 0px, img)
+tiny-button(img = '/shared/img2/assets.png')
+  tiny-button-icon(0, 0, img)
 
   & > div
     background none
