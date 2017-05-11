@@ -35,7 +35,7 @@
       if (!title || title === "") {
         var src = $this.find('.doc-image').attr('src');
         if (src) {
-          var parts = src.split('/');
+          var parts = src.split(/[/_]/);
           if (parts.length > 0) {
             var last = parts[parts.length - 1];
             title = last.replace(/[/.]/g, ' ');
