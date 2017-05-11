@@ -70,3 +70,15 @@ hr
   margin-bottom 20px
   border 0
   border-top 1px solid #ddd
+
+.highlighted-section
+  animation pusate 1s infinite alternate
+
+@keyframes pusate
+  from
+    box-shadow 0 0 10px anchorable-section-hightlight-start-color
+    //background-color anchorable-section-hightlight-start-color
+
+  to
+    box-shadow 0 0 20px anchorable-section-hightlight-end-color
+    background-color anchorable-section-hightlight-end-color
