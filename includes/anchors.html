@@ -11,7 +11,7 @@
     var makeCandidateSelector = function(selector) {
       var parts = selector.split(',');
       var newParts = [];
-      for (var i=0; i<parts.length; i++) {
+      for (var i = 0; i < parts.length; i++) {
         var part = parts[i];
         newParts.push(part + " .add-anchor");
       }
@@ -23,37 +23,37 @@
     var $candidates = $(candidatesSelector);
     var $anchorables = $candidates.not($candidates.children());
 
-    $anchorables.each(function () {
+    $anchorables.each(function() {
       var $this = $(this);
       var title;
-      if (!title ||title=="") {
+      if (!title || title === "") {
         title = $this.attr('id') || $this.attr('title') || $this.attr('src');
       }
-      if (!title ||title=="") {
+      if (!title || title === "") {
         title = $this.text();
       }
-      if (!title || title=="") {
+      if (!title || title === "") {
         var src = $this.find('.doc-image').attr('src');
         if (src) {
           var parts = src.split('/');
-          if (parts.length>0) {
-            var last = parts[parts.length-1];
+          if (parts.length > 0) {
+            var last = parts[parts.length - 1];
             title = last.replace(/[/.]/g, ' ');
           }
         }
       }
-      if (!title || title=="") {
+      if (!title || title === "") {
         return;
       }
-      var slug = 'mark-'+title.toLowerCase().replace(/[ _-]/g, ' ').replace(/^\s+/g, '').split(' ', 10).join('D').replace(/\W/g, '').replace(/D+/g, '-').replace(/^-+/g, '');
-      $this.prepend('<a id="'+slug+'" href="#'+slug+'" class="anchor" aria-hidden="true">'+octoIcon+'</a>');
+      var slug = 'mark-' + title.toLowerCase().replace(/[ _-]/g, ' ').replace(/^\s+/g, '').split(' ', 10).join('D').replace(/\W/g, '').replace(/D+/g, '-').replace(/^-+/g, '').replace(/-+$/g, '');
+      $this.prepend('<a id="' + slug + '" href="#' + slug + '" class="anchor" aria-hidden="true">' + octoIcon + '</a>');
     });
 
     // highlighting stuff
     var highlightSection = function(id) {
       $('.highlighted-section').removeClass('highlighted-section');
-      var selector = "#"+id;
-      if (selector!="#") {
+      var selector = "#" + id;
+      if (selector != "#") {
         $(selector).parent().addClass('highlighted-section');
       }
     };
