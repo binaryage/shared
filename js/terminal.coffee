@@ -16,7 +16,7 @@ decorateTerminals = (selector) ->
   Didn't work? Make sure you really copied the whole line as is.<br>
   Or report the issue at <a href=\"mailto:support@binaryage.com\">support@binaryage.com</a>
   </p>"
-  helpBox = "<div class=\"terminal-help\"><a href=\"#\" onclick=\"showTerminalHelp(this)\">How to run commands in Terminal?</a>"+detailsBox+"</div>"
+  helpBox = "<div class=\"terminal-help\"><a href=\"javascript:void(0)\" onclick=\"showTerminalHelp(this)\">How to run commands in Terminal?</a>"+detailsBox+"</div>"
   items.each ->
     el = $(this)
     el.after helpBox
