@@ -173,3 +173,42 @@ doc-info-box-text-size = 12px
       margin-right 20px
       width 500px
       float left
+      
+    .terminal
+      box-shadow 0 0 10px #999
+      margin-left 4px
+      background-image url('../img/terminal.png')
+      background-size 805px 310px
+      background-repeat no-repeat
+      background-color transparent
+      border none
+      border-radius 5px
+      color white
+      font-size 10px
+      padding-top 40px
+
+      &:before
+        content '$ '
+        color #999
+      
+      &.wide
+        width 1000px
+        background-image url('../img/terminal-wide.png')
+        background-size 1000px 310px
+
+    .terminal-help
+      text-align right
+      margin-top -10px
+      font-size 10px
+      margin-bottom 10px
+
+      a
+        margin-right 10px
+
+      .terminal-details
+        position relative 
+        top -18px
+        left 20px
+        text-align left
+        width 460px
+
