@@ -1,57 +1,78 @@
 header-section-height = 40px
 header-section-margin-top = 20px
 sidebar-background-color = #f8f8f8
-doc-side-title-color = #4A4C53
-doc-side-font = bold 12px font-name, arial, serif
-doc-side-title-font = bold 18px font-name, arial, serif
+doc-side-text-size = 12px
+doc-side-text-weight = bold
+doc-side-text-family = inherit
+doc-side-title-color = #999
+doc-side-title-size = 12px
+doc-side-title-weight = bold
+doc-side-title-family = inherit
+doc-main-title-color = #393d44
+doc-main-title-weight = bold
+doc-text-size = 20px
+doc-text-weight = normal
+inlined-box-margin = 0 0 16px 0
+doc-info-box-text-size = 12px
 
 .doc-content
   margin-top 30px
-  
+
+  .doc-back-link
+    padding 4px 6px
+    font-size doc-side-text-size
+    border-radius 2px
+    border 1px solid #ddd
+
+    img
+      display inline-block
+      background-color transparent
+      width 20px
+      position relative
+      top -2px
+
+    span
+      margin-left 4px
+
   .sidebar
     margin-bottom 40px
-  
+
     .content-sidebar
       background-color sidebar-background-color
       border-radius 4px
-      padding 6px 20px
-      box-shadow 0px 0px 4px #aaa
+      padding 12px 20px
+      box-shadow 0 0 4px #aaa
 
-    .header-sidebar
-      height header-section-height
-      line-height 30px
-
-      .back-button
-        tiny-button()
-      
-    h2
+    h2 // sidebar titles
+      text-transform uppercase
       margin-top 20px
       margin-bottom 8px
-      font doc-side-title-font
       color doc-side-title-color
-      text-shadow #FFF 0px 1px 1px
-      line-height 14px
-      
+      font-size doc-side-title-size
+      font-weight doc-side-title-weight
+      font-family doc-side-title-family
+      text-shadow #FFF 0 1px 1px
+
     ul, ol
       list-style-type none
-      margin-left 6px
-      
-    li 
-      font doc-side-font
-      line-height 18px
-      margin-bottom 2px
-      
+      margin-left 0
+      padding-left 10px
+
+    li // sidebar text
+      font-size doc-side-text-size
+      font-weight doc-side-text-weight
+      font-family doc-side-text-family
+
       a
         padding 1px 6px
         transition none
         border 1px solid transparent
         text-decoration none !important
         white-space nowrap
-        
+
       a:hover
         border-color link-color !important
-        
-      
+
     li.selected
       a
         background-color link-color
@@ -60,136 +81,63 @@ doc-side-title-font = bold 18px font-name, arial, serif
 
 .doc-page
   .header-content
-    height header-section-height
+    margin 0 20px
 
     .title
       margin-top 0
-      font doc-main-title-font
+      margin-bottom 0
       color doc-main-title-color
-      text-shadow #FFF 0px 2px 1px
-      line-height 30px
-      font-weight bold
+      font-weight doc-main-title-weight
+      text-shadow #FFF 0 2px 1px
 
   .page-content
     position: relative
     margin 20px
 
-  // terminal-like
-  pre
-    border 1px solid #000
-    box-shadow 0px 0px 10px #666
-    border-radius 3px
-    margin 1em 0
-    margin-left 40px
-    background-color rgb(41,41,41) !important
-    padding 10px
-    overflow auto
-
-  code
-    font-family monospace
-    font-size 12px
-    line-height 1em
-    background-color #f8f8ff !important
-    color #444 !important
-    padding 1px 4px !important
-    border 1px solid #dedede !important
-    border-radius 2px
-    whitespace nowrap
-
-  pre > code
-    display table
-    color #ddd !important
-    padding 0 !important
-    background-color rgb(41,41,41) !important
-    border none !important
-    whitespace pre
-    
-  .page-content
-    h2, h3, h4
-      font-weight bold
-  
-    h2
-      margin-top 40px
-
-    h2:first-child
-      margin-top 0px
-
-    h2:before,
-    h2:after
-      content: " "
-      display: table
-
-    h2:before
-      clear both
-
-    & > p
-      padding-left 20px
-
     .keyboard-shortcuts
-      width 400px
-      background-color #fff
-      border-radius 5px
-      border 1px solid #aaa
-      margin-bottom 20px
+      display flex
 
-      table
-        margin 0
-        margin-left 10px
-        margin-right 10px
-        width 380px
-
-      th
-        border-bottom 1px solid #ccc
-
-      td
-        vertical-align top
-
-    .keyboard-shortcuts.full
-      width 690px
-
-      table
-        width 670px
-
-    .license-desk
-      box-shadow 0px 0px 4px #666
-      margin-left 20px
-      background-color: #fff
-      border-radius 5px
-      margin-bottom 10px
-      padding 14px
+    .keyboard-shortcuts > table
       display inline-block
+      width auto
+      box-shadow 0 0 4px #999
+      margin-bottom 0
+      border-radius 2px
+
+    .info-box
+      border solid 1px #ccc
+      box-shadow 0 0 2px #aaa
+      margin-left 1px // offset the box shadow
+      background-color: #fff
+      border-radius 2px
+      padding 8px 10px
+      font-size doc-info-box-text-size
 
       .choice
         margin-top 10px
 
       .example
-        font-size 11px
         color #999
-        padding-left 10px
+        padding-left 14px
 
       .note
-        font-size 11px
+        font-size 10px
         color #999
 
     .exclamation
-      font-weight bold
       color #fff
-      background-color #a00
-      display block
+      background-color #c00 !important
 
-    .doc-pref
-      position: relative
-      max-width 500px
-      top: -20px
-      left: -26px
+    .compatibility
+      background-color #fffab3
 
     .doc-image
-      margin 10px 10px 20px 20px
       border-radius 5px
-      box-shadow 0px 0px 2px #666
+      box-shadow 0 0 2px #666
 
     .add-shadow
-      box-shadow 0px 0px 10px #999
+      box-shadow 0 0 10px #999
+      margin-left 4px
 
     .no-shadow
       box-shadow none
@@ -209,23 +157,58 @@ doc-side-title-font = bold 18px font-name, arial, serif
       margin-bottom: -40px
       width 50%
 
-    .doc-main-image
-      max-width 100%
-      margin-bottom: 0px
-
     .doc-side
-        margin-top 30px
-        width 280px
-        float left
+      margin-top 30px
+      width 280px
+      float left
 
     .doc-side-inner
-        transform scale(0.7)
-        transform-origin 0 0
+      transform scale(0.7)
+      transform-origin 0 0
 
     .doc-side h2
-        margin-top: 2px;
+      margin-top: 2px;
 
-    .doc-col 
-        margin-right 20px
-        width 500px
-        float left
+    .doc-col
+      margin-right 20px
+      width 500px
+      float left
+
+    .terminal
+      box-shadow 0 0 10px #999
+      margin-left 4px
+      background-image url('../img/terminal.png')
+      background-size 805px 310px
+      background-repeat no-repeat
+      background-color transparent
+      border none
+      border-radius 5px
+      color white
+      font-size 10px
+      padding-top 40px
+
+      &:before
+        content '$ '
+        color #999
+      
+      &.wide
+        width 1000px
+        background-image url('../img/terminal-wide.png')
+        background-size 1000px 310px
+
+    .terminal-help
+      text-align right
+      margin-top -14px
+      font-size 10px
+      margin-bottom 10px
+
+      a
+        margin-right 16px
+
+      .terminal-details
+        position relative 
+        top -14px
+        left 26px
+        text-align left
+        width 460px
+

@@ -1,16 +1,21 @@
 ---
 layout: default
 menu: products
+styles: ["shared/css/github-markdown"]
+anchors: .page-content
+auto-anchors: p,pre,ul,ol,h2,h3,h4,h5,h6,.anchorable
 ---
 
-<div class="doc-content">
+<div class="doc-content markdown-body markdown-tweaks">
   <div class="container">
+    <div class="row">
+      <div class="col-md-12 doc-header">
+        {% contentblock doc-header %}
+      </div>
+    </div>
     <div class="row">
       <div class="col-md-3">
         <div class="sidebar">
-          <div class="header-sidebar">
-            <a class="back-button" href="/">« Back to Homepage</a>
-          </div>
           <div class="content-sidebar">
             {% contentblock sidebar %}
           </div>

@@ -1,8 +1,8 @@
 techstack-icon-color = #ccc
 
 #page-www-index
-  #welcome
-    display none // homepage does not need explanatory welcome icon
+  #welcome // homepage does not need explanatory welcome icon
+    display none
 
 .page-icon
   margin-top 30px
@@ -24,47 +24,46 @@ techstack-icon-color = #ccc
     transition all 0.2s ease
     margin auto
     width 260px
-    
-  .title 
+
+  .title
     display inline-block
     font product-title-font
     color link-color
-    text-shadow #FFF 0px 2px 1px
+    text-shadow #FFF 0 2px 1px
     line-height 42px
     text-decoration none
-  
+
   .subtitle
     relative()
     display inline-block
     font product-subtitle-font
     color product-subtitle-color
-    text-shadow #FFF 0px 2px 1px
+    text-shadow #FFF 0 2px 1px
     line-height 24px
 
   .tech
     display none
-    text-shadow #FFF 0px 2px 1px
+    text-shadow #FFF 0 2px 1px
     margin-top 6px
-    
+
     i
       font-size 24px
       color techstack-icon-color
-    
+
   &:hover .title
     color selection-color !important
 
   &:hover .face
     transform scale(1.15)
-  
 
 .products-wrapper
   text-align center
-  
+
 .products
   display inline-block
   margin auto
-  
-  .product 
+
+  .product
     text-align center
     margin-top 20px
     margin-bottom 20px
@@ -72,62 +71,62 @@ techstack-icon-color = #ccc
     height 130px
     display inline-block
     text-decoration none !important
-    
+
     .icon
       width 80px
       height 80px
       transition all 0.2s ease
       display block
       margin auto
-      
+
     .title
       transition color tspeed ease 0s
       font www-product-font
       color link-color
-      text-shadow #FFF 0px 2px 1px
+      text-shadow #FFF 0 2px 1px
       line-height 24px
       display block
-    
+
     .desc
       font product-info-font
       color product-subtitle-color
-      text-shadow #FFF 0px 2px 1px
+      text-shadow #FFF 0 2px 1px
       line-height 13px
       display block
-      
+
     .tech
       display none
-      text-shadow #FFF 0px 2px 1px
+      text-shadow #FFF 0 2px 1px
       margin-top 6px
-      
+
       i
         font-size 18px
         color techstack-icon-color
-      
+
     &:hover .title
       color selection-color !important
 
     &:hover .icon
       transform scale(1.2)
-      
+
 .more-wrapper
   text-align center
-  text-shadow #FFF 0px 2px 1px
+  text-shadow #FFF 0 2px 1px
   font-size 14px
-  
+
   .more-box
-    padding 0px 40px
+    padding 0 40px
     display inline-block
-    
+
     .generic-separator
       margin-bottom 10px
-    
+
     .more-extension
       padding: 2px 20px
-      
+
       i
         padding-right 6px
-      
+
       a
         color #999
   

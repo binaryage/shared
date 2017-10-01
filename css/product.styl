@@ -1,10 +1,10 @@
 .product-header
   margin-top 50px
   margin-bottom 20px
-  
+
   .product-box
     relative()
-    padding 10px 0px
+    padding 10px 0
     padding-bottom 20px
     padding-left 150px
     border-radius 4px
@@ -14,66 +14,65 @@
       absolute(left 10px)
       width: 128px;
       height: 128px;
-                
+
     .product-title
       font product-title-font
       color: product-title-color
-      text-shadow #FFF 0px 1px 1px
+      text-shadow #FFF 0 1px 1px
       line-height 40px
-      margin 0px
+      margin 0
       margin-top 10px
       white-space nowrap
       display inline-block
-      
+
     .product-subtitle
       font product-subtitle-font
       color product-subtitle-color
-      text-shadow #FFF 0px 2px 1px
+      text-shadow #FFF 0 2px 1px
       line-height 20px
       white-space nowrap
       margin-top 6px
-      
+
   .product-buttons
-    
+
     .button-container
       float right
       margin-top 14px
       margin-left 20px
-      
+
       .button-note
         padding-right 10px
         relative(top -2px)
         text-align right
-        text-shadow #FFF 0px 1px 1px
+        text-shadow #FFF 0 1px 1px
         font-size 10px
         line-height 14px
-        
+
         a
           color minor-link-color
-          
+
         .exclamation
           display inline-block
           color white
           background-color red
           border-radius 2px
-          padding 0px 4px
+          padding 0 4px
           text-shadow none
-          
-          a 
+
+          a
             color white
             text-decoration underline
             text-shadow none
-            
+
             &:visited
               color white !important
-            
+
             &:hover
               color yellow !important
-          
-          
+
       .button
         product-button()
-        
+
       .cross-promo
         relative(top 4px)
         white-space nowrap
@@ -81,10 +80,10 @@
         background-color #fcffdd
         padding 4px 8px
         border-radius 4px
-        
+
         div
           display inline-block
-        
+
         i.fa
           relative(top -5px left 3px)
           color #999
@@ -93,17 +92,17 @@
           padding 0
           font-size 24px
           margin-right 14px
-        
+
   @media (max-width: 520px)
     .product-social
       display none
-      
+
     .cross-promo
       display none
-      
+
     .product-box
       zoom 0.7
-      
+
 .warning-banner
   padding 5 5 5 5
   font-size 24px

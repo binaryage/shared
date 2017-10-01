@@ -20,8 +20,8 @@ note: "leave the YAML front matter here, we want this to be processed as jekyll 
     {% inline_styles %}
   </head>
   <body id="page-{{ site.target_url | remove: 'https' | remove: 'http' | remove: ':' | remove: '/' | remove: '.com' | remove: '.org' | remove: '.binaryage' }}-{% if page.url == "/" %}index{% else %}{{ page.url | remove: '/' | remove: '.html' }}{% endif %}"
-        {% if layout.body_class %} class="{{layout.body_class}}"{% endif %}
-        {% if page.body_class %} class="{{page.body_class}}"{% endif %}>
+        class="site-{{ site.target_url | remove: 'https' | remove: 'http' | remove: ':' | remove: '/' | remove: '.com' | remove: '.org' | remove: '.binaryage' }}{% if layout.body_class %} {{layout.body_class}}{% endif %}{% if page.body_class %} {{page.body_class}}{% endif %}"
+        >
     {% if page.fastspring %}{% include webfont.html %}{% endif %}
     {% include header.html %}
     {% include main.html %}
@@ -34,5 +34,6 @@ note: "leave the YAML front matter here, we want this to be processed as jekyll 
     {% include disqus.html %}
     {% include triggering.html %}
     {% include local_url_rewriting.html %}
+    {% include anchors.html %}
   </body>
 </html>
