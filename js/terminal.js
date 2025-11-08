@@ -1,7 +1,3 @@
----
-note: "this is needed for processing by jekyll"
----
-
 (function() {
   var decorateTerminals;
 

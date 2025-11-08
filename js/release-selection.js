@@ -1,7 +1,3 @@
----
-note: "this is needed for processing by jekyll"
----
-
 (function() {
   defer$(function() {
     var hashToSelector, isVersion, selectRelease, selectReleaseAfterTabsGetInitialized, selectTab, selectVersion;

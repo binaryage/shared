@@ -1,7 +1,3 @@
----
-note: "this is needed for processing by jekyll"
----
-
 (function() {
   this.parsePlaintextChangelog = function(text) {
     var changelog, i, line, lines, m, parts, release;
