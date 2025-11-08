@@ -1,46 +1,42 @@
 ---
 note: "this is needed for processing by jekyll"
-regenerate: true # this is needed to rebuild css when some styl file is touched, jekyll 3+ tries to be smart and does not rebuild this file because it does not understand @import deps
+regenerate: true
 ---
 
-// css files will be embedded into this site.css
-@import "bootstrap.css"
-@import "font-awesome.css"
-@import "jquery.fancybox.css"
+/* CSS files will be embedded into this site.css */
+@import "bootstrap.css";
+@import "font-awesome.css";
+@import "jquery.fancybox.css";
 
-@import "nib"
+@import 'utils.css';
 
-@import 'constants'
-@import 'components'
-@import 'utils'
+@import 'global.css';
+@import 'logo.css';
+@import 'header.css';
+@import 'footer.css';
+@import 'social-box.css';
+@import 'doc.css';
+@import 'changelog.css';
+@import 'price-tags.css';
+@import 'product.css';
+@import 'product-tabs.css';
+@import 'product-showcase.css';
+@import '404.css';
+@import 'github-markdown-tweaks.css';
 
-@import 'global'
-@import 'logo'
-@import 'header'
-@import 'footer'
-@import 'social-box'
-@import 'doc'
-@import 'changelog'
-@import 'price-tags'
-@import 'product'
-@import 'product-tabs'
-@import 'product-showcase'
-@import '404'
-@import 'github-markdown-tweaks'
+/* www & related */
+@import 'www.css';
+@import 'blog.css';
+@import 'about.css';
+@import 'store.css';
+@import 'hints.css';
 
-// www & related
-@import 'www'
-@import 'blog'
-@import 'about'
-@import 'store'
-@import 'hints'
+/* product pages */
+@import 'totalterminal.css';
 
-// product pages
-@import 'totalterminal'
+/* custom totalfinder stuff */
+@import 'totalfinder-overlays.css';
+@import 'totalfinder.css';
 
-// custom totalfinder stuff
-@import 'totalfinder-overlays'     
-@import 'totalfinder'
-
-// custom totalspaces stuff
-@import 'totalspaces'
+/* custom totalspaces stuff */
+@import 'totalspaces.css';

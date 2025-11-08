@@ -1,0 +1,29 @@
+.social-box {
+  transition: opacity 0.5s ease 0s;
+  opacity: 0.2;
+  height: 30px;
+  margin-left: -10px;
+  white-space: nowrap;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  & > div {  /* wrappers */
+    min-width: 80px;
+    height: 20px;
+    margin: 0 10px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .twitter-wrapper {
+    position: relative;
+    top: 3px;
+  }
+
+  .plusone-wrapper {
+    position: relative;
+    top: 3px;
+  }
+}

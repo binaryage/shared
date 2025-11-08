@@ -1,0 +1,13 @@
+#page-totalterminal-index {
+  .product-button-download {
+    i {
+      color: #658bbb;
+    }
+
+    &:hover {
+      i {
+        color: #2283fe; /* Pre-calculated: saturate(#658bbb, 60) */
+      }
+    }
+  }
+}
