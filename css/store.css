@@ -8,14 +8,14 @@
 
 .core-window {
   margin: 24px 20px 20px 20px;
-  color: #666;
+  color: var(--color-gray-dark);  /* #666 */
 
   .core-section {
     position: relative;
   }
 
   .core-section-header {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--color-border);  /* #ccc */
     font-size: 16px;
     font-weight: bold;
     padding-top: 0;
@@ -31,7 +31,7 @@
     margin-top: 20px;
     margin-bottom: 16px;
     font-size: 14px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--color-gray-lightest);  /* #eee */
   }
 
   .core-form-field-group-body {
@@ -54,10 +54,10 @@
 
 .store-box {
   font: normal 15px 'Play', arial, serif;  /* store-font */
-  background-color: #fff;
+  background-color: var(--color-white);  /* #fff */
   border-radius: 12px;
-  border: 1px solid #ddd7d7;
-  box-shadow: 1px 1px 8px #ddd;
+  border: 1px solid var(--color-store-border);  /* #ddd7d7 */
+  box-shadow: 1px 1px 8px var(--color-border-light);  /* #ddd */
   margin: auto;
   margin-top: 58px;
   margin-bottom: 30px;
@@ -69,13 +69,13 @@
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     height: 50px;
-    border-bottom: 1px solid #e9e9e9;
-    background-color: #f7f7f7;
-    background: linear-gradient(to bottom, #fff, #f7f7f7);
+    border-bottom: 1px solid var(--color-store-header-border);  /* #e9e9e9 */
+    background-color: var(--color-store-header-bg);  /* #f7f7f7 */
+    background: linear-gradient(to bottom, var(--color-white), var(--color-store-header-bg));  /* #fff to #f7f7f7 */
     position: relative;
 
     .store-header-title {
-      color: #b5b5b5;  /* store-header-color */
+      color: var(--color-store-header);  /* #b5b5b5 store-header-color */
       font: bold 20px 'Play', arial, serif;  /* store-header-font */
       line-height: 50px;
       margin-left: 20px;
@@ -100,7 +100,7 @@
   }
 
   .store-product-option-display {
-    color: #393e46;  /* store-product-title-color */
+    color: var(--color-store-product-title);  /* #393e46 store-product-title-color */
     font-weight: bold !important;
     font-size: 16px;
   }
@@ -115,7 +115,7 @@
   }
 
   hr {
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--color-gray-lightest);  /* #eee */
   }
 
   code {
@@ -140,10 +140,10 @@
 
   input {
     border-radius: 5px !important;
-    border: 1px solid #d5d5d5 !important;
-    color: #666 !important;
+    border: 1px solid var(--color-store-border-light) !important;  /* #d5d5d5 */
+    color: var(--color-gray-dark) !important;  /* #666 */
     background: none !important;
-    background-color: #fff !important;
+    background-color: var(--color-white) !important;  /* #fff */
   }
 
   select {
@@ -153,11 +153,11 @@
   .store-value-money {
     white-space: nowrap;
     font-weight: bold;
-    color: #000;
+    color: var(--color-black);  /* #000 */
   }
 
   .store-product-pricing-tiered-table {
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-border-light);  /* #ddd */
     font-size: 12px;
     line-height: 18px;
 
@@ -167,15 +167,15 @@
 
     th {
       padding: 0 6px;
-      border-bottom: 1px solid #ddd;
-      background-color: #eee;
+      border-bottom: 1px solid var(--color-border-light);  /* #ddd */
+      background-color: var(--color-gray-lightest);  /* #eee */
     }
   }
 
   .store-order-pricing {
     margin: 0;
     padding-top: 10px;
-    border-top: 1px solid #e5e5e5;
+    border-top: 1px solid var(--color-store-pricing-border);  /* #e5e5e5 */
     position: relative;
     top: -1px;
 
@@ -194,7 +194,7 @@
 
     .store-order-price-label {
       font-weight: normal;
-      color: #999;
+      color: var(--color-gray-medium);  /* #999 */
     }
   }
 
@@ -221,7 +221,7 @@
     .core-form-field-body-note {
       float: right;
       width: 180px;
-      color: #aaa;
+      color: var(--color-gray);  /* #aaa */
       position: relative;
       top: -22px;
     }
@@ -245,23 +245,23 @@
 
     .store-action-title {
       text-align: center;
-      color: #fff;  /* store-product-button-color */
+      color: var(--color-store-button-text);  /* #fff store-product-button-color */
       font: bold 11px 'Play', arial, serif;  /* store-product-button-font */
       display: inline-block;
       margin: 0;
-      background-color: #399fd2;
-      background: linear-gradient(to bottom, #399fd2, #2688c5);
-      border: 1px solid #2381bf;
+      background-color: var(--color-store-button-bg);  /* #399fd2 */
+      background: linear-gradient(to bottom, var(--color-store-button-bg), var(--color-store-button-bg-end));  /* #399fd2 to #2688c5 */
+      border: 1px solid var(--color-store-button-border);  /* #2381bf */
       border-radius: 7px;
       white-space: nowrap;
       padding: 5px 8px;
       text-transform: uppercase;
-      text-shadow: #226699 0 1px 2px;
-      box-shadow: 0 1px 2px #999;
+      text-shadow: var(--color-store-button-shadow) 0 1px 2px;  /* #226699 */
+      box-shadow: 0 1px 2px var(--color-gray-medium);  /* #999 */
       height: auto !important;
 
       &:hover {
-        color: #FEF79A;
+        color: var(--color-store-button-hover);  /* #FEF79A */
       }
     }
   }
@@ -286,7 +286,7 @@
   margin: 0 !important;
   margin-top: 10px !important;
   border-top: none !important;
-  border-bottom: 1px dashed #e5e5e5;
+  border-bottom: 1px dashed var(--color-store-pricing-border);  /* #e5e5e5 */
   position: relative;
 
   .store-order-item-group-action-list {
@@ -391,7 +391,7 @@
     top: 10px;
     margin: 0;
     padding: 0;
-    color: #393e46;  /* store-product-title-color */
+    color: var(--color-store-product-title);  /* #393e46 store-product-title-color */
     font: bold 24px 'Play', arial, serif;  /* store-product-title-font */
   }
 
@@ -401,7 +401,7 @@
     top: 28px;
     margin: 0;
     padding: 0;
-    color: #6c6c6c;  /* store-product-description-color */
+    color: var(--color-store-product-description);  /* #6c6c6c store-product-description-color */
     font: 12px 'Play', arial, serif;  /* store-product-description-font */
   }
 
@@ -447,9 +447,9 @@
 .store-footer {
   padding-top: 20px;
   margin-top: 30px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--color-gray-lightest);  /* #eee */
   font-size: 10px;
-  color: #999;
+  color: var(--color-gray-medium);  /* #999 */
 }
 
 .store-portal {
@@ -484,8 +484,8 @@
     div:first-child {
       display: inline-block;
       padding: 6px 10px;
-      background-color: #eee;
-      border: 1px solid #ddd;
+      background-color: var(--color-gray-lightest);  /* #eee */
+      border: 1px solid var(--color-border-light);  /* #ddd */
       border-radius: 3px;
     }
   }

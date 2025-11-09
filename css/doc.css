@@ -22,7 +22,7 @@
     padding: 4px 6px;
     font-size: 12px;  /* doc-side-text-size */
     border-radius: 2px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-border-light);  /* #ddd */
 
     img {
       display: inline-block;
@@ -41,21 +41,21 @@
     margin-bottom: 40px;
 
     .content-sidebar {
-      background-color: #f8f8f8;  /* sidebar-background-color */
+      background-color: var(--color-sidebar-bg);  /* #f8f8f8 sidebar-background-color */
       border-radius: 4px;
       padding: 12px 20px;
-      box-shadow: 0 0 4px #aaa;
+      box-shadow: 0 0 4px var(--color-gray);  /* #aaa */
     }
 
     h2 {  /* sidebar titles */
       text-transform: uppercase;
       margin-top: 20px;
       margin-bottom: 8px;
-      color: #999;  /* doc-side-title-color */
+      color: var(--color-gray-medium);  /* #999 doc-side-title-color */
       font-size: 12px;  /* doc-side-title-size */
       font-weight: bold;  /* doc-side-title-weight */
       font-family: inherit;  /* doc-side-title-family */
-      text-shadow: #fff 0 1px 1px;
+      text-shadow: var(--color-white) 0 1px 1px;  /* #fff */
     }
 
     ul, ol {
@@ -78,14 +78,14 @@
       }
 
       a:hover {
-        border-color: #4f6393 !important;  /* link-color */
+        border-color: var(--color-link) !important;  /* #4f6393 link-color */
       }
     }
 
     li.selected {
       a {
-        background-color: #4f6393;  /* link-color */
-        color: #fff !important;  /* menu-item-selected-color */
+        background-color: var(--color-link);  /* #4f6393 link-color */
+        color: var(--color-white) !important;  /* #fff menu-item-selected-color */
         border-radius: 2px;
       }
     }
@@ -99,9 +99,9 @@
     .title {
       margin-top: 0;
       margin-bottom: 0;
-      color: #393d44;  /* doc-main-title-color */
+      color: var(--color-product-title);  /* #393d44 doc-main-title-color */
       font-weight: bold;  /* doc-main-title-weight */
-      text-shadow: #fff 0 2px 1px;
+      text-shadow: var(--color-white) 0 2px 1px;  /* #fff */
     }
   }
 
@@ -116,16 +116,16 @@
     .keyboard-shortcuts > table {
       display: inline-block;
       width: auto;
-      box-shadow: 0 0 4px #999;
+      box-shadow: 0 0 4px var(--color-gray-medium);  /* #999 */
       margin-bottom: 0;
       border-radius: 2px;
     }
 
     .info-box {
-      border: solid 1px #ccc;
-      box-shadow: 0 0 2px #aaa;
+      border: solid 1px var(--color-border);  /* #ccc */
+      box-shadow: 0 0 2px var(--color-gray);  /* #aaa */
       margin-left: 1px;  /* offset the box shadow */
-      background-color: #fff;
+      background-color: var(--color-white);  /* #fff */
       border-radius: 2px;
       padding: 8px 10px;
       font-size: 12px;  /* doc-info-box-text-size */
@@ -135,32 +135,32 @@
       }
 
       .example {
-        color: #999;
+        color: var(--color-gray-medium);  /* #999 */
         padding-left: 14px;
       }
 
       .note {
         font-size: 10px;
-        color: #999;
+        color: var(--color-gray-medium);  /* #999 */
       }
     }
 
     .exclamation {
-      color: #fff;
-      background-color: #c00 !important;
+      color: var(--color-white);  /* #fff */
+      background-color: var(--color-red-link) !important;  /* #c00 */
     }
 
     .compatibility {
-      background-color: #fffab3;
+      background-color: var(--color-compatibility-bg);  /* #fffab3 */
     }
 
     .doc-image {
       border-radius: 5px;
-      box-shadow: 0 0 2px #666;
+      box-shadow: 0 0 2px var(--color-gray-dark);  /* #666 */
     }
 
     .add-shadow {
-      box-shadow: 0 0 10px #999;
+      box-shadow: 0 0 10px var(--color-gray-medium);  /* #999 */
       margin-left: 4px;
     }
 
@@ -211,7 +211,7 @@
     }
 
     .terminal {
-      box-shadow: 0 0 10px #999;
+      box-shadow: 0 0 10px var(--color-gray-medium);  /* #999 */
       margin-left: 4px;
       background-image: url('../img/terminal.png');
       background-size: 805px 310px;
@@ -225,7 +225,7 @@
 
       &:before {
         content: '$ ';
-        color: #999;
+        color: var(--color-gray-medium);  /* #999 */
       }
 
       &.wide {

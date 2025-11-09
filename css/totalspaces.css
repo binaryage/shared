@@ -1,24 +1,24 @@
 #page-totalspaces-index {
   .product-button-buy-ts2 {
     i {
-      color: #b34d4d;  /* Pre-calculated: desaturate(red, 60) */
+      color: var(--color-product-red-desaturated);  /* #b34d4d desaturate(red, 60) */
     }
 
     &:hover {
       i {
-        color: #f00;  /* red */
+        color: var(--color-product-red);  /* #f00 red */
       }
     }
   }
 
   .product-button-download {
     i {
-      color: #658bbb;
+      color: var(--color-button-accent);  /* #658bbb */
     }
 
     &:hover {
       i {
-        color: #2283fe;  /* Pre-calculated: saturate(#658bbb, 60) */
+        color: var(--color-product-blue-saturated);  /* #2283fe saturate(#658bbb, 60) */
       }
     }
   }
@@ -46,39 +46,39 @@
       position: relative;
       cursor: pointer;
       font: bold 16px 'Play', arial, serif;
-      color: #8d9198;
-      border: 1px solid #ccc;
+      color: var(--color-button-text);  /* #8d9198 */
+      border: 1px solid var(--color-border);  /* #ccc */
       padding: 2px 14px;
-      text-shadow: #fff 0 1px 1px;
+      text-shadow: var(--color-white) 0 1px 1px;  /* #fff */
       text-align: left;
       border-radius: 8px;
       min-height: 38px;
       line-height: 30px;
       margin-bottom: 12px;
-      box-shadow: 0 1px 4px #ccc;
-      background-color: #fff;
-      background: linear-gradient(to bottom, #fff, #f4f4f4);
+      box-shadow: 0 1px 4px var(--color-border);  /* #ccc */
+      background-color: var(--color-white);  /* #fff */
+      background: linear-gradient(to bottom, var(--color-white), var(--color-button-bg-gradient-end));  /* #fff to #f4f4f4 */
       white-space: nowrap;
-      transition: all 0.5s ease 0s;
+      transition: all var(--transition-speed) ease 0s;  /* 0.5s tspeed */
       margin-right: 20px;
 
       &:hover {
-        background-color: #f3f3f3;
-        background: linear-gradient(to bottom, #fff, #f8f8f8);
-        border-color: #0f56b3;
+        background-color: var(--color-button-hover-bg-light);  /* #f3f3f3 */
+        background: linear-gradient(to bottom, var(--color-white), var(--color-button-hover-gradient-end));  /* #fff to #f8f8f8 */
+        border-color: var(--color-link-hover);  /* #0f56b3 selection-color */
       }
 
       i {
-        transition: all 0.5s ease 0s;
+        transition: all var(--transition-speed) ease 0s;  /* 0.5s tspeed */
         margin-right: 10px;
       }
 
       .trial-note {
         padding: 3px 29px;
-        background-color: #658bbb;
+        background-color: var(--color-button-accent);  /* #658bbb */
         text-shadow: none;
         font-weight: normal;
-        color: #fff;
+        color: var(--color-white);  /* #fff */
         font-size: 9px;
         line-height: 8px;
         text-align: center;
@@ -90,10 +90,10 @@
 
       .price-note {
         padding: 3px 29px;
-        background-color: #a2393c;
+        background-color: var(--color-price-note-bg);  /* #a2393c */
         text-shadow: none;
         font-weight: normal;
-        color: #fff;
+        color: var(--color-white);  /* #fff */
         font-size: 9px;
         line-height: 8px;
         text-align: center;
@@ -117,7 +117,7 @@
   .upgrade-input {
     width: 590px;
     height: 30px;
-    border: 1px solid #999999;
+    border: 1px solid var(--color-product-upgrade-border);  /* #999999 */
     padding: 5px;
     font-size: 24px;
   }

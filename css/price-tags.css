@@ -8,14 +8,14 @@
   position: relative;
   left: 30px;
   padding: 2px 6px;
-  color: #fff;  /* price-tag-color */
+  color: var(--color-white);  /* #fff price-tag-color */
   font-size: 18px;  /* price-tag-font-size */
-  text-shadow: #350000 0 1px 1px;  /* darken(price-tag-background-color, 30) */
-  background: #ce0000;  /* price-tag-background-color */
-  border-left: 1px solid #ce0000;  /* price-tag-background-color */
-  border-bottom: 1px solid #ce0000;  /* price-tag-background-color */
+  text-shadow: var(--color-price-tag-shadow) 0 1px 1px;  /* #350000 darken(price-tag-background-color, 30) */
+  background: var(--color-price-tag-bg);  /* #ce0000 price-tag-background-color */
+  border-left: 1px solid var(--color-price-tag-bg);  /* #ce0000 */
+  border-bottom: 1px solid var(--color-price-tag-bg);  /* #ce0000 */
   border-radius: 4px;
-  box-shadow: 1px 1px 2px #999;
+  box-shadow: 1px 1px 2px var(--color-gray-medium);  /* #999 */
 }
 
 .price-tag:after {
@@ -25,7 +25,7 @@
   height: 5px;
   width: 5px;
   border-radius: 2px;
-  background-color: #680000;  /* price-tag-dot-color */
+  background-color: var(--color-price-tag-dot);  /* #680000 price-tag-dot-color */
   position: absolute;
   pointer-events: none;
 }
@@ -42,7 +42,7 @@
 }
 
 .price-tag:before {
-  border-right-color: #ce0000;  /* price-tag-background-color */
+  border-right-color: var(--color-price-tag-bg);  /* #ce0000 price-tag-background-color */
   border-width: 12px;
   margin-top: -12px;
 }

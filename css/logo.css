@@ -1,12 +1,14 @@
-/* logo-badge-color = #686d76 */
-/* logo-white-color = #fff */
-/* logo-orange-color = #f9a538 */
+/* Logo colors now in tokens.css:
+   --color-logo-badge: #686d76
+   --color-logo-orange: #f9a538
+   --color-white: #fff
+*/
 
 .binaryage-logo {
   position: absolute;  /* Expanded absolute() - needed for responsive design, header should not break with small width */
   margin-top: 6px;
   opacity: 0.2;
-  transition: opacity 0.5s ease 0s;  /* tspeed */
+  transition: opacity var(--transition-speed) ease 0s;  /* 0.5s tspeed */
   transform: scale(0.6);
   transform-origin: 0 0;
 
@@ -19,17 +21,17 @@
       stroke-width: 1;
 
       .logo-badge-background {
-        fill: #686d76;  /* logo-badge-color */
+        fill: var(--color-logo-badge);  /* #686d76 */
       }
 
       .logo-letter-b {
-        stroke: #383b40;  /* darken(logo-badge-color, 20) */
-        fill: #fff;  /* logo-white-color */
+        stroke: var(--color-logo-badge-dark);  /* #383b40 darken(logo-badge-color, 20) */
+        fill: var(--color-white);  /* #fff */
       }
 
       .logo-letter-a {
-        stroke: #383b40;  /* darken(logo-badge-color, 20) */
-        fill: #f9a538;  /* logo-orange-color */
+        stroke: var(--color-logo-badge-dark);  /* #383b40 darken(logo-badge-color, 20) */
+        fill: var(--color-logo-orange);  /* #f9a538 */
       }
     }
 
@@ -37,11 +39,11 @@
       stroke: none;
 
       .logo-word-binary {
-        fill: #686d76;  /* logo-badge-color */
+        fill: var(--color-logo-badge);  /* #686d76 */
       }
 
       .logo-word-age {
-        fill: #f9a538;  /* logo-orange-color */
+        fill: var(--color-logo-orange);  /* #f9a538 */
       }
     }
   }

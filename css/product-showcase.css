@@ -18,7 +18,7 @@
   }
 
   &.tf-shadow .screenshot {
-    box-shadow: 0 0 20px #666;
+    box-shadow: 0 0 20px var(--color-gray-dark);  /* #666 */
     border-radius: 4px;
   }
 
@@ -63,7 +63,7 @@
     a {
       cursor: pointer;
       display: block;
-      background-color: #ccc;
+      background-color: var(--color-border);  /* #ccc */
       width: 10px;
       height: 10px;
       border-radius: 5px;
@@ -74,11 +74,11 @@
 
     a:hover {
       opacity: 0.6;
-      background-color: #999;
+      background-color: var(--color-gray-medium);  /* #999 */
     }
 
     a.active {
-      background-color: #666;
+      background-color: var(--color-gray-dark);  /* #666 */
     }
   }
 }
@@ -114,10 +114,10 @@
     margin-right: 10px;
     padding: 2px;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: var(--color-white);  /* #fff */
     display: block;
     transition: all 0.5s ease 0s;  /* tspeed */
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-border);  /* #ccc */
     opacity: 0.7;
   }
 
@@ -129,16 +129,16 @@
   .highlight-content h3 {
     margin: 2px 0;
     font: bold 14px 'Play', arial, serif;  /* highlight-title-font */
-    color: #393d44;  /* highlight-title-color */
-    text-shadow: #fff 0 1px 1px;
+    color: var(--color-product-title);  /* #393d44 highlight-title-color */
+    text-shadow: var(--color-white) 0 1px 1px;  /* #fff */
     line-height: 15px;
   }
 
   .highlight-content p {
     margin: 0;
     font: 12px 'Play', arial, serif;  /* highlight-text-font */
-    color: #8d9198;  /* highlight-text-color */
-    text-shadow: #fff 0 1px 1px;
+    color: var(--color-button-text);  /* #8d9198 highlight-text-color */
+    text-shadow: var(--color-white) 0 1px 1px;  /* #fff */
     line-height: 14px;
   }
 }
@@ -147,11 +147,11 @@
   cursor: pointer;
 
   &:hover {
-    background-color: #f5f5f5;  /* hovered-highlight-background-color */
+    background-color: var(--color-highlight-hover-bg);  /* #f5f5f5 hovered-highlight-background-color */
   }
 
   &.active {
-    background: #fff !important;  /* active-highlight-background-color */
+    background: var(--color-white) !important;  /* #fff active-highlight-background-color */
   }
 
   @media (min-width: 992px) {
@@ -167,7 +167,7 @@
     }
 
     &:hover:after {
-      border-left-color: #f5f5f5;  /* hovered-highlight-background-color */
+      border-left-color: var(--color-highlight-hover-bg);  /* #f5f5f5 hovered-highlight-background-color */
       border-width: 36px;
       margin-top: -36px;
     }
@@ -184,7 +184,7 @@
     }
 
     &.active:after {
-      border-left-color: #fff !important;  /* active-highlight-background-color */
+      border-left-color: var(--color-white) !important;  /* #fff active-highlight-background-color */
       border-width: 36px;
       margin-top: -36px;
     }

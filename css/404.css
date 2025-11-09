@@ -10,7 +10,7 @@
       margin-top: 30px;
       font-size: 28px;
       line-height: 28px;
-      text-shadow: #FFF 0 1px 1px;
+      text-shadow: var(--color-white) 0 1px 1px;  /* #FFF */
       text-align: center;
     }
 

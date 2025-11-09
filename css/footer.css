@@ -3,16 +3,16 @@
   margin-top: 10px;
 
   .footer-box-right {
-    border-top: 1px solid #ddd;
+    border-top: 1px solid var(--color-border-light);  /* #ddd */
     font: 10px 'Play', arial, serif;  /* footer-font */
-    color: #888;  /* footer-link-color */
-    text-shadow: #fff 0 1px 1px;
+    color: var(--color-gray-light);  /* #888 footer-link-color */
+    text-shadow: var(--shadow-text);  /* #fff 0 1px 1px */
     padding: 4px 10px 4px 10px;
     float: right;
     position: relative;
 
     a {
-      color: #888;  /* footer-link-color */
+      color: var(--color-gray-light);  /* #888 footer-link-color */
     }
 
     & > * {
@@ -22,7 +22,7 @@
 
   .footer-copyright {
     opacity: 0.6;
-    transition: all 0.5s ease 0s;  /* tspeed */
+    transition: all var(--transition-speed) ease 0s;  /* 0.5s tspeed */
 
     &:hover {
       opacity: 1;

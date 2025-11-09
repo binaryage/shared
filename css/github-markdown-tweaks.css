@@ -11,7 +11,7 @@
   }
 
   a {
-    color: #4F6393;  /* link-color */
+    color: var(--color-link);  /* #4F6393 link-color */
   }
 
   h2, h3, h4, h5, h6 {
@@ -24,7 +24,7 @@
   }
 
   .octicon-link {
-    color: #1b1f23;
+    color: var(--color-text-dark);  /* #1b1f23 */
     vertical-align: middle;
     visibility: hidden;
     opacity: 0.5;

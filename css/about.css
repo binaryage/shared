@@ -35,7 +35,7 @@
 
   .role {
     display: block;
-    color: #999;
+    color: var(--color-gray-medium);  /* #999 */
   }
 
   .contact {
