@@ -35,8 +35,8 @@
 
   .zoom-icon {
     cursor: pointer;
-    /* Expanded sprite(0, 0, 74px, 74px, "/shared/img2/zoom.png") */
-    background: transparent url("/shared/img2/zoom.png") no-repeat 0 0 !important;
+    /* Expanded sprite(0, 0, 74px, 74px, "/shared/img/zoom.png") */
+    background: transparent url("/shared/img/zoom.png") no-repeat 0 0 !important;
     width: 74px;
     height: 74px;
     display: block;

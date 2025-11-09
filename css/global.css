@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background: var(--color-bg) url('/shared/img2/background.png') repeat top left;  /* #f2f2f2 */
+  background: var(--color-bg) url('/shared/img/background.png') repeat top left;  /* #f2f2f2 */
   font: 12px 'Play', arial, serif;  /* basic-font */
 }
 
