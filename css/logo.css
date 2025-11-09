@@ -53,7 +53,7 @@
   }
 }
 
-@media (min-width: 620px) {  /* logo-menu-not-clashing */
+@media (width >= 620px) {  /* logo-menu-not-clashing */
   .binaryage-logo {
     margin-top: 32px;
   }

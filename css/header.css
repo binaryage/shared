@@ -44,7 +44,7 @@
         margin-right: 6px;
       }
 
-      @media (min-width: 620px) {
+      @media (width >= 620px) {
         position: relative;
         top: 0;
 

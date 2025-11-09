@@ -87,7 +87,7 @@
   padding-top: 20px;
 }
 
-@media (min-width: 1200px) {
+@media (width >= 1200px) {
   .highlights {
     /* Expanded relative(left highlights-shift) */
     position: relative;
@@ -95,7 +95,7 @@
   }
 }
 
-@media (max-width: 992px) {
+@media (width <= 992px) {
   .highlight {
     margin-right: 25px;
   }
@@ -154,7 +154,7 @@
     background: var(--color-white) !important;  /* #fff active-highlight-background-color */
   }
 
-  @media (min-width: 992px) {
+  @media (width >= 992px) {
     &:hover:after, :hover:before {
       left: 100%;
       top: 50%;

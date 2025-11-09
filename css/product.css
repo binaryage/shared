@@ -179,7 +179,7 @@
     }
   }
 
-  @media (max-width: 520px) {
+  @media (width <= 520px) {
     .product-social {
       display: none;
     }
