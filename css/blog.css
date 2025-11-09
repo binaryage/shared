@@ -36,7 +36,7 @@
 
     .post-title {
       display: block;
-      margin-left: 34px;
+      margin-inline-start: 34px;
       text-shadow: var(--color-white) 0 1px 1px;  /* #fff */
       margin-bottom: 10px;
       white-space: nowrap;
@@ -105,7 +105,7 @@
 
     i {
       transition: all var(--transition-speed) ease 0s;  /* 0.5s tspeed */
-      margin-right: 10px;
+      margin-inline-end: 10px;
     }
 
     .trial-note {
@@ -140,7 +140,7 @@
 
     & > div {
       padding: 0 4px;
-      margin-left: 22px;
+      margin-inline-start: 22px;
     }
 
     & > div {
@@ -174,7 +174,7 @@
       box-shadow: 0 0 10px var(--color-gray-dark);  /* #666 */
       border-radius: 3px;
       margin: 1em 0;
-      margin-left: 10px;
+      margin-inline-start: 10px;
       background-color: var(--color-blog-terminal-bg) !important;  /* rgb(41, 41, 41) */
       padding: 10px;
       overflow: auto;
@@ -202,18 +202,18 @@
     }
 
     p {
-      margin-left: 10px;
+      margin-inline-start: 10px;
       text-align: justify;
     }
 
     .fluid-object {
-      margin-left: 10px;
+      margin-inline-start: 10px;
     }
 
     .intro-icon {
       width: 64px;
       float: left;
-      margin-right: 16px;
+      margin-inline-end: 16px;
       margin-bottom: 30px;
       /* Expanded relative(top -6px) */
       position: relative;
@@ -266,7 +266,7 @@
       color: var(--color-gray-medium);  /* #999 */
       padding: 2px 10px;
       margin-top: 20px;
-      margin-left: 0;
+      margin-inline-start: 0;
       border-top: 1px solid var(--color-border-light);  /* #ddd */
     }
   }
@@ -393,14 +393,14 @@
           font-size: 14px;
           padding-top: 5px;
           line-height: 14px;
-          padding-left: 48px;
+          padding-inline-start: 48px;
           color: var(--color-product-title);  /* #393d44 product-title-color */
           text-shadow: var(--color-white) 0 1px 1px;  /* #fff */
         }
 
         .info {
           display: block;
-          padding-left: 48px;
+          padding-inline-start: 48px;
           font-size: 10px;
           line-height: 12px;
           font-weight: normal;
@@ -422,15 +422,15 @@
 
   .blog-download {  /* http://blog.binaryage.org/totalfinder-alpha/ */
     clear: both;
-    margin-left: 10px;
+    margin-inline-start: 10px;
     margin-top: 30px;
     margin-bottom: 30px;
     position: relative;
 
     img {
       float: left;
-      margin-right: 20px;
-      margin-left: 2px;
+      margin-inline-end: 20px;
+      margin-inline-start: 2px;
     }
 
     .download-link {
