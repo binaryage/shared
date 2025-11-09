@@ -1,0 +1,196 @@
+/*
+ * Design Tokens - CSS Custom Properties
+ *
+ * Central source of truth for all design values.
+ * Extracted from original Stylus constants.styl and analyzed CSS usage.
+ */
+
+:root {
+  /* ============================================
+   * COLORS - Base Palette
+   * ============================================ */
+
+  /* Primary link colors */
+  --color-link: #4f6393;
+  --color-link-hover: #0f56b3; /* selection-color */
+
+  /* Red link colors (used for special CTAs) */
+  --color-red-link: #c00;
+  --color-red-link-hover: #f00;  /* red-selection-color */
+
+  /* Menu colors */
+  --color-menu: #6c717b;
+  --color-menu-selected: #fff;
+
+  /* Product text colors */
+  --color-product-title: #393d44;
+  --color-product-subtitle: #303137;
+
+  /* Button colors */
+  --color-button-text: #8d9198; /* product-button-color, tiny-button-color */
+  --color-button-hover-bg: #e1e1e1;
+  --color-button-accent: #658bbb;
+
+  /* Highlight colors */
+  --color-highlight-title: #393d44;
+  --color-highlight-text: #8d9198;
+  --color-highlight-bg: #fcffdd;
+
+  /* Store colors */
+  --color-store-header: #b5b5b5;
+  --color-store-product-title: #393e46;
+  --color-store-product-description: #6c6c6c;
+  --color-store-product-price: #6c6c6c;
+  --color-store-button-text: #fff;
+
+  /* UI colors */
+  --color-bg: #f2f2f2;
+  --color-border: #ccc;
+  --color-border-light: #ddd;
+  --color-separator: #e1e1e1;
+  --color-shadow: #dadada;
+
+  /* Semantic colors */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-gray-light: #888;
+
+
+  /* ============================================
+   * TYPOGRAPHY - Font Families
+   * ============================================ */
+
+  --font-family: 'Play', arial, serif;
+  --font-family-tweets: arial, serif;
+  --font-family-doc: inherit; /* Inherits from github-markdown.css */
+
+
+  /* ============================================
+   * TYPOGRAPHY - Font Sizes & Weights
+   * ============================================ */
+
+  /* Base fonts */
+  --font-size-base: 12px;
+  --font-size-footer: 10px;
+
+  /* Heading sizes */
+  --font-size-h1: 30px; /* doc-main-title-font */
+  --font-size-h2: 20px;
+  --font-size-h3: 16px;
+  --font-size-h4: 15px;
+  --font-size-h5: 14px;
+  --font-size-h6: 13px;
+
+  /* Component-specific font sizes */
+  --font-size-menu: 16px;
+  --font-size-menu-small: 14px;
+  --font-size-product-title: 48px;
+  --font-size-product-subtitle: 18px;
+  --font-size-product-button: 20px;
+  --font-size-product-specs: 10px;
+  --font-size-product-info: 10px;
+  --font-size-minor-button: 16px;
+  --font-size-tiny-button: 10px;
+  --font-size-highlight-title: 14px;
+  --font-size-highlight-text: 12px;
+  --font-size-www-product: 20px;
+  --font-size-store: 15px;
+  --font-size-store-header: 20px;
+  --font-size-store-product-title: 24px;
+  --font-size-store-product-description: 12px;
+  --font-size-store-product-price: 16px;
+  --font-size-store-product-button: 11px;
+
+  /* Font weights */
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+
+  /* ============================================
+   * SPACING SCALE
+   * ============================================ */
+
+  --space-0: 0;
+  --space-1: 1px;
+  --space-2: 2px;
+  --space-3: 3px;
+  --space-4: 4px;
+  --space-5: 5px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-14: 14px;
+  --space-16: 16px;
+  --space-18: 18px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-26: 26px;
+  --space-28: 28px;
+  --space-30: 30px;
+  --space-32: 32px;
+  --space-38: 38px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-50: 50px;
+  --space-60: 60px;
+  --space-150: 150px;
+
+
+  /* ============================================
+   * BORDERS & RADIUS
+   * ============================================ */
+
+  --border-width: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 3px;
+
+  --radius-small: 2px;
+  --radius-medium: 4px;
+  --radius-large: 8px;
+  --radius-xlarge: 10px;
+
+
+  /* ============================================
+   * SHADOWS
+   * ============================================ */
+
+  --shadow-text: #fff 0 1px 1px;
+  --shadow-text-reverse: #000 0 1px 1px;
+  --shadow-box-small: 0 1px 2px var(--color-border);
+  --shadow-box-medium: 0 1px 4px var(--color-border);
+  --shadow-separator: rgba(255, 255, 255, 0.75) 0 1px 1px;
+
+
+  /* ============================================
+   * TIMING & ANIMATIONS
+   * ============================================ */
+
+  --transition-speed: 0.5s; /* tspeed - standard transition speed */
+  --transition-timing: ease;
+  --transition-duration-fast: 0.2s;
+  --transition-duration-slow: 1s;
+
+
+  /* ============================================
+   * LAYOUT & DIMENSIONS
+   * ============================================ */
+
+  --breakpoint-mobile: 620px; /* logo-menu-not-clashing */
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+  --breakpoint-wide: 1200px;
+
+  --line-height-base: 18px;
+  --line-height-button: 38px;
+  --line-height-minor-button: 30px;
+  --line-height-tiny-button: 22px;
+
+
+  /* ============================================
+   * SPECIAL EFFECTS
+   * ============================================ */
+
+  --highlight-start: transparent; /* anchorable-section-hightlight-start-color */
+  --highlight-end: yellow; /* anchorable-section-hightlight-end-color */
+}
