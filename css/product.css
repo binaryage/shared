@@ -180,10 +180,6 @@
   }
 
   @media (width <= 520px) {
-    .product-social {
-      display: none;
-    }
-
     .cross-promo {
       display: none;
     }
